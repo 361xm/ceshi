@@ -14,7 +14,7 @@
 <div class="newheader361"> 
 	<!--登陆/注册-->
 	<div class="toplogin">
-		<div class="logincont"> <a href="#" class="area"  target="_blank" ></a> <a href="http://www.361sport.com/index.php?m=Index&a=country" class="english"  target="_blank" ></a> <a href="http://ir.361sport.com/html/index.php" class="english"  target="_blank"  style="width:140px;"></a> <a href="http://ir.361sport.com/s/index.php" class="english"  target="_blank" ></a> <a href="/index.php?m=Jobs&a=index" class="english"  target="_blank" style="width:auto; padding:0px 20px;">招聘</a>
+		<div class="logincont">  <a href="/index.php?m=Jobs&a=index" class="english"  target="_blank" style="width:auto; padding:0px 20px;">招聘</a>
 							<span class="signIn" style="line-height: 12px;"><a href="javascript:void(0);" class="in" >马上签到</a></span> <a href="/index.php?m=Member&a=login"  class="in" >登录/注册</a><em>您好</em>		</div>
 	</div>
 	<!--导航-->
