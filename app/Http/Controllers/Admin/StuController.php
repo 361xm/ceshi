@@ -7,15 +7,15 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
+
+	
+ 
 class StuController extends Controller
-{
-	//上传图片
+{   
     public function doUplode()
     {
-    	return 1111;
-
-class StuController extends Controller
-{
+    	return 1111;//上传图片
+    }
     //1  查看所有信息
      public function index(Request $request)
     {
