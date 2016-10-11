@@ -25,6 +25,17 @@
         <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
         <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
+     <script>
+        function doDel(id){
+            if(confirm('确定删除吗？')){
+//                1.获得form表单节点对象
+                var myform = document.myform;
+//                2 设置提交方式
+                myform.action = "/stu/"+id;
+                myform.submit();
+            }
+        }
+    </script>
   </head>
   <body class="hold-transition skin-blue sidebar-mini">
     <div class="wrapper">
@@ -116,7 +127,7 @@
               </a>
               <ul class="treeview-menu">
                 <li><a href="{{ URL('/user') }}"><i class="fa fa-circle-o"></i> 用户详情信息表</a></li>
-                <li><a href="{{ URL('/add') }}"><i class="fa fa-circle-o"></i> 添加用户</a></li>
+                <li><a href="{{ URL('/stu/create') }}"><i class="fa fa-circle-o"></i> 添加用户</a></li>
               </ul>
             </li>
             <li class="treeview">
@@ -207,5 +218,7 @@
     <script src="{{ asset('admins/dist/js/app.min.js') }}"></script>
     <!-- AdminLTE for demo purposes -->
     <script src="{{ asset('admins/dist/js/demo.js') }}"></script>
+    @section('myscript')
+    @show
   </body>
 </html>

@@ -26,7 +26,22 @@ class LoginController extends Controller
                 // return redirect("admin/login");//重定向
 
             }
-            return view('admin.index.index');
+        $adminName = $request->input('adminName');
+        $password = $request->input('passWord');
+        // dd($adminName);
+        $ob = \DB::table('admin')->where("adminname",$adminName)->first();
+        // dd($ob);
+        if($ob){
+            //3 密码
+            if($ob->password==$password){
+                //31写入session
+                session()->set("adminuser",$ob);
+                //32跳转到后台首页
+                return view("admin/index/index");
+            }
+            return back()->with("msg","用户或密码错误");
+        }
+        return back()->with("msg","用户或密码错误");
     }
 
     //3 验证码

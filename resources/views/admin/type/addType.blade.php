@@ -6,19 +6,21 @@
                   <h3 class="box-title">添加商品类别</h3>
                 </div><!-- /.box-header -->
                 <!-- form start -->
-                <form role="form">
+                <form role="form" action="{{ URL('/file')}}" method="post" enctype="multipart/form-data">
+                  <input type="hidden" name="_token" value="{{ csrf_token()}}">
+                  <input type="hidden" name="_method" value="post">
                   <div class="box-body">
                     <div class="form-group">
-                      <label for="exampleInputEmail1">Email address</label>
-                      <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
+                      <label for="exampleInputEmail1">添加类别</label>
+                      <input type="text" name="classname" class="form-control" id="exampleInputEmail1" placeholder="Type">
                     </div>
                     <div class="form-group">
-                      <label for="exampleInputPassword1">Password</label>
-                      <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                      <label for="exampleInputPassword1">描述</label>
+                      <input type="text" name="decipt" class="form-control" id="exampleInputPassword1" placeholder="Description">
                     </div>
                     <div class="form-group">
                       <label for="exampleInputFile">图片</label>
-                      <input type="file" id="exampleInputFile">
+                      <input type="file" name="classimage" id="exampleInputFile">
                       <p class="help-block">Example block-level help text here.</p>
                     </div>
                     <div class="checkbox">
@@ -29,7 +31,7 @@
                   </div><!-- /.box-body -->
 
                   <div class="box-footer">
-                    <button type="submit" class="btn btn-primary">Submit</button>
+                    <button type="submit" class="btn btn-primary">添加</button>
                   </div>
                 </form>
               </div><!-- /.box -->

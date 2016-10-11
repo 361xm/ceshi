@@ -31,6 +31,14 @@
                       </div>
                     </div>
                   </div><!-- /.box-body -->
+                  <div class="form-group">   
+                    <label for="editor1" class="col-sm-2 control-label">留言</label>
+                    <div class="col-sm-10">
+                      <textarea id="editor1" name="editor1" rows="10" cols="80">
+                                                This is my textarea to be replaced with CKEditor.
+                      </textarea>  
+                     </div>         
+                  </div>                  
                   <div class="box-footer">
                     <button type="submit" class="btn btn-info pull-right">添加</button>
                   </div><!-- /.box-footer -->
@@ -39,4 +47,22 @@
           </div>   <!-- /.row -->
         </section><!-- /.content -->
 
+@endsection
+
+@section('myscript')
+  <!-- CK Editor -->
+    <script src="https://cdn.ckeditor.com/4.4.3/standard/ckeditor.js"></script>
+    <script>
+      $(function () {
+        // Replace the <textarea id="editor1"> with a CKEditor
+        // instance, using default configuration.
+        //1 创建一个对象
+        var config = new Object();
+        //2 对象使用文件上传的方式
+        config.filebrowserImageUploadUrl = "/uplode";
+        // config.filebrowserImageUploadUrl = './upload.php?type=img';
+        //3 添加config对象到CKeidtor中
+        CKEDITOR.replace('editor1',config);
+      });
+    </script>
 @endsection

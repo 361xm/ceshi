@@ -58,23 +58,6 @@
 // 	return "hello Delete";
 // });
 
-
-
-// //2 加载控制器的路由
-// Route::get("/demo","DemoController@index");//手动建控制器 
-// // Route::get("/stu","StuController@index");//使用artisan建控制器 
-// // Route::get("/stu/add","StuController@add");
-// Route::get("/test","mytest\TestController@index");//使用artisan建控制器 
-
-// //restfull 资源路由 
-// Route::resource("/stu","StuController");
-
-
-// // Route::get("/stu",function (){
-// // 	return "查看学生信息2";
-// // });
-
-
 // //3 多种路由方式请求 
 // // Route::match(['get', 'post'], '/aa', function () {
 // //     return 'Hello AA 可接收get和post请求';
@@ -136,6 +119,9 @@ Route::get('/link',"LinkController@link");
 // Route::get('/admin',"AdminController@admin");
 //跳转登录 注册页面
 Route::get('/login',"LoginController@login");
+Route::post('/dologin',"LoginController@dologin");
+//注册页面
+Route::post('/register',"RegisterController@register");
 //跳转到商品结算
 Route::get('/count',"CountController@count");
 //第一张图片链接
@@ -175,19 +161,16 @@ Route::get("/admin/logout","Admin\LoginController@logout");//提交退出请求
 
 
 //显示普通用户管理信息表
-Route::any('/user', "Admin\UserController@index2");
 // 搜索用户
 //普通添加用户信息表
 Route::get('/add', function () {
     return view('admin.user.add');
 });
 
-//显示普通用户管理信息表
-Route::get('/adminUser', function () {
-    return view('admin.adminuser.user');
-});
+//管理员管理信息表
+Route::any('/adminUser', 'Admin\UserController@adminUser');
 
-//普通添加用户信息表
+//管理员添加用户信息表
 Route::get('/adminAdd', function () {
     return view('admin.adminuser.add');
 });
@@ -223,12 +206,15 @@ Route::get('type/addorder',function () {
 Route::group(["prefix"=>"admin","middleware"=>"myauth"],function(){
 		Route::get("index","Admin\IndexController@index");//网站后台首页
 
-		// Route::get("logout","Admin\LoginController@logout");//执行退出 
+		Route::get("logout","Admin\LoginController@logout");//执行退出 
 
 		// Route::resource("stu","Admin\StuController");//学生信息管理
+		// Route::get('uplode',"Admin\StuController@doUplode");
 
 	});
+ Route::resource("/stu","Admin\StuController");//用户信息管理
+// 搜索
+Route::any('/user',"Admin\UserController@index2");
 // Route::get('/admin/index','Admin\IndexController@index');
 // 增删改查用户管理
-// Route::resource('/user',"UserController");
- //Route::get('/user',"Admin\UserController@index");
+ 
