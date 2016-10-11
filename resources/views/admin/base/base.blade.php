@@ -126,9 +126,9 @@
                 <i class="fa fa-angle-left pull-right"></i>
               </a>
               <ul class="treeview-menu">
-                <li><a href="{{ asset('type/shop') }}"><i class="fa fa-circle-o"></i>商品类别分类详情表</a></li>
-                <li><a href="{{ asset('type/shopList') }}"><i class="fa fa-circle-o"></i>商品列表</a></li>
-                <li><a href="{{ asset('type/addType') }}"><i class="fa fa-circle-o"></i>添加商品类别</a></li>
+                <li><a href="{{ URL('/type') }}"><i class="fa fa-circle-o"></i>商品类别分类详情表</a></li>
+                <li><a href="{{ URL('/typelist') }}"><i class="fa fa-circle-o"></i>商品列表</a></li>
+                <li><a href="{{ URL('/addType') }}"><i class="fa fa-circle-o"></i>添加商品类别</a></li>
                 <!-- <li><a href="../layout/collapsed-sidebar.html"><i class="fa fa-circle-o"></i> Collapsed Sidebar</a></li> -->
               </ul>
             </li>
