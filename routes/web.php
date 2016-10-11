@@ -58,23 +58,6 @@
 // 	return "hello Delete";
 // });
 
-
-
-// //2 加载控制器的路由
-// Route::get("/demo","DemoController@index");//手动建控制器 
-// // Route::get("/stu","StuController@index");//使用artisan建控制器 
-// // Route::get("/stu/add","StuController@add");
-// Route::get("/test","mytest\TestController@index");//使用artisan建控制器 
-
-// //restfull 资源路由 
-// Route::resource("/stu","StuController");
-
-
-// // Route::get("/stu",function (){
-// // 	return "查看学生信息2";
-// // });
-
-
 // //3 多种路由方式请求 
 // // Route::match(['get', 'post'], '/aa', function () {
 // //     return 'Hello AA 可接收get和post请求';
@@ -178,7 +161,6 @@ Route::get("/admin/logout","Admin\LoginController@logout");//提交退出请求
 
 
 //显示普通用户管理信息表
-Route::any('/user', "Admin\UserController@index2");
 // 搜索用户
 //普通添加用户信息表
 Route::get('/add', function () {
@@ -233,7 +215,9 @@ Route::group(["prefix"=>"admin","middleware"=>"myauth"],function(){
 		// Route::get('uplode',"Admin\StuController@doUplode");
 
 	});
+ Route::resource("/stu","Admin\StuController");//用户信息管理
+// 搜索
+Route::any('/user',"Admin\UserController@index2");
 // Route::get('/admin/index','Admin\IndexController@index');
 // 增删改查用户管理
-// Route::resource('/user',"UserController");
- //Route::get('/user',"Admin\UserController@index");
+ 

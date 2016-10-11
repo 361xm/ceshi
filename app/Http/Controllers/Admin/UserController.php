@@ -35,8 +35,9 @@ class UserController extends Controller
             $where['name'] = $name;
          // 模板显示
         } 
-        $list = $db->paginate(1);
-        return view("admin.user.user")->with(["list"=>$list,"where"=>$where]);
+        $list = $db->paginate(5);
+        $num = 0;
+        return view("admin.user.user")->with(["list"=>$list,"where"=>$where,"num"=>$num]);
         // 数据分页
         
     }
