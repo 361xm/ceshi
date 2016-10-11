@@ -115,7 +115,9 @@
 Route::get('/', function () {
     return view('web');
 });
-Route::get('/link',"LinkController@link");
+Route::get('/link',function () {
+    return view('web');
+});
 // Route::get('/admin',"AdminController@admin");
 //跳转登录 注册页面
 Route::get('/login',"LoginController@login");

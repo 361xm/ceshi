@@ -28,7 +28,7 @@
                 //31写入session
                 session()->set("adminuser",$ob);
                 //32跳转到后台首页
-                return view("/home/link");
+                return view("web");
             }
             return back()->with("msg","用户或密码错误");
         }
