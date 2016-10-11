@@ -41,10 +41,10 @@ $(document).ready(function() {
 <form action="{{ URL('admin/dologin') }}" method="post">
     <input type="hidden" name="_token" value="{{ csrf_token() }}">
   <dd class="user_icon">
-    <input type="text" name="userName" placeholder="账号" class="login_txtbx"/>
+    <input type="text" name="adminName" placeholder="账号" class="login_txtbx"/>
   </dd>
   <dd class="pwd_icon">
-    <input type="password" name="password" placeholder="密码" class="login_txtbx"/>
+    <input type="password" name="passWord" placeholder="密码" class="login_txtbx"/>
   </dd>
   <dd class="val_icon">
     <div class="col-xs-6">

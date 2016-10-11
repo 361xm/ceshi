@@ -9,13 +9,19 @@ use App\Http\Controllers\Controller;
 
 class UserController extends Controller
 {
-    public function index ()
+    public function adminUser (Request $request)
     {
-    	// 获得所有用户信息
-    	$list = \DB::table('user')->get();
-    	// dd($list);
-    	// 将数组传到试图里加载
-    	return view("admin.user.user",["list"=>$list,"num"=>$num]);
+    	$db = \DB::table('admin');
+        $where = [];
+        if($request->has('adminname')){
+            $name = $request->input('adminname');
+            $db->where('adminname', 'like', "%{$name}%");//实现过滤控制器
+            $where['name'] = $name;
+         // 模板显示
+        } 
+        // dd($where);
+        $list = $db->paginate(1);
+        return view("admin.adminUser.user")->with(['list'=>$list,"where"=>$where]);
     }
     public function index2 (Request $request)
     {

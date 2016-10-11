@@ -7,12 +7,11 @@
                 <div class="box-header">
                   <h3 class="box-title">管理员信息表</h3>
                   <div class="box-tools">
-                    <div class="input-group" style="width: 150px;">
-                      <input type="text" name="table_search" class="form-control input-sm pull-right" placeholder="Search">
-                      <div class="input-group-btn">
-                        <button class="btn btn-sm btn-default"><i class="fa fa-search"></i></button>
-                      </div>
-                    </div>
+                    <form action="{{ URL('/adminUser')}}" method="post">
+                        <input type="hidden" name="_token" value="{{ csrf_token()}}">
+                        <input type="text" name="adminname" size="15" class="form-inline">
+                        <button type="submit" class="btn btn-sm btn-default"><i class="fa fa-search"></i></button>
+                    </form>
                   </div>
                 </div><!-- /.box-header -->
                 <div class="box-body table-responsive no-padding">
@@ -23,16 +22,21 @@
                       <th>Status</th>
                       <th>操作</th>
                     </tr>
+                    @foreach($list as $user)
                     <tr>
-                      <td>1</td>
-                      <td>John Doe</td>
-                      <td><span class="label label-success">1</span></td>
+                      <td>{{ $user->id }}</td>
+                      <td>{{ $user->adminname }}</td>
+                      <td><span class="label label-success">{{ $user->status }}</span></td>
                       <td><button class="btn btn-xs btn-danger">删除</button>|<button class="btn btn-xs btn-info">修改</button></td>
                     </tr>
+                    @endforeach
                   </table>
-                </div><!-- /.box-body -->
-              </div><!-- /.box -->
-            </div>
-          </div>
+                  </div>
+                    <center style="float:right;">
+                    {!! $list->appends($where)->render() !!}
+                    </center>
+                    <!-- /.box -->
+                  </div>
+
     </section>
   @endsection
