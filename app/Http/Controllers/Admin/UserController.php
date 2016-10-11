@@ -20,7 +20,7 @@ class UserController extends Controller
          // 模板显示
         } 
         // dd($where);
-        $list = $db->paginate(1);
+        $list = $db->paginate(10);
         return view("admin.adminUser.user")->with(['list'=>$list,"where"=>$where]);
     }
     public function index2 (Request $request)
@@ -35,8 +35,8 @@ class UserController extends Controller
             $where['name'] = $name;
          // 模板显示
         } 
-        $list = $db->paginate(5);
-        $num = 0;
+        $list = $db->paginate(10);
+        $num = 1;
         return view("admin.user.user")->with(["list"=>$list,"where"=>$where,"num"=>$num]);
         // 数据分页
         
