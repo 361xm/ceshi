@@ -137,6 +137,8 @@ Route::get('/link',"LinkController@link");
 //跳转登录 注册页面
 Route::get('/login',"LoginController@login");
 Route::post('/dologin',"LoginController@dologin");
+//注册页面
+Route::post('/register',"RegisterController@register");
 //跳转到商品结算
 Route::get('/count',"CountController@count");
 //第一张图片链接
