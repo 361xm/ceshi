@@ -207,5 +207,7 @@
     <script src="{{ asset('admins/dist/js/app.min.js') }}"></script>
     <!-- AdminLTE for demo purposes -->
     <script src="{{ asset('admins/dist/js/demo.js') }}"></script>
+    @section('myscript')
+    @show
   </body>
 </html>

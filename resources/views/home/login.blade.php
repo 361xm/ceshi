@@ -5,10 +5,10 @@
 <title>会员登录-361°多一度热爱，361°官方商城</title>
 <meta name="keywords" content="作为中国领先的专业运动品牌，361°提供给所有热爱运动的年轻消费者设计与科技兼备的运动产品，并鼓励他们全情投入，不计得失地热爱运动。在“多一度热爱”品牌精神的指引下，361°积极践行“热爱”文化，将品牌、研发、设计、生产、经销融为一体，产品包括运动鞋、服及相关配件、童装、时尚休闲等多种品类，致力成为全球最令人尊敬的运动品牌企业之一。">
 <meta name="description" content="作为中国领先的专业运动品牌，361°提供给所有热爱运动的年轻消费者设计与科技兼备的运动产品，并鼓励他们全情投入，不计得失地热爱运动。在“多一度热爱”品牌精神的指引下，361°积极践行“热爱”文化，将品牌、研发、设计、生产、经销融为一体，产品包括运动鞋、服及相关配件、童装、时尚休闲等多种品类，致力成为全球最令人尊敬的运动品牌企业之一。">
-<link href="../../home/login/css/css.css" rel="stylesheet" type="text/css" />
-<link href="../../home/login/css/user.css" rel="stylesheet" type="text/css" />
-<link href="../../home/login/js/artDialog/skins/default.css" rel="stylesheet" type="text/css" />
-<link rel="stylesheet" type="text/css" href="../../home/login/js/fancybox/jquery.fancybox-1.3.4.css" media="screen" />
+<link href="{{ URL('home/login/css/css.css') }}" rel="stylesheet" type="text/css" />
+<link href="{{ URL('home/login/css/user.css') }}" rel="stylesheet" type="text/css" />
+<link href="{{ URL('home/login/js/artDialog/skins/default.css') }}" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" type="text/css" href="{{ URL('home/login/js/fancybox/jquery.fancybox-1.3.4.css') }}" media="screen" />
 <style type="text/css">
 .msg{ color:red; background:#ffdddd; border:1px solid #555555; margin-left:100px; height: 19px; margin-left: 110px; padding-left: 3px; padding-top: 3px; width: 226px; }
 #get_code{ cursor:pointer; }
@@ -185,33 +185,34 @@ var zhm_Url="/index.php?m=Exchange&a=checkdhm";
 <div class="login_content mauto">
 	<div class="login_top"></div>
     <div class="login_c clearfix">
-    	<form method='post' id="form1" action="/index.php?m=Member&a=checkLogin" >  
-    	<div class="login_cleft f_l">
-        	<div class="title">使用已注册的361°商城账号登录：</div>
-            <div class="formlist" style="margin-bottom:10px;">
-            	<dl>
-                	<dt>帐号：</dt>
-                    <dd><span><input type="text" name="Laccount" id="Laccount" onblur="if(value ==''){value='用户名或手机或邮箱'}" onfocus="if(value =='用户名或手机或邮箱'){value =''}" value="用户名或手机或邮箱"/></span></dd>
-                </dl>
-                <dl>
-                	<dt>密码：</dt>
-                    <dd><span><input type="password" name="Lpassword" id="Lpassword" value="" /></span></dd>
-                </dl>
-            </div>
-			<div class="formlist" id="profile_error" style="display:none; margin-bottom:5px;">
-				<dl style="padding:0px;">
-					<dt></dt>
-					<dd class="profile_error" style="width:199px;"></dd>
-				</dl>
+    	<form method='post' action="{{ URL('/dologin') }}" >
+    		<input type='hidden' name="_token" value="{{ csrf_token() }}">
+    		<div class="login_cleft f_l">
+	        	<div class="title">
+	        		@if(session('msg'))
+					   <p class="login-box-msg" style="color:red;">{{ session('msg') }}</p>
+					@else()
+					   <em>使用已注册的361°商城账号登录：</em>
+					 @endif()
+	        	</div>
+	            <div class="formlist" style="margin-bottom:10px;">
+	            	<dl>
+	                	<dt>帐号：</dt>
+	                    <dd><span><input type="text" name="username" id="Laccount" onblur="if(value ==''){value='用户名或手机或邮箱'}" onfocus="if(value =='用户名或手机或邮箱'){value =''}" value="用户名或手机或邮箱"/></span></dd>
+	                </dl>
+	                <dl>
+	                	<dt>密码：</dt>
+	                    <dd><span><input type="password" name="password" id="Lpassword" value="" /></span></dd>
+	                </dl>
+	            </div>
+	        	
+	            <div class="remember"><div style="float:left; margin-top:2px;"><input type="checkbox" name="savecookie" id="savecookie" value="1" /></div><div style="float:left; margin-left:5px;">(记住我)两周内自动登录</div><a href="/index.php?m=Member&a=getpwd" style="float:left; color:#BF262D; margin-left:20px;">忘记密码?</a> </div>
+	            <div>
+	            	<input type="submit" value="会员登录" class="submit pointer" style="margin-top:20px;"/>
+	            </div>
+				<div class="otherlogin" style="margin-top:5px;">第三方登陆</div>
+				<div class="iframeform"><label style="text-align:center;"><a href="/index.php?m=Loginby&a=index&ltype=qq" class="loginbyqq"  target="_blank"></a><a href="/index.php?m=Loginby&a=index&ltype=sina" class="loginbysina"  target="_blank"></a></label></div>
 			</div>
-            <div class="remember"><div style="float:left; margin-top:2px;"><input type="checkbox" name="savecookie" id="savecookie" value="1" /></div><div style="float:left; margin-left:5px;">(记住我)两周内自动登录</div><a href="/index.php?m=Member&a=getpwd" style="float:left; color:#BF262D; margin-left:20px;">忘记密码?</a> </div>
-            <div>
-            	<input type="button" name="button" id="button" value="提交" class="submit pointer" style="margin-top:20px;"/>
-                <input type="hidden" id="is_qqsina" value="0"/>
-            </div>
-			<div class="otherlogin" style="margin-top:5px;">第三方登陆</div>
-			<div class="iframeform"><label style="text-align:center;"><a href="/index.php?m=Loginby&a=index&ltype=qq" class="loginbyqq"  target="_blank"></a><a href="/index.php?m=Loginby&a=index&ltype=sina" class="loginbysina"  target="_blank"></a></label></div>
-		</div>
 		</form>
         <div class="login_cbo f_l"></div>
         <form method='post' id="form2" action="/index.php?m=Member&a=register" >
@@ -238,9 +239,13 @@ var zhm_Url="/index.php?m=Exchange&a=checkdhm";
                 	<dt>确认密码：</dt>
                     <dd><span><input type="password" name="repassword" id="repassword" value=""/></span></dd>
                 </dl>
-                <dl id="duanxin">
-                	<dt>短信验证码：</dt>
-                    <dd style="width:241px;"><span  style="float:left;"><input type="text" name="sms_code" id="sms_code" style="width:105px;" value=""/></span><input type="button" value="获取验证码"  data-type="0"  id="get_code" style="width:79px;margin-left: 10px; height:25px; float:left; background:#f5951d; color:#fff; border-radius:2px; padding:2px 5px;"/></dd>
+                <dl>
+                	<dt>验证码：</dt>
+                	<dd><span><input name="code" type="text" id="J_codetext" placeholder="验证码" maxlength="6" class="login_txtbx"></span></dd>
+                </dl>
+                 <dl>
+                 	<dt></dt>
+                	<dd><span><img src="{{ URL('admin/captcha/time()') }}" onclick="this.src='{{ URL('admin/captcha') }}/'+Math.random()"><span></dd>
                 </dl>
             </div>
 			<div class="formlist" id="profile_error_reg" style="display:none; margin-top:5px;">
@@ -549,8 +554,8 @@ $(document).ready(function() {
 	//中秋博饼兑换窗口结束  2015/9/19 @txx
 });
 </script>
-<script type="text/javascript" src="<!-- ../../home/login/js/ -->artDialog/artDialog.js"></script>
-<script type="text/javascript" src="../../home/login/js/login.js"></script> 
+<script type="text/javascript" src="{{ URL('home/login/js/artDialog.js') }}"></script>
+<script type="text/javascript" src="{{ URL('home/login/js/login.js') }}"></script> 
 <script type="text/javascript">
 var loginUrl = "/index.php?m=Member&a=checkLogin";
 var telUrl = "/index.php?m=Member&a=checkTel";

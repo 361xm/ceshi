@@ -136,6 +136,7 @@ Route::get('/link',"LinkController@link");
 // Route::get('/admin',"AdminController@admin");
 //跳转登录 注册页面
 Route::get('/login',"LoginController@login");
+Route::post('/dologin',"LoginController@dologin");
 //跳转到商品结算
 Route::get('/count',"CountController@count");
 //第一张图片链接
@@ -182,12 +183,10 @@ Route::get('/add', function () {
     return view('admin.user.add');
 });
 
-//显示普通用户管理信息表
-Route::get('/adminUser', function () {
-    return view('admin.adminuser.user');
-});
+//管理员管理信息表
+Route::any('/adminUser', 'Admin\UserController@adminUser');
 
-//普通添加用户信息表
+//管理员添加用户信息表
 Route::get('/adminAdd', function () {
     return view('admin.adminuser.add');
 });
@@ -226,9 +225,10 @@ Route::get('type/addorder',function () {
 Route::group(["prefix"=>"admin","middleware"=>"myauth"],function(){
 		Route::get("index","Admin\IndexController@index");//网站后台首页
 
-		// Route::get("logout","Admin\LoginController@logout");//执行退出 
+		Route::get("logout","Admin\LoginController@logout");//执行退出 
 
 		// Route::resource("stu","Admin\StuController");//学生信息管理
+		// Route::get('uplode',"Admin\StuController@doUplode");
 
 	});
 // Route::get('/admin/index','Admin\IndexController@index');
