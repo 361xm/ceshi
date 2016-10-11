@@ -192,20 +192,17 @@ Route::get('/adminAdd', function () {
     return view('admin.adminuser.add');
 });
 
-//显示商品类别信息表(父)
-Route::get('type/shopList',function () {
-	return view('admin.type.shopList');
-});
+//显示商品信息表
+Route::any('/typelist','Admin\ListController@shop');
 
 //显示商品类别添加
-Route::get('type/addType',function () {
-	return view('admin.type.addType');
-});
+Route::get('/addType','Admin\UploadController@put');
+
+//执行添加商品类别
+Route::resource('/file','Admin\UploadController');
 
 //显示商品类别分类详情表
-Route::get('type/shop',function () {
-	return view('admin.type.shop');
-});
+Route::any('/type','Admin\shopController@index');
 
 //显示评论中心
 Route::get('type/comment',function () {
