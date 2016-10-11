@@ -15,7 +15,7 @@ class UserController extends Controller
     	$list = \DB::table('user')->get();
     	// dd($list);
     	// 将数组传到试图里加载
-    	return view("admin.user.user",["list"=>$list]);
+    	return view("admin.user.user",["list"=>$list,"num"=>$num]);
     }
     public function index2 (Request $request)
     {
@@ -29,8 +29,9 @@ class UserController extends Controller
             $where['name'] = $name;
          // 模板显示
         } 
-        $list = $db->paginate(1);
-        return view("admin.user.user")->with(["list"=>$list,"where"=>$where]);
+        $list = $db->paginate(5);
+        $num = 0;
+        return view("admin.user.user")->with(["list"=>$list,"where"=>$where,"num"=>$num]);
         // 数据分页
         
     }
