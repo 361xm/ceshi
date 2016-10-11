@@ -234,4 +234,4 @@ Route::group(["prefix"=>"admin","middleware"=>"myauth"],function(){
 // Route::get('/admin/index','Admin\IndexController@index');
 // 增删改查用户管理
 // Route::resource('/user',"UserController");
- Route::get('/user',"Admin\UserController@index");
+ //Route::get('/user',"Admin\UserController@index");
