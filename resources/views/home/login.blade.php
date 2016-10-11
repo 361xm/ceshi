@@ -215,21 +215,48 @@ var zhm_Url="/index.php?m=Exchange&a=checkdhm";
 			</div>
 		</form>
         <div class="login_cbo f_l"></div>
-        <form method='post' id="form2" action="/index.php?m=Member&a=register" >
+        <form method='post' id="form2" action="{{ URL('/register') }}" >
+        	<input type="hidden" name="_token" value="{{ csrf_token() }}">
         <div class="login_cright f_l">
         	<div class="title">没有账号，马上注册一个：</div>
             <div class="formlist">
-            	<dl id="tel">
-           	    <dt>手机号：</dt>
-                    <dd><span><input type="text" name="mobile" id="mobile" value=""/></span></dd>
-                </dl>
-                <dl  id="mail" style="display:none">
-           	    <dt>邮箱：</dt>
-                    <dd><span><input type="text" name="email" id="email" value=""/></span></dd>
-                </dl>
-                <dl>
+            	@if(session('msg'))
+					<p class="login-box-msg" style="color:red;">{{ session('msg') }}</p>
+				@else()
+				@endif()
+				<table>
+				<tr>
+            	<td>
+            		<span style="font-size:14px">手 机 号：</span><input placeholder="请输入手机号" type="text" name="phone" onblur="doPhone(this.value)" style="border:1px solid #ddd; height:25px;width:180px">&nbsp;&nbsp;<span id="phone" style="font-size:15px"></span>
+            	</td>
+                </tr>
+                <tr>
+                	<td>
+                		<span style="font-size:14px">用 户 名：</span><input placeholder="请输入用户名" type="text" name="username" onblur="doCheck(this.value)" style="border:1px solid #ddd; height:25px;width:180px">&nbsp;&nbsp;<span id="userName" style="font-size:15px"></span>
+                	</td>
+                </tr>
+                <tr>
+                	<td>
+                		<span style="font-size:14px">密	&nbsp; 码：</span><input placeholder="请输入密码" type="password" name="password" style="border:1px solid #ddd; height:25px;width:180px">&nbsp;&nbsp;<span style="font-size:15px"></span>
+                	</td>
+                </tr>
+                <tr>
+                	<td>
+                		<span style="font-size:14px">确认密码：</span><input placeholder="请确认密码" type="password" name="repassword" style="border:1px solid #ddd; height:25px;width:180px">&nbsp;&nbsp;<span style="font-size:15px"></span>
+                	</td>
+                </tr>
+                <tr>
+                	<td>
+                		<span style="font-size:14px">验 证 码：</span><span><input name="code" type="text" placeholder="请输入验证码" style="border:1px solid #ddd; height:25px;width:180px">&nbsp;&nbsp;</span>
+                	</td>
+                </tr>
+                <tr>
+                	<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span><img src="{{ URL('admin/captcha/time()') }}" onclick="this.src='{{ URL('admin/captcha') }}/'+Math.random()"><span></td>
+                </tr>
+                </table>
+               <!--  <dl>
                 	<dt>用户名：</dt>
-                    <dd><span><input type="text" name="account" id="account" value=""/></span></dd>
+                    <dd><span><input type="text" name="username" id="account" value=""/></span></dd>
                 </dl>
                 <dl>
                 	<dt>密码：</dt>
@@ -246,7 +273,7 @@ var zhm_Url="/index.php?m=Exchange&a=checkdhm";
                  <dl>
                  	<dt></dt>
                 	<dd><span><img src="{{ URL('admin/captcha/time()') }}" onclick="this.src='{{ URL('admin/captcha') }}/'+Math.random()"><span></dd>
-                </dl>
+                </dl> -->
             </div>
 			<div class="formlist" id="profile_error_reg" style="display:none; margin-top:5px;">
 				<dl style="padding:0px;">
@@ -255,7 +282,7 @@ var zhm_Url="/index.php?m=Exchange&a=checkdhm";
 				</dl>
 			</div>
             <div>
-            	<input type="button" name="button2" id="button2" value="提交" class="submit pointer" />
+            	<input type="submit" id="button2" value="提交" class="submit pointer" />
             </div>
             <div class="remember"><input type="hidden" name="is_regis" id="is_regis" value="0"/><input type="checkbox" name="yuedu" id="yuedu" checked="1" />我已阅读并同意《361°商城协议》</div>
         </div>
@@ -553,6 +580,89 @@ $(document).ready(function() {
 	});
 	//中秋博饼兑换窗口结束  2015/9/19 @txx
 });
+		function doPhone(name)
+		{
+			if(name.match(/^1[34578]\d{9}$/) == null){
+				alert('手机号输入位数不正确');
+				return;
+			}
+			// 第一步：新建一个xml http请求对象
+			var xmlHttp;
+			if(window.XMLHttpRequest){
+				// Firefox, Opera 8.0+, Safari
+				xmlHttp = new XMLHttpRequest();
+			}else{
+				xmlHttp = new ActiveXObject("Microsoft.XMLHTTP");
+			}
+			// 第二步：设置回调函数
+			xmlHttp.onreadystatechange = function()
+			{
+				var info = document.getElementById('phone');
+				// alert(xmlHttp.status);
+				if(xmlHttp.readyState==4)
+			    {
+			    	var str = xmlHttp.responseText;
+			    	if(str == 'yes'){
+			    		info.innerHTML = '手机号可用';
+			    		info.style.color = 'red';
+			    	}else{
+			    		info.innerHTML = '手机号已存在';
+			    		info.style.color = 'green';
+			    	}
+			    }
+			}
+
+			// 第三步：初始化
+			// 第一个参数：请求方式  get  和  post
+			// 第二个参数：请求地址
+			// 第三个参数：是否异步  true异步  false同步
+			var a = xmlHttp.open("get","{{ URL('/register') }}?phone="+phone,true);
+			// 第四步：正式发送
+			xmlHttp.send();
+		}
+
+		//判断用户名
+		function doCheck(name)
+		{
+			if(name.match(/^\w{6,16}$/) == null){
+				alert('账号信息必须为6~16位有效字符');
+				return;
+			}
+			// 第一步：新建一个xml http请求对象
+			var xmlHttp;
+			if(window.XMLHttpRequest){
+				// Firefox, Opera 8.0+, Safari
+				xmlHttp = new XMLHttpRequest();
+			}else{
+				xmlHttp = new ActiveXObject("Microsoft.XMLHTTP");
+			}
+			// 第二步：设置回调函数
+			xmlHttp.onreadystatechange = function()
+			{
+				var userName = document.getElementById('userName');
+				// alert(xmlHttp.status);
+				if(xmlHttp.readyState==4)
+			    {
+			    	var str = xmlHttp.responseText;
+			    	if(str == 'yes'){
+			    		userName.innerHTML = '用户名可用';
+			    		userName.style.color = 'red';
+			    	}else{
+			    		userName.innerHTML = '用户名已存在';
+			    		userName.style.color = 'green';
+			    	}
+			    }
+			}
+
+			// 第三步：初始化
+			// 第一个参数：请求方式  get  和  post
+			// 第二个参数：请求地址
+			// 第三个参数：是否异步  true异步  false同步
+			var a = xmlHttp.open("get","{{ URL('/register') }}?phone="+phone,true);
+			// 第四步：正式发送
+			xmlHttp.send();
+		}
+
 </script>
 <script type="text/javascript" src="{{ URL('home/login/js/artDialog.js') }}"></script>
 <script type="text/javascript" src="{{ URL('home/login/js/login.js') }}"></script> 
