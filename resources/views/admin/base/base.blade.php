@@ -18,6 +18,8 @@
     <!-- AdminLTE Skins. Choose a skin from the css/skins
          folder instead of downloading all of them to reduce the load. -->
     <link rel="stylesheet" href="{{ asset('admins/dist/css/skins/_all-skins.min.css') }}">
+    <link rel="stylesheet" href="http://www.jq22.com/demo/validate20160608/js/jquery-1.10.2.js">
+    <link rel="stylesheet" href="http://www.jq22.com/demo/validate20160608/js/validate.js">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -25,16 +27,25 @@
         <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
         <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
-     <script>
-        function doDel(id){
-            if(confirm('确定删除吗？')){
+    <script>
+      function doDel(id){
+        if(confirm('确定删除吗？')){
 //                1.获得form表单节点对象
-                var myform = document.myform;
+            var myform = document.myform;
 //                2 设置提交方式
-                myform.action = "/stu/"+id;
-                myform.submit();
-            }
+            myform.action = "/stu/"+id;
+            myform.submit();
         }
+      }
+      function doDelt(id){
+        if(confirm('确定删除吗？')){
+//                1.获得form表单节点对象
+            var myform = document.myform;
+//                2 设置提交方式
+            myform.action = "/file/"+id;
+            myform.submit();
+        }
+      }
     </script>
   </head>
   <body class="hold-transition skin-blue sidebar-mini">
@@ -138,7 +149,7 @@
               </a>
               <ul class="treeview-menu">
                 <li><a href="{{ URL('/type') }}"><i class="fa fa-circle-o"></i>商品类别分类详情表</a></li>
-                <li><a href="{{ URL('/typelist') }}"><i class="fa fa-circle-o"></i>商品列表</a></li>
+                <li><a href="{{ URL('/types') }}"><i class="fa fa-circle-o"></i>商品列表</a></li>
                 <li><a href="{{ URL('/addType') }}"><i class="fa fa-circle-o"></i>添加商品类别</a></li>
                 <!-- <li><a href="../layout/collapsed-sidebar.html"><i class="fa fa-circle-o"></i> Collapsed Sidebar</a></li> -->
               </ul>
