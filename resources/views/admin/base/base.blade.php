@@ -72,14 +72,14 @@
               <li class="dropdown user user-menu">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                   <img src="{{ asset('admins/dist/img/user2-160x160.jpg') }}" class="user-image" alt="User Image">
-                  <span class="hidden-xs">敢死队</span>
+                  <span class="hidden-xs">{{ session('adminuser')->adminname }}</span>
                 </a>
                 <ul class="dropdown-menu">
                   <!-- User image -->
                   <li class="user-header">
                     <img src="{{ asset('admins/dist/img/user2-160x160.jpg') }}" class="img-circle" alt="User Image">
                     <p>
-                      敢死队 - 网站开发工程师
+                      {{ session('adminuser')->adminname }} - 网站开发工程师
                       <small>Member since Nov. 2012</small>
                     </p>
                   </li>
@@ -101,7 +101,7 @@
                       <a href="#" class="btn btn-default btn-flat">个人中心</a>
                     </div>
                     <div class="pull-right">
-                      <a href="{{ URL('/login') }}" class="btn btn-default btn-flat">退出</a>
+                      <a href="{{ URL('/admin/login') }}" class="btn btn-default btn-flat">退出</a>
                     </div>
                   </li>
                 </ul>
@@ -122,7 +122,7 @@
               <img src="{{ asset('admins/dist/img/user2-160x160.jpg') }}" class="img-circle" alt="User Image">
             </div>
             <div class="pull-left info">
-              <p>敢死队</p>
+              <p>{{ session('adminuser')->adminname }}</p>
               <a href="#"><i class="fa fa-circle text-success"></i> 在线</a>
             </div>
           </div>

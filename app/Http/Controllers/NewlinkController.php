@@ -30,4 +30,17 @@
 		{
 			return view('home/ShopList');
 		}
+		public function Shoping()
+		{
+			return view('home/Shoping');
+		}
+
+		public function center()
+		{
+			return view('home/center');
+		}
+		public function edit()
+		{
+			return view('home/edit');
+		}
 	}

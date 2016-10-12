@@ -26,7 +26,8 @@
             //3 密码
             if($ob->password==$password){
                 //31写入session
-                session()->set("adminuser",$ob);
+                $a = session()->set("adminuser",$ob);
+                // dd($a);
                 //32跳转到后台首页
                 return view("web");
             }
