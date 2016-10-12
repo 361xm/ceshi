@@ -148,7 +148,11 @@ Route::get('/pages',"NewlinkController@page");
 Route::get('/product',"NewlinkController@product");
 Route::get('/ShopList',"NewlinkController@ShopList");
 
-
+//跳转到购物车
+Route::get('/Shoping',"NewlinkController@Shoping");
+//个人中心
+Route::get('/center',"NewlinkController@center");
+Route::get('/edit',"NewlinkController@edit");
 //后台登录界面
 // Route::get('/login', function () {
 //     return view('admin.login.login');
