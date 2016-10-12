@@ -13,7 +13,7 @@ class LoginController extends Controller
     //1 登录表单
     public function login()
     {
-    	return view("admin.home.login");
+    	return view("admin.login.login");
     }
     //2 执行登录 
     public function dologin(Request $request)
