@@ -6,10 +6,9 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-
 class ListController extends Controller
 {
-   public function shop (Request $request)
+   public function shop(Request $request)
      {
         // 获得一个连接对象
      	$db = \DB::table('goods');
@@ -20,9 +19,9 @@ class ListController extends Controller
              $where['name'] = $name;
         // 模板显示
         } 
-         $list = $db->paginate(1);
-         return view("admin.type.shopList")->with(["list"=>$list,"where"=>$where]);
-         // 数据分页
-        
+         $list = $db->paginate(10);
+         $num = 1;
+         return view("admin.type.shopList")->with(["list"=>$list,"where"=>$where,"num"=>$num]);
+         // 数据分页        
      }
 }

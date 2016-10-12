@@ -28,7 +28,8 @@
                     </tr>
                     @foreach($list as $good)
                       <tr>
-
+                        <th>{{ ($list->currentPage()-1)*10+($num) }}</th>
+                        <input type="hidden" value="{{ $num++ }}">
                         <td>{{ $good->goodsname }}</td>
                         <td>{{ $good->tid }}</td>
                         <td>{{ $good->goodsprice }}</td>

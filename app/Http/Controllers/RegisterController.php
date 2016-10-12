@@ -8,7 +8,8 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
 class RegisterController extends Controller
-{
+{   
+    // 前台登录Ajax无刷新验证
     public function register(Request $request)
     {
     	$data = $request->only("phone","username","password","repassword");
@@ -35,6 +36,22 @@ class RegisterController extends Controller
         }
         
 
+    }
+
+    // 后台用户模块添加用户
+    public function addUser(Request $request)
+    {
+        $data = $request->only("phone","username","password");
+        $username = $request->input('username');
+        $phone = $request->input('phone');
+        $password = $request->input('password');
+        // 从数据库里面进行验证
+        $ob = \DB::table('user')->where('username',$username)->orwhere("phone",$phone)->first();
+        if($ob->phone){
+            return "y";
+        }else{
+            return "n";
+        }
     }
 
     //3 验证码

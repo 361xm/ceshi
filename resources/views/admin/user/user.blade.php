@@ -35,7 +35,7 @@
                       <input type="hidden"value="{{ $num++ }}">
                       <th>{{ $stu->username }}</th>
                       <th>{{ $stu->phone }}</th>
-                      <td><a href="javascript:doDel({{ $stu->id}})"<button class="btn btn-xs btn-danger">删除</button></a>|<button class="btn btn-xs btn-info">查看订单</button></td>
+                      <td><a href="javascript:doDel({{ $stu->id}})"><button class="btn btn-xs btn-danger">删除</button></a>|<button class="btn btn-xs btn-info">查看订单</button></td>
                     </tr>
                     @endforeach
                     

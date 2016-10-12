@@ -10,7 +10,7 @@ use App\Http\Controllers\Controller;
 
 class shopController extends Controller
 {
-     public function index (Request $request)
+     public function index(Request $request)
      {
         // 获得一个连接对象
      	$db = \DB::table('types');
@@ -22,10 +22,9 @@ class shopController extends Controller
         // 模板显示
         } 
          $list = $db->paginate(10);
-         $num = 0;
+         $num = 1;
          return view("admin.type.shop")->with(["list"=>$list,"where"=>$where,"num"=>$num]);
          // 数据分页"
         
      }
-
 }

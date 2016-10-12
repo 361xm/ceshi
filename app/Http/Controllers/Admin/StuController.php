@@ -66,24 +66,26 @@ class StuController extends Controller
 //         return $request;
         //获得指定的下标对应的值 
         $data = $request->only("phone","username","password");
+        $phone=$request->input('phone');
+        $username = $request->input('username');
+        $password = $request->input('password');
         // dd($data);
-
+        if($request->input('username')){     
         //2 写入数据库
         $id = \DB::table("user")->insertGetId($data);//执行添加返回自增ID号
 
-        //3 判断是否添加成功
-        if($id>0){
-            $look="添加成功";
-                sleep(2);
-             return view("admin.user.add")->with(["look"=>$look]);;
+            //3 判断是否添加成功
+            if($id>0){
+                $look="添加成功";
+                    sleep(2);
+                return view("admin.user.add")->with(["look"=>$look,'phone'=>$phone,'username'=>$username,'password'=>$password]);
+            } 
         }else{
-           $look= "添加失败";
-           sleep(2);
-           return view('admin.user.add')->with(["look"=>$look]);
-           
+            $look= "添加失败";
+               sleep(2);
+               return view('admin.user.add')->with(["look"=>$look,'phone'=>$phone,'username'=>$username,'password'=>$password]);
         }
     }
-
     //5 修改表单
     public function edit($id)
     {
