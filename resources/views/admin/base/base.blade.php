@@ -18,8 +18,6 @@
     <!-- AdminLTE Skins. Choose a skin from the css/skins
          folder instead of downloading all of them to reduce the load. -->
     <link rel="stylesheet" href="{{ asset('admins/dist/css/skins/_all-skins.min.css') }}">
-    <link rel="stylesheet" href="http://www.jq22.com/demo/validate20160608/js/jquery-1.10.2.js">
-    <link rel="stylesheet" href="http://www.jq22.com/demo/validate20160608/js/validate.js">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
