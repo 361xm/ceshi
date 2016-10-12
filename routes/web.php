@@ -124,6 +124,8 @@ Route::get('/login',"LoginController@login");
 Route::post('/dologin',"LoginController@dologin");
 //注册页面
 Route::post('/register',"RegisterController@register");
+// 后台添加用户页面
+Route::get('/addUser','RegisterController@addUser');
 //跳转到商品结算
 Route::get('/count',"CountController@count");
 //第一张图片链接
@@ -176,9 +178,8 @@ Route::any('/adminUser', 'Admin\UserController@adminUser');
 Route::get('/adminAdd', function () {
     return view('admin.adminuser.add');
 });
-
-//显示商品信息表
-Route::any('/typelist','Admin\ListController@shop');
+// 查看商品列表 
+Route::any('/types','Admin\ListController@shop');
 
 //显示商品类别添加
 Route::get('/addType','Admin\UploadController@put');
