@@ -75,10 +75,14 @@
 
 		<div class="hprolist">
 			<div class="hptitle" style="background-image:url(cssimg/homeg_123.jpg)">
+				<strong><span style="color:#ddd;font-size:20px;float:left;padding-top:10px;padding-left:10px;" >1F-男鞋</span></strong>
 				<a class="on" data-has="1" data-id="10" href="http://www.361sport.com/index.php?m=Product&a=index&sex=0&sports=12&pclass=4" target="_blank">跑步</a>
 				<a 	data-has="" data-id="11" href="http://www.361sport.com/index.php?m=Product&a=index&sex=0&sports=20&pclass=4" target="_blank">综训</a>
 				<a 	data-has="" data-id="12" href="http://www.361sport.com/index.php?m=Product&a=index&sex=0&sports=16&pclass=4" target="_blank">户外</a>
-				<a 	data-has="" data-id="13" href="http://www.361sport.com/index.php?m=Product&a=index&sex=0&sports=17&pclass=4" target="_blank">休闲</a></div>
+				<a 	data-has="" data-id="13" href="http://www.361sport.com/index.php?m=Product&a=index&sex=0&sports=17&pclass=4" target="_blank">休闲</a>
+
+			</div>
+
 			<div class="clearfix">
 				<div class="hpleft">
 					<dl class="clearfix">

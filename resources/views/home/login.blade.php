@@ -18,8 +18,8 @@
     		<input type='hidden' name="_token" value="{{ csrf_token() }}">
     		<div class="login_cleft f_l">
 	        	<div class="title">
-	        		@if(session('msg'))
-					   <p class="login-box-msg" style="color:red;">{{ session('msg') }}</p>
+	        		@if(session('mag'))
+					   <p class="login-box-msg" style="color:red;">{{ session('mag') }}</p>
 					@else()
 					   <em>使用已注册的361°商城账号登录：</em>
 					 @endif()
@@ -35,7 +35,7 @@
 	                </dl>
 	            </div>
 	        	
-	            <div class="remember"><div style="float:left; margin-top:2px;"><input type="checkbox" name="savecookie" id="savecookie" value="1" /></div><div style="float:left; margin-left:5px;">(记住我)两周内自动登录</div><a href="/index.php?m=Member&a=getpwd" style="float:left; color:#BF262D; margin-left:20px;">忘记密码?</a> </div>
+	            <div class="remember"><div style="float:left; margin-top:2px;"><input type="checkbox" name="savecookie" id="savecookie" value="1" /></div><div style="float:left; margin-left:5px;">(记住我)两周内自动登录</div><a href="{{ URL('/forgetPasswd') }}" style="float:left; color:#BF262D; margin-left:20px;">忘记密码?</a> </div>
 	            <div>
 	            	<input type="submit" value="会员登录" class="submit pointer" style="margin-top:20px;"/>
 	            </div>
@@ -66,12 +66,12 @@
                 </tr>
                 <tr>
                 	<td>
-                		<span style="font-size:14px">	密	&nbsp; 码&nbsp;	&nbsp; ：</span><input placeholder="请输入密码" type="password" name="password" style="border:1px solid #ddd; height:25px;width:180px">&nbsp;&nbsp;<span style="font-size:15px"></span>
+                		<span style="font-size:14px">密	&nbsp;码&nbsp; ：</span><input placeholder="请输入密码" type="password" name="password" style="border:1px solid #ddd; height:25px;width:180px">&nbsp;&nbsp;<span style="font-size:15px"></span>
                 	</td>
                 </tr>
                 <tr>
                 	<td>
-                		<span style="font-size:14px">确认密码：</span><input placeholder="请确认密码" type="password" name="repassword" style="border:1px solid #ddd; height:25px;width:180px">&nbsp;&nbsp;<span style="font-size:15px"></span>
+                		<span style="font-size:14px">确认密码&nbsp;：</span><input placeholder="请确认密码" type="password" name="repassword" style="border:1px solid #ddd; height:25px;width:180px">&nbsp;&nbsp;<span style="font-size:15px"></span>
                 	</td>
                 </tr>
                 <tr>
@@ -80,7 +80,7 @@
                 	</td>
                 </tr>
                 <tr>
-                	<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span><img src="{{ URL('admin/captcha/time()') }}" onclick="this.src='{{ URL('admin/captcha') }}/'+Math.random()"><span></td>
+                	<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span><img src="{{ URL('admin/captcha/time()') }}" onclick="this.src='{{ URL('admin/captcha') }}/'+Math.random()"><span></td>
                 </tr>
                 </table>
                <!--  <dl>
@@ -148,10 +148,10 @@
 			    {
 			    	var str = xmlHttp.responseText;
 			    	if(str == 'yes'){
-			    		info.innerHTML = '手机号可用';
+			    		info.innerHTML = '手机号已存在';
 			    		info.style.color = 'red';
 			    	}else{
-			    		info.innerHTML = '手机号已存在';
+			    		info.innerHTML = '手机号可用';
 			    		info.style.color = 'green';
 			    	}
 			    }
@@ -190,10 +190,10 @@
 			    {
 			    	var str = xmlHttp.responseText;
 			    	if(str == 'yes'){
-			    		userName.innerHTML = '用户名可用';
+			    		userName.innerHTML = '用户名已存在';
 			    		userName.style.color = 'red';
 			    	}else{
-			    		userName.innerHTML = '用户名已存在';
+			    		userName.innerHTML = '用户名可用';
 			    		userName.style.color = 'green';
 			    	}
 			    }

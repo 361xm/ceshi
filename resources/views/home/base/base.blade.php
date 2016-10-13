@@ -12,24 +12,33 @@
     <link href="../../home/css/css0520.css" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../home/css/jquery.fancybox-1.3.4.css" media="screen" />
     <link href="../../home/css/default.css" rel="stylesheet" type="text/css" />
+    <link href="../../home/css/product-new.css" rel="stylesheet" type="text/css" />
+    <link href="../../home/css/user.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
     <div class="newheader361" style="margin-top:-17px"> 
        <!--登陆/注册-->
         <div class="toplogin">
 
-            <div class="logincont"> <a href="#" class="area"  target="_blank" ></a>
-                    <a href="{{ URL('/login') }}"  class="in">
-                        <?php 
-                            if(isset(session('adminuser')->username)){
-                                echo session('adminuser')->username;
-                            }else{
-                                echo '注册登录';
-                            }
-                        ?>
-                    </a>
+            <div class="logincont"> <a href="#" class="area"  target="_blank"></a>
 
-        <em style="margin-left:8px">您好</em><a href="{{ URL('/center')}}" style="margin-left:8px"><em style="margin-left:8px">我的账户</em></a>&nbsp;&nbsp; <a href="{{ URL('admin/login')}}">后台登录</a></div>
+                    <?php 
+                        if(isset(session('adminuser')->username)){
+                          ?>  
+                            &nbsp;<a href="{{ URL('/center')}}" style="margin-left:8px;font-size:16px;"><em style="margin-left:8px;margin-right:8px;font-size:16px;" >{{ session('adminuser')->username }}</em></a>&nbsp;&nbsp;
+                            <span><a href="{{ URL('/logout') }}" style="font-size:16px;">退出</a></span>
+
+                        <?php
+
+                        }else{
+                        ?>
+                            <a href="{{ URL('/login') }}" style="font-size:16px;" class="in">注册登录</a>
+                        <?php
+                        }
+                    ?>
+
+                <em style="margin-left:8px;font-size:16px;">欢迎您：</em>
+            </div>
                         
         </div>
         <!--导航-->
@@ -37,7 +46,7 @@
             <div class="navcon"> <a class="logo" ></a>
                 <div class="newshop_menu" style="width:684px;">
                     <ul>
-                        <li><a href="/" style="background:none;" target="_blank" class="dd" >首页</a></li>
+                        <li><a href="/" style="background:none;" class="dd" >首页</a></li>
                         <li class="mainlevel"><a href="{{ URL('/product') }}" target="_blank" class="dd"><em></em>所有产品</a>
                         </li>
                         <li class="pointer"><a href="{{ URL('/info') }}" target="_blank" class="dd">品牌新闻</a></li>
@@ -280,6 +289,8 @@
     </script> 
     <script type="text/javascript" src="../../home/js/yzw.js"></script> 
     <script type="text/javascript" src="../../home/js/jquery.superslide.js"></script> 
+    <script type="text/javascript" src="../../home/js/superslide.2.1.js"></script> 
+    <script type="text/javascript" src="../../home/js/jquery.scrollLoading-min.js"></script> 
     <script type="text/javascript">
     $(function(){
         /**---------2016/5/20 add By @Ljp Begin------------**/

@@ -122,6 +122,18 @@ Route::get('/link',function () {
 //跳转登录 注册页面
 Route::get('/login',"LoginController@login");
 Route::post('/dologin',"LoginController@dologin");
+//退出登录
+Route::get('/logout',"LoginController@logout");
+
+//忘记密码
+Route::get('/forgetPasswd',"LoginController@forgetPasswd");
+//录入原始账号信息
+Route::post('/doForgetPasswd',"LoginController@doForgetPasswd");
+//修改密码
+Route::get('/editPasswd',"LoginController@editPasswd");
+
+
+
 //注册页面
 Route::post('/register',"RegisterController@register");
 // 后台添加用户页面
