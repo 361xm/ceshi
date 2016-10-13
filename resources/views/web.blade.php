@@ -53,8 +53,9 @@
 			<!-- <div class="right_u"> <a href="{{ URL('/login') }}" target="_blank" class="cd_reg">注册</a><br />
 				<a href="{{ URL('/login') }}" target="_blank" class="cd_login">登录</a> </div> -->
 			</div>
+                       </div>
 		<div class="hkjd">
-			<div class="piclist" style="margin-top:60px;">
+			<div class="piclist" style="margin-top:140px;">
 				<ul>
 					<li><a href="{{ URL('/lk1')}}" target="_blank"><img  src="../../home/images/homeg_28.jpg"/><span>跑步系列</span></a></li>
 					<li><a href="{{ URL('/lk2')}}" target="_blank"><img  src="../../home/images/homeg_32.jpg"/><span>综训系列</span></a></li>
@@ -68,39 +69,8 @@
 	</div>
 	<div class="hprolist_c">
 		<!--1F   遍历这一块-->
-
-		<div class="hprolist">
-			<div class="hptitle" style="background-image:url(cssimg/homeg_123.jpg)">
-				<strong><span style="color:#ddd;font-size:20px;float:left;padding-top:10px;padding-left:10px;" >1F-男鞋</span></strong>
-				<a class="on" data-has="1" data-id="10" href="http://www.361sport.com/index.php?m=Product&a=index&sex=0&sports=12&pclass=4" target="_blank">跑步</a>
-				<a 	data-has="" data-id="11" href="http://www.361sport.com/index.php?m=Product&a=index&sex=0&sports=20&pclass=4" target="_blank">综训</a>
-				<a 	data-has="" data-id="12" href="http://www.361sport.com/index.php?m=Product&a=index&sex=0&sports=16&pclass=4" target="_blank">户外</a>
-				<a 	data-has="" data-id="13" href="http://www.361sport.com/index.php?m=Product&a=index&sex=0&sports=17&pclass=4" target="_blank">休闲</a>
-
-			</div>
-
-			<div class="clearfix">
-				<div class="hpleft">
-					<dl class="clearfix">
-						<dt>男鞋</dt>
-							<dd><a href="http://www.361sport.com/index.php?m=Product&a=show&proid=5444" target="_blank"><img  src="../../home/images/homeg_93.jpg"></a></dd>
-							<dd><a href="http://www.361sport.com/index.php?m=Product&a=show&proid=5408" target="_blank"><img  src="../../home/images/homeg_95.jpg"></a></dd>
-							<dd><a href="http://www.361sport.com/index.php?m=Product&a=show&proid=5509" target="_blank"><img  src="../../home/images/homeg_100.jpg"></a></dd>
-							<dd><a href="http://www.361sport.com/index.php?m=Product&a=show&proid=5511" target="_blank"><img  src="../../home/images/homeg_113.jpg"></a></dd>
-							<dd><a href="http://www.361sport.com/index.php?m=Product&a=show&proid=5510" target="_blank"><img  src="../../home/images/homeg_111.jpg"></a></dd>
-							<dd></dd>
-						</dl>
-						<dl class="clearfix">
-						<dt>明星系列</dt>
-							<dd><a href="http://www.361sport.com/index.php?m=Product&a=show&proid=5447" target="_blank"><img  src="../../home/images/homeg0415_26.jpg"></a></dd>
-							<dd><a href="http://www.361sport.com/index.php?m=Product&a=show&proid=5512" target="_blank"><img  src="../../home/images/homeg0415_28.jpg"></a></dd>
-					</dl>
-				</div>
-			</div>
-		</div>
-		<!--1F   遍历这一块-->
 		@foreach($list as $type)
-			<div class="hprolist" style="margin-top:40px;padding-bottom:20px;">
+			<div class="hprolist" style="margin-top:10px;padding-bottom:35px;">
 				<div class="hptitle" style="background-image:url(cssimg/homeg_123.jpg);">
 					<strong><span style="color:#ddd;font-size:20px;float:left;padding-top:10px;padding-left:10px;" >{{ $type->classname }}</span></strong>
 					<a class="on" data-has="1" data-id="10" href="http://www.361sport.com/index.php?m=Product&a=index&sex=0&sports=12&pclass=4" target="_blank">跑步</a>
