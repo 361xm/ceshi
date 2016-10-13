@@ -1,6 +1,70 @@
-﻿@extends('home.base.base')
-@section('content')
-<link href="../../home/css/productview.css" rel="stylesheet" type="text/css" />
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>361°童装 男款 长袖T恤-361°多一度热爱，361°官方商城</title>
+<meta name="keywords" content="作为中国领先的专业运动品牌，361°提供给所有热爱运动的年轻消费者设计与科技兼备的运动产品，并鼓励他们全情投入，不计得失地热爱运动。在“多一度热爱”品牌精神的指引下，361°积极践行“热爱”文化，将品牌、研发、设计、生产、经销融为一体，产品包括运动鞋、服及相关配件、童装、时尚休闲等多种品类，致力成为全球最令人尊敬的运动品牌企业之一。,361°童装 男款 长袖T恤" />
+<meta name="description" content="作为中国领先的专业运动品牌，361°提供给所有热爱运动的年轻消费者设计与科技兼备的运动产品，并鼓励他们全情投入，不计得失地热爱运动。在“多一度热爱”品牌精神的指引下，361°积极践行“热爱”文化，将品牌、研发、设计、生产、经销融为一体，产品包括运动鞋、服及相关配件、童装、时尚休闲等多种品类，致力成为全球最令人尊敬的运动品牌企业之一。,361°童装 男款 长袖T恤" />
+<link href="http://361img.361sport.com.cn/shop/css/css.css" rel="stylesheet" type="text/css" />
+<link href="http://361img.361sport.com.cn/shop/css/productview.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" type="text/css" href="http://361img.361sport.com.cn/shop/js/fancybox/jquery.fancybox-1.3.4.css" media="screen" />
+<link href="http://361img.361sport.com.cn/shop/js/artDialog/skins/default.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div class="newheader361"> 
+	<!--登陆/注册-->
+	<div class="toplogin">
+		 <div class="toplogin">
+
+            <div class="logincont"> <a href="#" class="area"  target="_blank" ></a>
+                    <a href="{{ URL('/login') }}"  class="in">
+                        <?php 
+                            if(isset(session('adminuser')->username)){
+                                echo session('adminuser')->username;
+                            }else{
+                                echo '注册登录';
+                            }
+                        ?>
+                    </a>
+
+        <em style="margin-left:8px">您好</em><a href="{{ URL('/center')}}" style="margin-left:8px"><em style="margin-left:8px">我的账户</em></a>&nbsp;&nbsp; <a href="{{ URL('admin/login')}}">后台登录</a></div>
+                        
+        </div>
+    </div>
+        <!--导航-->
+        <div class="top_nav">
+            <div class="navcon"> <a class="logo" ></a>
+                <div class="newshop_menu" style="width:684px;">
+                    <ul>
+                        <li><a href="/" style="background:none;" class="dd" >首页</a></li>
+                        <li class="mainlevel"><a href="{{ URL('/product') }}" target="_blank" class="dd"><em></em>所有产品</a>
+                        </li>
+                        <li class="pointer"><a href="{{ URL('/info') }}" target="_blank" class="dd">品牌新闻</a></li>
+                        <!--<li class="pointer"><a href="http://rio2016.361sport.com.br/" target="_blank" class="dd" style="color:red;">里约奥运</a></li>-->
+                        <li class="pointer"><a href="{{ URL('/pages') }}" target="_blank" class="dd" style="color:red;">敢超10K</a></li>
+                        <li class="pointer"><a href="{{ URL('/Shoping') }}" target="_blank" class="dd">购物车</a></li>
+                </div>
+                <div class="serch">
+                    <div class="clearfix">
+                        <form id="search" name="search" method="get" action="/index.php?m=Product&a=index">
+                            <input type="text" name="keyword" id="keyword" class="input" onblur="if(value ==''){value='跑鞋'}" onfocus="if(value =='跑鞋'){value =''}" value="跑鞋"/>
+                            <input type="hidden" value="Product" name="m"/>
+                            <input type="hidden" value="index" name="a"/>
+                            <input type="submit" class="submit pointer" />
+                        </form>
+                        <div style="clear:both;"></div>
+                    </div>
+                    <div class="search-hots-keywords"> 热门搜索：
+                        <a href="http://www.361sport.com/index.php?m=Product&a=index&sports=12&pclass=4&sex=1">跑步鞋</a>
+                        <a href="http://www.361sport.com/index.php?m=Product&a=index&keyword=短T">短T恤</a>
+                        <a href="http://www.361sport.com/index.php?m=Pages&a=keji160323">科技助跑</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+</div>
+<div class="newheaderno"></div>
+
 <!--content Begin-->
 <div class="pv_topgm">
 	<div class="pv_topgm_c clearfix">
@@ -29,77 +93,101 @@
 	<div class="pv_xc">
 			<div class="pvxc_left f_l">
 							<div id="piclist" data-dcolor="白">
-                <div class="bigpic"><img src="../../home/images/57c7cc76250b4.jpg" rel="../../home/images/57c7cc76250b4.jpg" width="535" height="535"  class="jqzoom"/><span class="picfd"></span></div>
+                <div class="bigpic"><img src="http://361img.361sport.com.cn/product/2016/09/01/57c7cc76250b4.jpg" rel="http://361img.361sport.com.cn/product/2016/09/01/57c7cc76250b4.jpg" width="535" height="535"  class="jqzoom"/><span class="picfd"></span></div>
                 <div class="smallpic">
-					<a  class="check"><img src="../../home/images/m_57c7cc76250b4.jpg" data-mig="../../home/images/57c7cc76250b4.jpg" data-big="../../home/images/57c7cc76250b4.jpg"  height="97" width="97"/></a>					<a><img src="../../home/images/m_57c7cc766ffb2.jpg" data-mig="http://361img.361sport.com.cn/product/2016/09/01/57c7cc766ffb2.jpg" data-big="http://361img.361sport.com.cn/product/2016/09/01/57c7cc766ffb2.jpg" height="97" width="97"/></a>					<a><img src="../../home/images/m_57c7cc76b67b8.jpg" data-mig="http://361img.361sport.com.cn/product/2016/09/01/57c7cc76b67b8.jpg" data-big="http://361img.361sport.com.cn/product/2016/09/01/57c7cc76b67b8.jpg" height="97" width="97"/></a>					<a><img src="../../home/images/m_57c7cc770ba11.jpg" data-mig="http://361img.361sport.com.cn/product/2016/09/01/57c7cc770ba11.jpg" data-big="http://361img.361sport.com.cn/product/2016/09/01/57c7cc770ba11.jpg" height="97" width="97"/></a>                </div>
+					<a  class="check"><img src="http://361img.361sport.com.cn/product/2016/09/01/m_57c7cc76250b4.jpg" data-mig="http://361img.361sport.com.cn/product/2016/09/01/57c7cc76250b4.jpg" data-big="http://361img.361sport.com.cn/product/2016/09/01/57c7cc76250b4.jpg"  height="97" width="97"/></a>					<a><img src="http://361img.361sport.com.cn/product/2016/09/01/m_57c7cc766ffb2.jpg" data-mig="http://361img.361sport.com.cn/product/2016/09/01/57c7cc766ffb2.jpg" data-big="http://361img.361sport.com.cn/product/2016/09/01/57c7cc766ffb2.jpg" height="97" width="97"/></a>					<a><img src="http://361img.361sport.com.cn/product/2016/09/01/m_57c7cc76b67b8.jpg" data-mig="http://361img.361sport.com.cn/product/2016/09/01/57c7cc76b67b8.jpg" data-big="http://361img.361sport.com.cn/product/2016/09/01/57c7cc76b67b8.jpg" height="97" width="97"/></a>					<a><img src="http://361img.361sport.com.cn/product/2016/09/01/m_57c7cc770ba11.jpg" data-mig="http://361img.361sport.com.cn/product/2016/09/01/57c7cc770ba11.jpg" data-big="http://361img.361sport.com.cn/product/2016/09/01/57c7cc770ba11.jpg" height="97" width="97"/></a>                </div>
             </div>
 			</div>
-			<div class="pvxc_right f_l">
-				<div class="title">
-					<h1> 361°童装 男款 长袖T恤</h1><span class="rand5"></span>
-				</div>
-				<div class="price">
-					<div class="pricenum">
-						<div class="yahei scjg">
-							吊牌价：<span class="pricec1">￥159.00</span>
-						</div>
-						销售价 <span class="pricec2">￥159.00</span>  
+				@foreach($list as $ob)
+				<div class="pvxc_right f_l">
+					<div class="title">
+						<h1>{{ $ob->name }}</h1><span class="rand5"></span>
 					</div>
-					<div class="ktfx">
-						<div class="f_l pricekt" style="width:350px;padding-top:0px; position:relative;">
-							<span>运费: 不包邮( <a href="javascript:void(0);">运费详情</a> )</span><br />
-							<div id="postage-express">
-								<div  class="triangle_border_up"><span></span></div>
-								<div class="triangle_zfx">
-									<table cellpadding="0" cellspacing="0">
-										<tr>
-											<th id="dqmc">地区</th>
-											<th id="dqyf">运费</th>
-										</tr>
-																				<tr>
-											<td>其他</td>
-											<td id="show-dqyf"></td>
-										</tr>									</table>
-									<div class="post-remark">备注：会员满179.00包邮</div>
+					<div class="price">
+						<div class="pricenum">
+							<div class="yahei scjg">
+								吊牌价：<span class="pricec1">￥{{ $ob->price_c }}</span>
+							</div>
+							销售价 <span class="pricec2">￥{{ $ob->price }}</span> <span class="zhekou">[ 6.2折   节省￥60.00 ] </span> 
+						</div>
+						<div class="ktfx">
+							<div class="f_l pricekt" style="width:350px;padding-top:0px; position:relative;">
+								<span>运费: 不包邮( <a href="javascript:void(0);">运费详情</a> )</span><br />
+								<div id="postage-express">
+									<div  class="triangle_border_up"><span></span></div>
+									<div class="triangle_zfx">
+										<table cellpadding="0" cellspacing="0">
+											<tr>
+												<th id="dqmc">地区</th>
+												<th id="dqyf">运费</th>
+											</tr>
+																					<tr>
+												<td>其他</td>
+												<td id="show-dqyf"></td>
+											</tr>									</table>
+										<div class="post-remark">备注：会员满179.00包邮</div>
+									</div>
 								</div>
 							</div>
 						</div>
 					</div>
-				</div>
-				<div class="color xx contnet_color" data-pid="6414">
-					<dl class="content_right">
-											<dt>颜色分类</dt>
-					<dd class="doselected" data-color="白"><a title="白" id="color_id"><img src="../../home/images/s_57c7cc76250b4.jpg"  width="38" height="38"/></a></dd><dd class="doselected" data-color="红"><a title="红" id="color_id"><img src="../../home/images/s_57c7cc775698f.jpg"  width="38" height="38"/></a></dd><dd class="doselected" data-color="深蓝"><a title="深蓝" id="color_id"><img src="../../home/images/s_57c7cc7887982.jpg"  width="38" height="38"/></a></dd>					</dl>
-				</div>
-				<div class="size xx contnet_size" data-pid="6414">
-					<dl class="content_right">
-						                	<dt>尺码选择</dt>
-					<dd class="doselected" data-sizes="110"><a>110</a></dd><dd class="doselected" data-sizes="120"><a>120</a></dd><dd class="doselected" data-sizes="130"><a>130</a></dd><dd class="doselected" data-sizes="140"><a>140</a></dd><dd class="doselected" data-sizes="150"><a>150</a></dd><dd class="doselected" data-sizes="160"><a>160</a></dd><dd class="doselected" data-sizes="170"><a>170</a></dd>					</dl>
-				</div>
-				<div class="xx num">
-					<dl style="display:block;">
-						<dt>数量</dt>
-						<dd class="input"><input name="num" type="text" id="cartnum"  value="1" size="5"  onkeyup="value=value.replace(/\D+/g,'')" /></dd>
-						<dd class="input2"><span class="up"></span><span class="down"></span></dd>
-						<dd class="kuc">件 库存 <em id="pro_count_ku">240</em> 件<em class="tishi"> 商品库存不足 </em></dd>
-						<div style="clear:both;"></div>
-					</dl>
-					<div class="kuc-error">您所填写的商品数量超过库存！</div>
-				</div>
-				<div class="yhhd">
-					<dl class="clearfix">
-						<dd><a href="http://www.361sport.com/index.php?m=Pages&a=zypx160805" style="border-bottom:1px solid #F00; text-decoration:none;">畅跑随心 专业跑鞋推荐</a></dd><dd><a href="http://www.361sport.com/index.php?m=Pages&a=xzdr20160608" style="border-bottom:1px solid #F00; text-decoration:none;">fun享一厦 夏季潮人搭配</a></dd>					</dl>
-				</div>
-				<div class="buy">
-						<span class="buynow"><a  href="javascript:void(0);" data-tid="6414"></a></span>
-						<span class="addmycart"><a  href="javascript:void(0);" data-tid="6414"></a></span><a name="tcmiaodian" id="tcmiaodian"></a>				</div>
-				<input type="hidden" name="zti" id="zti" value=""/>
-				<div class="bdsharebuttonbox">
-					<span>分享到：</span><a href="#" class="bds_more" data-cmd="more"></a><a title="分享到QQ空间" href="#" class="bds_qzone" data-cmd="qzone"></a><a title="分享到新浪微博" href="#" class="bds_tsina" data-cmd="tsina"></a><a title="分享到腾讯微博" href="#" class="bds_tqq" data-cmd="tqq"></a><a title="分享到人人网" href="#" class="bds_renren" data-cmd="renren"></a><a title="分享到微信" href="#" class="bds_weixin" data-cmd="weixin"></a><a title="分享到豆瓣网" href="#" class="bds_douban" data-cmd="douban"></a>
-					<span class="favorites tostore" id="favorites"  data-tid="6414" style="position:relative;">加入收藏</span>
-				</div>
-<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+					<div class="color xx contnet_color" data-pid="6414">
+						<dl class="content_right">
+							<dt>颜色分类</dt>
+								<dd class="doselected" data-color="白"><a title="白" id="color_id"><img src="http://361img.361sport.com.cn/product/2016/09/01/s_57c7cc76250b4.jpg"  width="38" height="38"/></a></dd>
+								<dd class="doselected" data-color="红"><a title="红" id="color_id"><img src="http://361img.361sport.com.cn/product/2016/09/01/s_57c7cc775698f.jpg"  width="38" height="38"/></a></dd>
+								<dd class="doselected" data-color="深蓝"><a title="深蓝" id="color_id"><img src="http://361img.361sport.com.cn/product/2016/09/01/s_57c7cc7887982.jpg"  width="38" height="38"/></a></dd>
+						</dl>
+					</div>
+					<div class="size xx contnet_size" data-pid="6414">
+						<dl class="content_right">
+							<dt>尺码选择</dt>
+								<dd class="doselected" data-sizes="110">
+									<a>110</a>
+								</dd><dd class="doselected" data-sizes="120">
+									<a>120</a>
+								</dd><dd class="doselected" data-sizes="130">
+									<a>130</a>
+								</dd>
+								<dd class="doselected" data-sizes="140">
+									<a>140</a>
+								</dd>
+								<dd class="doselected" data-sizes="150">
+									<a>150</a>
+								</dd>
+								<dd class="doselected" data-sizes="160">
+									<a>160</a>
+								</dd>
+								<dd class="doselected" data-sizes="170">
+									<a>170</a>
+								</dd>
+						</dl>
+					</div>
+					<div class="xx num">
+						<dl style="display:block;">
+							<dt>数量</dt>
+							<dd class="input"><input name="num" type="text" id="cartnum"  value="1" size="5"  onkeyup="value=value.replace(/\D+/g,'')" /></dd>
+							<dd class="input2"><span class="up"></span><span class="down"></span></dd>
+							<dd class="kuc">件 库存 <em id="pro_count_ku">116</em> 件<em class="tishi"> 商品库存不足 </em></dd>
+							<div style="clear:both;"></div>
+						</dl>
+						<div class="kuc-error">您所填写的商品数量超过库存！</div>
+					</div>
+					<div class="yhhd">
+						<dl class="clearfix">
+							<dd><a href="http://www.361sport.com/index.php?m=Pages&a=zypx160805" style="border-bottom:1px solid #F00; text-decoration:none;">畅跑随心 专业跑鞋推荐</a></dd><dd><a href="http://www.361sport.com/index.php?m=Pages&a=xzdr20160608" style="border-bottom:1px solid #F00; text-decoration:none;">fun享一厦 夏季潮人搭配</a></dd>					</dl>
+					</div>
+					<div class="buy">
+							<span class="buynow"><a  href="javascript:void(0);" data-tid="6414"></a></span>
+							<span class="addmycart"><a  href="javascript:void(0);" data-tid="6414"></a></span><a name="tcmiaodian" id="tcmiaodian"></a>				</div>
+					<input type="hidden" name="zti" id="zti" value=""/>
+					<div class="bdsharebuttonbox">
+						<span>分享到：</span><a href="#" class="bds_more" data-cmd="more"></a><a title="分享到QQ空间" href="#" class="bds_qzone" data-cmd="qzone"></a><a title="分享到新浪微博" href="#" class="bds_tsina" data-cmd="tsina"></a><a title="分享到腾讯微博" href="#" class="bds_tqq" data-cmd="tqq"></a><a title="分享到人人网" href="#" class="bds_renren" data-cmd="renren"></a><a title="分享到微信" href="#" class="bds_weixin" data-cmd="weixin"></a><a title="分享到豆瓣网" href="#" class="bds_douban" data-cmd="douban"></a>
+						<span class="favorites tostore" id="favorites"  data-tid="6414" style="position:relative;">加入收藏</span>
+					</div>
+				<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
 			</div>
+			@endforeach
 			<div style="clear:both;"></div>
 								</div>
     </div>
@@ -134,65 +222,65 @@
 </div>
 <div class="goumguo hotsell">
 	<dl class="clearfix">
-		<dt>热销款 <a class="hotrefresh"></a></dt><dd><a href="/index.php?m=Product&a=show&proid=5418" target="_blank"><img src="../../home/images/m_56c7e1eaaa488.jpg" height="82" width="82"/></a><div>￥199.00</div></dd><dd><a href="/index.php?m=Product&a=show&proid=5429" target="_blank"><img src="../../home/images/m_56f5042cd4117.jpg" height="82" width="82"/></a><div>￥159.00</div></dd><dd><a href="/index.php?m=Product&a=show&proid=5425" target="_blank"><img src="../../home/images/m_56c810cb3a8bc.jpg" height="82" width="82"/></a><div>￥199.00</div></dd><dd><a href="/index.php?m=Product&a=show&proid=5363" target="_blank"><img src="../../home/images/m_56c595a212dc5.jpg" height="82" width="82"/></a><div>￥269.00</div></dd>				
+		<dt>热销款 <a class="hotrefresh"></a></dt><dd><a href="/index.php?m=Product&a=show&proid=5438" target="_blank"><img src="http://361img.361sport.com.cn/product/2016/02/22/m_56ca7b21a329e.jpg" height="82" width="82"/></a><div>￥189.00</div></dd><dd><a href="/index.php?m=Product&a=show&proid=5434" target="_blank"><img src="http://361img.361sport.com.cn/product/2016/02/22/m_56ca739a69082.jpg" height="82" width="82"/></a><div>￥159.00</div></dd><dd><a href="/index.php?m=Product&a=show&proid=5423" target="_blank"><img src="http://361img.361sport.com.cn/product/2016/02/20/m_56c80e9cbbf41.jpg" height="82" width="82"/></a><div>￥159.00</div></dd><dd><a href="/index.php?m=Product&a=show&proid=5418" target="_blank"><img src="http://361img.361sport.com.cn/product/2016/02/20/m_56c7e1eaaa488.jpg" height="82" width="82"/></a><div>￥199.00</div></dd>				
 	</dl>
 </div>
 <div class="goumguo">
 	<dl>
 		<dt>猜你喜欢</dt>
 		<dd>
-				<a href="/index.php?m=Product&a=show&proid=4329" target="_blank"><img src="../../home/images/b_55c8423db3b60.jpg" height="200" width="200"/></a>
+				<a href="/index.php?m=Product&a=show&proid=5199" target="_blank"><img src="http://361img.361sport.com.cn/product/2015/12/08/b_5666872d9a2d3.jpg" height="200" width="200"/></a>
 			<div class="prl_info">
 				<div class="prl_color">3色</div>
 				<b>
-					<a href="/index.php?m=Product&a=show&proid=4329" target="_blank">休闲鞋</a>
+					<a href="/index.php?m=Product&a=show&proid=5199" target="_blank">绒里夹克</a>
 				</b>
 				<div class="prl_des">
-					￥129.00<span>吊牌价<font>￥299.00</font></span>
+					￥245.00<span>吊牌价<font>￥499.00</font></span>
 				</div>
 			</div>
 			</dd><dd>
-				<a href="/index.php?m=Product&a=show&proid=4077" target="_blank"><img src="../../home/images/b_559a4f1e552d1.jpg" height="200" width="200"/></a>
+				<a href="/index.php?m=Product&a=show&proid=2846" target="_blank"><img src="http://361img.361sport.com.cn/product/2015/11/17/b_564aa04c660d8.JPG" height="200" width="200"/></a>
 			<div class="prl_info">
-				<div class="prl_color">4色</div>
+				<div class="prl_color">7色</div>
 				<b>
-					<a href="/index.php?m=Product&a=show&proid=4077" target="_blank">全新夜跑气悬浮科技缓震跑鞋</a>
+					<a href="/index.php?m=Product&a=show&proid=2846" target="_blank">冬季男装轻质保暖白鸭绒填充羽绒服</a>
 				</b>
 				<div class="prl_des">
-					￥169.00<span>吊牌价<font>￥399.00</font></span>
+					￥199.00<span>吊牌价<font>￥539.00</font></span>
 				</div>
 			</div>
 			</dd><dd>
-				<a href="/index.php?m=Product&a=show&proid=4755" target="_blank"><img src="../../home/images/b_56147d6adb4ee.jpg" height="200" width="200"/></a>
+				<a href="/index.php?m=Product&a=show&proid=3068" target="_blank"><img src="http://361img.361sport.com.cn/product/2015/01/16/b_54b8c5e345508.jpg" height="200" width="200"/></a>
 			<div class="prl_info">
 				<div class="prl_color">3色</div>
 				<b>
-					<a href="/index.php?m=Product&a=show&proid=4755" target="_blank">多功能户外鞋</a>
-				</b>
-				<div class="prl_des">
-					￥185.00<span>吊牌价<font>￥369.00</font></span>
-				</div>
-			</div>
-			</dd><dd>
-				<a href="/index.php?m=Product&a=show&proid=5461" target="_blank"><img src="../../home/images/b_56f5fd0c57b8c.jpg" height="200" width="200"/></a>
-			<div class="prl_info">
-				<div class="prl_color">4色</div>
-				<b>
-					<a href="/index.php?m=Product&a=show&proid=5461" target="_blank">篮球鞋</a>
-				</b>
-				<div class="prl_des">
-					￥209.00<span>吊牌价<font>￥429.00</font></span>
-				</div>
-			</div>
-			</dd><dd>
-				<a href="/index.php?m=Product&a=show&proid=3410" target="_blank"><img src="../../home/images/b_54fd5d59c281b.jpg" height="200" width="200"/></a>
-			<div class="prl_info">
-				<div class="prl_color">4色</div>
-				<b>
-					<a href="/index.php?m=Product&a=show&proid=3410" target="_blank">开襟卫衣</a>
+					<a href="/index.php?m=Product&a=show&proid=3068" target="_blank">休闲鞋</a>
 				</b>
 				<div class="prl_des">
 					￥119.00<span>吊牌价<font>￥319.00</font></span>
+				</div>
+			</div>
+			</dd><dd>
+				<a href="/index.php?m=Product&a=show&proid=5358" target="_blank"><img src="http://361img.361sport.com.cn/product/2016/02/20/b_56c7c67ac29da.jpg" height="200" width="200"/></a>
+			<div class="prl_info">
+				<div class="prl_color">3色</div>
+				<b>
+					<a href="/index.php?m=Product&a=show&proid=5358" target="_blank">篮球鞋</a>
+				</b>
+				<div class="prl_des">
+					￥289.00<span>吊牌价<font>￥539.00</font></span>
+				</div>
+			</div>
+			</dd><dd>
+				<a href="/index.php?m=Product&a=show&proid=5416" target="_blank"><img src="http://361img.361sport.com.cn/product/2016/02/20/b_56c7dd590c1d8.jpg" height="200" width="200"/></a>
+			<div class="prl_info">
+				<div class="prl_color">3色</div>
+				<b>
+					<a href="/index.php?m=Product&a=show&proid=5416" target="_blank">板鞋</a>
+				</b>
+				<div class="prl_des">
+					￥199.00<span>吊牌价<font>￥369.00</font></span>
 				</div>
 			</div>
 			</dd>					
@@ -221,18 +309,18 @@
 			</div>
 			<div class="bottom"></div>
 			<div class="piccontent">
-								<img src="../../home/images/57cad604c97b8.jpg" alt="" /><br />
+								<img src="http://361img.361sport.com.cn/uploads/image/20160903/57cad604c97b8.jpg" alt="" /><br />
 <br />
-<img src="../../home/images/57c7cc13a60f1.jpg" alt="" /><br />
-<img src="../../home/images/57c7cc1445082.jpg" alt="" /><br />
-<img src="../../home/images/57c7cc14edabb.jpg" alt="" /><br />
-<img src="../../home/images/57c7cc15a3f5e.jpg" alt="" /><br />
-<img src="../../home/images/57c7cc15d9163.jpg" alt="" /><br />
-<img src="../../home/images/57c7cc160e12b.jpg" alt="" /><br />
-<img src="../../home/images/57c7cc171f103.jpg" alt="" /><br />
-<img src="../../home/images/57c7cc177c6ee.jpg" alt="" /><br />
-<img src="../../home/images/57c7cc188629e.jpg" alt="" /><br />
-<img src="../../home/images/57c7cc1b37783.jpg" alt="" /><br />			</div>		</div>
+<img src="http://361img.361sport.com.cn/uploads/image/20160901/57c7cc13a60f1.jpg" alt="" /><br />
+<img src="http://361img.361sport.com.cn/uploads/image/20160901/57c7cc1445082.jpg" alt="" /><br />
+<img src="http://361img.361sport.com.cn/uploads/image/20160901/57c7cc14edabb.jpg" alt="" /><br />
+<img src="http://361img.361sport.com.cn/uploads/image/20160901/57c7cc15a3f5e.jpg" alt="" /><br />
+<img src="http://361img.361sport.com.cn/uploads/image/20160901/57c7cc15d9163.jpg" alt="" /><br />
+<img src="http://361img.361sport.com.cn/uploads/image/20160901/57c7cc160e12b.jpg" alt="" /><br />
+<img src="http://361img.361sport.com.cn/uploads/image/20160901/57c7cc171f103.jpg" alt="" /><br />
+<img src="http://361img.361sport.com.cn/uploads/image/20160901/57c7cc177c6ee.jpg" alt="" /><br />
+<img src="http://361img.361sport.com.cn/uploads/image/20160901/57c7cc188629e.jpg" alt="" /><br />
+<img src="http://361img.361sport.com.cn/uploads/image/20160901/57c7cc1b37783.jpg" alt="" /><br />			</div>		</div>
 		<div class="sppl splm"  id="sppl1" style="display:none;">
 			<div class="sppl_a">
 				<div class="sppl_aleft f_l">
@@ -272,7 +360,7 @@
 		<div class="spxq splm" style="display:none;">
 			<div class="sizetable">
 				<div class="title"></div>
-				<div class="sizecon"><img src="../../home/images/cmsm_07.jpg"/></div>
+				<div class="sizecon"><img src="http://361img.361sport.com.cn/shop/images/index/cmsm_07.jpg"/></div>
 			</div>
 		</div>
 	</div>
@@ -317,11 +405,184 @@
 	</div>
 </div>
 <div class="clear"></div>
-<script src="../../home/js/wb.js" type="text/javascript" charset="utf-8"></script>
+<!--comment End-->
+<script src="http://tjs.sjs.sinajs.cn/open/api/js/wb.js" type="text/javascript" charset="utf-8"></script>
+<div id="bottom">
+	<!--商标-->
+    <div class="trademark">
+    	<div class="trademark-content" style="width:1180px;">
+            <div class="trademark-tip">
+            	<img src="http://361img.361sport.com.cn/shop/images/newindex2016/images/foot2016.png" />
+
+     		</div>
+      		<div class="promis">
+             	<div class="promis-content">
+                	<div class="promise-con">
+                    	<ul>
+                           <li>
+                            	<div class="promise-left"><img src="http://361img.361sport.com.cn/shop/images/newindex5/images/guanfang-pic.png" width="91" height="34" /></div>
+                                <div class="promise-right" style="width:77px;">所售商品 均为官方正品</div>
+                                <div class="promise-bot"></div>
+                          </li>
+                            <li>
+                            	<div class="promise-left"><img src="http://361img.361sport.com.cn/shop/images/newindex5/images/sever.png" width="134" height="34" /></div>
+                              <div class="promise-right">7天无理由退换货 贴心售后服务</div>
+                              <div class="promise-bot"></div>
+                          </li>
+                            <li>
+                            	<div class="promise-left"><img src="http://361img.361sport.com.cn/shop/images/newindex5/images/shiwu.png" width="136" height="34" /></div>
+                              <div class="promise-right">100%实物拍摄 如实详情描述</div>
+                              <div class="promise-bot"></div>
+                          </li>
+                          <li>
+                            	<div class="promise-left"><img src="http://361img.361sport.com.cn/shop/images/newindex5/images/baoyou.png" width="136" height="34" /></div>
+                            <div class="promise-right" >满179元包邮 <br />包邮服务轻松购</div>
+                            <div class="promise-bot"></div>
+                          </li>
+                        </ul>
+                    </div>
+                    
+                </div>
+                <div class="communite">
+                  <div class="communite-content">
+                  	<div class="newfoot_cl">
+        	<dl>
+            	<dt>关于361°</dt>
+                <dd><a href="http://ir.361sport.com/s/index.php" target="_blank">投资者关系</a></dd>
+                <dd><a href="/index.php?m=Info&a=show&id=10">集团简介</a></dd>
+                <dd><a href="http://cn.361sport.com/shop.asp" target="_blank">店铺查询</a></dd>
+                <dd><a href="http://361bift.361sport.com" target="_blank">361°BIFT</a></dd>
+                <dd><a href="/index.php?m=Info&a=show&id=14">联系我们</a></dd>
+            </dl>
+            <dl>
+            	<dt>如何购物</dt>
+                <dd><a href="/index.php?m=Info&a=show&id=1&cate_id=7">购物流程</a></dd>
+                <dd><a href="/index.php?m=Info&a=show&id=2&cate_id=7">订单查询</a></dd>
+                <dd><a href="/index.php?m=Info&a=show&id=15&cate_id=7">会员及积分体系</a></dd>
+                <!--<dd><a href="#">常见问题</a></dd>
+                <dd><a href="#">帮助中心</a></dd>-->
+            </dl>
+            <dl>
+            	<dt>支付方式</dt>
+                <dd><a href="/index.php?m=Info&a=show&id=3&cate_id=7">支付方式</a></dd>
+                <dd><a href="/index.php?m=Info&a=show&id=4&cate_id=7">发票说明</a></dd>
+            </dl>
+            <dl>
+            	<dt>物流配送</dt>
+                <dd><a href="/index.php?m=Info&a=show&id=5&cate_id=7">配送时间和范围</a></dd>
+                <dd><a href="/index.php?m=Info&a=show&id=6&cate_id=7">配送费用</a></dd>
+                <dd><a href="/index.php?m=Info&a=show&id=7&cate_id=7">商品验收</a></dd>
+            </dl>
+            <dl style="width:95px;">
+            	<dt>售后服务</dt>
+                <dd><a href="/index.php?m=Info&a=show&id=9&cate_id=7">退换货流程</a></dd>
+                <dd><a href="/index.php?m=Info&a=show&id=8&cate_id=7">售后服务政策</a></dd>
+            </dl>
+        </div>
+                    <div class="newfoot_cr">
+                        <dl>
+                            <dt>联系361°官方商城</dt>
+                            <dd class="tel">
+                                <div class="phone-left"><img src="http://361img.361sport.com.cn/shop/images/newindex5/images/phone.png" width="42" height="42" /></div>
+                                <div class="phone-right">
+                                    <span class="p1">0592-3790038</span>
+                                    <span class="p2">&nbsp;&nbsp;在线时间：周一至周五<br>(9:00-12:00   13:00-18:00)<br></span>
+                                </div>
+                            </dd>
+                            <dd style="margin-bottom:0px;">
+                                <div class="phone-left"><a href="tencent://message/?uin=476849964&Site=qq&Menu=yes"><img src="http://361img.361sport.com.cn/shop/images/newindex5/images/qq.png" width="45" height="43" /></a></div>
+                                <div class="phone-right">
+                                    <div class="fourtime"><a href="tencent://message/?uin=476849964&Site=qq&Menu=yes">== 361在线客服 ==</a></div>
+                                </div>
+                            </dd>
+                            <dd style="padding-left:78px;">
+                                <div class="phone-right">
+                                    <div class="fourtime5"><a href="tencent://message/?uin=476849964&Site=qq&Menu=yes">QQ:476849964</a></div>
+                                </div>
+                            </dd>
+                        </dl>
+                    </div>
+					<div class="clear"></div>
+
+                  </div>
+                </div>
+                
+      </div>
+      <div class="Certificate">中国 闽ICP备05003868号 ©2013 三六一度(中国)有限公司 All Rights Reserved</div>
+    </div>
+</div>
+<script type="text/javascript" src="http://361img.361sport.com.cn/shop/js/jquery.js"></script>
+<script type="text/javascript" src="http://361img.361sport.com.cn/shop/js/artDialog/artDialog.js"></script>
+<script type="text/javascript" src="http://361img.361sport.com.cn/shop/js/fancybox/jquery.fancybox-1.3.4.js"></script>
+<script type="text/javascript" src="http://361img.361sport.com.cn/shop/js/common.js"></script>
+<script type="text/javascript">
+var signUrl = "/index.php?m=User&a=signIn";
 </script>
-<script type="text/javascript" src="../../home/js/jquery.imagezoom.min.js"></script>
-<script type="text/javascript" src="../../home/js/marquee.js"></script>
-<script type="text/javascript" src="../../home/js/detaile.js"></script>
+<!--双十一领优惠券-->
+<script type="text/javascript">
+$(document).ready(function(){
+	$("map#Mapjtr").find("area").live("click",function(){
+		var type = $(this).attr("data-type");
+		var linkurl = "/index.php?m=Pages&a=getcoupon3";
+		$.post(linkurl,{type:type},function( result ){
+			if( result.status == '1' ){
+				artDialog.login("账户登陆"); return false;
+			} else if( result.status == '2' ){
+				artDialog.tips(result.msg,2,"error"); return false;
+			} else {
+				artDialog.tips(result.msg,2,"succeed"); return true;
+			}
+		},"json")
+	});
+	$("map#Mapschl").find("area").live("click",function(){
+		var type = $(this).attr("data-type");
+		var linkurl = "/index.php?m=Pages&a=getcoupon3";
+		$.post(linkurl,{type:type},function( result ){
+			if( result.status == '1' ){
+				artDialog.login("账户登陆"); return false;
+			} else if( result.status == '2' ){
+				artDialog.tips(result.msg,2,"error"); return false;
+			} else {
+				artDialog.tips(result.msg,2,"succeed"); return true;
+			}
+		},"json")
+	});
+});
+</script>
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?30e32478a250ebe4ba15f477df282ae7";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script type="text/javascript">
+var  loginUrl="/index.php?m=Member&a=checkLogin";
+$(document).ready(function() {
+	$(".variousv").fancybox({
+		'padding'			: 0,
+		'autoScale'			: false,
+		'transitionIn'		: 'none',
+		'transitionOut'		: 'none',
+		'width'    : 860,
+		'height'   : 600,
+		'overlayColor' : '#000'
+	});
+		// 中秋博饼兑换窗口开始 2015/9/19 @txx
+	$("a.btn_exchange").live("click",function(){
+		$(".autumn").fadeIn("fast");
+	});
+	$("a.iframeclose").live("click",function(){
+		$(".autumn").hide("fast");
+	});
+	//中秋博饼兑换窗口结束  2015/9/19 @txx
+});
+</script>
+<script type="text/javascript" src="http://361img.361sport.com.cn/shop/js/jquery.imagezoom.min.js"></script>
+<script type="text/javascript" src="http://361img.361sport.com.cn/shop/js/marquee.js"></script>
+<script type="text/javascript" src="http://361img.361sport.com.cn/shop/js/detaile.js"></script>
 <script type="text/javascript">
 var collectUrl = "/index.php?m=Product&a=collect";
 var cartAjax = "/index.php?m=Product&a=cart";
@@ -329,8 +590,9 @@ var tcAjax = "/index.php?m=Product&a=cartpackage";
 //var ajaxurl = "/index.php?m=Product&a=ajaxchange";
 var buyUrl = "/index.php?m=Product&a=buyone";
 var hotsellUrl = "/index.php?m=Product&a=hotselllist";
-var skulist = '[{"pro_color":"\u767d","pic1":"\/2016\/09\/01\/57c7cc76250b4.jpg","colorsize":[{"pro_sizes":"110","pro_count":"8"},{"pro_sizes":"120","pro_count":"22"},{"pro_sizes":"130","pro_count":"27"},{"pro_sizes":"140","pro_count":"40"},{"pro_sizes":"150","pro_count":"22"},{"pro_sizes":"160","pro_count":"11"},{"pro_sizes":"170","pro_count":"0"}],"number":7},{"pro_color":"\u7ea2","pic1":"\/2016\/09\/01\/57c7cc775698f.jpg","colorsize":[{"pro_sizes":"110","pro_count":"9"},{"pro_sizes":"120","pro_count":"18"},{"pro_sizes":"130","pro_count":"20"},{"pro_sizes":"140","pro_count":"21"},{"pro_sizes":"150","pro_count":"21"},{"pro_sizes":"160","pro_count":"9"},{"pro_sizes":"170","pro_count":"0"}],"number":7},{"pro_color":"\u6df1\u84dd","pic1":"\/2016\/09\/01\/57c7cc7887982.jpg","colorsize":[{"pro_sizes":"110","pro_count":"0"},{"pro_sizes":"120","pro_count":"1"},{"pro_sizes":"130","pro_count":"4"},{"pro_sizes":"140","pro_count":"3"},{"pro_sizes":"150","pro_count":"3"},{"pro_sizes":"160","pro_count":"1"},{"pro_sizes":"170","pro_count":"0"}],"number":7}]';
+var skulist = '[{"pro_color":"\u767d","pic1":"\/2016\/09\/01\/57c7cc76250b4.jpg","colorsize":[{"pro_sizes":"110","pro_count":"3"},{"pro_sizes":"120","pro_count":"10"},{"pro_sizes":"130","pro_count":"15"},{"pro_sizes":"140","pro_count":"23"},{"pro_sizes":"150","pro_count":"11"},{"pro_sizes":"160","pro_count":"6"},{"pro_sizes":"170","pro_count":"0"}],"number":7},{"pro_color":"\u7ea2","pic1":"\/2016\/09\/01\/57c7cc775698f.jpg","colorsize":[{"pro_sizes":"110","pro_count":"3"},{"pro_sizes":"120","pro_count":"6"},{"pro_sizes":"130","pro_count":"8"},{"pro_sizes":"140","pro_count":"9"},{"pro_sizes":"150","pro_count":"8"},{"pro_sizes":"160","pro_count":"3"},{"pro_sizes":"170","pro_count":"0"}],"number":7},{"pro_color":"\u6df1\u84dd","pic1":"\/2016\/09\/01\/57c7cc7887982.jpg","colorsize":[{"pro_sizes":"110","pro_count":"0"},{"pro_sizes":"120","pro_count":"0"},{"pro_sizes":"130","pro_count":"4"},{"pro_sizes":"140","pro_count":"3"},{"pro_sizes":"150","pro_count":"3"},{"pro_sizes":"160","pro_count":"1"},{"pro_sizes":"170","pro_count":"0"}],"number":7}]';
 var piclist = '[{"pro_color":"\u767d","pic1":"http:\/\/361img.361sport.com.cn\/product\/2016\/09\/01\/57c7cc76250b4.jpg","pic2":"http:\/\/361img.361sport.com.cn\/product\/2016\/09\/01\/57c7cc766ffb2.jpg","pic3":"http:\/\/361img.361sport.com.cn\/product\/2016\/09\/01\/57c7cc76b67b8.jpg","pic4":"http:\/\/361img.361sport.com.cn\/product\/2016\/09\/01\/57c7cc770ba11.jpg","mig1":"http:\/\/361img.361sport.com.cn\/product\/2016\/09\/01\/57c7cc76250b4.jpg","sig1":"http:\/\/361img.361sport.com.cn\/product\/2016\/09\/01\/m_57c7cc76250b4.jpg","mig2":"http:\/\/361img.361sport.com.cn\/product\/2016\/09\/01\/57c7cc766ffb2.jpg","sig2":"http:\/\/361img.361sport.com.cn\/product\/2016\/09\/01\/m_57c7cc766ffb2.jpg","mig3":"http:\/\/361img.361sport.com.cn\/product\/2016\/09\/01\/57c7cc76b67b8.jpg","sig3":"http:\/\/361img.361sport.com.cn\/product\/2016\/09\/01\/m_57c7cc76b67b8.jpg","mig4":"http:\/\/361img.361sport.com.cn\/product\/2016\/09\/01\/57c7cc770ba11.jpg","sig4":"http:\/\/361img.361sport.com.cn\/product\/2016\/09\/01\/m_57c7cc770ba11.jpg"},{"pro_color":"\u7ea2","pic1":"http:\/\/361img.361sport.com.cn\/product\/2016\/09\/01\/57c7cc775698f.jpg","pic2":"http:\/\/361img.361sport.com.cn\/product\/2016\/09\/01\/57c7cc779e52f.jpg","pic3":"http:\/\/361img.361sport.com.cn\/product\/2016\/09\/01\/57c7cc77e4b1f.jpg","pic4":"http:\/\/361img.361sport.com.cn\/product\/2016\/09\/01\/57c7cc7839e81.jpg","mig1":"http:\/\/361img.361sport.com.cn\/product\/2016\/09\/01\/57c7cc775698f.jpg","sig1":"http:\/\/361img.361sport.com.cn\/product\/2016\/09\/01\/m_57c7cc775698f.jpg","mig2":"http:\/\/361img.361sport.com.cn\/product\/2016\/09\/01\/57c7cc779e52f.jpg","sig2":"http:\/\/361img.361sport.com.cn\/product\/2016\/09\/01\/m_57c7cc779e52f.jpg","mig3":"http:\/\/361img.361sport.com.cn\/product\/2016\/09\/01\/57c7cc77e4b1f.jpg","sig3":"http:\/\/361img.361sport.com.cn\/product\/2016\/09\/01\/m_57c7cc77e4b1f.jpg","mig4":"http:\/\/361img.361sport.com.cn\/product\/2016\/09\/01\/57c7cc7839e81.jpg","sig4":"http:\/\/361img.361sport.com.cn\/product\/2016\/09\/01\/m_57c7cc7839e81.jpg"},{"pro_color":"\u6df1\u84dd","pic1":"http:\/\/361img.361sport.com.cn\/product\/2016\/09\/01\/57c7cc7887982.jpg","pic2":"http:\/\/361img.361sport.com.cn\/product\/2016\/09\/01\/57c7cc78cf2b4.jpg","pic3":"http:\/\/361img.361sport.com.cn\/product\/2016\/09\/01\/57c7cc79318fe.jpg","pic4":"http:\/\/361img.361sport.com.cn\/product\/2016\/09\/01\/57c7cc797c59d.jpg","mig1":"http:\/\/361img.361sport.com.cn\/product\/2016\/09\/01\/57c7cc7887982.jpg","sig1":"http:\/\/361img.361sport.com.cn\/product\/2016\/09\/01\/m_57c7cc7887982.jpg","mig2":"http:\/\/361img.361sport.com.cn\/product\/2016\/09\/01\/57c7cc78cf2b4.jpg","sig2":"http:\/\/361img.361sport.com.cn\/product\/2016\/09\/01\/m_57c7cc78cf2b4.jpg","mig3":"http:\/\/361img.361sport.com.cn\/product\/2016\/09\/01\/57c7cc79318fe.jpg","sig3":"http:\/\/361img.361sport.com.cn\/product\/2016\/09\/01\/m_57c7cc79318fe.jpg","mig4":"http:\/\/361img.361sport.com.cn\/product\/2016\/09\/01\/57c7cc797c59d.jpg","sig4":"http:\/\/361img.361sport.com.cn\/product\/2016\/09\/01\/m_57c7cc797c59d.jpg"}]';
 var loginUrl = "/index.php?m=Member&a=checkLogin";
 </script>
-@endsection
+</body>
+</html>

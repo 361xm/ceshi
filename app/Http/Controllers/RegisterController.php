@@ -12,8 +12,8 @@ class RegisterController extends Controller
     // 前台登录Ajax无刷新验证
     public function register(Request $request)
     {
-    	$data = $request->only("phone","username","password","repassword");
-       $mycode = Session()->get('code');
+        $data = $request->only("phone","username","password","repassword");
+        $mycode = Session()->get('code');
        // dd($mycode);
        if($mycode!=$request->input('code')){
                 return back()->with("msg","验证码错误");//后退

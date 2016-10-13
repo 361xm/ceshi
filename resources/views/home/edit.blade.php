@@ -18,7 +18,7 @@
         	﻿<div class="pl_top"></div>
         <div class="pl_c">
             <div class="userinfo">
-                <div class="username Arial fbold">chiehjie</div>
+                <div class="username Arial fbold">{{ session('adminuser')->username }}</div>
                 <div style="margin-top:5px;">普通会员&nbsp;积分：0</div>
                 <a class="useredit" href="/index.php?m=User&a=profile">编辑个人资料</a>
             </div>
@@ -75,13 +75,13 @@
         </div>
         <div class="u_right">
 			<div class="title">修改个人信息</div>
-			<div class="color1">亲爱的chiehjie，填写真实的资料，有助于我们为您提供更贴心得服务，还可以获取<b>50</b>积分。</div>
+			<div class="color1">亲爱的{{ session('adminuser')->username }}，填写真实的资料，有助于我们为您提供更贴心得服务，还可以获取<b>50</b>积分。</div>
 									<form method='post' id="form1" name="form1" action="/index.php?m=User&a=profile"  enctype="multipart/form-data">
 			<div class="u_edit" style="padding-top:5px; padding-left:100px;">
 				<div class="formlist">
 					<dl>
 						<dt>登录名：</dt>
-						<dd class="ue_name">chiehjie</dd>
+						<dd class="ue_name">{{ session('adminuser')->username }}</dd>
 					</dl>
 					<dl>
 						<dt>真实姓名：</dt>
@@ -95,37 +95,7 @@
 						<font color="#FF0000">*</font>
 						</dd>
 					</dl>
-					<dl>
-						<dt>生日：</dt>
-						<dd>
-						<span>
-						<input type="text"  value="" name="birthday" id="birthday" class="ipt4"  style="width:80px;"/>
-						</span>
-						<font color="#FF0000">*</font>
-						</dd>
-					</dl>
-					<dl>
-						<dt><font size="-1">温馨提示：</font></dt>
-						<dd>(<font color="#3399FF">VIP银卡、金卡会员，生日当天享商品5折优惠，限量1件（生日当天，吊牌价5折）</font>)</dd>
-					</dl>
-					<dl>
-						<dt>证件：</dt>
-						<dd>
-						  <select name="credentials" id="credentials"  style="width:110px; height:26px;" >
-							<option value="1" >身份证</option>
-							<option value="2" >社保</option>
-							<option value="3" >军人</option>
-						  </select>
-						  <span><input type="text" name="idcard"  id="idcard" value=""  style="width:250px;"/></span>
-						  <font color="#FF0000">*</font>
-						</dd>
-					</dl>
-					<dl>
-						<dt>身份证审核：</dt>
-												<dd style="width:600px;">
-							正面图片<input type="file" name="face1" style="width:150px;">
-							反面图片<input type="file" name="face2" style="width:150px;">（图片不超过1M）
-						</dd>					</dl>
+					
 					<dl>
 						<dt>电子邮箱：</dt>
 						<dd><span><input type="text" name="email" id="email" value=""  style="width:366px;"/></span></dd>
@@ -156,7 +126,7 @@
 					<div class="clear"></div>
 					<dl>
 					<dt>手机号码：</dt>
-					<dd><span style="border:none;"><input type="text" id="mobile"  value="13036675587" style="width:159px;"/>&nbsp;&nbsp;&nbsp;验证码：<input type="text" id="sms_code" style="width:46px;"/></span><input type="button" id="get_code" value="获取验证码"><span id="spanfortimeout" style="border:none"><a class="code_timeout" style="display:none;">60秒后可重新发</a></span><input type="button" id="changeMobile" value="修改"/></dd>
+					<dd><span style="border:none;"><input type="text" id="mobile"  value="" style="width:159px;"/>
 					</dl>
 				</div>
 				<div class="formlist" id="profile_error_mobile" style="display:none;">

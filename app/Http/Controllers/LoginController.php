@@ -31,8 +31,46 @@
                 //32跳转到后台首页
                 return view("web");
             }
-            return back()->with("msg","用户或密码错误");
+            return back()->with("mag","用户或密码错误");
         }
-        return back()->with("msg","用户或密码错误");
+        return back()->with("mag","用户或密码错误");
     }
-	}
+        //4 执行退出
+    public function logout()
+    {
+        //忘记session
+        session()->forget("adminuser");
+        //重定向
+        return view("home/login");
+    }
+
+    //忘记密码
+    public function forgetPasswd()
+    {
+        return view('home/forgetPasswd');
+    }
+    //忘记密码的原始信息
+    public function doForgetPasswd(Request $request)
+    {
+        $phone = $request->input('phone');
+        // $email = $request->input('email');
+        // dd($phone);
+        $db = \DB::table('user')->first();
+        // dd($db);
+        if($db){
+            if($db->phone==$phone){
+                   return view('home/editPasswd');
+                }
+                return back()->with("mbg","手机号或者Email错误");
+            }
+            return back()->with("mbg","手机号或者Email错误");
+        }
+
+
+    //修改密码
+     public function editPasswd()
+    {
+        
+        return view('home/editPasswd');
+    }
+}
