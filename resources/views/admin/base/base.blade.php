@@ -51,6 +51,18 @@
         }
       }
     </script>
+
+    <script type="text/javascript">
+       function head(id){
+        if(confirm('确定删除吗？')){
+//                1.获得form表单节点对象
+            var myform = document.myform;
+//                2 设置提交方式
+            myform.action = "/Del/"+id;
+            myform.submit();
+        }
+      }
+    </script>
   </head>
   <body class="hold-transition skin-blue sidebar-mini">
     <div class="wrapper">
@@ -194,6 +206,15 @@
               <ul class="treeview-menu">
                 <li><a href="{{ URL('/adminUser') }}"><i class="fa fa-circle-o"></i> 管理员信息表</a></li>
                 <li><a href="{{ URL('/adminAdd') }}"><i class="fa fa-circle-o"></i> 添加管理员</a></li>
+              </ul>
+            </li>
+            <li class="treeview">
+              <a href="#">
+                <i class="fa fa-dashboard"></i> <span>新闻管理</span> <i class="fa fa-angle-left pull-right"></i>
+              </a>
+              <ul class="treeview-menu">
+                <li><a href="{{ URL('xinwen/press') }}"><i class="fa fa-circle-o"></i> 新闻详情表</a></li>
+                <li><a href="{{ URL('xinwen/addWen') }}"><i class="fa fa-circle-o"></i> 添加新闻</a></li>
               </ul>
             </li>
           </ul>

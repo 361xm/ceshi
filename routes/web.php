@@ -122,6 +122,18 @@ Route::get('/link',function () {
 //跳转登录 注册页面
 Route::get('/login',"LoginController@login");
 Route::post('/dologin',"LoginController@dologin");
+//退出登录
+Route::get('/logout',"LoginController@logout");
+
+//忘记密码
+Route::get('/forgetPasswd',"LoginController@forgetPasswd");
+//录入原始账号信息
+Route::post('/doForgetPasswd',"LoginController@doForgetPasswd");
+//修改密码
+Route::get('/editPasswd',"LoginController@editPasswd");
+
+
+
 //注册页面
 Route::post('/register',"RegisterController@register");
 // 后台添加用户页面
@@ -212,6 +224,18 @@ Route::get('type/addorder',function () {
 	return view('admin.type.addorder');
 });
 
+//显示新闻详情表
+Route::any('xinwen/press',"Admin\xinwenController@line");
+
+//显示新闻添加
+Route::any('xinwen/addWen',"Admin\xinwenController@title");
+
+//显示新闻执行添加
+Route::any('/addhead',"Admin\xinwenController@addtitle");
+
+//新闻删除
+Route::resource('/Del',"Admin\xinwenController");
+
 //后台管理首页(需要登录才可以访问)
 Route::group(["prefix"=>"admin","middleware"=>"myauth"],function(){
 		Route::get("index","Admin\IndexController@index");//网站后台首页
@@ -228,3 +252,7 @@ Route::any('/user',"Admin\UserController@index2");
 // Route::get('/admin/index','Admin\IndexController@index');
 // 增删改查用户管理
  
+
+
+//前台首页遍历
+Route::get('/',"StageController@desk");

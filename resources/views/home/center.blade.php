@@ -23,7 +23,7 @@
         ﻿<div class="pl_top"></div>
         <div class="pl_c">
             <div class="userinfo">
-                <div class="username Arial fbold">chiehjie</div>
+                <div class="username Arial fbold">{{ session('adminuser')->username }}</div>
                 <div style="margin-top:5px;">普通会员&nbsp;积分：0</div>
                 <a class="useredit" href="{{ URL('/edit') }}">编辑个人资料</a>
             </div>

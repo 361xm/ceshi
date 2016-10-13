@@ -6,7 +6,7 @@
               <!-- Horizontal Form -->
               <div class="box box-info">
                 <div class="box-header with-border">
-                  <h3 class="box-title">添加用户信息</h3>&nbsp;&nbsp;<a href="{{ URL('/user')}}"<button class="glyphicon glyphicon-arrow-left">用户列表</button></a>
+                  <h3 class="box-title glyphicon glyphicon-plus">添加用户信息</h3>&nbsp;&nbsp;<a href="{{ URL('/user')}}"<button class="glyphicon glyphicon-arrow-left">用户列表</button></a>
                 </div><!-- /.box-header -->
                 <!-- form start -->
                 <form class="form-horizontal" action="/stu" method="post">

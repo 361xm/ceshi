@@ -5,7 +5,7 @@
             <div class="col-xs-12">
               <div class="box">
                 <div class="box-header">
-                  <h3 class="box-title">用户信息</h3>&nbsp;&nbsp;<a href="{{ URL('/user')}}"<button class="glyphicon glyphicon-arrow-left">返回</button></a>
+                  <h3 class="box-title"><a class="glyphicon glyphicon-th"></a> 用户信息</h3>&nbsp;&nbsp;<a href="{{ URL('/user')}}"<button class="glyphicon glyphicon-arrow-left">返回</button></a>
                   <div class="box-tools">
                     <div class="" style="width: 150px;">
                       <form action="{{ URL('/user')}}" method="post">
@@ -22,7 +22,6 @@
                 </div><!-- /.box-header -->
                 <div class="box-body table-responsive no-padding">
                   <table class="table table-bordered table-hover">
-                  
                     <tr>
                       <th>ID</th>
                       <th>用户名</th>
@@ -31,11 +30,11 @@
                     </tr>
                     @foreach($list as $stu)      
                       <tr>
-                      <th>{{($list->currentPage()-1)*10+($num)}}</th>
+                      <th><b class="glyphicon glyphicon-flag">-{{($list->currentPage()-1)*10+($num)}}</b></th>
                       <input type="hidden"value="{{ $num++ }}">
                       <th>{{ $stu->username }}</th>
                       <th>{{ $stu->phone }}</th>
-                      <td><a href="javascript:doDel({{ $stu->id}})"><button class="btn btn-xs btn-danger">删除</button></a>|<button class="btn btn-xs btn-info">查看订单</button></td>
+                      <td><a href="javascript:doDel({{ $stu->id}})" class="glyphicon glyphicon-trash"></a> | <a href="" class="glyphicon glyphicon-eye-open"></a> | <a href="" class="glyphicon glyphicon-cog"></a></td>
                     </tr>
                     @endforeach
                     

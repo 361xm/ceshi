@@ -13,21 +13,16 @@
                   <div class="box-body">
                     <div class="form-group">
                       <label for="exampleInputEmail1">添加类别</label>
-                      <input type="text" name="classname" class="form-control" id="exampleInputEmail1" placeholder="Type">
+                      <input type="text" name="classname" class="form-control" id="exampleInputEmail1" placeholder="请输入...">
                     </div>
                     <div class="form-group">
                       <label for="exampleInputPassword1">描述</label>
-                      <input type="text" name="decipt" class="form-control" id="exampleInputPassword1" placeholder="Description">
+                      <input type="text" name="decipt" class="form-control" id="exampleInputPassword1" placeholder="请输入...">
                     </div>
                     <div class="form-group">
                       <label for="exampleInputFile">图片</label>
                       <input type="file" name="classimage" id="exampleInputFile">
                       <p class="help-block">请选择图片上传.....</p>
-                    </div>
-                    <div class="checkbox">
-                      <label>
-                        <input type="checkbox"> 确认
-                      </label>
                     </div>
                   </div><!-- /.box-body -->
                   <div>

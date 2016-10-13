@@ -14,7 +14,9 @@
 
 		public function info()
 		{
-			return view('home/xinwen');
+			$list=\DB::table("press")->get();
+
+    		return view("home/xinwen",["list"=>$list]);
 		}
 
 		public function page()
@@ -24,11 +26,16 @@
 
 		public function product()
 		{
-			return view('home/shangpin');
+			$db = \DB::table('product');
+			$where = [];
+			$list = $db->paginate(1);
+			// dd($list);
+			return view('home/shangpin')->with(['list'=>$list,'where'=>$where]);
 		}
 		public function ShopList()
 		{
-			return view('home/ShopList');
+			$list = \DB::table('product')->get();
+			return view('home/ShopList')->with(['list'=>$list]);
 		}
 		public function Shoping()
 		{
