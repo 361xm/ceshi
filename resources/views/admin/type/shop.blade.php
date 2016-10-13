@@ -8,10 +8,9 @@
                   <h3 class="box-title"><a class="glyphicon glyphicon-th">商品类别表</a> <a href="{{URL('/type')}}" class="glyphicon glyphicon-arrow-left">返回</a></h3>
                   <div class="box-tools">
                     <div class="" style="width: 150px;">
-                      <form action="{{ URL('/type') }}" method="post">
+                      <form action="/type" method="post">
                         <input type="hidden" name="_token" value="{{ csrf_token()}}">
-                        <input type="text" name="name" size="15" class="form-inline">
-                        <button type="submit" class="btn btn-sm btn-default"><i class="fa fa-search"></i></button>
+                         <button type="submit" class="btn btn-sm btn-default"><i class="fa fa-search"></i></button><input type="text" name="name" size="15"  class="margin-right:80px;">
                       </form>
                       <form action="" method="post" name="myform">
                             <input type="hidden" name="_token" value="{{ csrf_token()}}">
@@ -38,12 +37,11 @@
                       <th>{{ $ob->decipt }}</th>
                       <th>{{ $ob->classname }}</th>
                       <th><img src="admins/upload/{{ $ob->classimage }}" width="50px" height="50"></th>
-                      <td><a href="javascript:doDelt({{ $ob->id}})" class="glyphicon glyphicon-trash"></a> | <a href='{{ URL("/file/$ob->id/edit") }}' class="glyphicon glyphicon-wrench"></a> | <a href='{{ URL("/typelist/$ob->id") }}' class="glyphicon glyphicon-eye-open"></a> | <a href='{{ URL("/types/$ob->id") }}' class="glyphicon glyphicon-plus"></a></td>
+                      <td><a href="javascript:doDelt({{ $ob->id}})" class="glyphicon glyphicon-trash"></a> | <a href='{{ URL("/file/$ob->id/edit") }}' class="glyphicon glyphicon-wrench"></a> | <a href='{{ URL("/typelist/$ob->id") }}' class="glyphicon glyphicon-eye-open"></a> | <a data-toggle="modal" data-target="#myModal" class="glyphicon glyphicon-plus"></a></td>
                     </tr>
                     @endforeach
                   </table>
                 </div><!-- /.box-body -->
-
               </div>
               <center style="float:right;">
               {!! $list->appends($where)->render() !!}

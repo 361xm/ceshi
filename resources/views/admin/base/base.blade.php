@@ -224,19 +224,61 @@
       <!-- 左侧边栏结束 -->
           <!-- 主体内容开始 447-536 -->
           <!-- Content Wrapper. Contains page content -->
-          <div class="content-wrapper">
+          <div class="content-wrapper">      
             @yield("content")
           </div><!-- /.content-wrapper -->
       <!-- 主体内容结束 -->
       <!-- 页脚开始 538-544 -->
-      <footer class="main-footer">
-        <div class="pull-right hidden-xs">
-          <b>Version</b> 2.3.0
-        </div>
-        <strong>Copyright &copy; 2014-2015 <a href="http://almsaeedstudio.com">Almsaeed Studio</a>.</strong> All rights reserved.
-      </footer>
       <!-- 页脚结束 -->
-
+      <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+   <div class="modal-dialog">
+      <div class="modal-content">
+         <div class="modal-header">
+            <button type="button" class="close"
+               data-dismiss="modal" aria-hidden="true">
+                  &times;
+            </button>
+            <h4 class="modal-title" id="myModalLabel">
+               添加商品
+            </h4>
+         </div>
+         <div class="modal-body ">
+           <form role="form">
+              <div class="form-group">
+              <label for="name">商品名称</label>
+              <input type="text" class="form-control" id="name" placeholder="请输入名称">
+              </div>
+              <div class="form-group">
+              <label for="name">商品价格</label>
+              <input type="text" class="form-control" id="name" placeholder="请输入名称">
+              </div>
+              <div class="form-group">
+              <label for="name">库存</label>
+              <input type="text" class="form-control" id="name" placeholder="请输入名称">
+              </div>
+              <div class="form-group">
+              <label for="name">商品详情</label>
+              <input type="text" class="form-control" id="name" placeholder="请输入名称">
+              </div>
+              <div class="form-group">
+              <label for="inputfile">文件输入</label>
+              <input type="file" id="inputfile">
+              <p class="help-block">请添加图片</p>
+              </div>
+              <div class="checkbox">
+              </div>
+              </form>
+         </div>
+         <div class="modal-footer">
+            <button type="button" class="btn btn-default"
+               data-dismiss="modal">取消添加
+            </button>
+            <button type="button" class="btn btn-primary">
+               添加商品
+            </button>
+         </div>
+      </div><!-- /.modal-content -->
+</div><!-- /.modal -->
       <!-- Add the sidebar's background. This div must be placed
            immediately after the control sidebar -->
       <div class="control-sidebar-bg"></div>
@@ -254,6 +296,8 @@
     <script src="{{ asset('admins/dist/js/app.min.js') }}"></script>
     <!-- AdminLTE for demo purposes -->
     <script src="{{ asset('admins/dist/js/demo.js') }}"></script>
+    <link href="{{asset('admins/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <script src="http://libs.baidu.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
     @section('myscript')
     @show
   </body>

@@ -29,7 +29,8 @@
                 $a = session()->set("adminuser",$ob);
                 // dd($a);
                 //32跳转到后台首页
-                return view("web");
+                $list = \DB::table('types')->get();
+                return view("web",['list'=>$list]);
             }
             return back()->with("mag","用户或密码错误");
         }
