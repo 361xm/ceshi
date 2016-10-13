@@ -209,6 +209,18 @@ Route::get('type/addorder',function () {
 	return view('admin.type.addorder');
 });
 
+//显示新闻详情表
+Route::any('xinwen/press',"Admin\xinwenController@line");
+
+//显示新闻添加
+Route::any('xinwen/addWen',"Admin\xinwenController@title");
+
+//显示新闻执行添加
+Route::any('/addhead',"Admin\xinwenController@addtitle");
+
+//新闻删除
+Route::resource('/Del',"Admin\xinwenController");
+
 //后台管理首页(需要登录才可以访问)
 Route::group(["prefix"=>"admin","middleware"=>"myauth"],function(){
 		Route::get("index","Admin\IndexController@index");//网站后台首页
@@ -225,3 +237,7 @@ Route::any('/user',"Admin\UserController@index2");
 // Route::get('/admin/index','Admin\IndexController@index');
 // 增删改查用户管理
  
+
+
+//前台首页遍历
+Route::get('/',"StageController@desk");

@@ -14,7 +14,9 @@
 
 		public function info()
 		{
-			return view('home/xinwen');
+			$list=\DB::table("press")->get();
+
+    		return view("home/xinwen",["list"=>$list]);
 		}
 
 		public function page()
