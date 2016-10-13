@@ -185,6 +185,9 @@ Route::get('/adminAdd', function () {
 // 查看商品列表 
 Route::any('/types','Admin\ListController@shop');
 
+// 查看指定商品类别里面的商品
+Route::any('/typelist/{bar}','Admin\ListController@index2');
+
 //显示商品类别添加
 Route::get('/addType','Admin\UploadController@put');
 
