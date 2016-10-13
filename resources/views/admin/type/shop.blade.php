@@ -5,7 +5,7 @@
             <div class="col-xs-12">
               <div class="box">
                 <div class="box-header">
-                  <h3 class="box-title">商品类别表</h3>
+                  <h3 class="box-title"><a class="glyphicon glyphicon-th">商品类别表</a> <a href="{{URL('/type')}}" class="glyphicon glyphicon-arrow-left">返回</a></h3>
                   <div class="box-tools">
                     <div class="" style="width: 150px;">
                       <form action="{{ URL('/type') }}" method="post">
@@ -21,26 +21,27 @@
                   </div>
                 </div><!-- /.box-header -->
                 <div class="box-body table-responsive no-padding">
-                  <table class="table table-hover">  
+                  <table class="table table-bordered table-hover">  
                     <tr>
-                      <th style=" text-align:center;">ID</th>
-                      <th style=" text-align:center;">描述</th>
-                      <th style=" text-align:center;">类别名称</th>
-                      <th style=" text-align:center;">图片</th>
-                      <th style=" text-align:center;">操作</th>
+                      <th>ID</th>
+                      <th>商品编号</th>
+                      <th>描述</th>
+                      <th>类别名称</th>
+                      <th>图片</th>
+                      <th>操作</th>
                     </tr>
                     @foreach($list as $ob)
                       <tr>
-                      <th style=" text-align:center;">{{ ($list->currentPage()-1)*10+($num) }}</th>
+                      <th><b class="glyphicon glyphicon-home">-{{ ($list->currentPage()-1)*10+($num) }}</b></th>
+                      <th>{{ $ob->id }}</th>
                       <input type="hidden" value="{{ $num++ }}">
-                      <th style=" text-align:center;">{{ $ob->decipt }}</th>
-                      <th style=" text-align:center;">{{ $ob->classname }}</th>
-                      <th style=" text-align:center;"><img src="admins/upload/{{ $ob->classimage }}" width="50px" height="50"></th>
-                      <td style=" text-align:center;"><a href="javascript:doDelt({{ $ob->id}})"><button class="btn btn-xs btn-danger">删除</button></a> | <a href='{{ URL("/file/$ob->id/edit") }}'><button class="btn btn-xs btn-info" >修改</button></a> | <a href='{{ URL("/types/$ob->id") }}'><button class="btn btn-xs btn-info" >查看{{ $ob->classname }}商品</button></a> | <a href='{{ URL("/types/$ob->id") }}'><button class="btn btn-xs btn-success" >添加{{ $ob->classname }}商品</button></a></td>
+                      <th>{{ $ob->decipt }}</th>
+                      <th>{{ $ob->classname }}</th>
+                      <th><img src="admins/upload/{{ $ob->classimage }}" width="50px" height="50"></th>
+                      <td><a href="javascript:doDelt({{ $ob->id}})" class="glyphicon glyphicon-trash"></a> | <a href='{{ URL("/file/$ob->id/edit") }}' class="glyphicon glyphicon-wrench"></a> | <a href='{{ URL("/typelist/$ob->id") }}' class="glyphicon glyphicon-eye-open"></a> | <a href='{{ URL("/types/$ob->id") }}' class="glyphicon glyphicon-plus"></a></td>
                     </tr>
                     @endforeach
                   </table>
-                    
                 </div><!-- /.box-body -->
 
               </div>
