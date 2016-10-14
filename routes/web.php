@@ -194,6 +194,8 @@ Route::any('/adminUser', 'Admin\UserController@adminUser');
 Route::get('/adminAdd', function () {
     return view('admin.adminuser.add');
 });
+Route::any('/doAdminAdd', 'Admin\UserController@doAdminAdd');
+
 // 查看商品列表 
 Route::any('/types','Admin\ListController@shop');
 
