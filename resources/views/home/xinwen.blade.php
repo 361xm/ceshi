@@ -41,7 +41,7 @@
 				<div class="pp_news" style="margin-top:50px;">
 				<h1>{{ $wen->smallhead}}</h1>
 				<div class="pp_news_about clearfix">
-					<div class="pp-pic left"><img  style="width:350px;height:200px;" src="http://local153.com/admins/upload/{{ $wen->img }}" /></div>
+					<div class="pp-pic left"><img  style="width:350px;height:200px;" src="admins/upload/{{ $wen->img }}" /></div>
 					<div class="pp-info left">
 						<div class="pp-info-desc">{{ $wen->describe }}</div>
 						<div class="pp-date">{{ $wen->time }}</div>

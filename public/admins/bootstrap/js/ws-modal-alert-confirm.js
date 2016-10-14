@@ -1,24 +1,44 @@
-$(function () {
-      $('.modal').modal('show');//调出模态框。
-  window.Modal = function () {
+//实现modal弹出框和确认框效果 
+
+//1 html中的div项 弹出层
+  // <!-- system modal start -->
+  //   <div id="ycf-alert" class="modal">
+  //     <div class="modal-dialog modal-sm">
+  //       <div class="modal-content">
+  //         <div class="modal-header">
+  //           <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+  //           <h5 class="modal-title"><i class="fa fa-exclamation-circle"></i> [Title]</h5>
+  //         </div>
+  //         <div class="modal-body small">
+  //           <p>[Message]</p>
+  //         </div>
+  //         <div class="modal-footer" >
+  //           <button type="button" class="btn btn-primary ok" data-dismiss="modal">[BtnOk]</button>
+  //           <button type="button" class="btn btn-default cancel" data-dismiss="modal">[BtnCancel]</button>
+  //         </div>
+  //       </div>
+  //     </div>
+  //   </div>
+  // <!-- system modal end -->
+
+//2 实现弹出效果的js
+window.Modal = function () {
     var reg = new RegExp("\\[([^\\[\\]]*?)\\]", 'igm');
     var alr = $("#ycf-alert");
     var ahtml = alr.html();
-      $('#mymodal-data1').on('hidden.bs.modal', function (e) {
-      $state.go("header.answer");
-      }); 
+
     //关闭时恢复 modal html 原样，供下次调用时 replace 用
     //var _init = function () {
-    //  alr.on("hidden.bs.modal", function (e) {
-    //    $(this).html(ahtml);
-    //  });
+    //	alr.on("hidden.bs.modal", function (e) {
+    //		$(this).html(ahtml);
+    //	});
     //}();
 
     /* html 复原不在 _init() 里面做了，重复调用时会有问题，直接在 _alert/_confirm 里面做 */
 
 
     var _alert = function (options) {
-      alr.html(ahtml);  // 复原
+      alr.html(ahtml);	// 复原
       alr.find('.ok').removeClass('btn-success').addClass('btn-primary');
       alr.find('.cancel').hide();
       _dialog(options);
@@ -72,7 +92,9 @@ $(function () {
       alr.html(html);
       alr.modal({
         width: 500,
-        backdrop: 'static'
+        backdrop: 'static'//1 点击确定弹框消失
+        // backdrop: true //2 点击任意区域弹框消失
+        //3 定时消失 
       });
     }
 
@@ -83,4 +105,25 @@ $(function () {
 
   }();
 
-});
+
+  //3 测试和使用 
+
+// 四个选项都是可选参数
+// Modal.alert(
+//   {
+//     msg: '内容',
+//     title: '标题',
+//     btnok: '确定',
+//     btncl:'取消'
+//   });
+
+// 如需增加回调函数，后面直接加 .on( function(e){} );
+// 点击“确定” e: true
+// 点击“取消” e: false
+// Modal.confirm(
+//   {
+//     msg: "是否删除角色？"
+//   })
+//   .on( function (e) {
+//     alert("返回结果：" + e);
+//   });

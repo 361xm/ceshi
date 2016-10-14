@@ -200,11 +200,7 @@ Route::any('/types','Admin\ListController@shop');
 // 查看指定商品类别里面的商品
 Route::any('/typelist/{bar}','Admin\ListController@index2');
 
-// 添加商品
-Route::post("/addgoods",'Admin\TypeListController@index');
-
-// 显示视图
-Route::post('/saveRole',"Admin\addController@index");
+Route::resource("/addgoods",'Admin\TypeListController');
 
 //显示商品类别添加
 Route::get('/addType','Admin\UploadController@put');
@@ -262,5 +258,3 @@ Route::any('/user',"Admin\UserController@index2");
 
 //前台首页遍历
 Route::get('/',"StageController@desk");
-
-// 测试

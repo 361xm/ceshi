@@ -34,7 +34,7 @@
                         <td>{{ $good->goodsname }}</td>
                         <td>{{ $good->tid }}</td>
                         <td>{{ $good->goodsprice }}$</td>
-                        <td></td>
+                        <td>{{ $good->stock}}</td>
                         <td>{{ $good->goodsdescript }}</td>
                         <td><a href="" class="glyphicon glyphicon-trash"></a> | <a href="" class="glyphicon glyphicon-wrench"></a></td>
                       </tr>

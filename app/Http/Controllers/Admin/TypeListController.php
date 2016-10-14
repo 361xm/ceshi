@@ -9,8 +9,8 @@ use App\Http\Controllers\Controller;
 
 class TypeListController extends Controller
 {
-	public function index($id)
+	public function index(Request $request)
 	{
-		return "查看".$id;
+		return 1111;
 	}
 }
