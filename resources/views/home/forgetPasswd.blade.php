@@ -14,6 +14,13 @@
 				<tbody>
 					<tr>
 						<td>
+							<div class="title">
+				        		@if(session('msg'))
+								   <p class="login-box-msg" style="color:red;">{{ session('msg') }}</p>
+								@else()
+								   <em>使用已注册的361°商城账号登录：</em>
+								 @endif()
+				        	</div>
 							<div class="formlist">
 								<dl id="phone">
 								<dt>手机号：</dt>
