@@ -62,24 +62,36 @@
 
             }
         $phone = $request->input('phone');
-        // $email = $request->input('email');
         // dd($phone);
-        $db = \DB::table('user')->first();
-        // dd($db);
+        $db = \DB::table('user')->where("username",$username)->first();
+         
+
         if($db){
-            if($db->phone==$phone){
-                   return view('home/editPasswd');
+            if($db->phone==$phone){ 
+                session()->flash('username',$db->id);
+                $ob = $db->id; 
+                    return view('home/editPasswd')->with(['ob'=>$ob]);
                 }
-                return back()->with("mbg","手机号或者Email错误");
+                return back()->with("msg","手机号或者用户名不存在");
             }
-            return back()->with("mbg","手机号或者Email错误");
+            return back()->with("msg","手机号或者用户名不存在");
         }
 
-
-    //修改密码
-     public function editPasswd()
-    {
-        
-        return view('home/editPasswd');
+    //执行修改密码
+     public function doEditPasswd(Request $request,$id)
+    {   
+        $id = session()->get('username');
+        // dd($id);
+        $data = $request->only('password','repassword');
+        $password = $request->input('password');
+        $repassword = $request->input('repassword');
+        // dd($repasswd);
+        if($password===$repassword){
+            $ob = \DB::table('user')->where('id',$id)->update($data);
+            
+            return view('/home/login');
+        }else{
+             return back()->with("mvg","密码不一致");
+        }
     }
 }

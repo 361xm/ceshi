@@ -9,7 +9,7 @@
                   <div class="box-tools">
                     <div class="" style="width: 150px;">
                       <form action="/type" method="post">
-                        <input type="hidden" name="_token" value="{{ csrf_token()}}">
+                        <input type="hidden" name="_token" value="{{ csrf_token()}}" >
                          <button type="submit" class="btn btn-sm btn-default"><i class="fa fa-search"></i></button><input type="text" name="name" size="15"  class="margin-right:80px;">
                       </form>
                       <form action="" method="post" name="myform">

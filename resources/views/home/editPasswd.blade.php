@@ -5,40 +5,46 @@
 </div>
 <div class="login_content mauto">
 	<div class="login_top"></div>
-	<div class="login_c clearfix" style="height:350px;">
+	<div class="login_c clearfix" style="height:500px;">
 		<div style="text-align:center"><img src="../../home/images/getpwd.png"></div>
 		<br><br><br>
-		<table width="400" border="0" cellspacing="0" cellpadding="0" align="center" id="getpwdsteep1" style="display: none;">
-		<table width="700" border="0" cellspacing="0" cellpadding="0" align="center" id="getpwdsteep2" style="display: block;">
-			<tbody>
-				<tr>
-					<td class="u_edit">
-						<div class="formlist"> 
-							<dl>
-							<dt style="height:70px;">新密码：</dt>
-								<dd>
-									<span><input type="password" name="newPWD" id="newPWD" style="width:170px;" onkeyup="getStrong(this)"></span>
-									<div class="grade clearfix">
-											<ul>
-												<li class="grade_1">弱</li>
-												<li class="grade_2">中</li>
-												<li class="grade_3">强</li>
-											</ul>
-									</div>
-								</dd>
-							</dl>
-							<div class="clear"></div>
-							<dl>
-							<dt>确认密码：</dt>
-								<dd><span><input type="password" name="newPWD2" id="newPWD2" style="width:170px;"></span></dd>
-							</dl>
-							<div class="clear"></div>
-						</div>
-						<div style="padding-left:110px;"><input type="button" id="editpwd_s" class="btn_bac" value="确认修改"></div>
-					</td>
-				</tr>
-			</tbody>
-		</table>
+		<form action='{{ URL("/doEditPasswd/{$ob}") }}' method="post">
+			<input type="hidden" name="_token" value="{{ csrf_token() }}">
+			<table width="400" border="0" cellspacing="0" cellpadding="0" align="center" id="getpwdsteep1" style="display: none;">
+			<table width="700" border="0" cellspacing="0" cellpadding="0" align="center" id="getpwdsteep2" style="display: block;">
+				<tbody>
+					<tr>
+						<div class="title" style="margin-left:450px">
+				        		<em>请输入密码：</em>
+				        	</div>
+						<td class="u_edit">
+							<div class="formlist"> 
+								<dl>
+								<dt style="height:70px;">新密码：</dt>
+									<dd>
+										<span><input type="password" name="password" id="newPWD" style="width:170px;" onkeyup="getStrong(this)"></span>
+										<div class="grade clearfix">
+												<ul>
+													<li class="grade_1">弱</li>
+													<li class="grade_2">中</li>
+													<li class="grade_3">强</li>
+												</ul>
+										</div>
+									</dd>
+								</dl>
+								<div class="clear"></div>
+								<dl>
+								<dt>确认密码：</dt>
+									<dd><span><input type="password" name="repassword" id="newPWD2" style="width:170px;"></span></dd>
+								</dl>
+								<div class="clear"></div>
+							</div>
+							<div style="padding-left:110px;"><input type="submit" id="editpwd_s" class="btn_bac" value="确认修改"></div>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</form>
 	</div>
 	<div class="login_bottom"></div>
 </div>

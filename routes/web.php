@@ -128,9 +128,9 @@ Route::get('/logout',"LoginController@logout");
 //忘记密码
 Route::get('/forgetPasswd',"LoginController@forgetPasswd");
 //录入原始账号信息
-Route::post('/doForgetPasswd',"LoginController@doForgetPasswd");
-//修改密码
-Route::get('/editPasswd',"LoginController@editPasswd");
+Route::any('/doForgetPasswd',"LoginController@doForgetPasswd");
+//执行修改密码
+Route::post("/doEditPasswd/{ob}","LoginController@doEditPasswd");
 
 
 

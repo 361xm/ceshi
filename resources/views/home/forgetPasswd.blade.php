@@ -5,7 +5,7 @@
 </div>
 <div class="login_content mauto">
 	<div class="login_top"></div>
-	<div class="login_c clearfix" style="height:350px;">
+	<div class="login_c clearfix" style="height:500px;">
 		<div style="text-align:center"><img src="../../home/images/getpwd.png"></div>
 		<br><br><br>
 		<form action="{{ URL('/doForgetPasswd') }}" method="post">
@@ -22,14 +22,23 @@
 								 @endif()
 				        	</div>
 							<div class="formlist">
+								<div style="text-align:center">
+									@if(session('msg'))
+									   <p class="login-box-msg" style="color:red;">{{ session('msg') }}</p>
+									@else()
+									   <em>请输入新密码：</em>
+									@endif()
+								</div>
+								
+								<dl id="name">
+								<dt>用户名：</dt>
+									<dd><span><input type="text" name="name" id="name"></span></dd>
+								</dl>
 								<dl id="phone">
 								<dt>手机号：</dt>
 									<dd><span><input type="text" name="phone" id="email"></span></dd>
 								</dl>
-								<dl id="mail">
-								<dt>邮箱：</dt>
-									<dd><span><input type="text" name="email" id="email"></span></dd>
-								</dl>
+								
 								<dl id="maillyz">
 									<dt>验证码：</dt>
 									<dd style="width:270px;"><span style="float:left;"><input type="text" name="code" id="mail_code" style="width:105px;height:35px;"></span><span style="margin-left:18px;"><img src="{{ URL('admin/captcha/time()') }}" onclick="this.src='{{ URL('admin/captcha') }}/'+Math.random()"><span></dd>
