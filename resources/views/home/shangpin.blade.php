@@ -14,23 +14,28 @@
 <body>
 <div class="newheader361"> 
 	<!--登陆/注册-->
-	<div class="toplogin">
-		 <div class="toplogin">
+        <div class="toplogin">
 
-            <div class="logincont"> <a href="#" class="area"  target="_blank" ></a>
-                    <a href="{{ URL('/login') }}"  class="in">
-                        <?php 
-                            if(isset(session('adminuser')->username)){
-                                echo session('adminuser')->username;
-                            }else{
-                                echo '注册登录';
-                            }
-                        ?>
-                    </a>
+        <div class="logincont"> <a href="#" class="area"  target="_blank"></a>
 
-        <em style="margin-left:8px">您好</em><a href="{{ URL('/center')}}" style="margin-left:8px"><em style="margin-left:8px">我的账户</em></a>&nbsp;&nbsp; <a href="{{ URL('admin/login')}}">后台登录</a></div>
-                        
+                <?php 
+                    if(isset(session('adminuser')->username)){
+                      ?>  
+                        &nbsp;<a href="{{ URL('/center')}}" style="margin-left:8px;font-size:16px;"><em style="margin-left:8px;margin-right:8px;font-size:16px;" >{{ session('adminuser')->username }}</em></a>&nbsp;&nbsp;
+                        <span><a href="{{ URL('/logout') }}" style="font-size:16px;">退出</a></span>
+
+                    <?php
+
+                    }else{
+                    ?>
+                        <a href="{{ URL('/login') }}" style="font-size:16px;" class="in">注册登录</a>
+                    <?php
+                    }
+                ?>
+
+            <em style="margin-left:8px;font-size:16px;">欢迎您：</em>
         </div>
+                    
     </div>
         <!--导航-->
         <div class="top_nav">
@@ -159,7 +164,7 @@
 	                    	<div class="prl_c">
 		                    	<div class="prl_pic" style="position:relative;">
 		                        	<!-- {{ $p->image }} -->
-		                        	<img src="admins/upload/{{ $p->image }}" style="width:190px;height:200px">
+		                        	<a href="{{ URL('/ShopList') }}"><img src="admins/upload/{{ $p->image }}" style="width:190px;height:200px"></a>
 		                        </div>
 		                        <div class="prl_2 clearfix">
 		                            <div class="prl_title">
