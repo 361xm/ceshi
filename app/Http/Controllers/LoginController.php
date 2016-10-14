@@ -53,6 +53,14 @@
     //忘记密码的原始信息
     public function doForgetPasswd(Request $request)
     {
+        $mycode = Session()->get('code');
+        // dd($mycode);
+       if($mycode!=$request->input('code')){
+                return back()->with("msg","验证码错误");//后退
+                // session()->flash("msg","验证码错误");//写入错误信息
+                // return redirect("admin/login");//重定向
+
+            }
         $phone = $request->input('phone');
         // $email = $request->input('email');
         // dd($phone);
