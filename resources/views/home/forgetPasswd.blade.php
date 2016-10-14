@@ -22,13 +22,6 @@
 								 @endif()
 				        	</div>
 							<div class="formlist">
-								<div style="text-align:center">
-									@if(session('msg'))
-									   <p class="login-box-msg" style="color:red;">{{ session('msg') }}</p>
-									@else()
-									   <em>请输入新密码：</em>
-									@endif()
-								</div>
 								
 								<dl id="name">
 								<dt>用户名：</dt>
