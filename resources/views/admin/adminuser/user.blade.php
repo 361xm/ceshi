@@ -7,7 +7,7 @@
                 <div class="box-header">
                   <h3 class="box-title">管理员信息表</h3>
                   <div class="box-tools">
-                    <form action="{{ URL('/adminUser')}}" method="post">
+                    <form action="" method="post">
                         <input type="hidden" name="_token" value="{{ csrf_token()}}">
                         <input type="text" name="adminname" size="15" class="form-inline">
                         <button type="submit" class="btn btn-sm btn-default"><i class="fa fa-search"></i></button>
@@ -28,7 +28,7 @@
                       <td>{{ $user->adminname }}</td>
                       <td><span class="label label-success">{{ $user->status }}</span></td>
                       <td>
-                        <a class="glyphicon glyphicon-trash"></a> 
+                        <a class="glyphicon glyphicon-trash" onClick="delcfm()"></a>
                         <a data-toggle="modal" data-target="#myModall" class="glyphicon glyphicon-wrench"></a>
                         <a data-toggle="modal" data-target="#myModal" class="glyphicon glyphicon-plus"></a>
                       </td>
@@ -133,4 +133,34 @@
            immediately after the control sidebar -->
       <div class="control-sidebar-bg"></div>
     </div><!-- ./wrapper -->
+
+    <!-- 信息删除确认 -->  
+    <div class="modal fade" id="delcfmModel">  
+      <div class="modal-dialog">  
+        <div class="modal-content message_align">  
+          <div class="modal-header">  
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>  
+            <h4 class="modal-title">提示信息</h4>  
+          </div>  
+          <div class="modal-body">  
+            <p>您确认要删除吗？</p>  
+          </div>  
+          <div class="modal-footer">  
+             <input type="hidden" id="url"/>  
+             <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>  
+             <a  onclick="urlSubmit()" class="btn btn-success" data-dismiss="modal">确定</a>  
+          </div>  
+        </div><!-- /.modal-content -->  
+      </div><!-- /.modal-dialog -->  
+    </div><!-- /.modal -->
+    <script type="text/javascript">
+      function delcfm(url) {  
+        $('#url').val(url);//给会话中的隐藏属性URL赋值  
+        $('#delcfmModel').modal();  
+          }  
+      function urlSubmit(){  
+              var url=$.trim($("#url").val());//获取会话中的隐藏属性URL  
+              window.location.href=url; 
+          }  
+    </script>
   @endsection

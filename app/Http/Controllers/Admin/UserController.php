@@ -20,7 +20,7 @@ class UserController extends Controller
          // 模板显示
         } 
         // dd($where);
-        $list = $db->paginate(10);
+        $list = $db->paginate(3);
         return view("admin.adminUser.user")->with(['list'=>$list,"where"=>$where]);
     }
     public function index2 (Request $request)
@@ -40,5 +40,19 @@ class UserController extends Controller
         return view("admin.user.user")->with(["list"=>$list,"where"=>$where,"num"=>$num]);
         // 数据分页
         
+    }
+    public function doAdminAdd(Request $request)
+    {
+        $data = $request->only('adminname');
+        $db = \DB::table('admin')->first();
+        // dd($ob);
+        if($request->input('adminname')){
+           $id = \DB::table('admin')->insertGetId($data);
+            if($id>0){
+                return redirect("/adminUser");
+            } 
+        }else{
+                return redirect('/adminAdd');
+        }
     }
 }
