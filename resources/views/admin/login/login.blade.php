@@ -29,7 +29,7 @@ $(document).ready(function() {
 </script>
 </head>
 <body>
-<dl class="admin_login">
+<dl class="admin_login" style="height:1000px;">
  <dt>
   <strong>站点后台管理系统</strong>
   @if(session('msg'))

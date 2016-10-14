@@ -65,6 +65,20 @@
 					<li style="margin-right:0px;"><a href="{{ URL('/lk6')}}" target="_blank"><img  src="../../home/images/homeg_36.jpg"/><span>户外系列</span></a></li>
 				</ul>
 			</div>
+			<div class="hkjdlist">
+				<div class="innterwrap">
+					<ul class="focusList">
+						<ul class="slides">
+							<li> <a href="" ><img src="../../home/images/homeg_46.jpg"/></a> </li>
+							<li> <a href=""><img src="../../home/images/homeg_48.jpg"/></a> </li>
+							<li> <a href=""><img src="../../home/images/homeg_51.jpg"/></a> </li>
+							<li> <a href=""><img src="../../home/images/homeg_54.jpg"/></a> </li>
+							<li> <a href=""><img src="../../home/images/homeg_57.jpg"/></a> </li>
+							<li> <a href=""><img src="../../home/images/homeg_59.jpg"/></a> </li>
+						</ul>
+					</ul>
+				</div>
+			</div>
 		</div>
 	</div>
 	<div class="hprolist_c">

@@ -12,16 +12,22 @@ class xinwenController extends Controller
 	//查询数据库
     public function line(Request $request)
     {
+
+       // dd($request->input('name'));
+
     	$db = \DB::table('press');
      	$where = [];
-	     	if($request->has('smallhead')){
-	             $name = $request->input('smallhead');
+	     	if($request->has('name')){
+	             $name = $request->input('name');
 	             $db->where('smallhead','like',"%{$name}%");//实现过滤控制器
 	             $where['smallhead'] = $name;
 	        // 模板显示
 	        } 
-	     $list = $db->paginate(2);
-         return view('admin.xinwen.news')->with(["list"=>$list,"where"=>$where]);
+
+         $num = 0;
+	     $list = $db->paginate(3);
+         
+         return view('admin.xinwen.news')->with(["list"=>$list,"where"=>$where,"num"=>$num]);
     }
 
     //添加新闻
@@ -56,22 +62,60 @@ class xinwenController extends Controller
 		         }else{
 		             return "添加失败";
 		         }
-    	// return view('admin.xinwen.addWen');
     }
 
 
     //执行删除 
-    public function destroy()
+    public function destroy(Request $request,$id)
     {
-        // //1 执行删除 
-        // $data = \DB::table('press')->where('id',$id)->delete();//删除制定的id
+        //1 执行删除 
+        $data = \DB::table('press')->where('id',$id)->delete();//删除制定的id
 
-        // //2 删除后执行跳转 
-        // $db = \DB::table('press');
-        
-        //return redirect('xinwen/press'); 
+        //2 删除后执行跳转 
+        $db = \DB::table('press');
+        $where = [];
+            if($request->has('smallhead')){
+                 $name = $request->input('smallhead');
+                 $db->where('smallhead', 'like', "%{$name}%");//实现过滤控制器
+                 $where['smallhead'] = $name;
+            // 模板显示
+            } 
+         $list = $db->paginate(10);
+         return redirect('xinwen/press')->with(["list"=>$list,"where"=>$where]);
 
-        return 111;
+    }
 
+    //修改页面显示
+    public function edit($id)
+    {
+        $data = \DB::table('press')->where('id',$id);
+        $list = $data->paginate(10); 
+        return view("admin/xinwen/updateWen")->with(['id'=>$id,'list'=>$list]);
+    }
+
+    //执行修改
+    public function update(REQUEST $request,$id)
+    {
+
+        $data = $request->only("bithead","smallhead","describe","img");
+
+            if($request->hasFile("img")){
+                //获取上传信息,$file是一个uploadfile的对象 
+                $file = $request->file("img");
+                //确认上传的文件是否成功
+                if($file->isValid()){
+                    $picname = $file->getClientOriginalName(); //获取上传原文件名
+                    $ext = $file->getClientOriginalExtension(); //获取上传文件名的后缀名
+                    //执行移动上传文件
+                    $filename = time().rand(1000,9999).".".$ext;
+                    $data['img'] = $filename;
+                    $file->move("admins/upload/",$filename);
+
+                }
+            }
+
+            $id = \DB::table("press")->where("id",$id)->update($data);
+            
+            return redirect('xinwen/press');
     }
 }

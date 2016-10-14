@@ -128,9 +128,9 @@ Route::get('/logout',"LoginController@logout");
 //忘记密码
 Route::get('/forgetPasswd',"LoginController@forgetPasswd");
 //录入原始账号信息
-Route::post('/doForgetPasswd',"LoginController@doForgetPasswd");
-//修改密码
-Route::get('/editPasswd',"LoginController@editPasswd");
+Route::any('/doForgetPasswd',"LoginController@doForgetPasswd");
+//执行修改密码
+Route::post("/doEditPasswd/{ob}","LoginController@doEditPasswd");
 
 
 
@@ -194,6 +194,8 @@ Route::any('/adminUser', 'Admin\UserController@adminUser');
 Route::get('/adminAdd', function () {
     return view('admin.adminuser.add');
 });
+Route::any('/doAdminAdd', 'Admin\UserController@doAdminAdd');
+
 // 查看商品列表 
 Route::any('/types','Admin\ListController@shop');
 
@@ -235,7 +237,7 @@ Route::any('xinwen/addWen',"Admin\xinwenController@title");
 //显示新闻执行添加
 Route::any('/addhead',"Admin\xinwenController@addtitle");
 
-//新闻删除
+//新闻删除,修改
 Route::resource('/Del',"Admin\xinwenController");
 
 //后台管理首页(需要登录才可以访问)

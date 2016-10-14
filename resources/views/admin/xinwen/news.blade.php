@@ -33,13 +33,14 @@
                     </tr>
                     @foreach($list as $new)
                       <tr>
-                      <th style=" text-align:center;">{{ $new->id }}</th>
+                      <th style=" text-align:center;">{{ ($list->currentPage()-1)*3+($num)+1 }}</th>
+                      <input type="hidden" value="{{ $num++ }}">
                       <th style=" text-align:center;">{{ $new->bithead }}</th>
                       <th style=" text-align:center;">{{ $new->smallhead }}</th>
                       <th style=" text-align:center;"><img src="/admins/upload/{{ $new->img }}" width="50px" height="50px"></th>
                       <th style=" text-align:center;">{{ $new->describe }}</th>
                       <th style=" text-align:center;">{{ $new->time }}</th>
-                      <td><a href="javascript:head({{ $new->id}} )"><button class="btn btn-xs btn-info" >删除</button></a></td><td><button class="btn btn-xs btn-info">查看</button></td>
+                      <td><a href="javascript:head({{ $new->id}} )" class="glyphicon glyphicon-trash" ></a></td><td><a href='{{ URL("/Del/$new->id/edit") }}' class="glyphicon glyphicon-wrench"></a></td>
                     </tr>
                     @endforeach
                   </table>
