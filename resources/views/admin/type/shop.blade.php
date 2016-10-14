@@ -39,8 +39,6 @@
                       <th><img src="/admins/upload/{{ $ob->classimage }}" width="50px" height="50"></th>
                       <td><a href="javascript:doDelt({{ $ob->id}})" class="glyphicon glyphicon-trash"></a> | <a href='{{ URL("/file/$ob->id/edit") }}' class="glyphicon glyphicon-wrench"></a> | <a href='{{ URL("/typelist/$ob->id") }}' class="glyphicon glyphicon-eye-open"></a> | <a data-toggle="modal" data-target="#myModal" class="glyphicon glyphicon-plus" onClick="tids()"></a></td>
                     </tr>
-                </div><!-- /.modal-content -->
-          </div><!-- /.modal -->
                     @endforeach
                   </table>
                 </div><!-- /.box-body -->
