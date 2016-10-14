@@ -238,9 +238,6 @@ Route::any('/addhead',"Admin\xinwenController@addtitle");
 //新闻删除,修改
 Route::resource('/Del',"Admin\xinwenController");
 
-
-
-
 //后台管理首页(需要登录才可以访问)
 Route::group(["prefix"=>"admin","middleware"=>"myauth"],function(){
 		Route::get("index","Admin\IndexController@index");//网站后台首页
