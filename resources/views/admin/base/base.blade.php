@@ -62,6 +62,11 @@
             myform.submit();
         }
       }
+      function add(tid){
+            var myform = document.getElementById('form');
+            myform.action="/addgds/"+tid;
+
+      }
     </script>
   </head>
   <body class="hold-transition skin-blue sidebar-mini">

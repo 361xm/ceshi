@@ -204,6 +204,8 @@ Route::any('/typelist/{bar}','Admin\ListController@index2');
 
 Route::resource("/addgoods",'Admin\TypeListController');
 
+Route::post('/addgds/{bar}',"Admin\TypeListController@create");
+
 //显示商品类别添加
 Route::get('/addType','Admin\UploadController@put');
 
