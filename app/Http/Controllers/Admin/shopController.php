@@ -13,7 +13,7 @@ class shopController extends Controller
      public function index(Request $request)
      {
         // 获得一个连接对象
-     	$db = \DB::table('types');
+     	$db = \DB::table('types')->where('pid','0');
      	$where = [];
      	if($request->has('name')){
              $name = $request->input('name');
@@ -24,7 +24,6 @@ class shopController extends Controller
         } 
          $list = $db->paginate(10);
          $num = 1;
-         view()->share('list', $list);
          return view("admin.type.shop")->with(["list"=>$list,"where"=>$where,"num"=>$num]);
          // 数据分页"
         

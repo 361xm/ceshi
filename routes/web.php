@@ -202,11 +202,18 @@ Route::any('/types','Admin\ListController@shop');
 // 查看指定商品类别里面的商品
 Route::any('/typelist/{bar}','Admin\ListController@index2');
 
+// 删除单个商品
+Route::any('/del/{id}','Admin\TypeListController@delgood');
+
 Route::resource("/addgoods",'Admin\TypeListController');
 
+// 添加商品
 Route::post('/addgds/{bar}',"Admin\TypeListController@create");
 
-//显示商品类别添加
+//修改商品
+Route::post('/update/{bar}','Admin\TypeListController@update');
+
+//显示商品类别
 Route::get('/addType','Admin\UploadController@put');
 
 //执行添加商品类别

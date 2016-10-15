@@ -52,7 +52,7 @@ class UploadController extends Controller
     //4 执行添加
     public function store(REQUEST $request)
     {   
-    	$data = $request->only("decipt","classname","classimage");
+    	$data = $request->only('pid','path',"decipt","classname","classimage",'goodsname','goodsprice','goodsdescript','goodsimage','stock');
         if(!empty($request->input('decipt')) && !empty($request->input("classname")) && !empty($request->file('classimage'))){
         //判断是否有上传
         if($request->hasFile("classimage")){
@@ -114,7 +114,7 @@ class UploadController extends Controller
     public function update(REQUEST $request,$id)
     {
 
-        $data = $request->only("decipt","classname","classimage");
+        $data = $request->only('pid','path',"decipt","classname","classimage");
         if(!empty($request->input('decipt')) && !empty($request->input("classname")) && !empty($request->file('classimage'))){
         //判断是否有上传
         if($request->hasFile("classimage")){
@@ -176,6 +176,7 @@ class UploadController extends Controller
     {
         //1 执行删除 
         $data = \DB::table('types')->where('id',$id)->delete();//删除制定的id
+        $data = \DB::table('goods')->where('tid',$id)->delete();//删除类下面的商品
 
         //2 删除后执行跳转 
         $db = \DB::table('types');

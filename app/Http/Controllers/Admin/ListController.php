@@ -27,7 +27,7 @@ class ListController extends Controller
 
     public function index2(Request $request,$id)
     {
-        $db = \DB::table('goods')->orwhere("tid",$id);
+        $db = \DB::table('goods')->where("tid",$id);
         $where = [];
         if($request->has('name')){
              $name = $request->input('name');

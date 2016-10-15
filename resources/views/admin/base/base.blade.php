@@ -50,9 +50,19 @@
             myform.submit();
         }
       }
+      function del(id){
+        if(confirm('确定删除吗？')){
+//                1.获得form表单节点对象
+            var myform = document.myform;
+//                2 设置提交方式
+            myform.action = "/del/"+id;
+            myform.submit();
+        }
+      }
     </script>
 
     <script type="text/javascript">
+    // 删除
        function head(id){
         if(confirm('确定删除吗？')){
 //                1.获得form表单节点对象
@@ -62,10 +72,16 @@
             myform.submit();
         }
       }
+      // 添加商品
       function add(tid){
             var myform = document.getElementById('form');
             myform.action="/addgds/"+tid;
 
+      }
+      // 修改商品
+      function update(id){
+        var myform = document.getElementById('newform');
+        myform.action = "/update/"+id;
       }
     </script>
   </head>
