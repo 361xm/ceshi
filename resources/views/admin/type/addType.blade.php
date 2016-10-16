@@ -9,7 +9,13 @@
                 <form role="form" action="{{ URL('/file')}}" method="post" enctype="multipart/form-data">
                   <input type="hidden" name="_token" value="{{ csrf_token()}}">
                   <input type="hidden" name="_method" value="post">
-                  <input type="hidden" name="gid" value="0">
+                  <input type="hidden" name="pid" value="0">
+                  <input type="hidden" name="path" value="0">
+                  <input type="hidden" name="goodsname" value="0">
+                  <input type="hidden" name="goodsprice" value="0">
+                  <input type="hidden" name="goodsdescript" value="0">
+                  <input type="hidden" name="goodsimage" value="0">
+                  <input type="hidden" name="stock" value="0">
                   <div class="box-body">
                     <div class="form-group">
                       <label for="exampleInputEmail1">添加类别</label>

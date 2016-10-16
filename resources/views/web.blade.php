@@ -1,6 +1,6 @@
 ﻿@extends('home.base.base')
 @section('content')
-<body style="background-color:#EEE">
+<body style="background-color:#EEE;">
 <link rel="stylesheet" type="text/css" href="../../home/css/simple-calendar.css">
 <!--图片轮播-->
 
@@ -84,14 +84,20 @@
 	<div class="hprolist_c">
 		<!--1F   遍历这一块-->
 		@foreach($list as $type)
-			<div class="hprolist" style="margin-top:10px;padding-bottom:35px;">
+			<div class="hprolist" style="padding-bottom:35px;">
+				<?php
+					if($type->pid==0){
+				?>
 				<div class="hptitle" style="background-image:url(cssimg/homeg_123.jpg);">
 					<strong><span style="color:#ddd;font-size:20px;float:left;padding-top:10px;padding-left:10px;" >{{ $type->classname }}</span></strong>
-					<a class="on" data-has="1" data-id="10" href="http://www.361sport.com/index.php?m=Product&a=index&sex=0&sports=12&pclass=4" target="_blank">跑步</a>
-					<a 	data-has="" data-id="11" href="http://www.361sport.com/index.php?m=Product&a=index&sex=0&sports=20&pclass=4" target="_blank">综训</a>
-					<a 	data-has="" data-id="12" href="http://www.361sport.com/index.php?m=Product&a=index&sex=0&sports=16&pclass=4" target="_blank">户外</a>
-					<a 	data-has="" data-id="13" href="http://www.361sport.com/index.php?m=Product&a=index&sex=0&sports=17&pclass=4" target="_blank">休闲</a></div>
+				</div>
+				<?php
+			}	
+				?>
 				<div class="clearfix">
+					<?php
+						if($type->pid == 0){
+					?>
 					<div class="hpleft">
 						<dl class="clearfix">
 							<dt>{{ $type->decipt }}</dt>
@@ -101,38 +107,38 @@
 								<dd><a href="#"><img  src="../../home/images/homeg_113.jpg"></a></dd>
 								<dd><a href="#"><img  src="../../home/images/homeg_111.jpg"></a></dd>
 								<dd></dd>
-							</dl>
+						</dl>
 							<dl class="clearfix">
 							<dt>精品系列</dt>
 								<dd><a href="http://www.361sport.com/index.php?m=Product&a=show&proid=5447" target="_blank"><img  src="../../home/images/homeg0415_26.jpg"></a></dd>
 								<dd><a href="http://www.361sport.com/index.php?m=Product&a=show&proid=5512" target="_blank"><img  src="../../home/images/homeg0415_28.jpg"></a></dd>
-						</dl>
-					</div>				
-					<div class="hpright">
-						<dl style="display:block">
+							</dl>
+					</div>
+					<?php
+						}if($type->pid == 0){
+					?>
+						<div class="hpright">
+							<dl style="display:block;">
 							<dt>
-							<a href="http://www.361sport.com/index.php?m=Product&a=index&sex=0&sports=12&pclass=4" target="_blank"><img src="admins/upload/{{ $type->classimage }}" width="285" height="470" /></a>
+							<a href="http://www.361sport.com/index.php?m=Product&a=index&sex=0&sports=12&pclass=4" target="_blank"><img src="admins/upload/{{ $type->goodsimage }}" width="285" height="470" style="float:left;"/></a>
 							</dt>
-							<dd><a href="/index.php?m=Product&a=show&proid=5749" target="_blank"><img src="../../home/images/m_574c0739f2abf.jpg" width="174" height="174"/><span>常规跑鞋<br /><strong>RMB139.00</strong></span></a></dd><dd><a href="/index.php?m=Product&a=show&proid=5747" target="_blank"><img src="../../home/images/m_574c062d3a2b6.jpg" width="174" height="174"/><span>常规跑鞋<br /><strong>RMB189.00</strong></span></a></dd><dd><a href="/index.php?m=Product&a=show&proid=5707" target="_blank"><img src="../../home/images/m_573ad9cc17268.jpg" width="174" height="174"/><span>常规跑鞋<br /><strong>RMB189.00</strong></span></a></dd><dd><a href="/index.php?m=Product&a=show&proid=5511" target="_blank"><img src="../../home/images/m_56f238f568e90.jpg" width="174" height="174"/><span>常规跑鞋<br /><strong>RMB169.00</strong></span></a></dd><dd><a href="/index.php?m=Product&a=show&proid=4866" target="_blank"><img src="../../home/images/m_56284130a3848.jpg" width="174" height="174"/><span>跑步文化鞋（N）<br /><strong>RMB169.00</strong></span></a></dd><dd><a href="/index.php?m=Product&a=show&proid=4069" target="_blank"><img src="../../home/images/m_5599e2a987229.jpg" width="174" height="174"/><span>复古跑鞋(N)<br /><strong>RMB159.00</strong></span></a></dd>						</dl><dl >
-							<dt>
-							<a href="http://www.361sport.com/index.php?m=Product&a=index&sex=0&sports=20&pclass=4" target="_blank"><img src="../../home/images/571458b9a52d7.jpg" width="285" height="470" /></a>
-							</dt>
-													</dl><dl >
-							<dt>
-							<a href="http://www.361sport.com/index.php?m=Product&a=index&sex=0&sports=16&pclass=4" target="_blank"><img src="../../home/images/571458c806fb0.jpg" width="285" height="470" /></a>
-							</dt>
-													</dl><dl >
-							<dt>
-							<a href="http://www.361sport.com/index.php?m=Product&a=index&sex=0&sports=17&pclass=4" target="_blank"><img src="../../home/images/571458d190630.jpg" width="285" height="470" /></a>
-							</dt>
-													</dl>				</div>
-				</div>
+							<?php
+								}
+									if($type->pid > 0){
+								
+							?>
+							<dd><a href="" target="_blank"><img src="admins/upload/{{$type->goodsimage}}" width="174" height="174"/><span>{{ $type->goodsname}}<br /><strong>RMB{{ $type->goodsprice}}</strong></span></a></dd></dl>
+						</div>
+							<?php
+							}
+							?>
 			</div>
-
+		@endforeach	
+	</div>
 			<script type="text/javascript" src="../../home/js/simple-calendar.js"></script>
 	    	<script>
 	    		 var myCalendar = new SimpleCalendar('#calendar');
 	    	</script>
-			@endforeach
+	    		
 </body>
 @endsection
