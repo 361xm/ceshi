@@ -21,10 +21,15 @@
                     <div class="form-group">
                       <label class="col-sm-2 control-label form-label">密　码:</label>
                       <div class="col-sm-8">
-                        <input type="text" class="form-control" id="card_name1" name="password">
+                        <input type="password" class="form-control" id="card_name1" name="password">
                       </div>
                     </div>
-                    
+                   <div class="form-group">
+                      <label class="col-sm-2 control-label form-label">确认密码:</label>
+                      <div class="col-sm-8">
+                        <input type="password" class="form-control" id="card_name1" name="repassword">
+                      </div>
+                    </div> 
                   </div><!-- /.box-body -->
                   <div class="box-footer">
                     <button type="submit" class="btn btn-info pull-right">添加</button>

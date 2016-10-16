@@ -83,22 +83,18 @@
 	</div>
 	<div class="hprolist_c">
 		<!--1F   遍历这一块-->
-		@foreach($list as $type)
+		
 			<div class="hprolist" style="padding-bottom:35px;">
+				@foreach($list as $type)
 				<?php
 					if($type->pid==0){
 				?>
 				<div class="hptitle" style="background-image:url(cssimg/homeg_123.jpg);">
 					<strong><span style="color:#ddd;font-size:20px;float:left;padding-top:10px;padding-left:10px;" >{{ $type->classname }}</span></strong>
 				</div>
-				<?php
-			}	
-				?>
 				<div class="clearfix">
-					<?php
-						if($type->pid == 0){
-					?>
-					<div class="hpleft">
+				<div class="hpleft">
+					
 						<dl class="clearfix">
 							<dt>{{ $type->decipt }}</dt>
 								<dd><a href="#"><img  src="../../home/images/homeg_93.jpg"></a></dd>
@@ -114,26 +110,21 @@
 								<dd><a href="http://www.361sport.com/index.php?m=Product&a=show&proid=5512" target="_blank"><img  src="../../home/images/homeg0415_28.jpg"></a></dd>
 							</dl>
 					</div>
-					<?php
-						}if($type->pid == 0){
-					?>
 						<div class="hpright">
 							<dl style="display:block;">
 							<dt>
 							<a href="http://www.361sport.com/index.php?m=Product&a=index&sex=0&sports=12&pclass=4" target="_blank"><img src="admins/upload/{{ $type->goodsimage }}" width="285" height="470" style="float:left;"/></a>
 							</dt>
 							<?php
-								}
-									if($type->pid > 0){
-								
+}
 							?>
-							<dd><a href="" target="_blank"><img src="admins/upload/{{$type->goodsimage}}" width="174" height="174"/><span>{{ $type->goodsname}}<br /><strong>RMB{{ $type->goodsprice}}</strong></span></a></dd></dl>
+						@endforeach	
+						@foreach($data as $good)
+							<dd><a href="" target="_blank"><img src="admins/upload/{{$good->goodsImage}}" width="174" height="174"/><span>{{ $good->goodsname}}<br /><strong>RMB{{ $good->goodsprice}}</strong></span></a></dd></dl>
+						@endforeach
 						</div>
-							<?php
-							}
-							?>
-			</div>
-		@endforeach	
+					</div>	
+		
 	</div>
 			<script type="text/javascript" src="../../home/js/simple-calendar.js"></script>
 	    	<script>

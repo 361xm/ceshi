@@ -43,7 +43,7 @@ class UserController extends Controller
     }
     public function doAdminAdd(Request $request)
     {
-        $data = $request->only('adminname');
+        $data = $request->only('adminname','password','repassword');
         $db = \DB::table('admin')->first();
         // dd($ob);
         if($request->input('adminname')){
