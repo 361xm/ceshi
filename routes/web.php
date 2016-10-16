@@ -160,7 +160,7 @@ Route::get('/info',"NewlinkController@info");
 Route::get('/pages',"NewlinkController@page");
 //跳转到所有产品
 Route::get('/product',"NewlinkController@product");
-Route::get('/ShopList',"NewlinkController@ShopList");
+Route::get('/ShopList/{id}',"NewlinkController@ShopList");
 
 //跳转到购物车
 Route::get('/Shoping',"NewlinkController@Shoping");
