@@ -186,9 +186,13 @@ Route::get("/admin/logout","Admin\LoginController@logout");//提交退出请求
 Route::get('/add', function () {
     return view('admin.user.add');
 });
+//查看管理员
+Route::get('/adminUser',"Admin\AdminuserController@index");
+// 修改管理员
+Route::put('/update/{id}','Admin\AdminuserController@update');
+//删除管理员
+Route::resource('/Admin',"Admin\AdminuserController");
 
-//管理员管理信息表
-Route::any('/adminUser', 'Admin\UserController@adminUser');
 
 //管理员添加用户信息表
 Route::get('/adminAdd', function () {
@@ -256,7 +260,7 @@ Route::group(["prefix"=>"admin","middleware"=>"myauth"],function(){
 // 搜索
 Route::any('/user',"Admin\UserController@index2");
 // Route::get('/admin/index','Admin\IndexController@index');
-// 增删改查用户管理
+
  
 
 

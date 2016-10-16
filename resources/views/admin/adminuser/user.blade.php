@@ -14,28 +14,32 @@
                     </form>
                   </div>
                 </div><!-- /.box-header -->
-                <div class="box-body table-responsive no-padding">
-                  <table class="table table-hover">
-                    <tr>
-                      <th>ID</th>
-                      <th>AdminUser</th>
-                      <th>Status</th>
-                      <th>操作</th>
-                    </tr>
-                    @foreach($list as $user)
-                    <tr>
-                      <td>{{ $user->id }}</td>
-                      <td>{{ $user->adminname }}</td>
-                      <td><span class="label label-success">{{ $user->status }}</span></td>
-                      <td>
-                        <a class="glyphicon glyphicon-trash" onClick="delcfm()"></a>
-                        <a data-toggle="modal" data-target="#myModall" class="glyphicon glyphicon-wrench"></a>
-                        <a data-toggle="modal" data-target="#myModal" class="glyphicon glyphicon-plus"></a>
-                      </td>
-                    </tr>
-                    @endforeach
-                  </table>
-                  </div>
+                <form action="" method="post" name="myform">
+                  <input type="hidden" name="_token" value="{{ csrf_token()}}">
+                  <input type="hidden" name="_method" value="delete">
+                    <div class="box-body table-responsive no-padding">
+                      <table class="table table-hover">
+                        <tr>
+                          <th>ID</th>
+                          <th>AdminUser</th>
+                          <th>Status</th>
+                          <th>操作</th>
+                        </tr>
+                        @foreach($list as $user)
+                        <tr>
+                          <td>{{ $user->id }}</td>
+                          <td>{{ $user->adminname }}</td>
+                          <td><span class="label label-success">{{ $user->status }}</span></td>
+                          <td>
+                            <a href="javascript:deDel({{ $user->id}})" class="glyphicon glyphicon-trash"></a>
+                            <a onclick="doupdate({{ $user->id}})" data-toggle="modal" data-target="#myModall" class="glyphicon glyphicon-wrench"></a>
+                            <a data-toggle="modal" data-target="#myModal" class="glyphicon glyphicon-plus"></a>
+                          </td>
+                        </tr>
+                        @endforeach
+                      </table>
+                    </div>
+                  </form>
                     <center style="float:right;">
                     {!! $list->appends($where)->render() !!}
                     </center>
@@ -56,31 +60,33 @@
                修改管理员
             </h4>
          </div>
-         <div class="modal-body ">
-           <form role="form">
+         <div class="modal-body" >
+           <form role="form" id="updates" name="update" method="post">
+            <input type="hidden" name="_token" value="{{ csrf_token() }}">
+            <input type="hidden" name="_method" value="put">
               <div class="form-group">
-              <label for="name">AdminUser</label>
-              <input type="text" class="form-control" id="name" placeholder="AdminUser">
+              <label for="name" >AdminUser</label>
+              <input type="text" class="form-control" id="name" placeholder="AdminUser" name="adminname">
               </div>
               <div class="form-group">
-              <label for="name">password</label>
-              <input type="password" class="form-control" id="name" placeholder="password">
+              <label for="name" >password</label>
+              <input type="password" class="form-control" id="name" placeholder="password" name="password">
               </div>
               <div class="form-group">
-              <label for="name">repassword</label>
-              <input type="password" class="form-control" id="name" placeholder="repassword">
+              <label for="name" >repassword</label>
+              <input type="password" class="form-control" id="name" placeholder="repassword" name="repassword">
               </div>
               <div class="checkbox">
               </div>
-              </form>
          </div>
          <div class="modal-footer">
             <button type="button" class="btn btn-default"
                data-dismiss="modal">取消修改
             </button>
-            <button type="button" class="btn btn-primary">
+            <button type="submit" class="btn btn-primary">
                修改管理员
             </button>
+          </form>
          </div>
       </div><!-- /.modal-content -->
 </div><!-- /.modal -->
@@ -154,13 +160,19 @@
       </div><!-- /.modal-dialog -->  
     </div><!-- /.modal -->
     <script type="text/javascript">
-      function delcfm(url) {  
-        $('#url').val(url);//给会话中的隐藏属性URL赋值  
-        $('#delcfmModel').modal();  
-          }  
-      function urlSubmit(){  
-              var url=$.trim($("#url").val());//获取会话中的隐藏属性URL  
-              window.location.href=url; 
-          }  
+      function deDel(id) {  
+                if(confirm('确定删除吗？')){
+//                1.获得form表单节点对象
+            var myform = document.myform;
+//                2 设置提交方式
+            myform.action = "/Admin/"+id;
+            myform.submit();
+        }
+      }
+        function doupdate(id) {  
+            var updates = document.getElementById('updates');
+//                2 设置提交方式
+            updates.action="/update/"+id;
+        }
     </script>
   @endsection
