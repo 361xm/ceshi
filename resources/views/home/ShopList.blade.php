@@ -106,14 +106,14 @@
 				@foreach($list as $ob)
 				<div class="pvxc_right f_l">
 					<div class="title">
-						<h1>{{ $ob->name }}</h1><span class="rand5"></span>
+						<h1>{{ $ob->goodsname }}</h1><span class="rand5"></span>
 					</div>
 					<div class="price">
 						<div class="pricenum">
 							<div class="yahei scjg">
-								吊牌价：<span class="pricec1">￥{{ $ob->price_c }}</span>
+								吊牌价：<span class="pricec1">￥{{ $ob->goodsprice+100 }}</span>
 							</div>
-							销售价 <span class="pricec2">￥{{ $ob->price }}</span> <span class="zhekou">[ 6.2折   节省￥60.00 ] </span> 
+							销售价 <span class="pricec2">￥{{ $ob->goodsprice }}</span> <span class="zhekou">[ 6.2折   节省￥60.00 ] </span> 
 						</div>
 						<div class="ktfx">
 							<div class="f_l pricekt" style="width:350px;padding-top:0px; position:relative;">

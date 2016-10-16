@@ -271,8 +271,8 @@
     <script src="{{ asset('admins/dist/js/app.min.js') }}"></script>
     <!-- AdminLTE for demo purposes -->
     <script src="{{ asset('admins/dist/js/demo.js') }}"></script>
-    <link href="{{asset('admins/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <script src="{{ asset('admin/bootstrap/js/bootstrap.min.js')"></script>
+    <!-- <link href="{{asset('admins/bootstrap/css/bootstrap.min.css') }}"rel="stylesheet"> -->
+    <!--<script src="{{ asset('admins/bootstrap/js/bootstrap.min.js') }}  "></script>-->
     @section('myscript')
     @show
   </body>

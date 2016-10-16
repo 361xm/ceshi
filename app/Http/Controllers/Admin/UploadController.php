@@ -101,20 +101,20 @@ class UploadController extends Controller
         
 
     //5 修改表单
-    // public function edit($id)
-    // {
-    //     $data = \DB::table('types')->where('id',$id);
-    //     $list = $data->paginate(10); 
-    //    return view("admin/type/upDataShop")->with(['id'=>$id,'list'=>$list]);
+    public function edit($id)
+    {
+        $data = \DB::table('types')->where('id',$id);
+        $list = $data->paginate(10); 
+       return view("admin/type/upDataShop")->with(['id'=>$id,'list'=>$list]);
 
-    // }
+    }
 
 
     //6 执行修改 
     public function update(REQUEST $request,$id)
     {
 
-        $data = $request->only('pid','path',"decipt","classname","classimage");
+        $data = $request->only("decipt","classname","classimage");
         if(!empty($request->input('decipt')) && !empty($request->input("classname")) && !empty($request->file('classimage'))){
         //判断是否有上传
         if($request->hasFile("classimage")){
@@ -133,7 +133,7 @@ class UploadController extends Controller
                   // 判断数据库中是否有这个大类
                     if(!$newData){
                  //2 写入数据库
-                 $id = \DB::table("types")->where('id',$id)->update($data);//执行添加返回自增ID号
+                 $id = \DB::table("types")->where('id',$id)->update($data,['pid'=>0,'path'=>0,'classimage'=>$filename]);//执行添加返回自增ID号
                  //3 判断是否添加成功
                  if($id>0){
                     $db = \DB::table('types');
@@ -176,20 +176,8 @@ class UploadController extends Controller
     {
         //1 执行删除 
         $data = \DB::table('types')->where('id',$id)->delete();//删除制定的id
-        $data = \DB::table('goods')->where('tid',$id)->delete();//删除类下面的商品
-
-        //2 删除后执行跳转 
-        $db = \DB::table('types');
-        $where = [];
-            if($request->has('classname')){
-                 $name = $request->input('classname');
-                 $db->where('classname', 'like', "%{$name}%");//实现过滤控制器
-                 $where['classname'] = $name;
-            // 模板显示
-            } 
-            $num = 0;
-         $list = $db->paginate(10);
-         return Redirect::to('file')->with(["list"=>$list,"where"=>$where,"num"=>$num]); 
+        \DB::table('goods')->where('tid',$id)->delete();//删除类下面的商品
+         return redirect('file');
 
     }
 

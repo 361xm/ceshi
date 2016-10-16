@@ -11,7 +11,7 @@ class TypeListController extends Controller
 {	
 	// 添加商品
 	public function create(Request $request,$id)
-	{
+	{	
 		$goodsname = $request->input('goodsname');
 		$goodsprice = $request->input('goodsprice');
 		$stock = $request->input('stock');
@@ -81,7 +81,7 @@ class TypeListController extends Controller
 	                $goodsImage = $filename;
 	                $file->move("admins/upload/",$filename);
 	            }
-	            $data = \DB::table('goods')->where('id',$id)->update(['tid'=>$id,'stock'=>$stock,'goodsname'=>$goodsname,'goodsprice'=>$goodsprice,'goodsdescript'=>$goodsdescript,'goodsImage'=>$goodsImage]);
+	            $data = \DB::table('goods')->where('id',$id)->update(['stock'=>$stock,'goodsname'=>$goodsname,'goodsprice'=>$goodsprice,'goodsdescript'=>$goodsdescript,'goodsImage'=>$goodsImage]);
 	            $db = \DB::table('goods')->where('tid',$id);
 		        $where = [];
 		            if($request->has('goodsname')){

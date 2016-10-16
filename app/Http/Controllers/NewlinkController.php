@@ -26,15 +26,15 @@
 
 		public function product()
 		{
-			$db = \DB::table('product');
+			$db = \DB::table('goods');
 			$where = [];
-			$list = $db->paginate(1);
+			$list = $db->paginate(40);
 			// dd($list);
 			return view('home/shangpin')->with(['list'=>$list,'where'=>$where]);
 		}
-		public function ShopList()
+		public function ShopList($id)
 		{
-			$list = \DB::table('product')->get();
+			$list = \DB::table('goods')->where('id',$id)->get();
 			return view('home/ShopList')->with(['list'=>$list]);
 		}
 		public function Shoping()

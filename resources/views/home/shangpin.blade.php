@@ -163,16 +163,15 @@
 	                	<div class="prl_top"></div>
 	                    	<div class="prl_c">
 		                    	<div class="prl_pic" style="position:relative;">
-		                        	<!-- {{ $p->image }} -->
-		                        	<a href="{{ URL('/ShopList') }}"><img src="admins/upload/{{ $p->image }}" style="width:190px;height:200px"></a>
+		                        	<a href='{{ URL("/ShopList/$p->id") }}'><img src="admins/upload/{{ $p->goodsImage }}" style="width:190px;height:200px"></a>
 		                        </div>
 		                        <div class="prl_2 clearfix">
 		                            <div class="prl_title">
-		                            	<div class="title">{{ $p->name }}</div>
+		                            	<div class="title">{{ $p->goodsname }}</div>
 		                            </div>
 		                            <div class="prl_des">
-		                            	{{ $p->price }}                                
-		                            	<span>吊牌价<font>{{ $p->price_c }}</font></span>
+		                            	{{ $p->goodsprice }}                                
+		                            	<span>吊牌价<font>{{ $p->goodsprice+100 }}</font></span>
 		                            </div>  
 		                        </div>
 	                    	</div>

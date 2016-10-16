@@ -26,7 +26,7 @@ class RegisterController extends Controller
 		$password = $request->input("password");
 		$repassword = $request->input("repassword");
 		// dd($repassword);
-        $ob = \DB::table('user')->first();
+        $ob = \DB::table('user');
         // dd($ob);
         if($phone==$ob->phone || $username==$ob->username || $password===$repassword){
         	\DB::table('user')->insertGetId($data);
@@ -46,7 +46,7 @@ class RegisterController extends Controller
         $phone = $request->input('phone');
         $password = $request->input('password');
         // 从数据库里面进行验证
-        $ob = \DB::table('user')->where('username',$username)->orwhere("phone",$phone)->first();
+        $ob = \DB::table('user')->where('username',$username)->orwhere("phone",$phone)->get();
         if($ob->phone){
             return "y";
         }else{

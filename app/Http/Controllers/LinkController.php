@@ -8,6 +8,6 @@
 	{
 		public function link()
 		{
-			return view('home/link');
+			return redirect('home/link');
 		}
 	}

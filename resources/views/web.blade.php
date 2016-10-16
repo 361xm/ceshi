@@ -1,4 +1,4 @@
-﻿@extends('home.base.base')
+@extends('home.base.base')
 @section('content')
 <body style="background-color:#EEE;">
 <link rel="stylesheet" type="text/css" href="../../home/css/simple-calendar.css">
