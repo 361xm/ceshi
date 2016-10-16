@@ -30,7 +30,7 @@
                 // dd($a);
                 //32跳转到后台首页
                 $list = \DB::table('types')->get();
-                return view("web",['list'=>$list]);
+                return redirect("/");
             }
             return back()->with("mag","用户或密码错误");
         }
