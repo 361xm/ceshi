@@ -25,6 +25,7 @@
 						<th width="15%" align="center"><strong>数量</strong></th>
 						<th width="15%" align="center"><strong>会员价</strong></th>
 						<th align="center"><strong>小计</strong></th>
+
 					</tr>
 				</table>
 			</th>
@@ -33,6 +34,29 @@
 						</table>
 	<div class="order_buyinfo clearfix">
 		<div class="obi_left f_l">
+			<tr id="olist">
+				<td id="olist-zero"><span data-value="1" data-cartid="75668" class="on"></span></td>
+				<td id="olist-first" colspan="5">
+					<table cellpadding="0" cellspacing="0" class="order_list">
+						<tbody><tr>
+							<td width="15%"><a href="/index.php?m=Product&amp;a=show&amp;proid=5743" target="_blank"><img src="http://361img.361sport.com.cn/product/2016/05/30/m_574c0157ec421.jpg" width="80" height="80"></a></td>
+							<td width="20%" style="text-align:left;"><span class="title">常规跑鞋</span><br>
+							颜色：黑色/361度白&nbsp;&nbsp;&nbsp;尺码：40							 <br>
+							</td>
+							<td width="20%"> ￥149.00<br><em style="font-style:normal;text-decoration: line-through; color:#999999;">￥219.00</em></td>
+							<td width="15%">
+								<div>
+																<span class="order_num" data-tid="75668"><a class="down" id="cart_less"></a><input type="text" name="textfield" id="cart_count_75668" value="1" readonly="readonly"><a class="up" id="cart_add"></a></span>								</div>
+															</td>
+							<td id="hyjg" width="15%"><span id="cart_allprice_75668">￥<em style="font-style:normal;">149.00</em></span></td>
+							<td id="xiaoji"><span id="cart_allprice_75668">￥149.00</span></td>
+						</tr>
+						<input type="hidden" name="goodsId" value="5743">					</tbody></table>
+				</td>
+				<td id="olist-second">
+					<a class="tostore pointer">收藏</a>					<a class="f6" id="del-75668" href="javascript:void(0);" data-tid="75668">删除</a>
+				</td>
+			</tr>
 			<div class="delall f_l"><span style="margin-top:0px;"></span><div style="float:left;">&nbsp;全选 <a href="javascript:void(0);" id="deleall">批量删除</a></div><div style="clear:both;"></div></div>
 			<div class="clear"></div>
 		</div>
