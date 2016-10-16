@@ -101,13 +101,13 @@ class UploadController extends Controller
         
 
     //5 修改表单
-    public function edit($id)
-    {
-        $data = \DB::table('types')->where('id',$id);
-        $list = $data->paginate(10); 
-       return view("admin/type/upDataShop")->with(['id'=>$id,'list'=>$list]);
+    // public function edit($id)
+    // {
+    //     $data = \DB::table('types')->where('id',$id);
+    //     $list = $data->paginate(10); 
+    //    return view("admin/type/upDataShop")->with(['id'=>$id,'list'=>$list]);
 
-    }
+    // }
 
 
     //6 执行修改 
