@@ -25,7 +25,6 @@
 						<th width="15%" align="center"><strong>数量</strong></th>
 						<th width="15%" align="center"><strong>会员价</strong></th>
 						<th align="center"><strong>小计</strong></th>
-
 					</tr>
 				</table>
 			</th>
