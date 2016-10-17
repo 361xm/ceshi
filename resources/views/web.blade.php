@@ -1,4 +1,4 @@
-@extends('home.base.base')
+@extends('home.base.base1')
 @section('content')
 <body style="background-color:#EEE;">
 <link rel="stylesheet" type="text/css" href="../../home/css/simple-calendar.css">
@@ -113,22 +113,23 @@
 						<div class="hpright">
 							<dl style="display:block;">
 							<dt>
-							<a href="http://www.361sport.com/index.php?m=Product&a=index&sex=0&sports=12&pclass=4" target="_blank"><img src="admins/upload/{{ $type->classimage }}" width="285" height="470" style="float:left;"/></a>
+							<a href="{{ URL('/product') }}" target="_blank"><img src="admins/upload/{{ $type->classimage }}" width="285" height="470" style="float:left;"/></a>
 							</dt>
 							<?php
 							foreach($data as $good){
 								if($good->tid == $type->id){
 									
 							?>
-							<dd><a href="" target="_blank"><img src="admins/upload/{{$good->goodsImage}}" width="174" height="174"/><span>{{ $good->goodsname}}<br /><strong>RMB{{ $good->goodsprice}}</strong></span></a></dd></dl>
+							<dd><a href="{{ URL('/product') }}" target="_blank"><img src="admins/upload/{{$good->goodsImage}}" width="174" height="174"/><span>{{ $good->goodsname}}<br /><strong>RMB{{ $good->goodsprice}}</strong></span></a></dd></dl>
 							<?php
 								}}
 							?>
 						</div>
-					</div>			<?php
+					</div>			
+					<?php
 									
-								}
-							?>
+						}
+					?>
 			</div>
 			@endforeach	
 	</div>	
