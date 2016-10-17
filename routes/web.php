@@ -275,3 +275,15 @@ Route::any('/user',"Admin\UserController@index2");
 Route::get('/',"StageController@desk");
 
 Route::get('/Ajax/Sendmessage/{phone}/{content}','AjaxController@sendMessage');
+
+//网站配置
+Route::any('/config',function(){
+	return view('admin.config.main_config');
+});
+	
+//站点配置
+Route::any('/doConfig','WordController@zhandian');
+// 网站维护页面
+Route::get('/errors',function(){
+	return view('errors.errors');
+});
