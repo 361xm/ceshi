@@ -14,15 +14,15 @@ class AdminuserController extends Controller
 	{
 		$db = \DB::table('admin');
         $where = [];
-        if($request->has('adminname')){
-            $name = $request->input('adminname');
+        if($request->has('name')){
+            $name = $request->input('name');
             $db->where('adminname', 'like', "%{$name}%");//实现过滤控制器
-            $where['name'] = $name;
+            $where['adminname'] = $name;
          // 模板显示
         } 
-        // dd($where);
-        $list = $db->paginate(10);
-        return view("admin.adminUser.user")->with(['list'=>$list,"where"=>$where]);
+        $num=0;
+        $list = $db->paginate(3);
+        return view("admin.adminUser.user")->with(['list'=>$list,"where"=>$where,"num"=>$num]);
 	}
 	// 删除管理员
 	public function destroy($id)

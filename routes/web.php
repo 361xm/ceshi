@@ -187,11 +187,17 @@ Route::get('/add', function () {
     return view('admin.user.add');
 });
 //查看管理员
-Route::get('/adminUser',"Admin\AdminuserController@index");
+Route::any('/adminUser',"Admin\AdminuserController@index");
 // 修改管理员
 Route::put('/update/{id}','Admin\AdminuserController@update');
 //删除管理员
 Route::resource('/Admin',"Admin\AdminuserController");
+
+//评论遍历
+Route::any('/comment',"Admin\mitController@index");
+
+//评论删除
+Route::resource('/ment','Admin\mitController');
 
 
 //管理员添加用户信息表
@@ -275,3 +281,4 @@ Route::any('/user',"Admin\UserController@index2");
 Route::get('/',"StageController@desk");
 
 Route::get('/Ajax/Sendmessage/{phone}/{content}','AjaxController@sendMessage');
+Route::any('/dis/{id?}','disController@replay');

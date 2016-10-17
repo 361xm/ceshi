@@ -34,6 +34,8 @@
 		}
 		public function ShopList($id)
 		{
+			// $sess = Session()->all();
+			// dd($sess);
 			$list = \DB::table('goods')->where('id',$id)->get();
 			return view('home/ShopList')->with(['list'=>$list]);
 		}

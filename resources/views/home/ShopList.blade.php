@@ -295,7 +295,7 @@
 		<div class="dh3">
 			<ul>
 				<li class="check">商品详情</li>
-				<li>商品评论(<span>0</span>)</li>
+				<li>商品评论(<span></span>)</li>
 				<li>尺码说明</li>
 			</ul>
 		</div>
@@ -346,22 +346,28 @@
 			<div class="sppl_bdh">
 				<ul>
 					<!--<li>热门商品评价(<span></span>)</li>-->
-					<li class="check">当前产品评价(<span>0</span>)</li>
+					<li class="check">当前产品评价(<span></span>)</li>
 				</ul>
+
 			</div>
 			<!--<div class="sppl_bc1 pllm">
 				<ul>
 										<li class="page"></li>
 				</ul>
 			</div>-->
+			@foreach($list as $ob)
 			<div class="sppl_bc2 pllm">
 				<style type="text/css">
 				.sppl_bc2 .size{ height: 20px; width: 700px; }
 				</style>
 				<ul>
-										<li class="page" style="background:none;"></li>
+					<li>
+						<div class="li-top"><div class="left">
+						<img src="http://361img.361sport.com.cn/shop/images/index/icon_star_2.gif" /><img src="http://361img.361sport.com.cn/shop/images/index/icon_star_2.gif" /><img src="http://361img.361sport.com.cn/shop/images/index/icon_star_2.gif" /><img src="http://361img.361sport.com.cn/shop/images/index/icon_star_2.gif" /><img src="http://361img.361sport.com.cn/shop/images/index/icon_star_2.gif" /> 真心不错</div><div class="right user-nick">{{ $ob->username }}</div><div class="right col-size"><em>颜色：</em>{{ $ob->goodscolor}}</div><div style="clear:both;"></div></div>
+						<div class="li-bottom"><div class="left" style="width:500px;">{{ $ob->goodsdiscuss }}</div><div><em>尺码：</em>{{ $ob->goodssize}}</div><div style="clear:both;"></div></div>
+											</li>					<li class="page" style="background:none;"></li>
 				</ul>
-			</div>		</div>
+			</div>	</div>
 		<div class="spxq splm" style="display:none;">
 			<div class="sizetable">
 				<div class="title"></div>
@@ -399,15 +405,34 @@
 										<li class="page"></li>
 				</ul>
 			</div>-->
-			<div class="sppl_bc2 pllm">
-				<style type="text/css">
-				.sppl_bc2 .size{ height: 20px; width: 700px; }
-				</style>
-				<ul>
-										<li class="page" style="background:none;"></li>
-				</ul>
-			</div>	</div>
+				<input type="hidden" name="_token" value="{{ csrf_token() }}">
+				<div class="sppl_bc2 pllm">
+					<style type="text/css">
+					.sppl_bc2 .size{ height: 20px; width: 700px; }
+					</style>
+					<ul>
+						<li>
+							<div class="li-top"><div class="left">
+								<img src="http://361img.361sport.com.cn/shop/images/index/icon_star_2.gif" />
+								<img src="http://361img.361sport.com.cn/shop/images/index/icon_star_2.gif" />
+								<img src="http://361img.361sport.com.cn/shop/images/index/icon_star_2.gif" />
+								<img src="http://361img.361sport.com.cn/shop/images/index/icon_star_2.gif" /><img src="http://361img.361sport.com.cn/shop/images/index/icon_star_2.gif" /> 真心不错</div>
+								<div class="right user-nick"></div><div class="right col-size"><em>颜色：</em></div><div style="clear:both;"></div>
+							</div>
+								<div class="li-bottom">
+									<div class="left" style="width:500px;"></div>
+									<div class="right user-nick"></div><div class="right  col-size">
+									<em>尺码：</em>
+								</div>
+								<div style="clear:both;"></div>
+							</div>
+						</li>
+						<li class="page" style="background:none;"></li>
+					</ul>
+				</div>
+		</div>
 	</div>
+	@endforeach
 </div>
 <div class="clear"></div>
 <!--comment End-->
