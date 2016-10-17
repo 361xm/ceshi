@@ -301,32 +301,41 @@
 			</ul>
 		</div>
 		<div class="spxq splm">
+			@foreach($list as $db)
 			<div  class="spxq_c1 yahei">
 				<div class="title"></div>
 				<div class="content clearfix">
 					<ul>
-						<li><span>品牌：</span>361°童装</li>
-						<li><span>货号：</span>K6641104</li>
-						<li><span>上市时间：</span>2016年秋季</li>
-						<li><span>性别：</span>男</li>
+						<li><span>品牌：</span>{{ $db->goodsname }}</li>
+						<li><span>货号：</span>{{ $db->goodsnumber }}</li>
+						<li><span>上市时间：</span>{{ $db->goodstime }}</li>
 					</ul>
 				</div>
 				<div class="content2"><span>商品描述：</span></div>
 			</div>
 			<div class="bottom"></div>
 			<div class="piccontent">
-								<img src="http://361img.361sport.com.cn/uploads/image/20160903/57cad604c97b8.jpg" alt="" /><br />
-<br />
-<img src="http://361img.361sport.com.cn/uploads/image/20160901/57c7cc13a60f1.jpg" alt="" /><br />
-<img src="http://361img.361sport.com.cn/uploads/image/20160901/57c7cc1445082.jpg" alt="" /><br />
-<img src="http://361img.361sport.com.cn/uploads/image/20160901/57c7cc14edabb.jpg" alt="" /><br />
-<img src="http://361img.361sport.com.cn/uploads/image/20160901/57c7cc15a3f5e.jpg" alt="" /><br />
-<img src="http://361img.361sport.com.cn/uploads/image/20160901/57c7cc15d9163.jpg" alt="" /><br />
-<img src="http://361img.361sport.com.cn/uploads/image/20160901/57c7cc160e12b.jpg" alt="" /><br />
-<img src="http://361img.361sport.com.cn/uploads/image/20160901/57c7cc171f103.jpg" alt="" /><br />
-<img src="http://361img.361sport.com.cn/uploads/image/20160901/57c7cc177c6ee.jpg" alt="" /><br />
-<img src="http://361img.361sport.com.cn/uploads/image/20160901/57c7cc188629e.jpg" alt="" /><br />
-<img src="http://361img.361sport.com.cn/uploads/image/20160901/57c7cc1b37783.jpg" alt="" /><br />			</div>		</div>
+			<img src="{{ asset('./home/images/1.jpg') }}"><br />
+			<img src="{{ asset('./home/images/2.jpg') }}"><br />
+			<img src="{{ asset('./home/images/3.jpg') }}"><br />
+			<img src="{{ asset('./home/images/4.jpg') }}"><br />
+			<img src="{{ asset('./home/images/5.jpg') }}"><br />
+			<img src="{{ asset('./home/images/6.jpg') }}"><br />
+			<img src="{{ asset('./home/images/7.jpg') }}"><br />
+			<img src="{{ asset('./home/images/8.jpg') }}"><br />
+			<img src="{{ asset('./home/images/9.jpg') }}"><br />
+			<img src="{{ asset('./home/images/10.jpg') }}"><br />
+			<img src="{{ asset('./home/images/11.jpg') }}"><br />
+			<img src="{{ asset('./home/images/12.jpg') }}"><br />
+			<img src="{{ asset('./home/images/13.jpg') }}"><br />
+			<img src="{{ asset('./home/images/14.jpg') }}"><br />
+			<img src="{{ asset('./home/images/15.jpg') }}"><br />
+			<img src="{{ asset('./home/images/16.jpg') }}"><br />
+			<img src="{{ asset('./home/images/17.jpg') }}"><br />
+			<img src="{{ asset('./home/images/18.jpg') }}"><br />
+			<img src="{{ asset('./home/images/19.jpg') }}"><br />
+			<img src="{{ asset('./home/images/20.jpg') }}"><br />
+@endforeach
 		<div class="sppl splm"  id="sppl1" style="display:none;">
 			<div class="sppl_a">
 				<div class="sppl_aleft f_l">

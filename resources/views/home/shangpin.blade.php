@@ -163,7 +163,7 @@
 	                	<div class="prl_top"></div>
 	                    	<div class="prl_c">
 		                    	<div class="prl_pic" style="position:relative;">
-		                        	<a href='{{ URL("/ShopList/$p->id") }}'><img src="admins/upload/{{ $p->goodsImage }}" style="width:190px;height:200px"></a>
+		                        	<a href='{{ URL("/ShopList/$p->id") }}'><img src="admins/upload/{{ $p->goodsImage }}" style="width:189px;height:189px" class="bigpic scrollLoading"></a>
 		                        </div>
 		                        <div class="prl_2 clearfix">
 		                            <div class="prl_title">
