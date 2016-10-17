@@ -9,8 +9,14 @@
 <link href="http://361img.361sport.com.cn/shop/css/productview.css" rel="stylesheet" type="text/css" />
 <link rel="stylesheet" type="text/css" href="http://361img.361sport.com.cn/shop/js/fancybox/jquery.fancybox-1.3.4.css" media="screen" />
 <link href="http://361img.361sport.com.cn/shop/js/artDialog/skins/default.css" rel="stylesheet" type="text/css" />
-<link rel="stylesheet" href="./admins/bootstrap/css/bootstrap.min.css">
-
+<style>
+	#dd img{
+		border:1px solid #ddd;
+	}
+	#dd img.cc{
+		border:2px solid #F39800;
+	}
+</style>
 </head>
 <body>
 <div class="newheader361"> 
@@ -143,7 +149,7 @@
 						</div>
 					</div>
 					<div class="color xx contnet_color" data-pid="6414">
-						<dl class="content_right">
+						<dl class="content_right" id="dd">
 							<dt>颜色分类</dt>
 								<dd><img src='{{ asset("admins/upload/$ob->goodsImage") }}'  width="38" height="38"/></a></dd>
 								<dd><img src='{{ asset("admins/upload/$ob->goodsImage") }}'  width="38" height="38"/></a></dd>
@@ -153,11 +159,14 @@
 					<div class="size xx contnet_size" data-pid="6414">
 						<dl class="content_right">
 							<dt>大小选择</dt>
-							<label><input name="size" type="radio" value="" />苹果 </label>
-							<label><input name="size" type="radio" value="" />桃子 </label>
-							<label><input name="size" type="radio" value="" />香蕉 </label>
-							<label><input name="size" type="radio" value="" />梨 </label>
-							<label><input name="size" type="radio" value="" />其它 </label>
+							<label><input name="Fruit" type="radio" value="" class="btn-group"/>35</label>
+							<label><input name="Fruit" type="radio" value="" />36</label>
+							<label><input name="Fruit" type="radio" value="" />37</label>
+							<label><input name="Fruit" type="radio" value="" />38</label>
+							<label><input name="Fruit" type="radio" value="" />39</label>
+							<label><input name="Fruit" type="radio" value="" />40</label>
+							<label><input name="Fruit" type="radio" value="" />41</label>
+							<label><input name="Fruit" type="radio" value="" />42</label>
 						</dl>
 					</div>
 					<div class="xx num">
@@ -287,37 +296,46 @@
 		<div class="dh3">
 			<ul>
 				<li class="check">商品详情</li>
-				<li>商品评论(<span>0</span>)</li>
+				<li>商品评论(<span></span>)</li>
 				<li>尺码说明</li>
 			</ul>
 		</div>
 		<div class="spxq splm">
+			@foreach($list as $db)
 			<div  class="spxq_c1 yahei">
 				<div class="title"></div>
 				<div class="content clearfix">
 					<ul>
-						<li><span>品牌：</span>361°童装</li>
-						<li><span>货号：</span>K6641104</li>
-						<li><span>上市时间：</span>2016年秋季</li>
-						<li><span>性别：</span>男</li>
+						<li><span>品牌：</span>{{ $db->goodsname }}</li>
+						<li><span>货号：</span>{{ $db->goodsnumber }}</li>
+						<li><span>上市时间：</span>{{ $db->goodstime }}</li>
 					</ul>
 				</div>
 				<div class="content2"><span>商品描述：</span></div>
 			</div>
 			<div class="bottom"></div>
 			<div class="piccontent">
-								<img src="http://361img.361sport.com.cn/uploads/image/20160903/57cad604c97b8.jpg" alt="" /><br />
-<br />
-<img src="http://361img.361sport.com.cn/uploads/image/20160901/57c7cc13a60f1.jpg" alt="" /><br />
-<img src="http://361img.361sport.com.cn/uploads/image/20160901/57c7cc1445082.jpg" alt="" /><br />
-<img src="http://361img.361sport.com.cn/uploads/image/20160901/57c7cc14edabb.jpg" alt="" /><br />
-<img src="http://361img.361sport.com.cn/uploads/image/20160901/57c7cc15a3f5e.jpg" alt="" /><br />
-<img src="http://361img.361sport.com.cn/uploads/image/20160901/57c7cc15d9163.jpg" alt="" /><br />
-<img src="http://361img.361sport.com.cn/uploads/image/20160901/57c7cc160e12b.jpg" alt="" /><br />
-<img src="http://361img.361sport.com.cn/uploads/image/20160901/57c7cc171f103.jpg" alt="" /><br />
-<img src="http://361img.361sport.com.cn/uploads/image/20160901/57c7cc177c6ee.jpg" alt="" /><br />
-<img src="http://361img.361sport.com.cn/uploads/image/20160901/57c7cc188629e.jpg" alt="" /><br />
-<img src="http://361img.361sport.com.cn/uploads/image/20160901/57c7cc1b37783.jpg" alt="" /><br />			</div>		</div>
+			<img src="{{ asset('./home/images/1.jpg') }}"><br />
+			<img src="{{ asset('./home/images/2.jpg') }}"><br />
+			<img src="{{ asset('./home/images/3.jpg') }}"><br />
+			<img src="{{ asset('./home/images/4.jpg') }}"><br />
+			<img src="{{ asset('./home/images/5.jpg') }}"><br />
+			<img src="{{ asset('./home/images/6.jpg') }}"><br />
+			<img src="{{ asset('./home/images/7.jpg') }}"><br />
+			<img src="{{ asset('./home/images/8.jpg') }}"><br />
+			<img src="{{ asset('./home/images/9.jpg') }}"><br />
+			<img src="{{ asset('./home/images/10.jpg') }}"><br />
+			<img src="{{ asset('./home/images/11.jpg') }}"><br />
+			<img src="{{ asset('./home/images/12.jpg') }}"><br />
+			<img src="{{ asset('./home/images/13.jpg') }}"><br />
+			<img src="{{ asset('./home/images/14.jpg') }}"><br />
+			<img src="{{ asset('./home/images/15.jpg') }}"><br />
+			<img src="{{ asset('./home/images/16.jpg') }}"><br />
+			<img src="{{ asset('./home/images/17.jpg') }}"><br />
+			<img src="{{ asset('./home/images/18.jpg') }}"><br />
+			<img src="{{ asset('./home/images/19.jpg') }}"><br />
+			<img src="{{ asset('./home/images/20.jpg') }}"><br />
+@endforeach
 		<div class="sppl splm"  id="sppl1" style="display:none;">
 			<div class="sppl_a">
 				<div class="sppl_aleft f_l">
@@ -338,22 +356,28 @@
 			<div class="sppl_bdh">
 				<ul>
 					<!--<li>热门商品评价(<span></span>)</li>-->
-					<li class="check">当前产品评价(<span>0</span>)</li>
+					<li class="check">当前产品评价(<span></span>)</li>
 				</ul>
+
 			</div>
 			<!--<div class="sppl_bc1 pllm">
 				<ul>
 										<li class="page"></li>
 				</ul>
 			</div>-->
+			@foreach($list as $ob)
 			<div class="sppl_bc2 pllm">
 				<style type="text/css">
 				.sppl_bc2 .size{ height: 20px; width: 700px; }
 				</style>
 				<ul>
-										<li class="page" style="background:none;"></li>
+					<li>
+						<div class="li-top"><div class="left">
+						<img src="http://361img.361sport.com.cn/shop/images/index/icon_star_2.gif" /><img src="http://361img.361sport.com.cn/shop/images/index/icon_star_2.gif" /><img src="http://361img.361sport.com.cn/shop/images/index/icon_star_2.gif" /><img src="http://361img.361sport.com.cn/shop/images/index/icon_star_2.gif" /><img src="http://361img.361sport.com.cn/shop/images/index/icon_star_2.gif" /> 真心不错</div><div class="right user-nick">{{ $ob->username }}</div><div class="right col-size"><em>颜色：</em>{{ $ob->goodscolor}}</div><div style="clear:both;"></div></div>
+						<div class="li-bottom"><div class="left" style="width:500px;">{{ $ob->goodsdiscuss }}</div><div><em>尺码：</em>{{ $ob->goodssize}}</div><div style="clear:both;"></div></div>
+											</li>					<li class="page" style="background:none;"></li>
 				</ul>
-			</div>		</div>
+			</div>	</div>
 		<div class="spxq splm" style="display:none;">
 			<div class="sizetable">
 				<div class="title"></div>
@@ -391,15 +415,34 @@
 										<li class="page"></li>
 				</ul>
 			</div>-->
-			<div class="sppl_bc2 pllm">
-				<style type="text/css">
-				.sppl_bc2 .size{ height: 20px; width: 700px; }
-				</style>
-				<ul>
-										<li class="page" style="background:none;"></li>
-				</ul>
-			</div>	</div>
+				<input type="hidden" name="_token" value="{{ csrf_token() }}">
+				<div class="sppl_bc2 pllm">
+					<style type="text/css">
+					.sppl_bc2 .size{ height: 20px; width: 700px; }
+					</style>
+					<ul>
+						<li>
+							<div class="li-top"><div class="left">
+								<img src="http://361img.361sport.com.cn/shop/images/index/icon_star_2.gif" />
+								<img src="http://361img.361sport.com.cn/shop/images/index/icon_star_2.gif" />
+								<img src="http://361img.361sport.com.cn/shop/images/index/icon_star_2.gif" />
+								<img src="http://361img.361sport.com.cn/shop/images/index/icon_star_2.gif" /><img src="http://361img.361sport.com.cn/shop/images/index/icon_star_2.gif" /> 真心不错</div>
+								<div class="right user-nick"></div><div class="right col-size"><em>颜色：</em></div><div style="clear:both;"></div>
+							</div>
+								<div class="li-bottom">
+									<div class="left" style="width:500px;"></div>
+									<div class="right user-nick"></div><div class="right  col-size">
+									<em>尺码：</em>
+								</div>
+								<div style="clear:both;"></div>
+							</div>
+						</li>
+						<li class="page" style="background:none;"></li>
+					</ul>
+				</div>
+		</div>
 	</div>
+	@endforeach
 </div>
 <div class="clear"></div>
 <!--comment End-->
@@ -580,6 +623,9 @@ $(document).ready(function() {
 <script type="text/javascript" src="http://361img.361sport.com.cn/shop/js/jquery.imagezoom.min.js"></script>
 <script type="text/javascript" src="http://361img.361sport.com.cn/shop/js/marquee.js"></script>
 <script type="text/javascript" src="http://361img.361sport.com.cn/shop/js/detaile.js"></script>
+<!-- <script src="{{ asset('js/jquery.darktooltip.js')}}"></script>
+<script src="{{ asset('js/examples.js')}}"></script>
+<script type="text/javascript" src="{{ asset('home/js/jquery-1.8.0.min.js')}}"></script> -->
 <script type="text/javascript">
 var collectUrl = "/index.php?m=Product&a=collect";
 var cartAjax = "/index.php?m=Product&a=cart";
@@ -590,6 +636,10 @@ var hotsellUrl = "/index.php?m=Product&a=hotselllist";
 var skulist = '[{"pro_color":"\u767d","pic1":"\/2016\/09\/01\/57c7cc76250b4.jpg","colorsize":[{"pro_sizes":"110","pro_count":"3"},{"pro_sizes":"120","pro_count":"10"},{"pro_sizes":"130","pro_count":"15"},{"pro_sizes":"140","pro_count":"23"},{"pro_sizes":"150","pro_count":"11"},{"pro_sizes":"160","pro_count":"6"},{"pro_sizes":"170","pro_count":"0"}],"number":7},{"pro_color":"\u7ea2","pic1":"\/2016\/09\/01\/57c7cc775698f.jpg","colorsize":[{"pro_sizes":"110","pro_count":"3"},{"pro_sizes":"120","pro_count":"6"},{"pro_sizes":"130","pro_count":"8"},{"pro_sizes":"140","pro_count":"9"},{"pro_sizes":"150","pro_count":"8"},{"pro_sizes":"160","pro_count":"3"},{"pro_sizes":"170","pro_count":"0"}],"number":7},{"pro_color":"\u6df1\u84dd","pic1":"\/2016\/09\/01\/57c7cc7887982.jpg","colorsize":[{"pro_sizes":"110","pro_count":"0"},{"pro_sizes":"120","pro_count":"0"},{"pro_sizes":"130","pro_count":"4"},{"pro_sizes":"140","pro_count":"3"},{"pro_sizes":"150","pro_count":"3"},{"pro_sizes":"160","pro_count":"1"},{"pro_sizes":"170","pro_count":"0"}],"number":7}]';
 var piclist = '[{"pro_color":"\u767d","pic1":"http:\/\/361img.361sport.com.cn\/product\/2016\/09\/01\/57c7cc76250b4.jpg","pic2":"http:\/\/361img.361sport.com.cn\/product\/2016\/09\/01\/57c7cc766ffb2.jpg","pic3":"http:\/\/361img.361sport.com.cn\/product\/2016\/09\/01\/57c7cc76b67b8.jpg","pic4":"http:\/\/361img.361sport.com.cn\/product\/2016\/09\/01\/57c7cc770ba11.jpg","mig1":"http:\/\/361img.361sport.com.cn\/product\/2016\/09\/01\/57c7cc76250b4.jpg","sig1":"http:\/\/361img.361sport.com.cn\/product\/2016\/09\/01\/m_57c7cc76250b4.jpg","mig2":"http:\/\/361img.361sport.com.cn\/product\/2016\/09\/01\/57c7cc766ffb2.jpg","sig2":"http:\/\/361img.361sport.com.cn\/product\/2016\/09\/01\/m_57c7cc766ffb2.jpg","mig3":"http:\/\/361img.361sport.com.cn\/product\/2016\/09\/01\/57c7cc76b67b8.jpg","sig3":"http:\/\/361img.361sport.com.cn\/product\/2016\/09\/01\/m_57c7cc76b67b8.jpg","mig4":"http:\/\/361img.361sport.com.cn\/product\/2016\/09\/01\/57c7cc770ba11.jpg","sig4":"http:\/\/361img.361sport.com.cn\/product\/2016\/09\/01\/m_57c7cc770ba11.jpg"},{"pro_color":"\u7ea2","pic1":"http:\/\/361img.361sport.com.cn\/product\/2016\/09\/01\/57c7cc775698f.jpg","pic2":"http:\/\/361img.361sport.com.cn\/product\/2016\/09\/01\/57c7cc779e52f.jpg","pic3":"http:\/\/361img.361sport.com.cn\/product\/2016\/09\/01\/57c7cc77e4b1f.jpg","pic4":"http:\/\/361img.361sport.com.cn\/product\/2016\/09\/01\/57c7cc7839e81.jpg","mig1":"http:\/\/361img.361sport.com.cn\/product\/2016\/09\/01\/57c7cc775698f.jpg","sig1":"http:\/\/361img.361sport.com.cn\/product\/2016\/09\/01\/m_57c7cc775698f.jpg","mig2":"http:\/\/361img.361sport.com.cn\/product\/2016\/09\/01\/57c7cc779e52f.jpg","sig2":"http:\/\/361img.361sport.com.cn\/product\/2016\/09\/01\/m_57c7cc779e52f.jpg","mig3":"http:\/\/361img.361sport.com.cn\/product\/2016\/09\/01\/57c7cc77e4b1f.jpg","sig3":"http:\/\/361img.361sport.com.cn\/product\/2016\/09\/01\/m_57c7cc77e4b1f.jpg","mig4":"http:\/\/361img.361sport.com.cn\/product\/2016\/09\/01\/57c7cc7839e81.jpg","sig4":"http:\/\/361img.361sport.com.cn\/product\/2016\/09\/01\/m_57c7cc7839e81.jpg"},{"pro_color":"\u6df1\u84dd","pic1":"http:\/\/361img.361sport.com.cn\/product\/2016\/09\/01\/57c7cc7887982.jpg","pic2":"http:\/\/361img.361sport.com.cn\/product\/2016\/09\/01\/57c7cc78cf2b4.jpg","pic3":"http:\/\/361img.361sport.com.cn\/product\/2016\/09\/01\/57c7cc79318fe.jpg","pic4":"http:\/\/361img.361sport.com.cn\/product\/2016\/09\/01\/57c7cc797c59d.jpg","mig1":"http:\/\/361img.361sport.com.cn\/product\/2016\/09\/01\/57c7cc7887982.jpg","sig1":"http:\/\/361img.361sport.com.cn\/product\/2016\/09\/01\/m_57c7cc7887982.jpg","mig2":"http:\/\/361img.361sport.com.cn\/product\/2016\/09\/01\/57c7cc78cf2b4.jpg","sig2":"http:\/\/361img.361sport.com.cn\/product\/2016\/09\/01\/m_57c7cc78cf2b4.jpg","mig3":"http:\/\/361img.361sport.com.cn\/product\/2016\/09\/01\/57c7cc79318fe.jpg","sig3":"http:\/\/361img.361sport.com.cn\/product\/2016\/09\/01\/m_57c7cc79318fe.jpg","mig4":"http:\/\/361img.361sport.com.cn\/product\/2016\/09\/01\/57c7cc797c59d.jpg","sig4":"http:\/\/361img.361sport.com.cn\/product\/2016\/09\/01\/m_57c7cc797c59d.jpg"}]';
 var loginUrl = "/index.php?m=Member&a=checkLogin";
+$("img").click(function(){
+   $('img').removeClass('cc');
+	$(this).toggleClass('cc');
+})
 </script>
 <script type="text/javascript">
 	$("img").click("change",function(){

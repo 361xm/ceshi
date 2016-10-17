@@ -67,7 +67,8 @@ class UploadController extends Controller
                 $data['classimage'] = $filename;
                 $file->move("admins/upload/",$filename);
             }
-        }       $newData=\DB::table('types')->where('classname',$request->input('classname'))->first();
+        }       
+        $newData=\DB::table('types')->where('classname',$request->input('classname'))->first();
 		          // 判断数据库中是否有这个大类
                     if(!$newData){
                  //2 写入数据库

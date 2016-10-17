@@ -7,9 +7,9 @@
                 <div class="box-header">
                   <h3 class="box-title">管理员信息表</h3>
                   <div class="box-tools">
-                    <form action="" method="post">
+                    <form action="{{ URL('/adminUser') }}" method="post">
                         <input type="hidden" name="_token" value="{{ csrf_token()}}">
-                        <input type="text" name="adminname" size="15" class="form-inline">
+                        <input type="text" name="name" size="15" class="form-inline">
                         <button type="submit" class="btn btn-sm btn-default"><i class="fa fa-search"></i></button>
                     </form>
                   </div>
@@ -27,7 +27,8 @@
                         </tr>
                         @foreach($list as $user)
                         <tr>
-                          <td>{{ $user->id }}</td>
+                          <td>{{ ($list->currentPage()-1)*3+($num)+1 }}</td>
+                          <input type="hidden" value="{{ $num++ }}">
                           <td>{{ $user->adminname }}</td>
                           <td><span class="label label-success">{{ $user->status }}</span></td>
                           <td>

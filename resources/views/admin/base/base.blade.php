@@ -198,7 +198,7 @@
                 <i class="fa fa-angle-left pull-right"></i>
               </a>
               <ul class="treeview-menu">
-                <li><a href="{{ URL('type/comment') }}"><i class="fa fa-circle-o"></i>管理中心</a></li>
+                <li><a href="{{ URL('/comment') }}"><i class="fa fa-circle-o"></i>管理中心</a></li>
                 <!-- <li><a href="../charts/morris.html"><i class="fa fa-circle-o"></i> Morris</a></li>
                 <li><a href="../charts/flot.html"><i class="fa fa-circle-o"></i> Flot</a></li>
                 <li><a href="../charts/inline.html"><i class="fa fa-circle-o"></i> Inline charts</a></li> -->
