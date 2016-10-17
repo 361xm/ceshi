@@ -136,7 +136,6 @@
 			<script type="text/javascript" src="../../home/js/simple-calendar.js"></script>
 	    	<script>
 	    		 var myCalendar = new SimpleCalendar('#calendar');
-	    	</script>
-	    		
+	    	</script>   		
 </body>
 @endsection
