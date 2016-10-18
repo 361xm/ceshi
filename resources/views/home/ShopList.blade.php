@@ -16,10 +16,10 @@
 	#dd img.cc{
 		border:2px solid #F39800;
 	}
- 	button{
+ 	#btns{
 		border:1px solid  #ddd;
 	}
-	button.ff{
+	#btns.ff{
 		border:2px solid #F39800;
 	}
 
@@ -168,7 +168,7 @@
 						<dl class="content_right">
 							<dt>大小选择</dt>
 							
-							<label><button type="button" value="39" class="btns">39</button></label>
+							<label><button type="button" value="39" class="btns" id="btns">39</button></label>
 						</dl>
 					</div>
 					<div class="xx num">
@@ -186,8 +186,8 @@
 							<dd><a href="http://www.361sport.com/index.php?m=Pages&a=zypx160805" style="border-bottom:1px solid #F00; text-decoration:none;">畅跑随心 专业跑鞋推荐</a></dd><dd><a href="http://www.361sport.com/index.php?m=Pages&a=xzdr20160608" style="border-bottom:1px solid #F00; text-decoration:none;">fun享一厦 夏季潮人搭配</a></dd>					</dl>
 					</div>
 					<div class="buy">
-							<span class="buynow"><a  href="javascript:void(0);" data-tid="6414"></a></span>
-							<span class="addmycart"><a  href="javascript:void(0);" data-tid="6414"></a></span><a name="tcmiaodian" id="tcmiaodian"></a>				</div>
+							<span><button>立即购买</button></span>
+							<span><button>加入购物车</button></span>			</div>
 					<input type="hidden" name="zti" id="zti" value=""/>
 					<div class="bdsharebuttonbox">
 						<span>分享到：</span><a href="#" class="bds_more" data-cmd="more"></a><a title="分享到QQ空间" href="#" class="bds_qzone" data-cmd="qzone"></a><a title="分享到新浪微博" href="#" class="bds_tsina" data-cmd="tsina"></a><a title="分享到腾讯微博" href="#" class="bds_tqq" data-cmd="tqq"></a><a title="分享到人人网" href="#" class="bds_renren" data-cmd="renren"></a><a title="分享到微信" href="#" class="bds_weixin" data-cmd="weixin"></a><a title="分享到豆瓣网" href="#" class="bds_douban" data-cmd="douban"></a>
@@ -202,6 +202,7 @@
 </div>
 <!--itemEnd-->
 <div class="clear"></div>
+<!--comment Begin-->
 <div class="pvspxq clearfix">
 	<div class="xq_left">
 		<div class="xq_search">
@@ -229,65 +230,65 @@
 </div>
 <div class="goumguo hotsell">
 	<dl class="clearfix">
-		<dt>热销款 <a class="hotrefresh"></a></dt><dd><a href="/index.php?m=Product&a=show&proid=5426" target="_blank"><img src="http://361img.361sport.com.cn/product/2016/02/20/m_56c812c49c581.jpg" height="82" width="82"/></a><div>￥149.00</div></dd><dd><a href="/index.php?m=Product&a=show&proid=5438" target="_blank"><img src="http://361img.361sport.com.cn/product/2016/02/22/m_56ca7b21a329e.jpg" height="82" width="82"/></a><div>￥189.00</div></dd><dd><a href="/index.php?m=Product&a=show&proid=5269" target="_blank"><img src="http://361img.361sport.com.cn/product/2016/01/12/m_56946372e94f5.jpg" height="82" width="82"/></a><div>￥109.00</div></dd><dd><a href="/index.php?m=Product&a=show&proid=5418" target="_blank"><img src="http://361img.361sport.com.cn/product/2016/02/20/m_56c7e1eaaa488.jpg" height="82" width="82"/></a><div>￥199.00</div></dd>				
+		<dt>热销款 <a class="hotrefresh"></a></dt><dd><a href="/index.php?m=Product&a=show&proid=5438" target="_blank"><img src="http://361img.361sport.com.cn/product/2016/02/22/m_56ca7b21a329e.jpg" height="82" width="82"/></a><div>￥189.00</div></dd><dd><a href="/index.php?m=Product&a=show&proid=5434" target="_blank"><img src="http://361img.361sport.com.cn/product/2016/02/22/m_56ca739a69082.jpg" height="82" width="82"/></a><div>￥159.00</div></dd><dd><a href="/index.php?m=Product&a=show&proid=5423" target="_blank"><img src="http://361img.361sport.com.cn/product/2016/02/20/m_56c80e9cbbf41.jpg" height="82" width="82"/></a><div>￥159.00</div></dd><dd><a href="/index.php?m=Product&a=show&proid=5418" target="_blank"><img src="http://361img.361sport.com.cn/product/2016/02/20/m_56c7e1eaaa488.jpg" height="82" width="82"/></a><div>￥199.00</div></dd>				
 	</dl>
 </div>
 <div class="goumguo">
 	<dl>
 		<dt>猜你喜欢</dt>
 		<dd>
-				<a href="/index.php?m=Product&a=show&proid=5440" target="_blank"><img src="http://361img.361sport.com.cn/product/2016/02/23/b_56cc1d7b183c3.jpg" height="200" width="200"/></a>
+				<a href="/index.php?m=Product&a=show&proid=5199" target="_blank"><img src="http://361img.361sport.com.cn/product/2015/12/08/b_5666872d9a2d3.jpg" height="200" width="200"/></a>
 			<div class="prl_info">
 				<div class="prl_color">3色</div>
 				<b>
-					<a href="/index.php?m=Product&a=show&proid=5440" target="_blank">跑步文化鞋</a>
+					<a href="/index.php?m=Product&a=show&proid=5199" target="_blank">绒里夹克</a>
 				</b>
 				<div class="prl_des">
-					￥179.00<span>吊牌价<font>￥339.00</font></span>
+					￥245.00<span>吊牌价<font>￥499.00</font></span>
 				</div>
 			</div>
 			</dd><dd>
-				<a href="/index.php?m=Product&a=show&proid=5366" target="_blank"><img src="http://361img.361sport.com.cn/product/2016/02/27/b_56d154822d132.jpg" height="200" width="200"/></a>
+				<a href="/index.php?m=Product&a=show&proid=2846" target="_blank"><img src="http://361img.361sport.com.cn/product/2015/11/17/b_564aa04c660d8.JPG" height="200" width="200"/></a>
+			<div class="prl_info">
+				<div class="prl_color">7色</div>
+				<b>
+					<a href="/index.php?m=Product&a=show&proid=2846" target="_blank">冬季男装轻质保暖白鸭绒填充羽绒服</a>
+				</b>
+				<div class="prl_des">
+					￥199.00<span>吊牌价<font>￥539.00</font></span>
+				</div>
+			</div>
+			</dd><dd>
+				<a href="/index.php?m=Product&a=show&proid=3068" target="_blank"><img src="http://361img.361sport.com.cn/product/2015/01/16/b_54b8c5e345508.jpg" height="200" width="200"/></a>
 			<div class="prl_info">
 				<div class="prl_color">3色</div>
 				<b>
-					<a href="/index.php?m=Product&a=show&proid=5366" target="_blank">综训鞋</a>
+					<a href="/index.php?m=Product&a=show&proid=3068" target="_blank">休闲鞋</a>
 				</b>
 				<div class="prl_des">
-					￥159.00<span>吊牌价<font>￥239.00</font></span>
+					￥119.00<span>吊牌价<font>￥319.00</font></span>
 				</div>
 			</div>
 			</dd><dd>
-				<a href="/index.php?m=Product&a=show&proid=5270" target="_blank"><img src="http://361img.361sport.com.cn/product/2016/01/12/b_569464e0d54a2.jpg" height="200" width="200"/></a>
-			<div class="prl_info">
-				<div class="prl_color">4色</div>
-				<b>
-					<a href="/index.php?m=Product&a=show&proid=5270" target="_blank">跑步文化鞋</a>
-				</b>
-				<div class="prl_des">
-					￥179.00<span>吊牌价<font>￥299.00</font></span>
-				</div>
-			</div>
-			</dd><dd>
-				<a href="/index.php?m=Product&a=show&proid=5433" target="_blank"><img src="http://361img.361sport.com.cn/product/2016/02/22/b_56ca72236ee8d.jpg" height="200" width="200"/></a>
+				<a href="/index.php?m=Product&a=show&proid=5358" target="_blank"><img src="http://361img.361sport.com.cn/product/2016/02/20/b_56c7c67ac29da.jpg" height="200" width="200"/></a>
 			<div class="prl_info">
 				<div class="prl_color">3色</div>
 				<b>
-					<a href="/index.php?m=Product&a=show&proid=5433" target="_blank">跑步文化鞋</a>
+					<a href="/index.php?m=Product&a=show&proid=5358" target="_blank">篮球鞋</a>
 				</b>
 				<div class="prl_des">
-					￥139.00<span>吊牌价<font>￥219.00</font></span>
+					￥289.00<span>吊牌价<font>￥539.00</font></span>
 				</div>
 			</div>
 			</dd><dd>
-				<a href="/index.php?m=Product&a=show&proid=5412" target="_blank"><img src="http://361img.361sport.com.cn/product/2016/02/20/b_56c7d279dce62.jpg" height="200" width="200"/></a>
+				<a href="/index.php?m=Product&a=show&proid=5416" target="_blank"><img src="http://361img.361sport.com.cn/product/2016/02/20/b_56c7dd590c1d8.jpg" height="200" width="200"/></a>
 			<div class="prl_info">
-				<div class="prl_color">4色</div>
+				<div class="prl_color">3色</div>
 				<b>
-					<a href="/index.php?m=Product&a=show&proid=5412" target="_blank">综训鞋</a>
+					<a href="/index.php?m=Product&a=show&proid=5416" target="_blank">板鞋</a>
 				</b>
 				<div class="prl_des">
-					￥159.00<span>吊牌价<font>￥299.00</font></span>
+					￥199.00<span>吊牌价<font>￥369.00</font></span>
 				</div>
 			</div>
 			</dd>					
@@ -297,37 +298,46 @@
 		<div class="dh3">
 			<ul>
 				<li class="check">商品详情</li>
-				<li>商品评论(<span>0</span>)</li>
+				<li>商品评论(<span></span>)</li>
 				<li>尺码说明</li>
 			</ul>
 		</div>
-		@foreach($data as $db)
 		<div class="spxq splm">
-
+			@foreach($list as $db)
 			<div  class="spxq_c1 yahei">
 				<div class="title"></div>
-				
 				<div class="content clearfix">
 					<ul>
-						<li><span>品牌：</span>{{ $db->goodsname}}</li>
-						<li><span>货号：</span>{{ $db->goodsnumber}}</li>
-						<li><span>上市时间：</span>{{ $db->goodstime}}</li>
+						<li><span>品牌：</span>{{ $db->goodsname }}</li>
+						<li><span>货号：</span>{{ $db->goodsnumber }}</li>
+						<li><span>上市时间：</span>{{ $db->goodstime }}</li>
 					</ul>
 				</div>
 				<div class="content2"><span>商品描述：</span></div>
 			</div>
 			<div class="bottom"></div>
 			<div class="piccontent">
-			<img src=' {{ asset("home/images/$db->image") }}'><br />
-			<img src=' {{ asset("home/images/$db->image1") }}'><br />
-			<img src=' {{ asset("home/images/$db->image2") }}'><br />
-			<img src=' {{ asset("home/images/$db->image3") }}'><br />
-			<img src=' {{ asset("home/images/$db->image4") }}'><br />
-			<img src=' {{ asset("home/images/$db->image5") }}'><br />
-			<img src=' {{ asset("home/images/$db->image6") }}'><br />
-			</div>	
-		</div>
-		@endforeach
+			<img src="{{ asset('./home/images/1.jpg') }}"><br />
+			<img src="{{ asset('./home/images/2.jpg') }}"><br />
+			<img src="{{ asset('./home/images/3.jpg') }}"><br />
+			<img src="{{ asset('./home/images/4.jpg') }}"><br />
+			<img src="{{ asset('./home/images/5.jpg') }}"><br />
+			<img src="{{ asset('./home/images/6.jpg') }}"><br />
+			<img src="{{ asset('./home/images/7.jpg') }}"><br />
+			<img src="{{ asset('./home/images/8.jpg') }}"><br />
+			<img src="{{ asset('./home/images/9.jpg') }}"><br />
+			<img src="{{ asset('./home/images/10.jpg') }}"><br />
+			<img src="{{ asset('./home/images/11.jpg') }}"><br />
+			<img src="{{ asset('./home/images/12.jpg') }}"><br />
+			<img src="{{ asset('./home/images/13.jpg') }}"><br />
+			<img src="{{ asset('./home/images/14.jpg') }}"><br />
+			<img src="{{ asset('./home/images/15.jpg') }}"><br />
+			<img src="{{ asset('./home/images/16.jpg') }}"><br />
+			<img src="{{ asset('./home/images/17.jpg') }}"><br />
+			<img src="{{ asset('./home/images/18.jpg') }}"><br />
+			<img src="{{ asset('./home/images/19.jpg') }}"><br />
+			<img src="{{ asset('./home/images/20.jpg') }}"><br />
+@endforeach
 		<div class="sppl splm"  id="sppl1" style="display:none;">
 			<div class="sppl_a">
 				<div class="sppl_aleft f_l">
@@ -350,32 +360,26 @@
 					<!--<li>热门商品评价(<span></span>)</li>-->
 					<li class="check">当前产品评价(<span></span>)</li>
 				</ul>
+
 			</div>
 			<!--<div class="sppl_bc1 pllm">
 				<ul>
 										<li class="page"></li>
 				</ul>
 			</div>-->
-
+			@foreach($list as $ob)
 			<div class="sppl_bc2 pllm">
-				@foreach($data as $db)
 				<style type="text/css">
 				.sppl_bc2 .size{ height: 20px; width: 700px; }
 				</style>
-				
 				<ul>
 					<li>
 						<div class="li-top"><div class="left">
-						<img src="http://361img.361sport.com.cn/shop/images/index/icon_star_2.gif" /><img src="http://361img.361sport.com.cn/shop/images/index/icon_star_2.gif" /><img src="http://361img.361sport.com.cn/shop/images/index/icon_star_2.gif" /><img src="http://361img.361sport.com.cn/shop/images/index/icon_star_2.gif" /><img src="http://361img.361sport.com.cn/shop/images/index/icon_star_2.gif" /> 真心不错</div><div class="right user-nick">{{ $db->username }}</div><div class="right col-size"><em>颜色：</em>{{ $db->goodscolor}}</div><div style="clear:both;"></div></div>
-						<div class="li-bottom">
-							<div class="left" style="width:500px;">{{ $db->goodsdiscuss }}</div>
-							<div><em>尺码：</em>{{ $db->goodssize}}</div><div style="clear:both;"></div>
-						</div>
-					</li>
-					<li class="page" style="background:none;"></li>
+						<img src="http://361img.361sport.com.cn/shop/images/index/icon_star_2.gif" /><img src="http://361img.361sport.com.cn/shop/images/index/icon_star_2.gif" /><img src="http://361img.361sport.com.cn/shop/images/index/icon_star_2.gif" /><img src="http://361img.361sport.com.cn/shop/images/index/icon_star_2.gif" /><img src="http://361img.361sport.com.cn/shop/images/index/icon_star_2.gif" /> 真心不错</div><div class="right user-nick">{{ $ob->username }}</div><div class="right col-size"><em>颜色：</em>{{ $ob->goodscolor}}</div><div style="clear:both;"></div></div>
+						<div class="li-bottom"><div class="left" style="width:500px;">{{ $ob->goodsdiscuss }}</div><div><em>尺码：</em>{{ $ob->goodssize}}</div><div style="clear:both;"></div></div>
+											</li>					<li class="page" style="background:none;"></li>
 				</ul>
-				@endforeach
-			</div>		</div>
+			</div>	</div>
 		<div class="spxq splm" style="display:none;">
 			<div class="sizetable">
 				<div class="title"></div>
@@ -413,19 +417,37 @@
 										<li class="page"></li>
 				</ul>
 			</div>-->
-			<div class="sppl_bc2 pllm">
-				<style type="text/css">
-				.sppl_bc2 .size{ height: 20px; width: 700px; }
-				</style>
-				<ul>
-										<li class="page" style="background:none;"></li>
-				</ul>
-			</div>	</div>
+				<input type="hidden" name="_token" value="{{ csrf_token() }}">
+				<div class="sppl_bc2 pllm">
+					<style type="text/css">
+					.sppl_bc2 .size{ height: 20px; width: 700px; }
+					</style>
+					<ul>
+						<li>
+							<div class="li-top"><div class="left">
+								<img src="http://361img.361sport.com.cn/shop/images/index/icon_star_2.gif" />
+								<img src="http://361img.361sport.com.cn/shop/images/index/icon_star_2.gif" />
+								<img src="http://361img.361sport.com.cn/shop/images/index/icon_star_2.gif" />
+								<img src="http://361img.361sport.com.cn/shop/images/index/icon_star_2.gif" /><img src="http://361img.361sport.com.cn/shop/images/index/icon_star_2.gif" /> 真心不错</div>
+								<div class="right user-nick"></div><div class="right col-size"><em>颜色：</em></div><div style="clear:both;"></div>
+							</div>
+								<div class="li-bottom">
+									<div class="left" style="width:500px;"></div>
+									<div class="right user-nick"></div><div class="right  col-size">
+									<em>尺码：</em>
+								</div>
+								<div style="clear:both;"></div>
+							</div>
+						</li>
+						<li class="page" style="background:none;"></li>
+					</ul>
+				</div>
+		</div>
 	</div>
+	@endforeach
 </div>
 <div class="clear"></div>
 <!--comment End-->
-
 <script src="http://tjs.sjs.sinajs.cn/open/api/js/wb.js" type="text/javascript" charset="utf-8"></script>
 <div id="bottom">
 	<!--商标-->
