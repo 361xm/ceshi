@@ -37,7 +37,9 @@
 			// $sess = Session()->all();
 			// dd($sess);
 			$list = \DB::table('goods')->where('id',$id)->get();
-			return view('home/ShopList')->with(['list'=>$list]);
+			$data = \DB::table('images')->join('goods','images.gid','=','goods.id')->get();
+			// dd($data);
+			return view('home/ShopList')->with(['list'=>$list,'data'=>$data]);
 		}
 		public function Shoping()
 		{
