@@ -316,13 +316,13 @@
 			</div>
 			<div class="bottom"></div>
 			<div class="piccontent">
-			<img src=' {{ asset("home/images/$db->image") }}'><br />
-			<img src=' {{ asset("home/images/$db->image1") }}'><br />
-			<img src=' {{ asset("home/images/$db->image2") }}'><br />
-			<img src=' {{ asset("home/images/$db->image3") }}'><br />
-			<img src=' {{ asset("home/images/$db->image4") }}'><br />
-			<img src=' {{ asset("home/images/$db->image5") }}'><br />
-			<img src=' {{ asset("home/images/$db->image6") }}'><br />
+			<img src=' {{ asset("home/images/image/$db->image") }}'><br />
+			<img src=' {{ asset("home/images/image/$db->image1") }}'><br />
+			<img src=' {{ asset("home/images/image/$db->image2") }}'><br />
+			<img src=' {{ asset("home/images/image/$db->image3") }}'><br />
+			<img src=' {{ asset("home/images/image/$db->image4") }}'><br />
+			<img src=' {{ asset("home/images/image/$db->image5") }}'><br />
+			<img src=' {{ asset("home/images/image/$db->image6") }}'><br />
 			</div>	
 		</div>
 		@endforeach
