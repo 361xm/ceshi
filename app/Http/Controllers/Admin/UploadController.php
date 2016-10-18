@@ -31,22 +31,7 @@ class UploadController extends Controller
 	     $list = $db->paginate(10);
          return view('admin.type.shop')->with(["list"=>$list,"where"=>$where,"num"=>$num]);   
     }
-     //2 查看单条学生信息
-//     public function show($id)
-//     {
-//         return "查看学生信息Id".$id;
-//     }
 
-
-//     //3 添加表单
-//     public function create()
-//     {
-// //         return "添加表单";
-//         //1 显示添加表单
-//         return view("admin.user.add");
-
-
-//     }
 
 
     //4 执行添加

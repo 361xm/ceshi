@@ -1,5 +1,5 @@
 @extends("admin.base.base")
-  @section('content')
+@section('content')
     <section class="content">
           <div class="row">
             <div class="col-xs-12">
