@@ -120,7 +120,7 @@
 								if($good->tid == $type->id){
 									
 							?>
-							<dd><a href="{{ URL('/product') }}" target="_blank"><img src="admins/upload/{{$good->goodsImage}}" width="174" height="174"/><span>{{ $good->goodsname}}<br /><strong>RMB{{ $good->goodsprice}}</strong></span></a></dd></dl>
+							<dd><a href='{{ URL("/ShopList/$good->id") }}' target="_blank"><img src="admins/upload/{{$good->goodsImage}}" width="174" height="174"/><span>{{ $good->goodsname}}<br /><strong>RMB{{ $good->goodsprice}}</strong></span></a></dd></dl>
 							<?php
 								}}
 							?>
