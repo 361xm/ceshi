@@ -16,6 +16,13 @@
 	#dd img.cc{
 		border:2px solid #F39800;
 	}
+ 	button{
+		border:1px solid  #ddd;
+	}
+	button.ff{
+		border:2px solid #F39800;
+	}
+
 </style>
 </head>
 <body>
@@ -92,7 +99,8 @@
 		<div class="tm_right">
 			<div class="buy">
 					<span class="buynow"><a  href="javascript:void(0);" data-tid="6414"></a></span>
-					<span class="addmycart"><a  href="javascript:void(0);" data-tid="6414"></a></span>			</div>
+					<!-- 加入购物车 -->
+					<span class="addmycart"><a  href=""></a></span>			</div>
 		</div>
 	</div>
 </div>
@@ -159,14 +167,8 @@
 					<div class="size xx contnet_size" data-pid="6414">
 						<dl class="content_right">
 							<dt>大小选择</dt>
-							<label><input name="Fruit" type="radio" value="" class="btn-group"/>35</label>
-							<label><input name="Fruit" type="radio" value="" />36</label>
-							<label><input name="Fruit" type="radio" value="" />37</label>
-							<label><input name="Fruit" type="radio" value="" />38</label>
-							<label><input name="Fruit" type="radio" value="" />39</label>
-							<label><input name="Fruit" type="radio" value="" />40</label>
-							<label><input name="Fruit" type="radio" value="" />41</label>
-							<label><input name="Fruit" type="radio" value="" />42</label>
+							
+							<label><button type="button" value="39" class="btns">39</button></label>
 						</dl>
 					</div>
 					<div class="xx num">
@@ -507,7 +509,7 @@
                 <dd><a href="/index.php?m=Info&a=show&id=3&cate_id=7">支付方式</a></dd>
                 <dd><a href="/index.php?m=Info&a=show&id=4&cate_id=7">发票说明</a></dd>
             </dl>
-            <dl>
+            <dl>	
             	<dt>物流配送</dt>
                 <dd><a href="/index.php?m=Info&a=show&id=5&cate_id=7">配送时间和范围</a></dd>
                 <dd><a href="/index.php?m=Info&a=show&id=6&cate_id=7">配送费用</a></dd>
@@ -555,39 +557,14 @@
 <script type="text/javascript" src="http://361img.361sport.com.cn/shop/js/artDialog/artDialog.js"></script>
 <script type="text/javascript" src="http://361img.361sport.com.cn/shop/js/fancybox/jquery.fancybox-1.3.4.js"></script>
 <script type="text/javascript" src="http://361img.361sport.com.cn/shop/js/common.js"></script>
+<script type="text/javascript" src="{{ asset('home/js/jquery-1.8.0.min.js')}}"></script>
 <script type="text/javascript">
 var signUrl = "/index.php?m=User&a=signIn";
 </script>
-<!--双十一领优惠券-->
 <script type="text/javascript">
-$(document).ready(function(){
-	$("map#Mapjtr").find("area").live("click",function(){
-		var type = $(this).attr("data-type");
-		var linkurl = "/index.php?m=Pages&a=getcoupon3";
-		$.post(linkurl,{type:type},function( result ){
-			if( result.status == '1' ){
-				artDialog.login("账户登陆"); return false;
-			} else if( result.status == '2' ){
-				artDialog.tips(result.msg,2,"error"); return false;
-			} else {
-				artDialog.tips(result.msg,2,"succeed"); return true;
-			}
-		},"json")
+	$('.btns').click(function(){
+		alert($(this).html());
 	});
-	$("map#Mapschl").find("area").live("click",function(){
-		var type = $(this).attr("data-type");
-		var linkurl = "/index.php?m=Pages&a=getcoupon3";
-		$.post(linkurl,{type:type},function( result ){
-			if( result.status == '1' ){
-				artDialog.login("账户登陆"); return false;
-			} else if( result.status == '2' ){
-				artDialog.tips(result.msg,2,"error"); return false;
-			} else {
-				artDialog.tips(result.msg,2,"succeed"); return true;
-			}
-		},"json")
-	});
-});
 </script>
 <script>
 var _hmt = _hmt || [];
@@ -623,6 +600,7 @@ $(document).ready(function() {
 <script type="text/javascript" src="http://361img.361sport.com.cn/shop/js/jquery.imagezoom.min.js"></script>
 <script type="text/javascript" src="http://361img.361sport.com.cn/shop/js/marquee.js"></script>
 <script type="text/javascript" src="http://361img.361sport.com.cn/shop/js/detaile.js"></script>
+<script src="{{ asset('admins/bootstrap/js/bootstrap.min.js') }}"></script>
 <!-- <script src="{{ asset('js/jquery.darktooltip.js')}}"></script>
 <script src="{{ asset('js/examples.js')}}"></script>
 <script type="text/javascript" src="{{ asset('home/js/jquery-1.8.0.min.js')}}"></script> -->
@@ -640,9 +618,20 @@ $("img").click(function(){
    $('img').removeClass('cc');
 	$(this).toggleClass('cc');
 })
+$("button").click(function(){
+   $('button').removeClass('ff');
+	$(this).toggleClass('ff');
+})
 </script>
 <script type="text/javascript">
 	$("img").click("change",function(){
+		if($(this).attr("checked")=='checked'){
+		$(this).css("background","url(src_checked) no-repeat");
+		}else{
+		$(this).css("background","url(src_nocheck) no-repeat");
+		}
+		});
+	$("button").click("change",function(){
 		if($(this).attr("checked")=='checked'){
 		$(this).css("background","url(src_checked) no-repeat");
 		}else{
