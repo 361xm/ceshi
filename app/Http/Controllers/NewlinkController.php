@@ -45,8 +45,8 @@
 		}
 
 		public function center()
-		{
-			return view('home/center');
+		{	$configs = \DB::table('config')->get();
+			return view('home/center')->with('configs',$configs);
 		}
 		public function edit()
 		{
