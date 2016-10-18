@@ -11,27 +11,27 @@
                 <!-- form start -->
                 <form class="form-horizontal" action="/doAdminAdd" method="post">
                   <input type="hidden" name="_token()" value="{{ csrf_token() }}">
-                 <div class="row form-horizontal">
+                 <div class="row form-horizontal" style="width:600px;margin:0px auto;">
                     <div class="form-group">
                       <label class="col-sm-2 control-label form-label">用户名:</label>
-                      <div class="col-sm-8">
+                      <div class="col-sm-6">
                         <input type="text" class="form-control" id="card_name" name="adminname">
                       </div>
                     </div>
                     <div class="form-group">
                       <label class="col-sm-2 control-label form-label">密　码:</label>
-                      <div class="col-sm-8">
+                      <div class="col-sm-6">
                         <input type="password" class="form-control" id="card_name1" name="password">
                       </div>
                     </div>
                    <div class="form-group">
                       <label class="col-sm-2 control-label form-label">确认密码:</label>
-                      <div class="col-sm-8">
+                      <div class="col-sm-6">
                         <input type="password" class="form-control" id="card_name1" name="repassword">
                       </div>
                     </div> 
                   </div><!-- /.box-body -->
-                  <div class="box-footer">
+                  <div class="box-footer" style="margin-right:300px">
                     <button type="submit" class="btn btn-info pull-right">添加</button>
                   </div><!-- /.box-footer -->
                 </form>

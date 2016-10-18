@@ -147,7 +147,7 @@
 							<span><input type="text" name="phone_zone" id="phone_zone"  value="" style="width:74px;" /></span> -
 							<span><input type="text" name="phone" id="phone"  value="" style="width:132px;" /></span> -
 							<span><input type="text" name="phone_opx" id="phone_opx"  value="" style="width:74px;" /></span>
-							&nbsp;&nbsp;区号-电话号码-分机
+							区号-电话号码-分机
 					  </dd>
 					</dl>
 				</div>
