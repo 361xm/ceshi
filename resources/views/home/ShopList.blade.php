@@ -299,7 +299,7 @@
 				<li>尺码说明</li>
 			</ul>
 		</div>
-		@foreach($data as $db)
+		
 		<div class="spxq splm">
 
 			<div  class="spxq_c1 yahei">
@@ -307,25 +307,27 @@
 				
 				<div class="content clearfix">
 					<ul>
-						<li><span>品牌：</span>{{ $db->goodsname}}</li>
-						<li><span>货号：</span>{{ $db->goodsnumber}}</li>
-						<li><span>上市时间：</span>{{ $db->goodstime}}</li>
+						<li><span>品牌：</span>xxx</li>
+						<li><span>货号：</span>xxx</li>
+						<li><span>上市时间：</span>xxx</li>
 					</ul>
 				</div>
 				<div class="content2"><span>商品描述：</span></div>
 			</div>
 			<div class="bottom"></div>
+			@foreach($data as $db)
 			<div class="piccontent">
-			<img src=' {{ asset("home/images/image/$db->image") }}'><br />
-			<img src=' {{ asset("home/images/image/$db->image1") }}'><br />
-			<img src=' {{ asset("home/images/image/$db->image2") }}'><br />
-			<img src=' {{ asset("home/images/image/$db->image3") }}'><br />
-			<img src=' {{ asset("home/images/image/$db->image4") }}'><br />
-			<img src=' {{ asset("home/images/image/$db->image5") }}'><br />
-			<img src=' {{ asset("home/images/image/$db->image6") }}'><br />
+			<img src=' {{ asset("admins/upload/$db->image") }}'><br />
+			<img src=' {{ asset("admins/upload/$db->image1") }}'><br />
+			<img src=' {{ asset("admins/upload/$db->image2") }}'><br />
+			<img src=' {{ asset("admins/upload/$db->image3") }}'><br />
+			<img src=' {{ asset("admins/upload/$db->image4") }}'><br />
+			<img src=' {{ asset("admins/upload/$db->image5") }}'><br />
+			<img src=' {{ asset("admins/upload/$db->image6") }}'><br />
 			</div>	
+			@endforeach
 		</div>
-		@endforeach
+		
 		<div class="sppl splm"  id="sppl1" style="display:none;">
 			<div class="sppl_a">
 				<div class="sppl_aleft f_l">
@@ -356,7 +358,6 @@
 			</div>-->
 
 			<div class="sppl_bc2 pllm">
-				@foreach($data as $db)
 				<style type="text/css">
 				.sppl_bc2 .size{ height: 20px; width: 700px; }
 				</style>
@@ -364,15 +365,14 @@
 				<ul>
 					<li>
 						<div class="li-top"><div class="left">
-						<img src="http://361img.361sport.com.cn/shop/images/index/icon_star_2.gif" /><img src="http://361img.361sport.com.cn/shop/images/index/icon_star_2.gif" /><img src="http://361img.361sport.com.cn/shop/images/index/icon_star_2.gif" /><img src="http://361img.361sport.com.cn/shop/images/index/icon_star_2.gif" /><img src="http://361img.361sport.com.cn/shop/images/index/icon_star_2.gif" /> 真心不错</div><div class="right user-nick">{{ $db->username }}</div><div class="right col-size"><em>颜色：</em>{{ $db->goodscolor}}</div><div style="clear:both;"></div></div>
+						<img src="http://361img.361sport.com.cn/shop/images/index/icon_star_2.gif" /><img src="http://361img.361sport.com.cn/shop/images/index/icon_star_2.gif" /><img src="http://361img.361sport.com.cn/shop/images/index/icon_star_2.gif" /><img src="http://361img.361sport.com.cn/shop/images/index/icon_star_2.gif" /><img src="http://361img.361sport.com.cn/shop/images/index/icon_star_2.gif" /> 真心不错</div><div class="right user-nick"></div><div class="right col-size"><em>颜色：</em></div><div style="clear:both;"></div></div>
 						<div class="li-bottom">
-							<div class="left" style="width:500px;">{{ $db->goodsdiscuss }}</div>
-							<div><em>尺码：</em>{{ $db->goodssize}}</div><div style="clear:both;"></div>
+							<div class="left" style="width:500px;"></div>
+							<div><em>尺码：</em></div><div style="clear:both;"></div>
 						</div>
 					</li>
 					<li class="page" style="background:none;"></li>
 				</ul>
-				@endforeach
 			</div>		</div>
 		<div class="spxq splm" style="display:none;">
 			<div class="sizetable">

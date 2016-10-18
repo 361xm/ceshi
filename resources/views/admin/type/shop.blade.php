@@ -87,6 +87,22 @@
                       <input type="file" id="inputfile" name="goodsImage">
                       <p class="help-block">请添加图片</p>
                       </div>
+                       <div class="form-group">
+                      <label for="inputfile">上传子图</label>
+                      <input type="file" id="inputfile" name="image">
+                      <p class="help-block">请添加图片</p>
+                      <input type="file" id="inputfile" name="image1">
+                      <p class="help-block">请添加图片</p>
+                      <input type="file" id="inputfile" name="image2">
+                      <p class="help-block">请添加图片</p>
+                      <input type="file" id="inputfile" name="image3">
+                      <p class="help-block">请添加图片</p>
+                      <input type="file" id="inputfile" name="image4">
+                      <p class="help-block">请添加图片</p>
+                      <input type="file" id="inputfile" name="image5">
+                      <p class="help-block">请添加图片</p>
+
+                      </div>
                       <div class="checkbox">
                       </div>
                    </div>

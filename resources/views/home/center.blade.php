@@ -68,7 +68,7 @@
                 <div class="pclass">
                     <ul>
                         <li><a href="/index.php?m=User&a=profile">个人档案</a></li>
-                        <li><a href="/index.php?m=User&a=password">修改登录密码</a></li>
+                        <li><a href='{{ URL("/forgetPasswd") }}'>修改登录密码</a></li>
                     </ul>
                 </div>
             </div>

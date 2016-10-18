@@ -10,23 +10,23 @@
                 </div><!-- /.box-header -->
                 <!-- form start -->
                 <form class="form-horizontal" action="/stu" method="post">
-                 <div class="row form-horizontal">
+                 <div class="row form-horizontal" style="width:500px;margin:0px auto;">
                     <div class="form-group">
                       <label class="col-sm-2 control-label form-label">手机号:</label>
-                      <div class="col-sm-8">
+                      <div class="col-sm-6">
                         <input type="text" class="form-control" id="card_name1" name="phone">
                       </div>
                     </div>
                     <div class="form-group">
                       <label class="col-sm-2 control-label form-label">用户名:</label>
-                      <div class="col-sm-8">
+                      <div class="col-sm-6">
                         <input type="text" class="form-control" id="card_name2" name="username">
                       </div>
                     </div>
                     <div class="form-group">
                       <label class="col-sm-2 control-label form-label">密　码:</label>
-                      <div class="col-sm-8">
-                        <input type="text" class="form-control" id="card_name3" name="password">
+                      <div class="col-sm-6">
+                        <input type="text"  class="form-control" id="card_name3" name="password">
                       </div>
                     </div>
                     <script type="text/javascript">
@@ -70,7 +70,7 @@
                       </div>
                     </div>
                   </div><!-- /.box-body -->
-                  <div class="box-footer">
+                  <div class="box-footer" style="margin-right:300px;">
                     <button type="submit" class="btn btn-info pull-right" onclick="toValidate()">添加</button>
                   </div><!-- /.box-footer -->
                   </div> 
