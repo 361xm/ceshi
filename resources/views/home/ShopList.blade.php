@@ -317,27 +317,16 @@
 			</div>
 			<div class="bottom"></div>
 			<div class="piccontent">
-			<img src="{{ asset('./home/images/1.jpg') }}"><br />
-			<img src="{{ asset('./home/images/2.jpg') }}"><br />
-			<img src="{{ asset('./home/images/3.jpg') }}"><br />
-			<img src="{{ asset('./home/images/4.jpg') }}"><br />
-			<img src="{{ asset('./home/images/5.jpg') }}"><br />
-			<img src="{{ asset('./home/images/6.jpg') }}"><br />
-			<img src="{{ asset('./home/images/7.jpg') }}"><br />
-			<img src="{{ asset('./home/images/8.jpg') }}"><br />
-			<img src="{{ asset('./home/images/9.jpg') }}"><br />
-			<img src="{{ asset('./home/images/10.jpg') }}"><br />
-			<img src="{{ asset('./home/images/11.jpg') }}"><br />
-			<img src="{{ asset('./home/images/12.jpg') }}"><br />
-			<img src="{{ asset('./home/images/13.jpg') }}"><br />
-			<img src="{{ asset('./home/images/14.jpg') }}"><br />
-			<img src="{{ asset('./home/images/15.jpg') }}"><br />
-			<img src="{{ asset('./home/images/16.jpg') }}"><br />
-			<img src="{{ asset('./home/images/17.jpg') }}"><br />
-			<img src="{{ asset('./home/images/18.jpg') }}"><br />
-			<img src="{{ asset('./home/images/19.jpg') }}"><br />
-			<img src="{{ asset('./home/images/20.jpg') }}"><br />
-@endforeach
+			<img src=' {{ asset("home/images/image/$db->image") }}'><br />
+			<img src=' {{ asset("home/images/image/$db->image1") }}'><br />
+			<img src=' {{ asset("home/images/image/$db->image2") }}'><br />
+			<img src=' {{ asset("home/images/image/$db->image3") }}'><br />
+			<img src=' {{ asset("home/images/image/$db->image4") }}'><br />
+			<img src=' {{ asset("home/images/image/$db->image5") }}'><br />
+			<img src=' {{ asset("home/images/image/$db->image6") }}'><br />
+			</div>	
+		</div>
+		@endforeach
 		<div class="sppl splm"  id="sppl1" style="display:none;">
 			<div class="sppl_a">
 				<div class="sppl_aleft f_l">
