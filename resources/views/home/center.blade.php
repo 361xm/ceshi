@@ -25,11 +25,11 @@
             <div class="userinfo">
                 <div class="username Arial fbold">{{ session('adminuser')->username }}</div>
                 <div style="margin-top:5px;">普通会员&nbsp;积分：0</div>
-                <a class="useredit" href="{{ URL('/edit') }}">编辑个人资料</a>
+                <a class="useredit" href="{{ URL('/edit') }}" style="color:orange;">添加个人资料</a>
+                <a class="useredit" href="{{ URL('/doCenter')}}" style="color:orange;">修改个人资料</a>
             </div>
             <div class="userinfo2">
                 <a href="/index.php?m=User&a=comlist"><span>0</span>商品评论</a>
-                <a href="/index.php?m=User&a=collect"><span>1</span>我的收藏</a>
                 <a href="/index.php?m=User&a=order&order=status&status=1"><span>0</span>处理中订单</a>
             </div>
             <div>
@@ -41,12 +41,6 @@
                     </ul>
                 </div>
             </div>
-            <div>
-                <div class="pclass_title clearfix"><a href="/index.php?m=User&a=coupon">卡券中心(1)</a></div>
-            </div>
-            <div>
-                <div class="pclass_title clearfix"><a href="/index.php?m=User&a=collect">收藏管理</a></div>
-            </div>
 			<!--
             <div>
                 <div class="pclass_title clearfix"><a href="/index.php?m=User&a=exchange">我的积分</a></div>
@@ -55,7 +49,6 @@
                 <div class="pclass_title clearfix close"><span></span>我的评论</div>
                 <div class="pclass">
                     <ul>
-                        <li><a href="/index.php?m=User&a=comment">未完成评论</a></li>
                         <li><a href="/index.php?m=User&a=comlist">发表过的评论</a></li>
                     </ul>
                 </div>
@@ -67,7 +60,7 @@
                 <div class="pclass_title clearfix close"><span></span>账户设置</div>
                 <div class="pclass">
                     <ul>
-                        <li><a href="/index.php?m=User&a=profile">个人档案</a></li>
+                        <li><a href="{{ URL('/doCenter') }}">个人档案</a></li>
                         <li><a href='{{ URL("/forgetPasswd") }}'>修改登录密码</a></li>
                     </ul>
                 </div>

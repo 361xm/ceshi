@@ -79,7 +79,7 @@
         }
 
     //执行修改密码
-     public function doEditPasswd(Request $request,$id)
+     public function doEditPasswd(Request $request)
     {   
         $id = session()->get('username');
         // dd($id);
@@ -88,11 +88,12 @@
         $repassword = $request->input('repassword');
         // dd($repasswd);
         if($password===$repassword){
-            $ob = \DB::table('user')->where('id',$id)->update($data);
+            $ob = \DB::table('user')->where('username',$id)->update($data);
             
             return view('/home/login');
         }else{
-             return back()->with("mvg","密码不一致");
+            $mvg = "密码不一致";
+             return view('/home/editPasswd')->with(["mvg",$mvg]);
         }
     }
 }
