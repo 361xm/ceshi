@@ -238,9 +238,7 @@ Route::get('type/comment',function () {
 });
 
 //显示订单详情表
-Route::get('type/order',function () {
-	return view('admin.type.order');
-});
+Route::any('type/order',"Admin\WordController@index");
 
 //显示添加订单表
 Route::get('type/addorder',function () {
@@ -293,3 +291,23 @@ Route::any('/doConfig','WordController@zhandian');
 Route::get('/errors',function(){
 	return view('errors.errors');
 });
+
+//链接显示
+Route::any('/interlinkage',"Admin\lianController@index");
+
+//显示添加链接
+Route::get('/addinter',"Admin\lianController@wang");
+
+//执行添加链接
+Route::any('/qj', 'Admin\lianController@doqj');
+
+//执行删除
+Route::resource('/adcDel', 'Admin\lianController');
+
+//Route::any('/shui', 'Admin\lianController@update');
+
+Route::get('/shui',function(){
+	return 123;
+});
+
+Route::any('/hao',"Admin\lianController@index");

@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html>
   <head>
     <meta charset="utf-8">
@@ -245,6 +244,15 @@
               <ul class="treeview-menu">
                 <li><a href="{{ URL('/config') }}"><i class="fa fa-circle-o"></i>网站配置</a></li>
                 
+              </ul>
+            </li>
+            <li class="treeview">
+              <a href="#">
+                <i class="fa fa-dashboard"></i> <span>友情链接</span> <i class="fa fa-angle-left pull-right"></i>
+              </a>
+              <ul class="treeview-menu">
+                <li><a href="{{ URL('/interlinkage') }}"><i class="fa fa-circle-o"></i>友情链接表</a></li>
+                <li><a href="{{ URL('/addinter') }}"><i class="fa fa-circle-o"></i>添加链接</a></li>
               </ul>
             </li>
           </ul>

@@ -34,7 +34,7 @@
                           <td>
                             <a href="javascript:deDel({{ $user->id}})" class="glyphicon glyphicon-trash"></a>
                             <a onclick="doupdate({{ $user->id}})" data-toggle="modal" data-target="#myModall" class="glyphicon glyphicon-wrench"></a>
-                            <a data-toggle="modal" data-target="#myModal" class="glyphicon glyphicon-plus"></a>
+                            <a class="glyphicon glyphicon-plus"></a>
                           </td>
                         </tr>
                         @endforeach
@@ -105,33 +105,15 @@
                   &times;
             </button>
             <h4 class="modal-title" id="myModalLabel">
-               添加管理员
+               修改权限
             </h4>
-         </div>
-         <div class="modal-body ">
-           <form role="form">
-              <div class="form-group">
-              <label for="name">名称</label>
-              <input type="text" class="form-control" id="name" placeholder="请输入名称">
-              </div>
-              <div class="form-group">
-              <label for="name">密码</label>
-              <input type="text" class="form-control" id="name" placeholder="请输入密码">
-              </div>
-              <div class="form-group">
-              <label for="name">确认密码</label>
-              <input type="text" class="form-control" id="name" placeholder="请确认名称">
-              </div>
-              <div class="checkbox">
-              </div>
-              </form>
          </div>
          <div class="modal-footer">
             <button type="button" class="btn btn-default"
-               data-dismiss="modal">取消添加
+               data-dismiss="modal">取消修改
             </button>
             <button type="button" class="btn btn-primary">
-               添加管理员
+               修改权限
             </button>
          </div>
       </div><!-- /.modal-content -->
@@ -155,7 +137,7 @@
           <div class="modal-footer">  
              <input type="hidden" id="url"/>  
              <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>  
-             <a  onclick="urlSubmit()" class="btn btn-success" data-dismiss="modal">确定</a>  
+             <a onclick="urlSubmit()" class="btn btn-success" data-dismiss="modal">确定</a>  
           </div>  
         </div><!-- /.modal-content -->  
       </div><!-- /.modal-dialog -->  
