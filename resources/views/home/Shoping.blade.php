@@ -4,11 +4,17 @@
 <link href="{{ asset('home/gouwche/css/lanrenzhijia.css')}}" rel="stylesheet" type="text/css" />
 <script src="{{ asset('home/gouwche/js/jquery.1.4.2-min.js')}}"></script>
 <script src="{{ asset('home/gouwche/js/Calculation.js')}}"></script>
+<script src="{{ asset('home/gouwche/jquery.spinner.min.js')}}"></script>
+<script src="{{ asset('home/gouwche/bootstrap-spinner.css')}}"></script>
 <style type="text/css">
 .divA{ width:320px; margin-left:500px; padding-top:4px;	height:200px;}
 .divA a{padding: 13px 50px;margin-left:55px; display:inline-block;}
 .tishi1{width:350px;margin-bottom: 10px;float:right;color:#000;background:#F79646;height:15px;padding:3px 5px;letter-spacing:1px;}
 .order_l_r1 { margin-bottom: 30px; }
+.gw_num{border: 1px solid #dbdbdb;width: 110px;line-height: 26px;overflow: hidden;}
+.gw_num em{display: block;height: 26px;width: 26px;float: left;color: #7A7979;border-right: 1px solid #dbdbdb;text-align: center;cursor: pointer;}
+.gw_num .num{display: block;float: left;text-align: center;width: 52px;font-style: normal;font-size: 14px;line-height: 24px;border: 0;}
+.gw_num em.add{float: right;border-right: 0;border-left: 1px solid #dbdbdb;}
 </style>
 <div class="ordercon clearfix">
     <div class="order_l_right order_l_r1 f_r"></div>
@@ -16,25 +22,6 @@
 </div>
 <div class="clear"></div>
 <div class="ordercon">
-    <table width="100%" border="0" cellspacing="0" cellpadding="0" class="order_listdh" height="32">
-		<tr>
-			<th width="5%" align="center" id="allCheck"><span style="margin-top:0px;"></span></th>
-			<th colspan="5">
-				<table cellpadding="0" cellspacing="0" width="100%">
-					<tr>
-						<th width="15%">&nbsp;</th>
-						<th width="20%"><strong>商品</strong></th>
-						<th width="20%" align="center"><strong>单价</strong></th>
-						<th width="15%" align="center"><strong>数量</strong></th>
-						<th width="15%" align="center"><strong>会员价</strong></th>
-						<th align="center"><strong>小计</strong></th>
-					</tr>
-				</table>
-			</th>
-			<th width="8%" align="center"><strong>操作</strong></th>
-			
-		</tr>
-	</table>
 <table cellpadding="0" cellspacing="0" class="gwc_tb1">
     <tr>
       <td class="tb1_td1"><input id="Checkbox1" type="checkbox"  class="allselect"/></td>
@@ -49,63 +36,62 @@
 			           <?php 
 			           		if(isset($list)){
 			           ?>
-
-			           @foreach($list as $gb)
-
-  
   <!---商品加减算总数---->
   <table cellpadding="0" cellspacing="0" class="gwc_tb2">
-    <tr>
+  @foreach($list as $gb)
+  
+    <tr id="olist">
       <td class="tb2_td1"><input type="checkbox" value="1" name="newslist" id="newslist-1" /></td>
       <td class="tb2_td2"><a href="#"><img src="images/img1.jpg"/></a></td>
       <td class="tb2_td3"><a href="#">{{ $gb->goodname}}</a></td>
       <td class="tb1_td4">一件</td>
-      <td class="tb1_td5"><input id="min1" name=""  style=" width:20px; height:18px;border:1px solid #ccc;" type="button" value="-" />
-        <input id="text_box1" name="" type="text" value="1" style=" width:30px; text-align:center; border:1px solid #ccc;" />
-        <input id="add1" name="" style=" width:20px; height:18px;border:1px solid #ccc;" type="button" value="+" />
+      <td class="tb1_td5">
+        <div class="gw_num">
+          <em class="jian" onclick="jian()">-</em>
+          <input type="text" value="1" class="num" id="vals"/>
+          <em class="add" onclick="jia()">+</em>
+        </div>
       </td>
-      <td class="tb1_td6"><label id="total1" class="tot" style="color:#ff5500;font-size:14px; font-weight:bold;"></label></td>
-      <td class="tb1_td7"><button onclick="viods({{ $gb->id }})">删除</button></td>
-    </tr>
+      <td class="tb1_td6"><label id="total1" class="tot" style="color:#ff5500;font-size:14px; font-weight:bold;">{{ $gb->goodsprice}}</label></td>
+      <td class="tb1_td7"><button onclick="voids({{ $gb->id }})">删除</button></td>
+    </tr> @endforeach
   </table>
-  <!---商品加减算总数---->
   
-	@endforeach
-	<?php
-		}else{
-			echo "";
-		}
-	?>
+  <!---商品加减算总数-->
+	
 	<table cellpadding="0" cellspacing="0" class="gwc_tb3">
     <tr>
       <td class="tb1_td1"><input id="checkAll" class="allselect" type="checkbox" /></td>
       <td class="tb1_td1">全选</td>
-      <td class="tb3_td1"><input id="invert" type="checkbox" />
-        反选
-        <input id="cancel" type="checkbox" />
-        取消 </td>
-      <td class="tb3_td2">已选商品
-        <label id="shuliang" style="color:#ff5500;font-size:14px; font-weight:bold;">0</label>
-        件</td>
-      <td class="tb3_td3">合计(不含运费):<span>￥</span><span style=" color:#ff5500;">
-        <label id="zong1" style="color:#ff5500;font-size:14px; font-weight:bold;"></label>
+      <td class="tb3_td1">
+      <td class="tb3_td3">合计(不含运费):<span>￥</span><span style=" color:#ff5500;" >
+        <label id="zong1" style="color:#ff5500;font-size:14px; font-weight:bold;"><span id="vls">{{ $gb->goodsprice }}</span></label>
         </span></td>
-      <td class="tb3_td4"><span id="jz1">结算</span><a href="#" style=" display:none;"  class="jz2" id="jz2">结算</a></td>
+      <td class="tb3_td4"><button class="btn">结算</button></td>
     </tr>
-  </table> 
+  </table>
+
 </div>
-<div class="ordercon">
-  <div class="order_history_dh"><span>商品删除记录</span><a href="javascript:void(0);"  class="f_r" style="padding-right:10px; display:inline-block;">清空记录</a></div>
-    <div class="order_history">
-    	<ul id="deletecart">
-			<li class="cartloadding" style="border-top:none;"></li>
-        </ul>
-    </div>
-  <div class="order_historybot"></div>
-</div>
+<?php
+    }else{
+      echo "";
+    }
+  ?> 
 <!--内容-->
 <div class="clear"></div>
 <script type="text/javascript">
+    function jia(){
+      var counts = $('#vals').val();
+      var jianshu = Number(counts)+1;
+      var vls = $('#vls').html()*jianshu;
+      jianshu-1;
+      $('#vls').html(vls);
+    }
+    function jian(){
+       var counts = $('#vals').val();
+      var vls = $('#vls').html()/counts;
+      $('#vls').html(vls);
+    }
 		function voids(id){
 			$.ajax({
 				type:'get',
@@ -114,12 +100,29 @@
 				datatype:'json',
 				success:function(data){
 					$('#olist').remove();
+          alert(data);
 				},
 				error:function(data){
 					alert('错误');
 				}
 			});
 		}
+    $(document).ready(function(){
+    //加的效果
+    $(".add").click(function(){
+    var n=$(this).prev().val();
+    var num=parseInt(n)+1;
+    if(num==0){ return;}
+    $(this).prev().val(num);
+    });
+    //减的效果
+    $(".jian").click(function(){
+    var n=$(this).next().val();
+    var num=parseInt(n)-1;
+    if(num==0){ return}
+    $(this).next().val(num);
+    });
+    })
 </script>
 <!--底部-->
 <script src="http://tjs.sjs.sinajs.cn/open/api/js/wb.js" type="text/javascript" charset="utf-8"></script>

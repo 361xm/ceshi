@@ -38,7 +38,7 @@
                     </div>
                   </div><!-- /.box-body -->
                   <div class="box-footer">
-                    <button type="submit" class="btn btn-primary">添加</button>
+                    <button type="submit" class="btn btn-primary">修改</button>
                   </div>
                 </form>
               </div><!-- /.box -->
