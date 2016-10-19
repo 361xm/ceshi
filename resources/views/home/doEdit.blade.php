@@ -20,7 +20,7 @@
             <div class="userinfo">
                 <div class="username Arial fbold">{{ session('adminuser')->username }}</div>
                 <div style="margin-top:5px;">普通会员&nbsp;积分：0</div>
-                <a class="useredit" href="{{ URL('/edit') }}" style="color:orange;">添加个人资料</a>
+				<a class="useredit" href="{{ URL('/edit') }}" style="color:orange;">添加个人资料</a>
                 <a class="useredit" href="{{ URL('/doCenter')}}" style="color:orange;">修改个人资料</a>
             </div>
             <div class="userinfo2">
@@ -62,15 +62,11 @@
             </div>
 </div>
 <div class="pl_bottom2"></div>
-
-
-
         </div>
         <div class="u_right">
-			<div class="title">添加个人信息</div>
-
+			<div class="title">修改个人信息</div>
 			<div class="color1">亲爱的{{ session('adminuser')->username }}，填写真实的资料，有助于我们为您提供更贴心得服务，还可以获取<b>50</b>积分。</div>
-			<form method='post' id="form1" name="form1" action="/doAdd" enctype="multipart/form-data">
+			<form method='post' id="form1" name="form1" action="/doEdit" enctype="multipart/form-data">
 				<input type="hidden" name="_token" value="{{ csrf_token() }}">
 				<div class="u_edit" style="padding-top:5px; padding-left:100px;">
 					<div class="formlist">
@@ -78,23 +74,25 @@
 							<dt>登录名：</dt>
 							<dd class="ue_name">{{ session('adminuser')->username }}</dd>
 						</dl>
+						@foreach($data as $list)
 						<dl>
 							<dt>真实姓名：</dt>
-							<dd><span><input type="text" name="username" id="realname" style="width:170px;" value="" /></span>&nbsp;<font color="#FF0000">*</font></dd>
+							<dd><span><input type="text" name="username" id="realname" style="width:170px;" value="{{ $list->username }}" /></span>&nbsp;<font color="#FF0000">*</font></dd>
 						</dl>
 						<dl>
 							<dt>性别：</dt>
 							<dd>
-							<input type="radio" name="sex" id="sex" value="1" /> 男
-							<input type="radio" name="sex" id="sex" value="0" checked="checked"/> 女
+							<input type="radio" name="sex" id="sex" value="{{ $list->sex }}" /> 男
+							<input type="radio" name="sex" id="sex" value="{{ $list->sex }}" checked="checked"/> 女
 							<font color="#FF0000">*</font>
 							</dd>
 						</dl>
 						
 						<dl>
 							<dt>电子邮箱：</dt>
-							<dd><span><input type="text" name="email" id="email" value=""  style="width:366px;"/></span></dd>
+							<dd><span><input type="text" name="email" id="email" value="{{ $list->email }}"  style="width:366px;"/></span></dd>
 						</dl>
+
 					</div>
 					<div class="tomail" style="padding-bottom:55px;">
 						<div style="float:left; margin-top:2px;"><input type="checkbox" name="email_call" id="email_call" value="1" /></div>
@@ -105,23 +103,25 @@
 						<dl>
 							<dt>所在区域：</dt>
 							<div>  
-							<select id="area" name="area"></select>  
-							省：<select id="cmbProvince" name="sheng"></select>  
-							市：<select id="cmbCity" name="shi"></select>  
-							区：<select id="cmbArea" name="qu"></select>  
+							<select id="area" name="area">{{ $list->area }}</select>  
+							省：<select id="cmbProvince" name="sheng">{{ $list->area }}</select>  
+							市：<select id="cmbCity" name="shi">{{ $list->area }}</select>  
+							区：<select id="cmbArea" name="qu">{{ $list->area }}</select>  
 							<br /><br /> 
 							</div>  
 						</dl>
 						<dl>
 							<dt>街道地址：</dt>
-							<dd><span><input type="text" name="address" id="address"  style="width:366px;" value=""/></span></dd>
+							<dd><span><input type="text" name="address" id="address"  style="width:366px;" value="{{ $list->area }}"/></span></dd>
 						</dl>
 						<div class="clear"></div>
 						<dl>
 						<dt>手机号码：</dt>
-						<dd><span style="border:none;"><input type="text" id="mobile" name="phone" value="" style="width:159px;"/>
+						<dd><span style="border:none;"><input type="text" id="mobile" name="phone" value="{{ $list->phone }}" style="width:159px;"/></span></dd>
 						</dl>
+						@endforeach
 					</div>
+				
 					<div class="formlist" id="profile_error_mobile" style="display:none;">
 						<dl>
 							<dt></dt>

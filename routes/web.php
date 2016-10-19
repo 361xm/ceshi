@@ -130,7 +130,7 @@ Route::get('/forgetPasswd',"LoginController@forgetPasswd");
 //录入原始账号信息
 Route::any('/doForgetPasswd',"LoginController@doForgetPasswd");
 //执行修改密码
-Route::post("/doEditPasswd/{ob}","LoginController@doEditPasswd");
+Route::post("/doEditPasswd/{id?}","LoginController@doEditPasswd");
 
 
 
@@ -167,6 +167,12 @@ Route::get('/Shoping',"NewlinkController@Shoping");
 //个人中心
 Route::get('/center',"NewlinkController@center");
 Route::get('/edit',"NewlinkController@edit");
+//添加收货人地址信息
+Route::any('/doAdd',"NewlinkController@doAdd");
+//修改收货人信息
+Route::any('/doCenter',"Newlinkcontroller@doCenter");
+Route::any('/doEdit/{id?}',"Newlinkcontroller@doEdit");
+
 //后台登录界面
 // Route::get('/login', function () {
 //     return view('admin.login.login');

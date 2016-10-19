@@ -12,7 +12,6 @@ class RegisterController extends Controller
     // 前台登录Ajax无刷新验证
     public function register(Request $request)
     {
-        $data = $request->only("phone","username","password","repassword");
         $mycode = Session()->get('code');
        // dd($mycode);
        if($mycode!=$request->input('code')){
@@ -25,15 +24,21 @@ class RegisterController extends Controller
 		$username = $request->input("username");
 		$password = $request->input("password");
 		$repassword = $request->input("repassword");
-		// dd($repassword);
-        $ob = \DB::table('user');
-        // dd($ob);
-        if($phone==$ob->phone || $username==$ob->username || $password===$repassword){
-        	\DB::table('user')->insertGetId($data);
-        	return redirect("/login");
-        }else{
-        	echo '密码不一致';
+		// dd($username);
+        $list = \DB::table('user')->get();
+        foreach($list as $gb){
+
+            if($phone!=$gb->phone && $username!=$gb->username && $password===$repassword){
+                 $ob = \DB::table('user')->insert(['phone'=>$phone,'username'=>$username,'password'=>$password,'repassword'=>$repassword]);
+                    return redirect("/login");
+                }else{
+                    echo '密码不一致';
+            }
         }
+        // dd($user_c);
+       
+        
+       
         
 
     }
