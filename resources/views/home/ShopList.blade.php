@@ -104,15 +104,15 @@
 <!--itemBegin-->
 <div class="pv_c1">
 	<div class="pv_xc">
-		@foreach($list as $ob)
+		@foreach($data as $ob)
 			<div class="pvxc_left f_l">
 							<div id="piclist" data-dcolor="白">
                 <div class="bigpic"><img src='{{ asset("admins/upload/$ob->goodsImage") }}' rel='{{ asset("admins/upload/$ob->goodsImage") }}' width="535" height="535"  class="jqzoom"/><span class="picfd"></span></div>
                 <div class="smallpic">
 					<a  class="check"><img src='{{ asset("admins/upload/$ob->goodsImage") }}' data-mig='{{ asset("admins/upload/$ob->goodsImage") }}' data-big='{{ asset("admins/upload/$ob->goodsImage") }}'  height="97" width="97"/></a>
-				<a  class="check"><img src='{{ asset("admins/upload/$ob->goodsImage") }}' data-mig='{{ asset("admins/upload/$ob->goodsImage") }}' data-big='{{ asset("admins/upload/$ob->goodsImage") }}'  height="97" width="97"/></a>
-			<a  class="check"><img src='{{ asset("admins/upload/$ob->goodsImage") }}' data-mig='{{ asset("admins/upload/$ob->goodsImage") }}' data-big='{{ asset("admins/upload/$ob->goodsImage") }}'  height="97" width="97"/></a>
-		<a  class="check"><img src='{{ asset("admins/upload/$ob->goodsImage") }}' data-mig='{{ asset("admins/upload/$ob->goodsImage") }}' data-big='{{ asset("admins/upload/$ob->goodsImage") }}'  height="97" width="97"/></a></div>
+				<a  class="check"><img src='{{ asset("admins/upload/$ob->image_c") }}' data-mig='{{ asset("admins/upload/$ob->image_c") }}' data-big='{{ asset("admins/upload/$ob->image_c") }}'  height="97" width="97"/></a>
+			<a  class="check"><img src='{{ asset("admins/upload/$ob->image_c1") }}' data-mig='{{ asset("admins/upload/$ob->image_c1") }}' data-big='{{ asset("admins/upload/$ob->image_c1") }}'  height="97" width="97"/></a>
+		<a  class="check"><img src='{{ asset("admins/upload/$ob->image_c2") }}' data-mig='{{ asset("admins/upload/$ob->image_c2") }}' data-big='{{ asset("admins/upload/$ob->image_c2") }}'  height="97" width="97"/></a></div>
             </div>
 			</div>
 				
@@ -315,17 +315,18 @@
 				<div class="content2"><span>商品描述：</span></div>
 			</div>
 			<div class="bottom"></div>
-			@foreach($data as $db)
+			
 			<div class="piccontent">
+			@foreach($data as $db)
 			<img src=' {{ asset("admins/upload/$db->image") }}'><br />
 			<img src=' {{ asset("admins/upload/$db->image1") }}'><br />
 			<img src=' {{ asset("admins/upload/$db->image2") }}'><br />
 			<img src=' {{ asset("admins/upload/$db->image3") }}'><br />
 			<img src=' {{ asset("admins/upload/$db->image4") }}'><br />
 			<img src=' {{ asset("admins/upload/$db->image5") }}'><br />
-			<img src=' {{ asset("admins/upload/$db->image6") }}'><br />
-			</div>	
 			@endforeach
+			</div>	
+			
 		</div>
 		
 		<div class="sppl splm"  id="sppl1" style="display:none;">
