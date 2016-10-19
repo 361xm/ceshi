@@ -280,7 +280,7 @@ Route::any('/user',"Admin\UserController@index2");
 //前台首页遍历
 Route::get('/',"StageController@desk");
 
-Route::get('/Ajax/Sendmessage/{phone}/{content}','AjaxController@sendMessage');
+Route::any('/gouwche/{id}/{color}','AjaxController@index');
 
 //网站配置
 Route::any('/config',function(){
@@ -289,7 +289,10 @@ Route::any('/config',function(){
 	
 //站点配置
 Route::any('/doConfig','WordController@zhandian');
+
 // 网站维护页面
 Route::get('/errors',function(){
 	return view('errors.errors');
 });
+// 删除购物车
+Route::any('/doCon','WordController@del');

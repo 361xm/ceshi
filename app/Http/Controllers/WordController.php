@@ -11,6 +11,7 @@ class WordController extends Controller
 {
    	  public function zhandian(Request $request)
     {
+       
     	// $open=$request->input('open');
     	$data = $request->only("title","key","wzimage",'open');
         //判断是否有上传
@@ -39,5 +40,11 @@ class WordController extends Controller
         }       
         		return "错误";
 		        
+    }
+    public function del(Request $request)
+    { 
+        $did = $request->did;
+        $list = \DB::table('gouwche')->where('id',$did)->delete();
+        return "删除成功";
     }
 }

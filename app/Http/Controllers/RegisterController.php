@@ -25,15 +25,18 @@ class RegisterController extends Controller
 		$username = $request->input("username");
 		$password = $request->input("password");
 		$repassword = $request->input("repassword");
-		// dd($repassword);
-        $ob = \DB::table('user');
-        // dd($ob);
-        if($phone==$ob->phone || $username==$ob->username || $password===$repassword){
-        	\DB::table('user')->insertGetId($data);
-        	return redirect("/login");
+		// dd($repassword); 
+        $ob = \DB::table('user')->get();
+        foreach($ob as $user){
+        if($username==$user->username || $password===$repassword){
+            \DB::table('user')->insertGetId($data);
+            return redirect("/login");
         }else{
-        	echo '密码不一致';
+            echo '密码不一致';
         }
+        }
+       
+       
         
 
     }

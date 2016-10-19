@@ -38,12 +38,15 @@
 			// dd($sess);
 			$list = \DB::table('goods')->where('id',$id)->get();
 			$data = \DB::table('images')->join('goods','images.gid','=','goods.id')->get();
-			return view('home/ShopList')->with(['list'=>$list,'data'=>$data]);
+			$configs = \DB::table('config')->get();
+			return view('home/ShopList')->with(['list'=>$list,'data'=>$data,'config'=>$configs]);
 			// dd($data);
 		}
 		public function Shoping()
-		{
-			return view('home/Shoping');
+		{	$configs = \DB::table('config')->get();
+			$data = \DB::table('images')->join('goods','images.gid','=','goods.id')->get();
+			return view('home/Shoping')->with(['configs',$configs,'data',$data]);
+			
 		}
 
 		public function center()

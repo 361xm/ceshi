@@ -5,10 +5,18 @@
 <title>361°多一度热爱，361°官方商城</title>
 <meta name="keywords" content="作为中国领先的专业运动品牌，361°提供给所有热爱运动的年轻消费者设计与科技兼备的运动产品，并鼓励他们全情投入，不计得失地热爱运动。在“多一度热爱”品牌精神的指引下，361°积极践行“热爱”文化，将品牌、研发、设计、生产、经销融为一体，产品包括运动鞋、服及相关配件、童装、时尚休闲等多种品类，致力成为全球最令人尊敬的运动品牌企业之一。,361°童装 男款 长袖T恤" />
 <meta name="description" content="作为中国领先的专业运动品牌，361°提供给所有热爱运动的年轻消费者设计与科技兼备的运动产品，并鼓励他们全情投入，不计得失地热爱运动。在“多一度热爱”品牌精神的指引下，361°积极践行“热爱”文化，将品牌、研发、设计、生产、经销融为一体，产品包括运动鞋、服及相关配件、童装、时尚休闲等多种品类，致力成为全球最令人尊敬的运动品牌企业之一。,361°童装 男款 长袖T恤" />
+<link rel="stylesheet" href="{{ asset('admins/bootstrap/css/bootstrap.min.css') }}">
 <link href="http://361img.361sport.com.cn/shop/css/css.css" rel="stylesheet" type="text/css" />
 <link href="http://361img.361sport.com.cn/shop/css/productview.css" rel="stylesheet" type="text/css" />
 <link rel="stylesheet" type="text/css" href="http://361img.361sport.com.cn/shop/js/fancybox/jquery.fancybox-1.3.4.css" media="screen" />
 <link href="http://361img.361sport.com.cn/shop/js/artDialog/skins/default.css" rel="stylesheet" type="text/css" />
+<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+<script src="http://libs.baidu.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="{{ asset('home/js/jquery-1.8.3.min.js') }}"></script>
+<script src="http://libs.baidu.com/jquery/1.7.0/jquery.min.js"></script>
+<script type="text/javascript" src="{{ asset('home/jquery-nicescroll.js') }}"></script>
+<link rel="stylesheet" href="{{ asset('home/xia/css/j-select.css') }}" />
+<script src="{{ asset('home/xia/js/jquery-jSelect.min.js') }}"></script>
 <style>
 	#dd img{
 		border:1px solid #ddd;
@@ -23,7 +31,40 @@
 		border:2px solid #F39800;
 	}
 
+	#select{width: 200px; line-height: 25px; border-radius: 5px; border:1px solid #ccc; font-size: 12px; padding:0 10px; position: relative;}
+	#select i{width: 0; height: 0; border-top: 5px solid #333; border-left: 5px solid transparent;  border-right: 5px solid transparent;
+	position: absolute; top: 10px; right: 10px;}
+	#select span{display: block; height: 25px; cursor: pointer;}
+	#select ul,#select li{padding: 0; margin:0 }
+	#select li{line-height: 30px; color: #666; list-style-type: none; border-bottom: 1px dashed #eee; cursor: pointer;transition: all 1s ease 0s;}
+	#select li:hover{ border-bottom: 1px solid #51A6FF; background-color: #DAF0FF; padding-left: 20px; font-weight: bold; }
+	#select li:last-child{border-bottom: 0}
+	#select ul{display: none;}
+	.flipx { transform: rotateY(180deg); }	
 </style>
+<script>
+		$(function(){
+			$(".checkspan").bind("click",function(){
+				var ul = $(this).siblings('ul')
+				if(ul.is(":hidden")){
+					ul.slideDown('400', function() {
+						$(this).find("li").bind("click",function(){
+							var selectLi=$(this).text();
+							$("#select span").text(selectLi);
+							$("#select ul").slideUp(400);
+						})
+							ul.mouseleave(function() {
+								$('#select ul').slideUp(400)
+							});
+					});
+				}else{
+					$(this).siblings('ul').slideUp(400)
+				}
+				
+			})
+			
+		})
+	</script>
 </head>
 <body>
 <div class="newheader361"> 
@@ -156,39 +197,63 @@
 							</div>
 						</div>
 					</div>
-					<div class="color xx contnet_color" data-pid="6414">
-						<dl class="content_right" id="dd">
-							<dt>颜色分类</dt>
-								<dd><img src='{{ asset("admins/upload/$ob->goodsImage") }}'  width="38" height="38"/></a></dd>
-								<dd><img src='{{ asset("admins/upload/$ob->goodsImage") }}'  width="38" height="38"/></a></dd>
-								<dd><img src='{{ asset("admins/upload/$ob->goodsImage") }}'  width="38" height="38"/></a></dd>
-						</dl>
-					</div>
-					<div class="size xx contnet_size" data-pid="6414">
-						<dl class="content_right">
-							<dt>大小选择</dt>
-							
-							<label><button type="button" value="39" class="btns" id="btns">39</button></label>
-						</dl>
-					</div>
-					<div class="xx num">
-						<dl style="display:block;">
-							<dt>数量</dt>
-							<dd class="input"><input name="num" type="text" id="cartnum"  value="1" size="5"  onkeyup="value=value.replace(/\D+/g,'')" /></dd>
-							<dd class="input2"><span class="up"></span><span class="down"></span></dd>
-							<dd class="kuc">件 库存 <em id="pro_count_ku">116</em> 件<em class="tishi"> 商品库存不足 </em></dd>
-							<div style="clear:both;"></div>
-						</dl>
-						<div class="kuc-error">您所填写的商品数量超过库存！</div>
-					</div>
-					<div class="yhhd">
-						<dl class="clearfix">
-							<dd><a href="http://www.361sport.com/index.php?m=Pages&a=zypx160805" style="border-bottom:1px solid #F00; text-decoration:none;">畅跑随心 专业跑鞋推荐</a></dd><dd><a href="http://www.361sport.com/index.php?m=Pages&a=xzdr20160608" style="border-bottom:1px solid #F00; text-decoration:none;">fun享一厦 夏季潮人搭配</a></dd>					</dl>
-					</div>
-					<div class="buy">
-							<span><button>立即购买</button></span>
-							<span><button>加入购物车</button></span>			</div>
-					<input type="hidden" name="zti" id="zti" value=""/>
+					<button data-toggle="modal" data-target="#myModal">请选择你要的操作</button>
+				<!-- 模态框（Modal） -->
+					<div class="modal fade" id="myModal" tabindex="-1" role="dialog"
+					   aria-labelledby="myModalLabel" aria-hidden="true">
+					   <div class="modal-dialog">
+					      <div class="modal-content">
+					         <div class="modal-header">
+					            <button type="button" class="close" data-dismiss="modal"
+					               aria-hidden="true">×
+					            </button>
+					            <h4 class="modal-title" id="myModalLabel">
+					               亲~ 以免您失手请您手动输入你要的商品 么么哒~~
+					            </h4>
+					         </div>
+					         <div class="modal-body">
+					           	<form role="form" method="post" action='{{ URL("/gouwche/$ob->id/$ob->goodsImage ")}}' id="form">
+				                      <input type="hidden" name="_token" value="{{ csrf_token() }}">
+				                      <input type="hidden" name="_method" value="post">
+				                      <div class="form-group">
+				                      <label for="name">请输入多少件</label>
+				                      <input type="text" class="form-control" id="stock" name="count" placeholder="请输入件数。。">
+				                      </div>
+									<div>
+									    <select id="city" class="select" name="goodscolor">请选择你要的颜色
+									        <option value="白色">白色</option>
+									        <option value="红色">红色</option>
+									        <option value="蓝色">蓝色</option>
+									    </select>
+									</div>
+									<div>
+									    <select id="city" class="select" name="sizes">
+									        <option value="39">39</option>
+									        <option value="40">40</option>
+									        <option value="41">41</option>
+									    </select>
+									</div>
+				                   </div>
+				                 <div class="modal-footer">
+					            
+					            <button type="submit" class="btn btn-primary">
+					               加入购物车
+					            </button>
+					            <button type="button" class="btn btn-primary">
+					               立即购买
+					            </button>
+					            <button type="button" class="btn btn-default"
+					               data-dismiss="modal">取消
+					            </button>
+					         </div>
+					     </form>
+					         </div>
+					         
+					      </div><!-- /.modal-content -->
+					   </div><!-- /.modal-dialog -->
+					</div><!-- /.modal -->
+				</div>
+                    </tr>
 					<div class="bdsharebuttonbox">
 						<span>分享到：</span><a href="#" class="bds_more" data-cmd="more"></a><a title="分享到QQ空间" href="#" class="bds_qzone" data-cmd="qzone"></a><a title="分享到新浪微博" href="#" class="bds_tsina" data-cmd="tsina"></a><a title="分享到腾讯微博" href="#" class="bds_tqq" data-cmd="tqq"></a><a title="分享到人人网" href="#" class="bds_renren" data-cmd="renren"></a><a title="分享到微信" href="#" class="bds_weixin" data-cmd="weixin"></a><a title="分享到豆瓣网" href="#" class="bds_douban" data-cmd="douban"></a>
 						<span class="favorites tostore" id="favorites"  data-tid="6414" style="position:relative;">加入收藏</span>
@@ -303,18 +368,7 @@
 			</ul>
 		</div>
 		<div class="spxq splm">
-			@foreach($list as $db)
-			<div  class="spxq_c1 yahei">
-				<div class="title"></div>
-				<div class="content clearfix">
-					<ul>
-						<li><span>品牌：</span>{{ $db->goodsname }}</li>
-						<li><span>货号：</span>{{ $db->goodsnumber }}</li>
-						<li><span>上市时间：</span>{{ $db->goodstime }}</li>
-					</ul>
-				</div>
-				<div class="content2"><span>商品描述：</span></div>
-			</div>
+			@foreach($data as $db)
 			<div class="bottom"></div>
 			<div class="piccontent">
 			<img src=' {{ asset("home/images/image/$db->image") }}'><br />
@@ -364,8 +418,8 @@
 				<ul>
 					<li>
 						<div class="li-top"><div class="left">
-						<img src="http://361img.361sport.com.cn/shop/images/index/icon_star_2.gif" /><img src="http://361img.361sport.com.cn/shop/images/index/icon_star_2.gif" /><img src="http://361img.361sport.com.cn/shop/images/index/icon_star_2.gif" /><img src="http://361img.361sport.com.cn/shop/images/index/icon_star_2.gif" /><img src="http://361img.361sport.com.cn/shop/images/index/icon_star_2.gif" /> 真心不错</div><div class="right user-nick">{{ $ob->username }}</div><div class="right col-size"><em>颜色：</em>{{ $ob->goodscolor}}</div><div style="clear:both;"></div></div>
-						<div class="li-bottom"><div class="left" style="width:500px;">{{ $ob->goodsdiscuss }}</div><div><em>尺码：</em>{{ $ob->goodssize}}</div><div style="clear:both;"></div></div>
+						<img src="http://361img.361sport.com.cn/shop/images/index/icon_star_2.gif" /><img src="http://361img.361sport.com.cn/shop/images/index/icon_star_2.gif" /><img src="http://361img.361sport.com.cn/shop/images/index/icon_star_2.gif" /><img src="http://361img.361sport.com.cn/shop/images/index/icon_star_2.gif" /><img src="http://361img.361sport.com.cn/shop/images/index/icon_star_2.gif" /> 真心不错</div><div class="right user-nick"></div><div class="right col-size"><em>颜色：</em></div><div style="clear:both;"></div></div>
+						<div class="li-bottom"><div class="left" style="width:500px;"></div><div><em>尺码：</em></div><div style="clear:both;"></div></div>
 											</li>					<li class="page" style="background:none;"></li>
 				</ul>
 			</div>	</div>
@@ -546,14 +600,8 @@
 <script type="text/javascript" src="http://361img.361sport.com.cn/shop/js/artDialog/artDialog.js"></script>
 <script type="text/javascript" src="http://361img.361sport.com.cn/shop/js/fancybox/jquery.fancybox-1.3.4.js"></script>
 <script type="text/javascript" src="http://361img.361sport.com.cn/shop/js/common.js"></script>
-<script type="text/javascript" src="{{ asset('home/js/jquery-1.8.0.min.js')}}"></script>
 <script type="text/javascript">
 var signUrl = "/index.php?m=User&a=signIn";
-</script>
-<script type="text/javascript">
-	$('.btns').click(function(){
-		alert($(this).html());
-	});
 </script>
 <script>
 var _hmt = _hmt || [];
