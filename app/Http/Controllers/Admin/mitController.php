@@ -21,7 +21,7 @@ class mitController extends Controller
 	        // 模板显示
 	        } 
 	     $num = 0;
-	     $list = $db->paginate(3);
+	     $list = $db->paginate(10);
          return view('admin.type.comment')->with(["list"=>$list,"where"=>$where,"num"=>$num]);   
     }
 

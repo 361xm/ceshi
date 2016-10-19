@@ -153,15 +153,15 @@
 <!--itemBegin-->
 <div class="pv_c1">
 	<div class="pv_xc">
-		@foreach($list as $ob)
+		@foreach($data as $ob)
 			<div class="pvxc_left f_l">
 							<div id="piclist" data-dcolor="白">
                 <div class="bigpic"><img src='{{ asset("admins/upload/$ob->goodsImage") }}' rel='{{ asset("admins/upload/$ob->goodsImage") }}' width="535" height="535"  class="jqzoom"/><span class="picfd"></span></div>
                 <div class="smallpic">
 					<a  class="check"><img src='{{ asset("admins/upload/$ob->goodsImage") }}' data-mig='{{ asset("admins/upload/$ob->goodsImage") }}' data-big='{{ asset("admins/upload/$ob->goodsImage") }}'  height="97" width="97"/></a>
-				<a  class="check"><img src='{{ asset("admins/upload/$ob->goodsImage") }}' data-mig='{{ asset("admins/upload/$ob->goodsImage") }}' data-big='{{ asset("admins/upload/$ob->goodsImage") }}'  height="97" width="97"/></a>
-			<a  class="check"><img src='{{ asset("admins/upload/$ob->goodsImage") }}' data-mig='{{ asset("admins/upload/$ob->goodsImage") }}' data-big='{{ asset("admins/upload/$ob->goodsImage") }}'  height="97" width="97"/></a>
-		<a  class="check"><img src='{{ asset("admins/upload/$ob->goodsImage") }}' data-mig='{{ asset("admins/upload/$ob->goodsImage") }}' data-big='{{ asset("admins/upload/$ob->goodsImage") }}'  height="97" width="97"/></a></div>
+				<a  class="check"><img src='{{ asset("admins/upload/$ob->image_c") }}' data-mig='{{ asset("admins/upload/$ob->image_c") }}' data-big='{{ asset("admins/upload/$ob->image_c") }}'  height="97" width="97"/></a>
+			<a  class="check"><img src='{{ asset("admins/upload/$ob->image_c1") }}' data-mig='{{ asset("admins/upload/$ob->image_c1") }}' data-big='{{ asset("admins/upload/$ob->image_c1") }}'  height="97" width="97"/></a>
+		<a  class="check"><img src='{{ asset("admins/upload/$ob->image_c2") }}' data-mig='{{ asset("admins/upload/$ob->image_c2") }}' data-big='{{ asset("admins/upload/$ob->image_c2") }}'  height="97" width="97"/></a></div>
             </div>
 			</div>
 				
@@ -367,20 +367,36 @@
 				<li>尺码说明</li>
 			</ul>
 		</div>
+		
 		<div class="spxq splm">
-			@foreach($data as $db)
+
+			<div  class="spxq_c1 yahei">
+				<div class="title"></div>
+				
+				<div class="content clearfix">
+					<ul>
+						<li><span>品牌：</span>xxx</li>
+						<li><span>货号：</span>xxx</li>
+						<li><span>上市时间：</span>xxx</li>
+					</ul>
+				</div>
+				<div class="content2"><span>商品描述：</span></div>
+			</div>
 			<div class="bottom"></div>
+			
 			<div class="piccontent">
-			<img src=' {{ asset("home/images/image/$db->image") }}'><br />
-			<img src=' {{ asset("home/images/image/$db->image1") }}'><br />
-			<img src=' {{ asset("home/images/image/$db->image2") }}'><br />
-			<img src=' {{ asset("home/images/image/$db->image3") }}'><br />
-			<img src=' {{ asset("home/images/image/$db->image4") }}'><br />
-			<img src=' {{ asset("home/images/image/$db->image5") }}'><br />
-			<img src=' {{ asset("home/images/image/$db->image6") }}'><br />
+			@foreach($data as $db)
+			<img src=' {{ asset("admins/upload/$db->image") }}'><br />
+			<img src=' {{ asset("admins/upload/$db->image1") }}'><br />
+			<img src=' {{ asset("admins/upload/$db->image2") }}'><br />
+			<img src=' {{ asset("admins/upload/$db->image3") }}'><br />
+			<img src=' {{ asset("admins/upload/$db->image4") }}'><br />
+			<img src=' {{ asset("admins/upload/$db->image5") }}'><br />
+			@endforeach
 			</div>	
+			
 		</div>
-		@endforeach
+		
 		<div class="sppl splm"  id="sppl1" style="display:none;">
 			<div class="sppl_a">
 				<div class="sppl_aleft f_l">
@@ -419,10 +435,14 @@
 					<li>
 						<div class="li-top"><div class="left">
 						<img src="http://361img.361sport.com.cn/shop/images/index/icon_star_2.gif" /><img src="http://361img.361sport.com.cn/shop/images/index/icon_star_2.gif" /><img src="http://361img.361sport.com.cn/shop/images/index/icon_star_2.gif" /><img src="http://361img.361sport.com.cn/shop/images/index/icon_star_2.gif" /><img src="http://361img.361sport.com.cn/shop/images/index/icon_star_2.gif" /> 真心不错</div><div class="right user-nick"></div><div class="right col-size"><em>颜色：</em></div><div style="clear:both;"></div></div>
-						<div class="li-bottom"><div class="left" style="width:500px;"></div><div><em>尺码：</em></div><div style="clear:both;"></div></div>
-											</li>					<li class="page" style="background:none;"></li>
+						<div class="li-bottom">
+							<div class="left" style="width:500px;"></div>
+							<div><em>尺码：</em></div><div style="clear:both;"></div>
+						</div>
+					</li>
+					<li class="page" style="background:none;"></li>
 				</ul>
-			</div>	</div>
+			</div>		</div>
 		<div class="spxq splm" style="display:none;">
 			<div class="sizetable">
 				<div class="title"></div>

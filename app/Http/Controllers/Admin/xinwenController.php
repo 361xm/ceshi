@@ -25,7 +25,7 @@ class xinwenController extends Controller
 	        } 
 
          $num = 0;
-	     $list = $db->paginate(3);
+	     $list = $db->paginate(10);
          
          return view('admin.xinwen.news')->with(["list"=>$list,"where"=>$where,"num"=>$num]);
     }

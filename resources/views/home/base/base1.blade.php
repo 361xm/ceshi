@@ -1,14 +1,9 @@
-﻿<?php
-    if($configs[0]->open == 1){
-        header("location:{{ URL('/errors')");
-    }else{
-?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns:wb="http://open.weibo.com/wb">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>{{ $configs[0]->title}}</title>
-    <meta name="keywords" content="{{ $configs[0]->key}}" />
+    <title></title>
+    <meta name="keywords" content="" />
     <meta name="description" content="作为中国领先的专业运动品牌，361°提供给所有热爱运动的年轻消费者设计与科技兼备的运动产品，并鼓励他们全情投入，不计得失地热爱运动。在"多一度热爱"品牌精神的指引下，361°积极践行"热爱"文化，将品牌、研发、设计、生产、经销融为一体，产品包括运动鞋、服及相关配件、童装、时尚休闲等多种品类，致力成为全球最令人尊敬的运动品牌企业之一。" />
     <meta property="qc:admins" content="15426722676361307246375" />
     <link rel="icon" href="/favicon.ico" type="image/x-icon" />
@@ -48,7 +43,10 @@
         </div>
         <!--导航-->
         <div class="top_nav">
-            <div class="navcon"> <a class="logo" ></a>
+            <div class="navcon">
+                
+                <a class="logo"><img src="admins/upload/{{ $configs[0]->wzimage }}" style="width:200px;height:70px;"></a>
+               
                 <div class="newshop_menu" style="width:684px;">
                     <ul>
                         <li><a href="/" style="background:none;" class="dd" >首页</a></li>
@@ -137,56 +135,54 @@
                         <div class="newfoot_cl">
                 <dl>
                     <dt>关于361°</dt>
-                    <dd><a href="http://ir.361sport.com/s/index.php" target="_blank"></a></dd>
-                    <dd><a href="/index.php?m=Info&a=show&id=10">集团简介</a></dd>
-                    <dd><a href="http://cn.361sport.com/shop.asp" target="_blank">店铺查询</a></dd>
-                    <dd><a href="http://361bift.361sport.com" target="_blank">361°BIFT</a></dd>
-                    <dd><a href="/index.php?m=Info&a=show&id=14">联系我们</a></dd>
+                    <dd><a href="http://www.361sport.com/index.php?m=Info&a=show&id=10&cate_id=6">集团简介</a></dd>
+                    <dd><a href="{{ URL('/info') }}" target="_blank">实时新闻</a></dd>
+                    <dd><a href="http://ir.361sport.com/s/index.php">投资者关系</a></dd>
                 </dl>
                 <dl>
                     <dt>如何购物</dt>
-                    <dd><a href="/index.php?m=Info&a=show&id=1&cate_id=7">购物流程</a></dd>
-                    <dd><a href="/index.php?m=Info&a=show&id=2&cate_id=7">订单查询</a></dd>
-                    <dd><a href="/index.php?m=Info&a=show&id=15&cate_id=7">会员及积分体系</a></dd>
+                    <dd><a href="http://www.361sport.com/index.php?m=Info&a=show&id=1&cate_id=7">购物流程</a></dd>
+                  <!--   <dd><a href="">订单查询</a></dd>
+                    <dd><a href="">会员及积分体系</a></dd> -->
                     <!--<dd><a href="#">常见问题</a></dd>
                     <dd><a href="#">帮助中心</a></dd>-->
                 </dl>
                 <dl>
                     <dt>支付方式</dt>
-                    <dd><a href="/index.php?m=Info&a=show&id=3&cate_id=7">支付方式</a></dd>
-                    <dd><a href="/index.php?m=Info&a=show&id=4&cate_id=7">发票说明</a></dd>
+                    <dd><a href="http://www.361sport.com/index.php?m=Info&a=show&id=3&cate_id=7">支付方式</a></dd>
+                    <dd><a href="http://www.361sport.com/index.php?m=Info&a=show&id=4&cate_id=7">发票说明</a></dd>
                 </dl>
                 <dl>
                     <dt>物流配送</dt>
-                    <dd><a href="/index.php?m=Info&a=show&id=5&cate_id=7">配送时间和范围</a></dd>
-                    <dd><a href="/index.php?m=Info&a=show&id=6&cate_id=7">配送费用</a></dd>
-                    <dd><a href="/index.php?m=Info&a=show&id=7&cate_id=7">商品验收</a></dd>
+                    <dd><a href="http://www.361sport.com/index.php?m=Info&a=show&id=5&cate_id=7">配送时间和范围</a></dd>
+                    <dd><a href="http://www.361sport.com/index.php?m=Info&a=show&id=6&cate_id=7">配送费用</a></dd>
+                    <dd><a href="http://www.361sport.com/index.php?m=Info&a=show&id=7&cate_id=7">商品验收</a></dd>
                 </dl>
                 <dl style="width:95px;">
                     <dt>售后服务</dt>
-                    <dd><a href="/index.php?m=Info&a=show&id=9&cate_id=7">退换货流程</a></dd>
-                    <dd><a href="/index.php?m=Info&a=show&id=8&cate_id=7">售后服务政策</a></dd>
+                    <dd><a href="http://www.361sport.com/index.php?m=Info&a=show&id=9&cate_id=7">退换货流程</a></dd>
+                    <dd><a href="http://www.361sport.com/index.php?m=Info&a=show&id=8&cate_id=7">售后服务政策</a></dd>
                 </dl>
             </div>
                         <div class="newfoot_cr">
                             <dl>
-                                <dt>联系361°官方商城</dt>
+                                <dt>联系敢死队官方</dt>
                                 <dd class="tel">
                                     <div class="phone-left"><img src="../../home/images/phone.png" width="42" height="42" /></div>
                                     <div class="phone-right">
-                                        <span class="p1">0592-3790038</span>
+                                        <span class="p1">13036675841</span>
                                         <span class="p2">&nbsp;&nbsp;在线时间：周一至周五<br>(9:00-12:00   13:00-18:00)<br></span>
                                     </div>
                                 </dd>
                                 <dd style="margin-bottom:0px;">
                                     <div class="phone-left"><a href="tencent://message/?uin=476849964&Site=qq&Menu=yes"><img src="../../home/images/qq.png" width="45" height="43" /></a></div>
                                     <div class="phone-right">
-                                        <div class="fourtime"><a href="tencent://message/?uin=476849964&Site=qq&Menu=yes">== 361在线客服 ==</a></div>
+                                        <div class="fourtime"><a href="tencent://message/?uin=476849964&Site=qq&Menu=yes">== 在线客服 ==</a></div>
                                     </div>
                                 </dd>
                                 <dd style="padding-left:78px;">
                                     <div class="phone-right">
-                                        <div class="fourtime5"><a href="tencent://message/?uin=476849964&Site=qq&Menu=yes">QQ:476849964</a></div>
+                                        <div class="fourtime5"><a href="tencent://message/?uin=476849964&Site=qq&Menu=yes">QQ:530239095</a></div>
                                     </div>
                                 </dd>
                             </dl>
@@ -197,7 +193,7 @@
                     </div>
                     
           </div>
-          <div class="Certificate">中国 闽ICP备05003868号 ©2013 三六一度(中国)有限公司 All Rights Reserved</div>
+          <div class="Certificate">中国 北京兄弟连153期敢死队小组 </div>
         </div>
     <div style="display:none;">
         <div id="inline6" style="width:820px;height:600px;overflow:auto; margin:auto;">
@@ -365,6 +361,3 @@
     </script>
 </body>
 </html>
-<?php
-}
-?>
