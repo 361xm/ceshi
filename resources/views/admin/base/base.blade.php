@@ -219,7 +219,6 @@
               </a>
               <ul class="treeview-menu">
                 <li><a href="{{ URL('type/order') }}"><i class="fa fa-circle-o"></i>订单详情表</a></li>
-                <li><a href="{{ URL('type/addorder') }}"><i class="fa fa-circle-o"></i>添加订单</a></li>
                 <li><a href="../UI/buttons.html"><i class="fa fa-circle-o"></i>发货单列表</a></li>
                 <li><a href="../UI/sliders.html"><i class="fa fa-circle-o"></i>退货单列表</a></li>
 <!--                 <li><a href="../UI/timeline.html"><i class="fa fa-circle-o"></i> Timeline</a></li>
