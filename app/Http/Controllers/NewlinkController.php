@@ -89,7 +89,7 @@
 				$array[] = $value;	
 			}
 			if(!in_array($id,$array)){
-				\DB::table('user_c')->insert(['uid'=>$id,'username'=>$username,'sex'=>$sex,'email'=>$email,'area'=>$areas]);
+				\DB::table('user_c')->insert(['uid'=>$id,'username'=>$username,'sex'=>$sex,'email'=>$email,'area'=>$areas,'phone'=>$phone]);
 				return redirect('/doCenter');
 				}else{
 					$msg = '不能重复添加';
