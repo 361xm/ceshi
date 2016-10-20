@@ -197,7 +197,7 @@
 							</div>
 						</div>
 					</div>
-					<button data-toggle="modal" data-target="#myModal">请选择你要的操作</button>
+					<button data-toggle="modal" data-target="#myModal" class="btn btn-primary">请选择你要的操作</button>
 				<!-- 模态框（Modal） -->
 					<div class="modal fade" id="myModal" tabindex="-1" role="dialog"
 					   aria-labelledby="myModalLabel" aria-hidden="true">
@@ -216,18 +216,21 @@
 				                      <input type="hidden" name="_token" value="{{ csrf_token() }}">
 				                      <input type="hidden" name="_method" value="post">
 				                      <div class="form-group">
-				                      <label for="name">请输入多少件</label>
-				                      <input type="text" class="form-control" id="stock" name="count" placeholder="请输入件数。。">
-				                      </div>
-									<div>
-									    <select id="city" class="select" name="goodscolor">请选择你要的颜色
+									    <select id="city" class="form-control" name="goodcount" style="width:100%;">你要几件呢？~
+									        <option value="1">1</option>
+									        <option value="2">2</option>
+									        <option value="3">3</option>
+									    </select>
+									</div>
+									<div class="form-group">
+									    <select id="city" class="form-control" name="goodscolor" style="width:100%;">请选择你要的颜色
 									        <option value="白色">白色</option>
 									        <option value="红色">红色</option>
 									        <option value="蓝色">蓝色</option>
 									    </select>
 									</div>
-									<div>
-									    <select id="city" class="select" name="sizes">
+									<div class="form-group">
+									    <select id="city" class="form-control" name="sizes" style="width:100%;">
 									        <option value="39">39</option>
 									        <option value="40">40</option>
 									        <option value="41">41</option>
