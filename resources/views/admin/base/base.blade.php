@@ -51,11 +51,19 @@
       }
       function del(id){
         if(confirm('确定删除吗？')){
-//                1.获得form表单节点对象
-            var myform = document.myform;
-//                2 设置提交方式
-            myform.action = "/del/"+id;
-            myform.submit();
+          $.ajax({
+            type:'get',
+            url:'{{ URL("/del")}}',
+            data:{tid:id},
+            datatype:'json',
+            success:function(data){
+              $('#types').remove();
+              alert(data);
+            },
+            error:function(data){
+              alert('错误');
+            }
+          });
         }
       }
     </script>

@@ -30,7 +30,8 @@
 			$where = [];
 			$list = $db->paginate(40);
 			// dd($list);
-			return view('home/shangpin')->with(['list'=>$list,'where'=>$where]);
+			$configs = \DB::table('config')->get();
+			return view('home/shangpin')->with(['list'=>$list,'where'=>$where,'configs'=>$configs]);
 		}
 		public function ShopList($id)
 		{
@@ -39,26 +40,31 @@
 			$list = \DB::table('goods')->where('id',$id)->get();
 			$data = \DB::table('images')->join('goods','images.gid','=','goods.id')->where('gid',$id)->get();
 			// dd($data);
-			return view('home/ShopList')->with(['list'=>$list,'data'=>$data]);
+			$configs = \DB::table('config')->get();
+			return view('home/ShopList')->with(['list'=>$list,'data'=>$data,'configs'=>$configs]);
 			// dd($data);
 		}
 
 		public function Shoping()
 		{	$configs = \DB::table('config')->get();
 			$data = \DB::table('images')->join('goods','images.gid','=','goods.id')->get();
-			return view('home/Shoping')->with(['configs',$configs,'data',$data]);
+			return view('home/Shoping')->with(['configs'=>$configs,'data'=>$data]);
 			
 		}
 
 		public function center()
-		{	$configs = \DB::table('config')->get();
-			return view('home/center')->with('configs',$configs);
+		{	
+			$id = session('adminuser')->id;
+			$danzi = \DB::table('details')->where('uid',$id)->get();
+			$configs = \DB::table('config')->get();
+			return view('home/center')->with(['configs'=>$configs,'danzi'=>$danzi]);
 		}
 
 
 		public function edit()
 		{
-			return view('home/edit');
+			$configs = \DB::table('config')->get();
+			return view('home/edit')->with(['configs'=>$configs]);
 		}
 
 		//添加收货人地址信息
@@ -87,12 +93,18 @@
 				return redirect('/doCenter');
 				}else{
 					$msg = '不能重复添加';
-					return view('/edit')->with(['msg'=>$img]);
+					$configs = \DB::table('config')->get();
+					return view('/edit')->with(['msg'=>$img,'configs'=>$configs]);
 				}
 		}
 
 		public function doCenter()
 		{	
+
+
+
+			$configs = \DB::table('config')->get();
+			
 			// return 1;
 			$id = session('adminuser')->id;
 			
@@ -106,9 +118,10 @@
 				$array[] = $value;	
 			}
 			if(in_array($id,$array)){
-					return view('home/doEdit')->with(['data'=>$data]);
+				$configs = \DB::table('config')->get();
+					return view('home/doEdit')->with(['data'=>$data,'configs'=>$configs]);
 				}else{
-					return '失败';
+					return view('home.doEdit')->with(['configs'=>$configs,'data'=>$data]);
 				}
 			
 		}

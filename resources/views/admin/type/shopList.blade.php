@@ -31,7 +31,7 @@
                         <th>操作</th>
                     </tr>
                     @foreach($list as $good)
-                      <tr>
+                      <tr id="types">
                         <th><b class="glyphicon glyphicon-home"></b>-{{ ($list->currentPage()-1)*10+($num) }}</th>
                         <input type="hidden" value="{{ $num++ }}">
                         <td>{{ $good->goodsname }}</td>
@@ -39,7 +39,7 @@
                         <td>{{ $good->goodsprice }}$</td>
                         <td>{{ $good->stock}}</td>
                         <td>{{ $good->goodsdescript }}</td>
-                        <td><a href="javascript:del({{ $good->id }})" class="glyphicon glyphicon-trash"></a> | <a onclick="update({{ $good->id}})" data-goodsname="{{ $good->goodsname }}" data-goodsprice="{{ $good->goodsprice }}" data-goodstock="{{ $good->stock }}" data-goodsdescript="{{ $good->goodsdescript }}" class="glyphicon glyphicon-wrench" data-toggle="modal" data-target="#myModal" id="values"></a></td>
+                        <td><a onclick="del({{ $good->id }})" class="glyphicon glyphicon-trash"></a> | <a onclick="update({{ $good->id}})" data-goodsname="{{ $good->goodsname }}" data-goodsprice="{{ $good->goodsprice }}" data-goodstock="{{ $good->stock }}" data-goodsdescript="{{ $good->goodsdescript }}" class="glyphicon glyphicon-wrench" data-toggle="modal" data-target="#myModal" id="values"></a></td>
                       </tr>
                       @endforeach
                   </table>                    

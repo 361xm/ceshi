@@ -1,0 +1,8 @@
+/* ::::: http://361img.361sport.com.cn/shop/shop/css/css.css ::::: */
+
+body { margin: 0px; padding: 0px; min-width: 1000px; background: none repeat scroll 0% 0% rgb(0, 0, 0); }
+.country_foot { border-top: 1px solid rgb(13, 13, 13); line-height: 44px; height: 44px; text-align: center; color: rgb(41, 41, 41); width: 100%; font-size: 12px; font-family: Arial,Helvetica,sans-serif; }
+.country_l { position: absolute; width: 120px; font-family: "微软雅黑",Arial,Helvetica,sans-serif; font-size: 14px; }
+.country_l a { color: rgb(243, 152, 0); text-decoration: none; }
+.country_l dd a { cursor: pointer; }
+.country_l dd { display: none; height: 25px; line-height: 25px; }

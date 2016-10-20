@@ -184,10 +184,11 @@ class TypeListController extends Controller
 			}
 		}
 	// 删除商品
-	public function delgood($id)
+	public function delgood(Request $request)
 	{	
+		$id = $request->tid;
 		\DB::table('goods')->where('id',$id)->delete();
-		return redirect('types');
+		return "删除成功";
 	}
 	// 修改商品
 	public function update(Request $request,$id)

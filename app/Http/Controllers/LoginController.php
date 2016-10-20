@@ -42,13 +42,14 @@
         //忘记session
         session()->forget("adminuser");
         //重定向
-        return view("home/login");
+        $configs = \DB::table('config')->get();
+        return view("home/login")->with(['configs'=>$configs]);
     }
 
     //忘记密码
     public function forgetPasswd()
-    {
-        return view('home/forgetPasswd');
+    {   $configs = \DB::table('config')->get();
+        return view('home/forgetPasswd')->with(['configs'=>$configs]);
     }
     //忘记密码的原始信息
     public function doForgetPasswd(Request $request)
@@ -56,6 +57,7 @@
         $mycode = Session()->get('code');
         // dd($mycode);
        if($mycode!=$request->input('code')){
+        $configs = \DB::table('config')->get();
                 return back()->with("msg","验证码错误");//后退
                 // session()->flash("msg","验证码错误");//写入错误信息
                 // return redirect("admin/login");//重定向
@@ -71,7 +73,8 @@
             if($db->phone==$phone){ 
                 session()->flash('username',$db->id);
                 $ob = $db->id; 
-                    return view('home/editPasswd')->with(['ob'=>$ob]);
+                $configs = \DB::table('config')->get();
+                    return view('home/editPasswd')->with(['ob'=>$ob,'configs'=>$configs]);
                 }
                 return back()->with("msg","手机号或者用户名不存在");
             }
@@ -88,12 +91,13 @@
         $repassword = $request->input('repassword');
         // dd($repasswd);
         if($password===$repassword){
-            $ob = \DB::table('user')->where('username',$id)->update($data);
-            
-            return view('/home/login');
+            $ob = \DB::table('user')->where('id',$id)->update($data);
+            $configs = \DB::table('config')->get();
+            return view('/home/login')->with(['configs'=>$configs]);
         }else{
             $mvg = "密码不一致";
-             return view('/home/editPasswd')->with(["mvg",$mvg]);
+            $configs = \DB::table('config')->get();
+             return view('/home/editPasswd')->with(["mvg"=>$mvg,'configs'=>$configs]);
         }
     }
 }

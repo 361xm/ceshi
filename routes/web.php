@@ -219,7 +219,7 @@ Route::any('/types','Admin\ListController@shop');
 Route::any('/typelist/{bar}','Admin\ListController@index2');
 
 // 删除单个商品
-Route::any('/del/{id}','Admin\TypeListController@delgood');
+Route::any('/del/{id?}','Admin\TypeListController@delgood');
 
 Route::resource("/addgoods",'Admin\TypeListController');
 
@@ -320,3 +320,7 @@ Route::get('/shui',function(){
 Route::any('/hao',"Admin\lianController@index");
 // 删除购物车
 Route::any('/doCon','WordController@del');
+
+Route::any('/dingdan/{id?}','DingdanController@dingdan');
+// 支付
+Route::any('/zhifu/{id?}','ZhiFuController@zhifu');

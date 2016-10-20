@@ -42,9 +42,9 @@
   
     <tr id="olist">
       <td class="tb2_td1"><input type="checkbox" value="1" name="newslist" id="newslist-1" /></td>
-      <td class="tb2_td2"><a href="#"><img src="images/img1.jpg"/></a></td>
+      <td class="tb2_td2"><a href="#"><img src='{{ URL("admins/upload/$gb->goodsimg")}}'/></a></td>
       <td class="tb2_td3"><a href="#">{{ $gb->goodname}}</a></td>
-      <td class="tb1_td4">一件</td>
+      <td class="tb1_td4">{{ $gb->goodsdescript }}</td>
       <td class="tb1_td5">
         <div class="gw_num">
           <em class="jian" onclick="jian()">-</em>
@@ -67,7 +67,7 @@
       <td class="tb3_td3">合计(不含运费):<span>￥</span><span style=" color:#ff5500;" >
         <label id="zong1" style="color:#ff5500;font-size:14px; font-weight:bold;"><span id="vls">{{ $gb->goodsprice }}</span></label>
         </span></td>
-      <td class="tb3_td4"><button class="btn">结算</button></td>
+      <td class="tb3_td4"><a class="btn-default" href="{{ URL('/dingdan').'/'.session('adminuser')->id}}" >结算</a></td>
     </tr>
   </table>
 

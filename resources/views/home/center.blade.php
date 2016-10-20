@@ -105,7 +105,52 @@
                     </div>
 					</form>
 			</div>
-			<div class="uoserch_right"></div>
+			<div>
+                <!-- 遍历这一块 -->
+                @foreach($danzi as $gb)
+                <table width="98%" cellspacing="0" cellpadding="15" border="0" class="uolist_bo">
+                    <tbody><tr>
+                    <td width="26%" valign="top" class="uolist_left" rowspan="2">
+                        已下订单<br>
+                        <span class="time">{{ $gb->time }}</span><br>
+                        订单编号 <font color="#004b91">GF{{ $gb->id}}</font><br>
+                        收件人 <font color="#333333">{{ $gb->username }}</font><br>
+                        应付金额<font color="#bc1820">￥{{ $gb->price}}</font><br>
+                    </td>
+                    <td valign="top" class="uolist_right1" colspan="2"><span class="color1"><?php echo $gb->status==1?'已发货':'待发货'?></span></td>
+                    </tr>
+                    <tr>
+                      <td valign="middle" height="190">
+                      <table width="100%" cellspacing="0" cellpadding="0" border="0" class="orderlist-all">
+                            <tbody><tr>
+                              <td width="32%">
+                                <a href="/index.php?m=Product&amp;a=show&amp;proid=6705" target="_blank"><img width="150" height="150" src='{{ asset("admins/upload/$gb->gimage")}}'></a>
+                              </td>
+                              <td width="68%" class="uolist_right2">
+                                  <div></div>
+                                  <div class="yahei"><a href="/index.php?m=Product&amp;a=show&amp;proid=6705" target="_blank">{{ $gb->gdname }}</a></div>
+                                  <table width="100%" cellspacing="0" cellpadding="0" border="0">
+                                    <tbody><tr>
+                                      <td width="45%">颜色：{{ $gb->color}}<br>尺寸：{{ $gb->big}} 
+                                      <br>数量：{{ $gb->count}}</td>
+                                      <td width="55%">价格：￥{{ $gb->price }}</td>
+                                    </tr>
+                                  </tbody></table>
+                              </td>
+                            </tr>                                                 </tbody></table>
+                      </td>
+                      <td width="18%" valign="middle">
+                        <div class="uolist_right3">
+                            <ul>
+                                <a style="display:block;height:33px;" href="/index.php?m=Order&amp;a=pay&amp;ordersn=GF2016101936085" class="tobuy">马上支付</a>
+                                                                <li style="margin:10px 31px;"><a href="javascript:void(0);" data-id="43518" id="delOrder">删除</a></li>                           </ul>
+                        </div>
+                      </td>
+                  </tr>
+                </tbody>@endforeach</table>
+               
+                <!-- 结束 -->
+            </div>
           </div>
           <div>所有订单，共 <b>0</b> 单</div>
 		  		         <div class="page"></div>
