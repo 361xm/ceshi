@@ -39,6 +39,7 @@
 			$db = \DB::table('goods');
 			$where = [];
 			$list = $db->paginate(40);
+
 			$wan=\DB::table("links")->get();
 
 			$configs = \DB::table('config')->get();
@@ -52,12 +53,15 @@
 			$data = \DB::table('images')->join('goods','images.gid','=','goods.id')->where('gid',$id)->get();
 			// dd($data);
 			$configs = \DB::table('config')->get();
+
 			$wan=\DB::table("links")->get();
 			return view('home/ShopList')->with(['list'=>$list,'data'=>$data,'configs'=>$configs,'wan'=>$wan]);
+
 			// dd($data);
 		}
 
 		public function Shoping()
+
 		{
 			$wan=\DB::table("links")->get();
 			$configs = \DB::table('config')->get();
@@ -74,15 +78,18 @@
 			$danzi = \DB::table('details')->where('uid',$id)->get();
 			$configs = \DB::table('config')->get();
 			return view('home/center')->with(['configs'=>$configs,'danzi'=>$danzi,"wan"=>$wan]);
+
 		}
 
 
 		public function edit()
 		{
 
+
 			$wan=\DB::table("links")->get();
 			$configs = \DB::table('config')->get();
 			return view('home/edit')->with(['configs'=>$configs,"wan"=>$wan]);
+
 		}
 
 		//添加收货人地址信息
@@ -126,18 +133,24 @@
 			$uid = \DB::table('user_c')->pluck('uid');
 			// dd($uid);
 			$data = \DB::table('user_c')->where('uid',$id)->get();
+
 			$wan=\DB::table("links")->get();
-			// $uid = $data->id;
-			// dd($id);
+
 			$array = array();
 			foreach($uid as $key=>$value){
 				$array[] = $value;	
 			}
 			if(in_array($id,$array)){
 				$configs = \DB::table('config')->get();
+
 					return view('home/doEdit')->with(['data'=>$data,'configs'=>$configs,'wan'=>$wan]);
 				}else{
 					return view('home.doEdit')->with(['configs'=>$configs,'data'=>$data,'wan'=>$wan]);
+
+					return view('home/doEdit')->with(['data'=>$data,'configs'=>$configs,'wan'=>$wan]);
+				}else{
+					return view('home.doEdit')->with(['configs'=>$configs,'data'=>$data,'wan'=>$wan]);
+
 				}
 			
 		}

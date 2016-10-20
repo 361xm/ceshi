@@ -27,6 +27,7 @@ class WordController extends Controller
             $list = \DB::select("select *,concat(path,'-',id) as npath from types order by npath");
             $data = \DB::table('goods')->get();
             $configs = \DB::table('config')->get();
+
             $wan=\DB::table('links')->get();
             return view("/web")->with(['list'=>$list,"data"=>$data,'configs'=>$configs,'wan'=>$wan]);
     		}

@@ -44,6 +44,7 @@
         //忘记session
         session()->forget("adminuser");
         //重定向
+
         $congigs=\DB::table('config')->get();
         return view("home/login")->with(['configs'=>$configs,'wan'=>$wan]);
     }

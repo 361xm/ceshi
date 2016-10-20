@@ -587,8 +587,22 @@
                       </div>
                     </div>
                     
+
           </div>
           <div class="Certificate">中国 北京兄弟连153期敢死队小组 </div>
+                </div>
+                <div class="communite">
+                  <div class="communite-content">
+                  	<div class="newfoot_cl">
+        	<dl>
+            	<dt>关于361°</dt>
+                <dd><a href="http://ir.361sport.com/s/index.php" target="_blank">投资者关系</a></dd>
+                <dd><a href="/index.php?m=Info&a=show&id=10">集团简介</a></dd>
+                <dd><a href="http://cn.361sport.com/shop.asp" target="_blank">店铺查询</a></dd>
+                <dd><a href="http://361bift.361sport.com" target="_blank">361°BIFT</a></dd>
+                <dd><a href="/index.php?m=Info&a=show&id=14">联系我们</a></dd>
+            </dl>
+
         </div>
 </div>
 <script type="text/javascript" src="http://361img.361sport.com.cn/shop/js/jquery.js"></script>

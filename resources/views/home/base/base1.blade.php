@@ -50,6 +50,7 @@
         <div class="top_nav">
             <div class="navcon">
                 
+
                 <a class="logo"><img src="" style="width:200px;height:70px;"></a>
                
                 <div class="newshop_menu" style="width:684px;">
