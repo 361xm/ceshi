@@ -324,3 +324,6 @@ Route::any('/doCon','WordController@del');
 Route::any('/dingdan/{id?}','DingdanController@dingdan');
 // 支付
 Route::any('/zhifu/{id?}','ZhiFuController@zhifu');
+
+//男女士商品
+Route::any('/men','MenController@index');

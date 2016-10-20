@@ -28,10 +28,7 @@
                 <a class="useredit" href="{{ URL('/edit') }}" style="color:orange;">添加个人资料</a>
                 <a class="useredit" href="{{ URL('/doCenter')}}" style="color:orange;">修改个人资料</a>
             </div>
-            <div class="userinfo2">
-                <a href="/index.php?m=User&a=comlist"><span>0</span>商品评论</a>
-                <a href="/index.php?m=User&a=order&order=status&status=1"><span>0</span>处理中订单</a>
-            </div>
+
             <div>
                 <div class="pclass_title clearfix close"><span></span>我的订单</div>
                 <div class="pclass">
@@ -40,21 +37,6 @@
                         <li><a href="/index.php?m=User&a=backlist">退换货订单</a></li>
                     </ul>
                 </div>
-            </div>
-			<!--
-            <div>
-                <div class="pclass_title clearfix"><a href="/index.php?m=User&a=exchange">我的积分</a></div>
-            </div>-->
-            <div>
-                <div class="pclass_title clearfix close"><span></span>我的评论</div>
-                <div class="pclass">
-                    <ul>
-                        <li><a href="/index.php?m=User&a=comlist">发表过的评论</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div>
-                <div class="pclass_title clearfix"><a href="/index.php?m=User&a=address">收货地址</a></div>
             </div>
             <div>
                 <div class="pclass_title clearfix close"><span></span>账户设置</div>

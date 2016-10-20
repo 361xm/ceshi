@@ -70,6 +70,11 @@
                       <label for="name">商品名称</label>
                       <input type="text" class="form-control" id="name" name="goodsname" placeholder="请输入名称">
                       </div>
+                      <label for="name">商品类别</label>
+                      <div style="margin-bottom:15px;">
+                        男：<input type="radio" name="sex" value="1">
+                        女：<input type="radio" name="sex" value="0">
+                      </div>
                       <div class="form-group">
                       <label for="name">商品价格</label>
                       <input type="text" class="form-control" id="goodsprice" name="goodsprice" placeholder="请输入价格">

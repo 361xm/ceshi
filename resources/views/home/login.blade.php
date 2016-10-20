@@ -146,16 +146,15 @@
 				// alert(xmlHttp.status);
 				if(xmlHttp.readyState==4)
 			    {
-			    	var str = xmlHttp.responseText;
-			    	if(str == 'yes'){
+			    	
 			    		info.innerHTML = '手机号已存在';
 			    		info.style.color = 'red';
-			    	}else{
+			    }
 			    		info.innerHTML = '手机号可用';
 			    		info.style.color = 'green';
-			    	}
-			    }
+
 			}
+
 
 			// 第三步：初始化
 			// 第一个参数：请求方式  get  和  post
