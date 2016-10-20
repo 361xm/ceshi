@@ -36,6 +36,30 @@ class WordController extends Controller
     {
         $did = $request->did;
         \DB::table('gouwche')->where('id',$did)->delete();
-        return "删除成功";
+    }
+    public function index(Request $request)
+    {
+         $db = \DB::table('details');
+        $where = [];
+        if($request->has('name')){
+            $name = $request->input('name');
+            $db->where('id', 'like', "%{$name}%");//实现过滤控制器
+            $where['id'] = $name;
+         // 模板显示
+        } 
+        $list = $db->paginate(10);
+        $num = 0;
+        return view("admin.type.order")->with(["list"=>$list,"where"=>$where,"num"=>$num]);
+    }
+    public function shan(Request $request)
+    {
+        $did = $request->did;
+        \DB::table('details')->where('id',$did)->delete();
+        return '删除成功';
+    }
+    // 结算
+    public function jiesuan(Reuqest $request)
+    {  
+        return $request->prices;
     }
 }
