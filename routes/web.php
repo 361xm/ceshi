@@ -164,7 +164,7 @@ Route::get('/ShopList/{id}',"NewlinkController@ShopList");
 
 //跳转到购物车
 Route::get('/Shoping',"NewlinkController@Shoping");
-//个人中心
+//个人中心a
 Route::get('/center',"NewlinkController@center");
 Route::get('/edit',"NewlinkController@edit");
 //添加收货人地址信息
@@ -244,7 +244,7 @@ Route::get('type/comment',function () {
 });
 
 //显示订单详情表
-Route::any('type/order',"Admin\WordController@index");
+Route::any('type/order',"WordController@index");
 
 //显示添加订单表
 Route::get('type/addorder',function () {
@@ -294,6 +294,9 @@ Route::any('/config',function(){
 //站点配置
 Route::any('/doConfig','WordController@zhandian');
 
+// Ajax订单删除
+Route::any('/shan','WordController@shan');
+
 // 网站维护页面
 Route::get('/errors',function(){
 	return view('errors.errors');
@@ -324,3 +327,6 @@ Route::any('/doCon','WordController@del');
 Route::any('/dingdan/{id?}','DingdanController@dingdan');
 // 支付
 Route::any('/zhifu/{id?}','ZhiFuController@zhifu');
+
+// Ajax获取用户要购买的商品
+Route::any('/jiesuan','WordController@jiesuan');
