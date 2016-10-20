@@ -1,10 +1,16 @@
 @extends('home.base.base1')
 @section('content')
+<link href="http://361img.361sport.com.cn/shop/css/css.css" rel="stylesheet" type="text/css" />
 <link href="http://361img.361sport.com.cn/shop/css/user.css" rel="stylesheet" type="text/css" />
+<link href="http://361img.361sport.com.cn/shop/js/artDialog/skins/default.css" rel="stylesheet" type="text/css" />
 <style type="text/css">
-#get_code,#changeMobile{ background:#f97d02; border-radius:3px; margin:0 8px; color:white; padding:2px 5px; cursor:pointer;}
-.formlist dl dd { width: 480px }
+.uoserch_c1 .input{height:18px;margin:0;}
+.uoserch_c .submit{margin-left:10px;}
+.uoserch_c1,.uoserch_c2{height:27px;line-height:27px;text-align:center;padding:0;}
+.bank{ width:535px; position:absolute; left:566px; top:200px; background:#f0f0f5; border:2px solid #ddd; border-radius:4px; }
+.bankClose{ text-align:right;	 }
 </style>
+
 <script type="text/javascript" src="../../home/js/jsAddress.js"></script>
 <!--内容-->
 <div class="userbac">
@@ -23,10 +29,12 @@
                 <a class="useredit" href="{{ URL('/edit') }}" style="color:orange;">添加个人资料</a>
                 <a class="useredit" href="{{ URL('/doCenter')}}" style="color:orange;">修改个人资料</a>
             </div>
-            <div class="userinfo2">
-                <a href="/index.php?m=User&a=comlist"><span>0</span>商品评论</a>
-                <a href="/index.php?m=User&a=order&order=status&status=1"><span>0</span>处理中订单</a>
-            </div>
+ 
+			<!--
+            <div>
+                <div class="pclass_title clearfix"><a href="/index.php?m=User&a=exchange">我的积分</a></div>
+            </div>-->
+
             <div>
                 <div class="pclass_title clearfix close"><span></span>我的订单</div>
                 <div class="pclass">
@@ -36,30 +44,16 @@
                     </ul>
                 </div>
             </div>
-			<!--
-            <div>
-                <div class="pclass_title clearfix"><a href="/index.php?m=User&a=exchange">我的积分</a></div>
-            </div>-->
-            <div>
-                <div class="pclass_title clearfix close"><span></span>我的评论</div>
-                <div class="pclass">
-                    <ul>
-                        <li><a href="/index.php?m=User&a=comlist">发表过的评论</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div>
-                <div class="pclass_title clearfix"><a href="/index.php?m=User&a=address">收货地址</a></div>
-            </div>
             <div>
                 <div class="pclass_title clearfix close"><span></span>账户设置</div>
                 <div class="pclass">
                     <ul>
-                        <li><a href="/index.php?m=User&a=profile">个人档案</a></li>
-                        <li><a href="/index.php?m=User&a=password">修改登录密码</a></li>
+                        <li><a href="{{ URL('/doCenter') }}">个人档案</a></li>
+                        <li><a href='{{ URL("/forgetPasswd") }}'>修改登录密码</a></li>
                     </ul>
                 </div>
             </div>
+
 </div>
 <div class="pl_bottom2"></div>
 
@@ -150,10 +144,24 @@
 		<div class="clear"></div>
     </div>
 </div>
-<!--底部-->
 <script src="http://tjs.sjs.sinajs.cn/open/api/js/wb.js" type="text/javascript" charset="utf-8"></script>
-<script type="text/javascript">  
-    addressInit('area','cmbProvince','cmbCity','cmbArea','西北地区', '北京', '市辖区', '东城区');  
-    //addressInit('Select1', 'Select2', 'Select3');  
-</script>  
+<script type="text/javascript" src="http://361img.361sport.com.cn/shop/js/artDialog/artDialog.js"></script>
+<script type="text/javascript" src="http://361img.361sport.com.cn/shop/js/user.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+	$("a#delOrder").live("click",function(){
+		var delid = $(this).attr("data-id");
+		var delUrl = "/index.php?m=User&a=delOrder";
+		artDialog.confirm("确定删除订单？",function(){
+			$.post(delUrl,{delid:delid},function( result ){
+				if( result.status == '0' ){
+					artDialog.tips(result.msg,2,"succeed"); window.location.reload(); return true;
+				} else {
+					artDialog.tips(result.msg,2,"error"); return false;
+				}
+			},"json");
+		},function(){ return false; });
+	});
+});
+</script>
 @endsection

@@ -36,7 +36,7 @@
                       <th style=" text-align:center;">{{ $new->fu }}</th>
                       <th style=" text-align:center;">{{ $new->zi }}</th>
                       <th style=" text-align:center;">{{ $new->info }}</th>
-                     <td><a href="javascript:adc({{ $new->id }})" class="glyphicon glyphicon-trash"></a> | <a onclick="update({{ $new->id }})" class="glyphicon glyphicon-plus" data-toggle="modal" data-target="#myModal" id="values"></a></td>
+                     <td><a href="javascript:adc({{ $new->id }})" class="glyphicon glyphicon-trash"></a> | <a onclick="date({{ $new->id}} )" class="glyphicon glyphicon-wrench" data-toggle="modal" data-target="#myModal" id="values"></a></td>
                     </tr>
                     @endforeach
                   </table>
@@ -62,7 +62,7 @@
         }
       }
     </script>
-  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
    <div class="modal-dialog">
       <div class="modal-content">
          <div class="modal-header">
@@ -75,20 +75,20 @@
             </h4>
          </div>
          <div class="modal-body" >
-           <form role="form" id="updates" name="update" method="post">
+           <form role="form" id="updates" name="newform" method="post" action="">
             <input type="hidden" name="_token" value="{{ csrf_token() }}">
             <input type="hidden" name="_method" value="put">
               <div class="form-group">
               <label for="name" >大标题</label>
-              <input type="text" class="form-control" id="name" placeholder="请输入..." name="fu">
+              <input type="text" class="form-control"  placeholder="请输入..." name="fu">
               </div>
               <div class="form-group">
               <label for="name" >小标题</label>
-              <input type="text" class="form-control" id="name" placeholder="请输入..." name="zi">
+              <input type="text" class="form-control" placeholder="请输入..." name="zi">
               </div>
               <div class="form-group">
               <label for="name" >链接地址</label>
-              <input type="text" class="form-control" id="name" placeholder="请输入..." name="info">
+              <input type="text" class="form-control"  placeholder="请输入..." name="info">
               </div>
               <div class="checkbox">
               </div>
@@ -104,15 +104,17 @@
          </div>
       </div><!-- /.modal-content -->
 </div><!-- /.modal -->
+
       <!-- Add the sidebar's background. This div must be placed
            immediately after the control sidebar -->
       <div class="control-sidebar-bg"></div>
     </div><!-- ./wrapper -->
 
     <script type="text/javascript">
-      function update(id){
-        var myform = document.getElementById('updates');
-        myform.action = "/shui/"+id;
-      }
+      function date(id)
+      {
+        var newform = document.getElementById('updates');
+        newform.action = "/ek/"+id;
+      } 
     </script>
   @endsection

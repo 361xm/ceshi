@@ -29,7 +29,7 @@
                                     个人电子发票                                                    </p>
                 </div>
                 <div class="icon-box">
-                    <i class="iconfont"><img src="images/yes_ok.png"></i>
+                    <i class="iconfont"><img src="{{ asset('home/dingdancss/images/yes_ok.png')}}"></i>
                 </div>
             </div>
         </form>

@@ -27,7 +27,6 @@
       <td class="tb1_td1"><input id="Checkbox1" type="checkbox"  class="allselect"/></td>
       <td class="tb1_td1">全选</td>
       <td class="tb1_td3">商品</td>
-      <td class="tb1_td4">商品信息</td>
       <td class="tb1_td5">数量</td>
       <td class="tb1_td6">单价</td>
       <td class="tb1_td7">操作</td>
@@ -44,7 +43,6 @@
       <td class="tb2_td1"><input type="checkbox" value="1" name="newslist" id="newslist-1" /></td>
       <td class="tb2_td2"><a href="#"><img src='{{ URL("admins/upload/$gb->goodsimg")}}'/></a></td>
       <td class="tb2_td3"><a href="#">{{ $gb->goodname}}</a></td>
-      <td class="tb1_td4">{{ $gb->goodsdescript }}</td>
       <td class="tb1_td5">
         <div class="gw_num">
           <em class="jian" onclick="jian()">-</em>
@@ -81,15 +79,18 @@
 <div class="clear"></div>
 <script type="text/javascript">
     function jia(){
-      var counts = $('#vals').val();
-      var jianshu = Number(counts)+1;
-      var vls = $('#vls').html()*jianshu;
-      jianshu-1;
+      var counts = Number($('#vls').html());
+      var vls = Number($('#vls').html())+counts;
+      var val = Number($('#vals').val())+1;
       $('#vls').html(vls);
     }
     function jian(){
-       var counts = $('#vals').val();
-      var vls = $('#vls').html()/counts;
+       var counts = Number($('#total1').html());
+       var val = Number($('#vals').val());
+       if(val == 1){
+        $('#.jian').attr('disabled', 'true');
+       }
+      var vls = Number($('#vls').html())-counts;
       $('#vls').html(vls);
     }
 		function voids(id){

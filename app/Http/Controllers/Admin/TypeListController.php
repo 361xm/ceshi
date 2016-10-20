@@ -26,7 +26,8 @@ class TypeListController extends Controller
 		$image_c = $request->file('image_c');
 		$image_c1 = $request->file('image_c1');
 		$image_c2 = $request->file('image_c2');
-		// dd($image_c2);
+		$sex = $request->input('sex');
+		// dd($sex);
 		// 上传
 		 if(!empty($goodsname) && !empty($goodsprice) && !empty($goodsImage)){
         //判断是否有上传

@@ -20,8 +20,10 @@ class AjaxController extends Controller
                $price = $goodsname[0]->goodsprice;
                $data = \DB::table('gouwche')->insert(['uid'=>$uid,'gid'=>$id,'color'=>$goodscolor,'sizes'=>$sizes,'count'=>$count,'goodname'=>$name,'goodsimg'=>$color,'goodsprice'=>$price]);
                $configs = \DB::table('config')->get(); 
-               $list = \DB::table('goods')->join('gouwche','gouwche.gid','=','goods.id')->where('uid',$uid)->get();
-               return view('home/Shoping')->with(['list'=>$list,'configs'=>$configs]);             
+               $list = \DB::table('gouwche')->join('goods','gouwche.gid','=','goods.id')->where('uid',$uid)->get();
+
+               $wan=\DB::table('links')->get();
+               return view('home/Shoping')->with(['list'=>$list,'configs'=>$configs,'wan'=>$wan]);             
           }else{
                return redirect('/login');
           }

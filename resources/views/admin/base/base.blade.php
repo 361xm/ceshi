@@ -218,9 +218,9 @@
                 <i class="fa fa-angle-left pull-right"></i>
               </a>
               <ul class="treeview-menu">
-                <li><a href="{{ URL('type/order') }}"><i class="fa fa-circle-o"></i>订单详情表</a></li>
-                <li><a href="../UI/buttons.html"><i class="fa fa-circle-o"></i>发货单列表</a></li>
-                <li><a href="../UI/sliders.html"><i class="fa fa-circle-o"></i>退货单列表</a></li>
+                <li><a href="{{ URL('type/order') }}"><i class="fa fa-circle-o"></i>待发货列表</a></li>
+                <li><a href="{{ URL('type/ordera') }}"><i class="fa fa-circle-o"></i>发货单列表</a></li>
+                <li><a href="{{ URL('type/orderb') }}"><i class="fa fa-circle-o"></i>退货单列表</a></li>
 <!--                 <li><a href="../UI/timeline.html"><i class="fa fa-circle-o"></i> Timeline</a></li>
                 <li><a href="../UI/modals.html"><i class="fa fa-circle-o"></i> Modals</a></li> -->
               </ul>

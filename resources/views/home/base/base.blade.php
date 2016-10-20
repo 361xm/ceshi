@@ -131,12 +131,12 @@
                       <div class="communite-content">
            
             <div class="newfoot_cl">
+                 @foreach($wan as $new)    
                 <dl>
-                    <dt>关于361°</dt>
-                    <dd><a href="http://www.361sport.com/index.php?m=Info&a=show&id=10&cate_id=6">集团简介</a></dd>
-                    <dd><a href="{{ URL('/info') }}" target="_blank">实时新闻</a></dd>
-                    <dd><a href="http://ir.361sport.com/s/index.php">投资者关系</a></dd>
-                </dl>               
+                    <dt>{{ $new->fu }}</dt>
+                    <dd><a href="http://{{ $new->info }}">{{ $new->zi }}</a></dd>
+                </dl>
+                @endforeach             
             </div>
 
                         <div class="newfoot_cr">

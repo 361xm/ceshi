@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -9,7 +9,7 @@
 <link href="http://361img.361sport.com.cn/shop/css/product-new.css" rel="stylesheet" type="text/css" />
 <link rel="stylesheet" type="text/css" href="http://361img.361sport.com.cn/shop/js/fancybox/jquery.fancybox-1.3.4.css" media="screen" />
 <link href="http://361img.361sport.com.cn/shop/js/artDialog/skins/default.css" rel="stylesheet" type="text/css" />
-<link rel="stylesheet" href="{{ asset('admins/bootstrap/css/bootstrap1.css') }}">
+<link rel="stylesheet" href="{{ asset('./admins/bootstrap/css/bootstrap1.css') }}">
 </head>
 <body>
 <div class="newheader361"> 
@@ -82,21 +82,18 @@
 		<div class="smenu-list border-top">
 			<h4 class="open clearfix">性别<span>&nbsp;</span></h4>
 			<ul class="smenulist clearfix" >
-				<a href="http://www.361sport.com/index.php?m=Product&a=index&sex=1"><li>男子</li></a>
-				<a href="http://www.361sport.com/index.php?m=Product&a=index&sex=0"><li>女子</li></a>
+				<a href="#" onclick="Do()" id="men" value="男士"><li>男士</li></a>
+				<a href="#" onclick="women()" id="women" value="女士"><li>女士</li></a>
 			</ul>
-		</div>
-		<div class="smenu-list border-top">
-			<h4 class="open clearfix">产品类别<span>&nbsp;</span></h4>
-			<ul class="smenulist clearfix" >
-				<a href="http://www.361sport.com/index.php?m=Product&a=index&pclass=4"><li>鞋</li></a><a href="http://www.361sport.com/index.php?m=Product&a=index&pclass=7"><li>上装</li></a><a href="http://www.361sport.com/index.php?m=Product&a=index&pclass=8"><li>下装</li></a><a href="http://www.361sport.com/index.php?m=Product&a=index&pclass=10"><li>泳镜</li></a><a href="http://www.361sport.com/index.php?m=Product&a=index&pclass=44"><li>泳帽</li></a><a href="http://www.361sport.com/index.php?m=Product&a=index&pclass=45"><li>泳衣</li></a><a href="http://www.361sport.com/index.php?m=Product&a=index&pclass=55"><li>配件</li></a><a href="http://www.361sport.com/index.php?m=Product&a=index&pclass=78"><li>新品上市</li></a>			</ul>
 		</div>
 	</div>
 	<div class="search-list">
 				<div class="search-choose clearfix">
 			<div class="youchoose"><b>您的选择：</b></div>
-			<div class="chooseleft">
-							</div>
+
+			<div class="chooseleft" id="choose">
+
+			</div>
 			<div class="chooseright"><a href="/index.php?m=Product&a=index">全部撤销</a><span>共<em>2377</em>件产品</span></div>
 		</div>
 		<div class="sr-chooseCon">
@@ -105,9 +102,22 @@
 					<table  cellpadding="0" cellspacing="0">
 						<tr valign="top">
 							<td class="choosetitle">尺&nbsp;&nbsp;&nbsp;码</td>
-							<td  id="chimasize">
-								<ul class="clearfix">
-									<li><a  href="http://www.361sport.com/index.php?m=Product&a=index&size=XS">XS</a></li><li><a  href="http://www.361sport.com/index.php?m=Product&a=index&size=S">S</a></li><li><a  href="http://www.361sport.com/index.php?m=Product&a=index&size=M">M</a></li><li><a  href="http://www.361sport.com/index.php?m=Product&a=index&size=L">L</a></li><li><a  href="http://www.361sport.com/index.php?m=Product&a=index&size=XL">XL</a></li><li><a  href="http://www.361sport.com/index.php?m=Product&a=index&size=XXL">XXL</a></li><li><a  href="http://www.361sport.com/index.php?m=Product&a=index&size=XXXL">XXXL</a></li><li><a  href="http://www.361sport.com/index.php?m=Product&a=index&size=4XL">4XL</a></li><li><a  href="http://www.361sport.com/index.php?m=Product&a=index&size=5XL">5XL</a></li><li><a  href="http://www.361sport.com/index.php?m=Product&a=index&size=6XL">6XL</a></li><li><a  href="http://www.361sport.com/index.php?m=Product&a=index&size=7XL">7XL</a></li><li><a  href="http://www.361sport.com/index.php?m=Product&a=index&size=8XL">8XL</a></li><li><a  href="http://www.361sport.com/index.php?m=Product&a=index&size=25">25</a></li><li><a  href="http://www.361sport.com/index.php?m=Product&a=index&size=26">26</a></li><li><a  href="http://www.361sport.com/index.php?m=Product&a=index&size=27">27</a></li><li><a  href="http://www.361sport.com/index.php?m=Product&a=index&size=28">28</a></li><li><a  href="http://www.361sport.com/index.php?m=Product&a=index&size=29">29</a></li><li><a  href="http://www.361sport.com/index.php?m=Product&a=index&size=30">30</a></li><li><a  href="http://www.361sport.com/index.php?m=Product&a=index&size=31">31</a></li><li><a  href="http://www.361sport.com/index.php?m=Product&a=index&size=32">32</a></li><li><a  href="http://www.361sport.com/index.php?m=Product&a=index&size=33">33</a></li><li><a  href="http://www.361sport.com/index.php?m=Product&a=index&size=34">34</a></li><li><a  href="http://www.361sport.com/index.php?m=Product&a=index&size=35">35</a></li><li><a  href="http://www.361sport.com/index.php?m=Product&a=index&size=36">36</a></li><li><a  href="http://www.361sport.com/index.php?m=Product&a=index&size=37">37</a></li><li><a  href="http://www.361sport.com/index.php?m=Product&a=index&size=38">38</a></li><li><a  href="http://www.361sport.com/index.php?m=Product&a=index&size=39">39</a></li><li><a  href="http://www.361sport.com/index.php?m=Product&a=index&size=40">40</a></li><li><a  href="http://www.361sport.com/index.php?m=Product&a=index&size=41">41</a></li><li><a  href="http://www.361sport.com/index.php?m=Product&a=index&size=42">42</a></li><li><a  href="http://www.361sport.com/index.php?m=Product&a=index&size=43">43</a></li><li><a  href="http://www.361sport.com/index.php?m=Product&a=index&size=44">44</a></li><li><a  href="http://www.361sport.com/index.php?m=Product&a=index&size=45">45</a></li>								</ul>
+							<td  id="chimasize">&nbsp;&nbsp;
+								<input type="button"  id="btn_1" value="XS" onClick="btn_1()"  style="background-color:#fff;color:#ddd;"/>&nbsp;&nbsp;
+								<input type="button"  id="btn_2" value="S" 	onClick="btn_2()" 	style="background-color:#fff;color:#ddd;"/>&nbsp;&nbsp;
+								<input type="button"  id="btn_3" value="M"	onClick="btn_3()" 	style="background-color:#fff;color:#ddd;"/>&nbsp;&nbsp;
+								<input type="button"  id="btn_4" value="L" 	onClick="btn_4()" 	style="background-color:#fff;color:#ddd;"/>&nbsp;&nbsp;
+								<input type="button"  id="btn_5" value="XL" onClick="btn_5()" 	style="background-color:#fff;color:#ddd;"/>&nbsp;&nbsp;
+								<input type="button"  id="btn_6" value="XXL" onClick="btn_6()" 	style="background-color:#fff;color:#ddd;"/>&nbsp;&nbsp;
+								<input type="button"  id="btn_7" value="XXXL" onClick="btn_7()" 	style="background-color:#fff;color:#ddd;"/>&nbsp;&nbsp;
+								<input type="button"  id="btn_8" value="36" onClick="btn_8()" 	style="background-color:#fff;color:#ddd;"/>&nbsp;&nbsp;
+								<input type="button"  id="btn_9" value="37" onClick="btn_9()" 	style="background-color:#fff;color:#ddd;"/>&nbsp;&nbsp;
+								<input type="button"  id="btn_10" value="38" onClick="btn_10()" 	style="background-color:#fff;color:#ddd;"/>&nbsp;&nbsp;
+								<input type="button"  id="btn_11" value="39" onClick="btn_11()" 	style="background-color:#fff;color:#ddd;"/>&nbsp;&nbsp;
+								<input type="button"  id="btn_12" value="40" onClick="btn_12()" 	style="background-color:#fff;color:#ddd;"/>&nbsp;&nbsp;
+								<input type="button"  id="btn_13" value="41" onClick="btn_13()" 	style="background-color:#fff;color:#ddd;"/>&nbsp;&nbsp;
+								<input type="button"  id="btn_14" value="42" onClick="btn_14()" 	style="background-color:#fff;color:#ddd;"/>&nbsp;&nbsp;
+								<input type="button"  id="btn_15" value="43" onClick="btn_15()" 	style="background-color:#fff;color:#ddd;"/>&nbsp;&nbsp;
 							</td>
 							<td id="more"><a href="javascript:void(0);">更多>></a></td>
 						</tr>
@@ -117,38 +127,19 @@
 					<table cellpadding="0" cellspacing="0">
 						<tr  valign="top">
 							<td  class="choosetitle">颜&nbsp;&nbsp;&nbsp;色</td>
-							<td>
-								<ul class="clearfix">
-									<li><a  href="http://www.361sport.com/index.php?m=Product&a=index&color=%E7%99%BD">白</a></li><li><a  href="http://www.361sport.com/index.php?m=Product&a=index&color=%E7%BA%A2">红</a></li><li><a  href="http://www.361sport.com/index.php?m=Product&a=index&color=%E9%BB%84">黄</a></li><li><a  href="http://www.361sport.com/index.php?m=Product&a=index&color=%E6%A9%99">橙</a></li><li><a  href="http://www.361sport.com/index.php?m=Product&a=index&color=%E7%BB%BF">绿</a></li><li><a  href="http://www.361sport.com/index.php?m=Product&a=index&color=%E7%B4%AB">紫</a></li><li><a  href="http://www.361sport.com/index.php?m=Product&a=index&color=%E8%93%9D">蓝</a></li><li><a  href="http://www.361sport.com/index.php?m=Product&a=index&color=%E7%81%B0">灰</a></li><li><a  href="http://www.361sport.com/index.php?m=Product&a=index&color=%E9%BB%91">黑</a></li><li><a  href="http://www.361sport.com/index.php?m=Product&a=index&color=%E6%A3%95">棕</a></li>								</ul>
+							<td>&nbsp;&nbsp;
+								<input type="button"  id="col_1" value="白" onClick="col_1()"  style="background-color:#fff;color:#ddd;"/>&nbsp;&nbsp;
+								<input type="button"  id="col_2" value="红" onClick="col_2()" 	style="background-color:#fff;color:#ddd;"/>&nbsp;&nbsp;
+								<input type="button"  id="col_3" value="黑"	onClick="col_3()" 	style="background-color:#fff;color:#ddd;"/>&nbsp;&nbsp;
+								<input type="button"  id="col_4" value="黄" onClick="col_4()" 	style="background-color:#fff;color:#ddd;"/>&nbsp;&nbsp;
+								<input type="button"  id="col_5" value="紫" onClick="col_5()" 	style="background-color:#fff;color:#ddd;"/>&nbsp;&nbsp;
+								<input type="button"  id="col_6" value="灰" onClick="col_6()" 	style="background-color:#fff;color:#ddd;"/>&nbsp;&nbsp;
 							</td>
 						</tr>
 					</table>
 				</div>
-				<div class="chooseCon01">
-					<table  cellpadding="0" cellspacing="0">
-						<tr valign="top">
-							<td class="choosetitle">上市时间</td>
-							<td id="chimasize">
-								<ul class="clearfix">
-									<li><a  href="http://www.361sport.com/index.php?m=Product&a=index&time=%E5%BE%80%E5%B9%B4xx%E5%AD%A3">往年xx季</a></li><li><a  href="http://www.361sport.com/index.php?m=Product&a=index&time=2016%E6%98%A5%E5%AD%A3">2016春季</a></li><li><a  href="http://www.361sport.com/index.php?m=Product&a=index&time=2016%E5%B9%B4%E7%BA%AF%E5%AD%A3">2016年纯季</a></li><li><a  href="http://www.361sport.com/index.php?m=Product&a=index&time=2016%E5%B9%B4%E7%A7%8B%E5%AD%A3">2016年秋季</a></li><li><a  href="http://www.361sport.com/index.php?m=Product&a=index&time=2016%E5%B9%B4%E6%98%A5%E5%AD%A3">2016年春季</a></li><li><a  href="http://www.361sport.com/index.php?m=Product&a=index&time=2016%E5%B9%B4%E6%98%A5%E5%A4%8F%E5%AD%A3">2016年春夏季</a></li><li><a  href="http://www.361sport.com/index.php?m=Product&a=index&time=2016%E5%B9%B4%E5%A4%8F%E5%AD%A3">2016年夏季</a></li><li><a  href="http://www.361sport.com/index.php?m=Product&a=index&time=2016%E5%B9%B4%E5%86%AC%E5%AD%A3">2016年冬季</a></li><li><a  href="http://www.361sport.com/index.php?m=Product&a=index&time=2016%E5%A4%8F%E5%AD%A3">2016夏季</a></li><li><a  href="http://www.361sport.com/index.php?m=Product&a=index&time=2016-06-15">2016-06-15</a></li><li><a  href="http://www.361sport.com/index.php?m=Product&a=index&time=2015%E7%A7%8B%E5%AD%A3">2015秋季</a></li><li><a  href="http://www.361sport.com/index.php?m=Product&a=index&time=2015%E6%98%A5%E5%AD%A3">2015春季</a></li><li><a  href="http://www.361sport.com/index.php?m=Product&a=index&time=2015%E6%98%A5%E5%A4%8F%E5%AD%A3">2015春夏季</a></li><li><a  href="http://www.361sport.com/index.php?m=Product&a=index&time=2015%E5%B9%B4%E7%A7%8B%E5%AD%A3">2015年秋季</a></li><li><a  href="http://www.361sport.com/index.php?m=Product&a=index&time=2015%E5%B9%B4%E6%98%A5%E5%AD%A3">2015年春季</a></li><li><a  href="http://www.361sport.com/index.php?m=Product&a=index&time=2015%E5%B9%B4%E6%98%A5%E5%A4%8F%E5%AD%A3">2015年春夏季</a></li><li><a  href="http://www.361sport.com/index.php?m=Product&a=index&time=2015%E5%B9%B4%E5%A4%8F%E5%AD%A3">2015年夏季</a></li><li><a  href="http://www.361sport.com/index.php?m=Product&a=index&time=2015%E5%B9%B4%E5%86%AC%E5%AD%A3">2015年冬季</a></li><li><a  href="http://www.361sport.com/index.php?m=Product&a=index&time=2015%E5%86%AC%E5%AD%A3">2015冬季</a></li><li><a  href="http://www.361sport.com/index.php?m=Product&a=index&time=2014%E7%A7%8B%E5%AD%A3">2014秋季</a></li><li><a  href="http://www.361sport.com/index.php?m=Product&a=index&time=2014%E5%B9%B4%E7%A7%8B%E5%AD%A3">2014年秋季</a></li><li><a  href="http://www.361sport.com/index.php?m=Product&a=index&time=2014%E5%B9%B4%E7%A7%8B%E5%86%AC%E5%AD%A3">2014年秋冬季</a></li><li><a  href="http://www.361sport.com/index.php?m=Product&a=index&time=2014%E5%B9%B4%E6%98%A5%E5%AD%A3">2014年春季</a></li><li><a  href="http://www.361sport.com/index.php?m=Product&a=index&time=2014%E5%B9%B4%E6%98%A5%E5%A4%8F%E5%AD%A3">2014年春夏季</a></li><li><a  href="http://www.361sport.com/index.php?m=Product&a=index&time=2014%E5%B9%B4%E6%98%A5">2014年春</a></li><li><a  href="http://www.361sport.com/index.php?m=Product&a=index&time=2014%E5%B9%B4%E5%A4%8F%E5%AD%A3">2014年夏季</a></li><li><a  href="http://www.361sport.com/index.php?m=Product&a=index&time=2014%E5%B9%B4%E5%86%AC%E5%AD%A3">2014年冬季</a></li><li><a  href="http://www.361sport.com/index.php?m=Product&a=index&time=2014%E5%86%AC%E5%AD%A3">2014冬季</a></li><li><a  href="http://www.361sport.com/index.php?m=Product&a=index&time=2013%E7%A7%8B%E5%AD%A3">2013秋季</a></li><li><a  href="http://www.361sport.com/index.php?m=Product&a=index&time=2013%E5%B9%B4%E7%A7%8B%E5%AD%A3">2013年秋季</a></li><li><a  href="http://www.361sport.com/index.php?m=Product&a=index&time=2013%E5%B9%B4%E6%98%A5%E5%AD%A3">2013年春季</a></li><li><a  href="http://www.361sport.com/index.php?m=Product&a=index&time=2013%E5%B9%B4%E6%98%A5%E5%A4%8F%E5%AD%A3">2013年春夏季</a></li><li><a  href="http://www.361sport.com/index.php?m=Product&a=index&time=2013%E5%B9%B4%E6%98%A5%E5%A4%8F">2013年春夏</a></li><li><a  href="http://www.361sport.com/index.php?m=Product&a=index&time=2013%E5%B9%B4%E5%A4%8F%E5%AD%A3">2013年夏季</a></li><li><a  href="http://www.361sport.com/index.php?m=Product&a=index&time=2013%E5%B9%B4%E5%86%AC%E5%AD%A3">2013年冬季</a></li><li><a  href="http://www.361sport.com/index.php?m=Product&a=index&time=2013%E5%86%AC%E5%AD%A3%E5%AD%A3">2013冬季季</a></li><li><a  href="http://www.361sport.com/index.php?m=Product&a=index&time=2013%E5%86%AC%E5%AD%A3">2013冬季</a></li><li><a  href="http://www.361sport.com/index.php?m=Product&a=index&time=2012%E5%B9%B4%E7%A7%8B%E5%AD%A3">2012年秋季</a></li><li><a  href="http://www.361sport.com/index.php?m=Product&a=index&time=2012%E5%B9%B4%E6%98%A5%E5%A4%8F%E5%AD%A3">2012年春夏季</a></li><li><a  href="http://www.361sport.com/index.php?m=Product&a=index&time=2012%E5%B9%B4%E5%86%AC%E5%AD%A3">2012年冬季</a></li><li><a  href="http://www.361sport.com/index.php?m=Product&a=index&time=+2016%E5%B9%B4%E5%A4%8F%E5%AD%A3"> 2016年夏季</a></li><li><a  href="http://www.361sport.com/index.php?m=Product&a=index&time=+2015%E7%A7%8B%E5%AD%A3"> 2015秋季</a></li><li><a  href="http://www.361sport.com/index.php?m=Product&a=index&time=+2015%E5%B9%B4%E7%A7%8B%E5%AD%A3"> 2015年秋季</a></li><li><a  href="http://www.361sport.com/index.php?m=Product&a=index&time=+2015%E5%86%AC%E5%AD%A3"> 2015冬季</a></li>								</ul>
-							</td>
-							<td id="more"><a href="javascript:void(0);">更多>></a></td>
-						</tr>
-					<table>
-				</div>
-				<div class="chooseCon01 chooselast">
-					<table cellpadding="0" cellspacing="0">
-						<tr  valign="top">
-							<td class="choosetitle">价&nbsp;&nbsp;&nbsp;格</td>
-							<td>
-								<ul class="clearfix">
-									<li class="choosetitle">价&nbsp;&nbsp;&nbsp;格</li>
-									<li><a href="http://www.361sport.com/index.php?m=Product&a=index&price=1">0-100</a></li><li><a href="http://www.361sport.com/index.php?m=Product&a=index&price=2">100-200</a></li><li><a href="http://www.361sport.com/index.php?m=Product&a=index&price=3">200-300</a></li><li><a href="http://www.361sport.com/index.php?m=Product&a=index&price=4">300-1000</a></li><li><a href="http://www.361sport.com/index.php?m=Product&a=index&price=5">1000以上</a></li>									<li><input type="text" name="minprice" value="¥" />&nbsp;-&nbsp;<input type="text" name="maxprice" value="¥" /><input type="submit" name="submit" class="submit" value="确定" /></li>
-								</ul>
-							</td>
-						</tr>
-					</table>
-				</div>
+
+				
 			</div>
 			<a href="javascript:void(0);" class="openicon"><span>收起</span></a>
 		</div>
@@ -227,38 +218,13 @@
                 <div class="communite">
                   <div class="communite-content">
                   	<div class="newfoot_cl">
-        	<dl>
-            	<dt>关于361°</dt>
-                <dd><a href="http://ir.361sport.com/s/index.php" target="_blank">投资者关系</a></dd>
-                <dd><a href="/index.php?m=Info&a=show&id=10">集团简介</a></dd>
-                <dd><a href="http://cn.361sport.com/shop.asp" target="_blank">店铺查询</a></dd>
-                <dd><a href="http://361bift.361sport.com" target="_blank">361°BIFT</a></dd>
-                <dd><a href="/index.php?m=Info&a=show&id=14">联系我们</a></dd>
-            </dl>
-            <dl>
-            	<dt>如何购物</dt>
-                <dd><a href="/index.php?m=Info&a=show&id=1&cate_id=7">购物流程</a></dd>
-                <dd><a href="/index.php?m=Info&a=show&id=2&cate_id=7">订单查询</a></dd>
-                <dd><a href="/index.php?m=Info&a=show&id=15&cate_id=7">会员及积分体系</a></dd>
-                <!--<dd><a href="#">常见问题</a></dd>
-                <dd><a href="#">帮助中心</a></dd>-->
-            </dl>
-            <dl>
-            	<dt>支付方式</dt>
-                <dd><a href="/index.php?m=Info&a=show&id=3&cate_id=7">支付方式</a></dd>
-                <dd><a href="/index.php?m=Info&a=show&id=4&cate_id=7">发票说明</a></dd>
-            </dl>
-            <dl>
-            	<dt>物流配送</dt>
-                <dd><a href="/index.php?m=Info&a=show&id=5&cate_id=7">配送时间和范围</a></dd>
-                <dd><a href="/index.php?m=Info&a=show&id=6&cate_id=7">配送费用</a></dd>
-                <dd><a href="/index.php?m=Info&a=show&id=7&cate_id=7">商品验收</a></dd>
-            </dl>
-            <dl style="width:95px;">
-            	<dt>售后服务</dt>
-                <dd><a href="/index.php?m=Info&a=show&id=9&cate_id=7">退换货流程</a></dd>
-                <dd><a href="/index.php?m=Info&a=show&id=8&cate_id=7">售后服务政策</a></dd>
-            </dl>
+        	 @foreach($wan as $new)    
+                <dl>
+                    <dt>{{ $new->fu }}</dt>
+                    <dd><a href="http://{{ $new->info }}">{{ $new->zi }}</a></dd>
+                </dl>
+                @endforeach 
+          
         </div>
                     <div class="newfoot_cr">
                         <dl>
@@ -392,5 +358,183 @@ $(function(){
 	});
 });
 </script>
-</body>
-</html>
+<script type="text/javascript">
+	function btn_1(){
+		var btn_1 = document.getElementById('btn_1').value;
+		var choose = document.getElementById('choose');
+		choose.innerHTML = btn_1;
+		choose.style.color = 'orange';
+	}
+	function btn_2(){
+		var btn_2 = document.getElementById('btn_2').value;
+		var choose = document.getElementById('choose');
+		choose.innerHTML = btn_2;
+		choose.style.color = 'orange';
+	}
+	function btn_3(){
+		var btn_3 = document.getElementById('btn_3').value;
+		var choose = document.getElementById('choose');
+		choose.innerHTML = btn_3;
+		choose.style.color = 'orange';
+	}
+	function btn_4(){
+		var btn_4 = document.getElementById('btn_4').value;
+		var choose = document.getElementById('choose');
+		choose.innerHTML = btn_4;
+		choose.style.color = 'orange';
+	}
+	function btn_5(){
+		var btn_5 = document.getElementById('btn_5').value;
+		var choose = document.getElementById('choose');
+		choose.innerHTML = btn_5;
+		choose.style.color = 'orange';
+	}
+	function btn_6(){
+		var btn_6 = document.getElementById('btn_6').value;
+		var choose = document.getElementById('choose');
+		choose.innerHTML = btn_6;
+		choose.style.color = 'orange';
+	}
+	function btn_7(){
+		var btn_7 = document.getElementById('btn_7').value;
+		var choose = document.getElementById('choose');
+		choose.innerHTML = btn_7;
+		choose.style.color = 'orange';
+	}
+	function btn_8(){
+		var btn_8 = document.getElementById('btn_8').value;
+		var choose = document.getElementById('choose');
+		choose.innerHTML = btn_8;
+		choose.style.color = 'orange';
+	}
+	function btn_9(){
+		var btn_9 = document.getElementById('btn_9').value;
+		var choose = document.getElementById('choose');
+		choose.innerHTML = btn_9;
+		choose.style.color = 'orange';
+	}
+	function btn_10(){
+		var btn_10 = document.getElementById('btn_10').value;
+		var choose = document.getElementById('choose');
+		choose.innerHTML = btn_10;
+		choose.style.color = 'orange';
+	}
+	function btn_11(){
+		var btn_11 = document.getElementById('btn_11').value;
+		var choose = document.getElementById('choose');
+		choose.innerHTML = btn_11;
+		choose.style.color = 'orange';
+	}
+	function btn_12(){
+		var btn_12 = document.getElementById('btn_12').value;
+		var choose = document.getElementById('choose');
+		choose.innerHTML = btn_12;
+		choose.style.color = 'orange';
+	}
+	function btn_13(){
+		var btn_13 = document.getElementById('btn_13').value;
+		var choose = document.getElementById('choose');
+		choose.innerHTML = btn_13;
+		choose.style.color = 'orange';
+	}
+	function btn_14(){
+		var btn_14 = document.getElementById('btn_14').value;
+		var choose = document.getElementById('choose');
+		choose.innerHTML = btn_14;
+		choose.style.color = 'orange';
+	}
+	function btn_15(){
+		var btn_15 = document.getElementById('btn_15').value;
+		var choose = document.getElementById('choose');
+		choose.innerHTML = btn_15;
+		choose.style.color = 'orange';
+	}
+		function col_1(){
+		var col_1 = document.getElementById('col_1').value;
+		var choose = document.getElementById('choose');
+		choose.innerHTML += col_1;
+
+	}
+        function col_2(){
+        var col_2 = document.getElementById('col_2').value;
+        var choose = document.getElementById('choose');
+        choose.innerHTML += col_2;
+
+    }
+        function col_3(){
+        var col_3 = document.getElementById('col_3').value;
+        var choose = document.getElementById('choose');
+        choose.innerHTML += col_3;
+
+    }
+        function col_4(){
+        var col_4 = document.getElementById('col_4').value;
+        var choose = document.getElementById('choose');
+        choose.innerHTML += col_4;
+
+    }
+        function col_5(){
+        var col_5 = document.getElementById('col_5').value;
+        var choose = document.getElementById('choose');
+        choose.innerHTML += col_5;
+
+    }
+        function col_6(){
+        var col_6 = document.getElementById('col_6').value;
+        var choose = document.getElementById('choose');
+        choose.innerHTML += col_6;
+
+    }
+
+</script>
+<script type="text/javascript">
+    var choose = document.getElementById('choose');
+    var mens = document.getElementById('mens').value();
+    function Do(){
+       $.ajax({
+            url:'{{ URL("/men") }}',
+            type:'get',
+            data:{did:"{{ $p->id }}"},
+            dataType:'html',
+            success:function(data){
+                // var men =  "received JSON:" + JSON.stringify(data);
+                // $('#choose').html(function(){
+                //     return men;
+               // alert(data)
+               if(data == 0){
+                    var a = "男士";
+                choose.innerHTML = a;
+                choose.style.color = 'orange';
+              }
+            },
+            error:function(){
+                alert('ajax请求失败');
+            },
+        });
+    }
+    function women(){
+       $.ajax({
+            url:'{{ URL("/men") }}',
+            type:'get',
+            data:{did:"{{ $p->id }}"},
+            dataType:'html',
+            success:function(data){
+                // var men =  "received JSON:" + JSON.stringify(data);
+                // $('#choose').html(function(){
+                //     return men;
+               // alert(data)
+               if(data !== 0){
+                    var a = "女士";
+                choose.innerHTML = a;
+                choose.style.color = 'orange';
+              }
+            },
+            error:function(){
+                alert('ajax请求失败');
+            },
+        });
+    }
+</script>
+
+
+

@@ -74,13 +74,33 @@
                 </div>
                 <div style="clear: both;"></div>
               </td>
-              <td align="center" width="15%">￥{{ $list->goodsprice}}</td>
-              <td align="center" width="11%"> ￥{{ $list->goodsprice-100}}</td>
+              <td align="center" width="15%" id="priced">{{ $list->goodsprice}}</td>
+              <td align="center" width="11%"> {{ $list->goodsprice-100}}</td>
               <td align="center" width="13%">
-                <div>{{ $list->count}}</div>
+                <div><input type="text" style="width:50px;border:2px solid red;" id="txe" onblur="chufa()"></div>
                             </td>
+                            <!-- 这是为了商品价格相城 -->
+                            <script type="text/javascript">
+                            function chufa(){
+                                // 商品的个数
+                                var txe = document.getElementById('txe');
+                                // 商品的价格
+                                var priced = document.getElementById('priced');
+                                // 商品的小鸡
+                                var xiaoji = document.getElementById('xiaoji');
+                                // 商品的应付总额
+                                var zonge = document.getElementById('zonge');
+
+                                var bianl = priced.innerHTML*txe.value;
+
+                                xiaoji.innerHTML=bianl;
+
+                                zonge.innerHTML = bianl;
+                              }
+
+                            </script>
               <td align="center" width="10%">{{ $list->goodsprice-100}}</td>
-              <td align="center" width="14%">{{ $list->goodsprice-100}}</td>
+              <td align="center" width="14%" id="xiaoji"></td>
             </tr>       </tbody></table>
         </td>
         </tr>   </tbody></table>
@@ -98,7 +118,7 @@
             </tr>
             <tr>
               <th>应付总额：</th>
-              <td><span class="price">{{$list->count*$list->goodsprice}}</span><span>元</span></td>
+              <td><span class="price" id="zonge"></span><span>元</span></td>
             </tr>
           </tbody></table>
         </div>
