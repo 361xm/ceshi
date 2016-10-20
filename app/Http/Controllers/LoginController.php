@@ -9,7 +9,8 @@
 	{
 		public function login()
 		{
-			return view('home/login');
+            $wan=\DB::table("links")->get();
+			return view('home/login',["wan"=>$wan]);
 		
 		}
 
@@ -39,10 +40,12 @@
         //4 执行退出
     public function logout()
     {
+        $wan=\DB::table("links")->get();
         //忘记session
         session()->forget("adminuser");
         //重定向
-        return view("home/login");
+        $congigs=\DB::table('config')->get();
+        return view("home/login")->with(['configs'=>$configs,'wan'=>$wan]);
     }
 
     //忘记密码

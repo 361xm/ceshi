@@ -8,11 +8,11 @@
 		<div class="innterwrap">
 			<ul class="focusList">
 				<ul class="slides">		
-					<li> <a href="#" target="_blank" ><img src="../../home/images/gc160902_01.jpg"/></a> </li>			
-					<li> <a href="#" target="_blank" ><img src="../../home/images/hdp160913.jpg"/></a> </li>
-					<li> <a href="#" target="_blank" ><img src="../../home/images/hdp160826.jpg"/></a> </li>
-					<li> <a href="#" target="_blank" ><img src="../../home/images/hdp20160726.jpg"/></a> </li>
-					<li> <a href="#" target="_blank" ><img src="../../home/images/hdp160617.jpg"/></a> </li>
+					<li> <a href="#"><img src="../../home/images/gc160902_01.jpg"/></a> </li>			
+					<li> <a href="#"><img src="../../home/images/hdp160913.jpg"/></a> </li>
+					<li> <a href="#"><img src="../../home/images/hdp160826.jpg"/></a> </li>
+					<li> <a href="#"><img src="../../home/images/hdp20160726.jpg"/></a> </li>
+					<li> <a href="#"><img src="../../home/images/hdp160617.jpg"/></a> </li>
 				</ul>
 			</ul>
 			<ol class="btnlist">			

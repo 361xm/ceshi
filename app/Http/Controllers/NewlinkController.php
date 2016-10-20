@@ -9,19 +9,29 @@
 	{
 		public function newlink()
 		{
-			return view('home/newlink');
+			$wan=\DB::table("links")->get();
+			return view('home/newlink',["wan"=>$wan]);
+		}
+
+		public function link()
+		{
+			$wan=\DB::table("links")->get();
+			$list=\DB::table("types")->get();
+			$data = \DB::table('goods')->get();
+			return view('/web',["wan"=>$wan,"list"=>$list,"data"=>$data]);
 		}
 
 		public function info()
 		{
 			$list=\DB::table("press")->get();
-
-    		return view("home/xinwen",["list"=>$list]);
+			$wan=\DB::table("links")->get();
+    		return view("home/xinwen",["list"=>$list,"wan"=>$wan]);
 		}
 
 		public function page()
-		{
-			return view('home/ganchao');
+		{	
+			$wan=\DB::table("links")->get();
+			return view('home/ganchao')->with(["wan"=>$wan]);
 		}
 
 		public function product()
@@ -29,8 +39,9 @@
 			$db = \DB::table('goods');
 			$where = [];
 			$list = $db->paginate(40);
+			$wan=\DB::table("links")->get();
 			// dd($list);
-			return view('home/shangpin')->with(['list'=>$list,'where'=>$where]);
+			return view('home/shangpin')->with(['list'=>$list,'where'=>$where,"wan"=>$wan]);
 		}
 		public function ShopList($id)
 		{
@@ -43,15 +54,18 @@
 		}
 		public function Shoping()
 		{
-			return view('home/Shoping');
+			$wan=\DB::table("links")->get();
+			return view('home/Shoping')->with(["wan"=>$wan]);
 		}
 
 		public function center()
 		{
-			return view('home/center');
+			$wan=\DB::table("links")->get();
+			return view('home/center',["wan"=>$wan]);
 		}
 		public function edit()
 		{
-			return view('home/edit');
+			$wan=\DB::table("links")->get();
+			return view('home/edit',["wan"=>$wan]);
 		}
 	}

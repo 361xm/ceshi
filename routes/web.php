@@ -115,9 +115,8 @@
 Route::get('/', function () {
     return view('web');
 });
-Route::get('/link',function () {
-    return view('web');
-});
+
+Route::get('/link',"NewlinkController@link");
 // Route::get('/admin',"AdminController@admin");
 //跳转登录 注册页面
 Route::get('/login',"LoginController@login");
@@ -153,7 +152,7 @@ Route::get('/lk4',"Lk4Controller@lk4");
 //第六张图片链接
 Route::get('/lk5',"Lk5Controller@lk5");
 //第七张图片链接
-Route::get('/lk6',"Lk6Controller@lk6");
+Route::get('/lk6',"Lk5Controller@lk6");
 //跳转到新闻
 Route::get('/info',"NewlinkController@info");
 //跳转到10k
@@ -286,7 +285,7 @@ Route::any('/config',function(){
 });
 	
 //站点配置
-Route::any('/doConfig','WordController@zhandian');
+Route::any('/doConfig','Admin\zhanController@zhandian');
 // 网站维护页面
 Route::get('/errors',function(){
 	return view('errors.errors');
@@ -301,13 +300,13 @@ Route::get('/addinter',"Admin\lianController@wang");
 //执行添加链接
 Route::any('/qj', 'Admin\lianController@doqj');
 
+//执行修改
+Route::any('/ek/{id?}', 'Admin\lianController@shaqj');
+
 //执行删除
 Route::resource('/adcDel', 'Admin\lianController');
 
-//Route::any('/shui', 'Admin\lianController@update');
 
-Route::get('/shui',function(){
-	return 123;
-});
 
-Route::any('/hao',"Admin\lianController@index");
+// Route::any('/tui/{id}',"Admin\lianController@update");
+
