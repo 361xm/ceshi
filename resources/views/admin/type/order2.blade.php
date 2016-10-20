@@ -6,10 +6,10 @@
             <div class="col-xs-12">
               <div class="box">
                 <div class="box-header">
-                  <h3 class="box-title">待发货订单详情表</h3>
+                  <h3 class="box-title">退货订单详情表</h3>
                   <div class="box-tools">
                     <div class="" style="width: 150px;">
-                      <form action="{{ URL('type/order') }}" method="post" enctype="multipart/form-data">
+                      <form action="{{ URL('type/orderb') }}" method="post" enctype="multipart/form-data">
                         <input type="hidden" name="_token" value="{{ csrf_token()}}">
                         <input type="text" name="name" size="15" class="form-inline">
                         <button type="submit" class="btn btn-sm btn-default"><i class="fa fa-search"></i></button>
@@ -47,7 +47,7 @@
                         <td>{{$order->price }}</td>
                         <td>{{$order->time }}</td>
                         <td>{{$order->status}}</td>
-                        <td><a href="javascript:deDel({{ $order->id}})" class="glyphicon glyphicon-trash"></a><a href="/order/huo/{{ $order->id }}"><button class="btn btn-xs btn-info">发货</button></a>
+                        <td><a href="javascript:shouji({{ $order->id }})" class="glyphicon glyphicon-trash"></a><a href="/order/huojj/{{ $order->id }}"><button class="btn btn-xs btn-info">发货</button></a>
                         </td>
                       </tr>
                     </tbody>
@@ -65,11 +65,11 @@
           </div>
     </section>
     <script type="text/javascript">
-      function deDel(id) {  
+      function shouji(id) {  
          if(confirm('确定删除吗？')){
             var myform = document.myform;
 
-            myform.action = "/shan/"+id;
+            myform.action = "/shanb/"+id;
             myform.submit();
         }
       }

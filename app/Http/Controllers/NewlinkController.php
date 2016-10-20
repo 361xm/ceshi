@@ -9,19 +9,29 @@
 	{
 		public function newlink()
 		{
-			return view('home/newlink');
+			$wan=\DB::table("links")->get();
+			return view('home/newlink',["wan"=>$wan]);
+		}
+
+		public function link()
+		{
+			$wan=\DB::table("links")->get();
+			$list=\DB::table("types")->get();
+			$data = \DB::table('goods')->get();
+			return view('/web',["wan"=>$wan,"list"=>$list,"data"=>$data]);
 		}
 
 		public function info()
 		{
 			$list=\DB::table("press")->get();
-
-    		return view("home/xinwen",["list"=>$list]);
+			$wan=\DB::table("links")->get();
+    		return view("home/xinwen",["list"=>$list,"wan"=>$wan]);
 		}
 
 		public function page()
-		{
-			return view('home/ganchao');
+		{	
+			$wan=\DB::table("links")->get();
+			return view('home/ganchao')->with(["wan"=>$wan]);
 		}
 
 		public function product()
@@ -29,9 +39,11 @@
 			$db = \DB::table('goods');
 			$where = [];
 			$list = $db->paginate(40);
-			// dd($list);
+
+			$wan=\DB::table("links")->get();
+
 			$configs = \DB::table('config')->get();
-			return view('home/shangpin')->with(['list'=>$list,'where'=>$where,'configs'=>$configs]);
+			return view('home/shangpin')->with(['list'=>$list,'where'=>$where,'configs'=>$configs,"wan"=>$wan]);
 		}
 		public function ShopList($id)
 		{
@@ -41,30 +53,43 @@
 			$data = \DB::table('images')->join('goods','images.gid','=','goods.id')->where('gid',$id)->get();
 			// dd($data);
 			$configs = \DB::table('config')->get();
-			return view('home/ShopList')->with(['list'=>$list,'data'=>$data,'configs'=>$configs]);
+
+			$wan=\DB::table("links")->get();
+			return view('home/ShopList')->with(['list'=>$list,'data'=>$data,'configs'=>$configs,'wan'=>$wan]);
+
 			// dd($data);
 		}
 
 		public function Shoping()
-		{	$configs = \DB::table('config')->get();
+
+		{
+			$wan=\DB::table("links")->get();
+			$configs = \DB::table('config')->get();
 			$data = \DB::table('images')->join('goods','images.gid','=','goods.id')->get();
-			return view('home/Shoping')->with(['configs'=>$configs,'data'=>$data]);
-			
+			return view('home/Shoping')->with(['configs'=>$configs,'data'=>$data,"wan"=>$wan]);
 		}
 
 		public function center()
-		{	
+
+		{
+			$wan=\DB::table("links")->get();
+	
 			$id = session('adminuser')->id;
 			$danzi = \DB::table('details')->where('uid',$id)->get();
 			$configs = \DB::table('config')->get();
-			return view('home/center')->with(['configs'=>$configs,'danzi'=>$danzi]);
+			return view('home/center')->with(['configs'=>$configs,'danzi'=>$danzi,"wan"=>$wan]);
+
 		}
 
 
 		public function edit()
 		{
+
+
+			$wan=\DB::table("links")->get();
 			$configs = \DB::table('config')->get();
-			return view('home/edit')->with(['configs'=>$configs]);
+			return view('home/edit')->with(['configs'=>$configs,"wan"=>$wan]);
+
 		}
 
 		//添加收货人地址信息
@@ -100,9 +125,6 @@
 
 		public function doCenter()
 		{	
-
-
-
 			$configs = \DB::table('config')->get();
 			
 			// return 1;
@@ -111,17 +133,24 @@
 			$uid = \DB::table('user_c')->pluck('uid');
 			// dd($uid);
 			$data = \DB::table('user_c')->where('uid',$id)->get();
-			// $uid = $data->id;
-			// dd($id);
+
+			$wan=\DB::table("links")->get();
+
 			$array = array();
 			foreach($uid as $key=>$value){
 				$array[] = $value;	
 			}
 			if(in_array($id,$array)){
 				$configs = \DB::table('config')->get();
-					return view('home/doEdit')->with(['data'=>$data,'configs'=>$configs]);
+
+					return view('home/doEdit')->with(['data'=>$data,'configs'=>$configs,'wan'=>$wan]);
 				}else{
-					return view('home.doEdit')->with(['configs'=>$configs,'data'=>$data]);
+					return view('home.doEdit')->with(['configs'=>$configs,'data'=>$data,'wan'=>$wan]);
+
+					return view('home/doEdit')->with(['data'=>$data,'configs'=>$configs,'wan'=>$wan]);
+				}else{
+					return view('home.doEdit')->with(['configs'=>$configs,'data'=>$data,'wan'=>$wan]);
+
 				}
 			
 		}
@@ -132,6 +161,5 @@
 			$list = $request->only('username','sex','email','area','phone');
 			\DB::table('user_c')->where('uid',$id)->update($list);
 			return redirect('/doCenter');
-			// return 1;
 		}
 	}

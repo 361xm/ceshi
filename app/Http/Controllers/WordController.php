@@ -27,7 +27,9 @@ class WordController extends Controller
             $list = \DB::select("select *,concat(path,'-',id) as npath from types order by npath");
             $data = \DB::table('goods')->get();
             $configs = \DB::table('config')->get();
-            return view("/web")->with(['list'=>$list,"data"=>$data,'configs'=>$configs]);
+
+            $wan=\DB::table('links')->get();
+            return view("/web")->with(['list'=>$list,"data"=>$data,'configs'=>$configs,'wan'=>$wan]);
     		}
 	    }
 	}
@@ -37,5 +39,180 @@ class WordController extends Controller
         $did = $request->did;
         \DB::table('gouwche')->where('id',$did)->delete();
         return "删除成功";
+    }
+
+
+    public function index(Request $request)
+    {
+        $db = \DB::table('details');
+        $where = [];
+        if($request->has('name')){
+            $name = $request->input('name');
+            $db->where('id', 'like', "%{$name}%");//实现过滤控制器
+            $where['id'] = $name;
+         // 模板显示
+        } 
+        $list = $db->paginate(10);
+        $num = 0;
+       // $status=\DB::table('details')->where('status','=','0')->pluck('status');
+        $status=\DB::table('details')->where('status','0')->get();
+        // dd($status);
+        return view("admin.type.order")->with(["list"=>$list,"where"=>$where,"num"=>$num])->with(['status'=>$status]);
+    }
+ 
+    public function index1(Request $request)
+    {
+        $db = \DB::table('details');
+        $where = [];
+        if($request->has('name')){
+            $name = $request->input('name');
+            $db->where('id', 'like', "%{$name}%");//实现过滤控制器
+            $where['id'] = $name;
+         // 模板显示
+        } 
+        $list = $db->paginate(10);
+        $num = 0;
+       // $status=\DB::table('details')->where('status','=','0')->pluck('status');
+        $status=\DB::table('details')->where('status','1')->get();
+        // dd($status);
+        return view("admin.type.order1")->with(["list"=>$list,"where"=>$where,"num"=>$num,"status"=>$status]);
+    }
+
+    public function index2(Request $request)
+    {
+        $db = \DB::table('details');
+        $where = [];
+        if($request->has('name')){
+            $name = $request->input('name');
+            $db->where('id', 'like', "%{$name}%");//实现过滤控制器
+            $where['id'] = $name;
+         // 模板显示
+        } 
+        $list = $db->paginate(10);
+        $num = 0;
+       // $status=\DB::table('details')->where('status','=','0')->pluck('status');
+        $status=\DB::table('details')->where('status','=','2')->get();
+        return view("admin.type.order2")->with(["list"=>$list,"where"=>$where,"num"=>$num,"status"=>$status]);
+    }
+
+    public function edit(Request $request,$id)
+    {
+        //1 执行删除 
+        $data = \DB::table('details')->where('id',$id)->delete();//删除制定的id
+
+        //删除后执行跳转 
+        $db = \DB::table('details');
+        $where = [];
+            if($request->has('name')){
+                 $name = $request->input('name');
+                 $db->where('id', 'like', "%{$name}%");//实现过滤控制器
+                 $where['id'] = $name;
+            // 模板显示
+            } 
+         $list = $db->paginate(10);
+         return redirect('type/order')->with(['where'=>$where,'$list'=>$list]);
+
+    }
+
+
+        public function edit1(Request $request,$id)
+            {
+                //1 执行删除 
+                $data = \DB::table('details')->where('id',$id)->delete();//删除制定的id
+
+                //删除后执行跳转 
+                $db = \DB::table('details');
+                $where = [];
+                    if($request->has('name')){
+                         $name = $request->input('name');
+                         $db->where('id', 'like', "%{$name}%");//实现过滤控制器
+                         $where['id'] = $name;
+                    // 模板显示
+                    } 
+                 $list = $db->paginate(10);
+                 return redirect('type/ordera')->with(['where'=>$where,'$list'=>$list]);
+
+            }
+
+            public function edit2(Request $request,$id)
+                {
+                    //1 执行删除 
+                    $data = \DB::table('details')->where('id',$id)->delete();//删除制定的id
+
+                    //删除后执行跳转 
+                    $db = \DB::table('details');
+                    $where = [];
+                        if($request->has('name')){
+                             $name = $request->input('name');
+                             $db->where('id', 'like', "%{$name}%");//实现过滤控制器
+                             $where['id'] = $name;
+                        // 模板显示
+                        } 
+                     $list = $db->paginate(10);
+                     return redirect('type/orderb')->with(['where'=>$where,'$list'=>$list]);
+
+                }
+    public function huo(Request $request,$id)
+    {
+         //$data = $request->only("status");
+        $db = \DB::table('details');
+        $where = [];
+            if($request->has('name')){
+                 $name = $request->input('name');
+                 $db->where('id', 'like', "%{$name}%");//实现过滤控制器
+                 $where['id'] = $name;
+            // 模板显示
+            } 
+         $list = $db->paginate(10);
+         $aa=\DB::table('details')
+            ->where('id', $id)
+            ->update(['status'=>1]);
+
+     //  $data = \DB::table('details')->get();
+       $data=\DB::table('details')->where('status','=','0')->get();
+       //dd($data);
+
+         return view('admin.type.order')->with('status',$data)->with(["list"=>$list,"where"=>$where]);
+    }
+
+    
+    public function huoqq(Request $request,$id)
+    {
+         //$data = $request->only("status");
+        $db = \DB::table('details');
+        $where = [];
+            if($request->has('name')){
+                 $name = $request->input('name');
+                 $db->where('id', 'like', "%{$name}%");//实现过滤控制器
+                 $where['id'] = $name;
+            // 模板显示
+            } 
+         $list = $db->paginate(10);
+         $aa=\DB::table('details')
+            ->where('id', $id)
+            ->update(['status'=>2]);
+
+        $data=\DB::table('details')->where('status','=','1')->get();
+         return view('admin.type.order1')->with('status',$data)->with(["list"=>$list,"where"=>$where]);
+    }
+
+    public function huojj(Request $request,$id)
+    {
+         //$data = $request->only("status");
+        $db = \DB::table('details');
+        $where = [];
+            if($request->has('name')){
+                 $name = $request->input('name');
+                 $db->where('id', 'like', "%{$name}%");//实现过滤控制器
+                 $where['id'] = $name;
+            // 模板显示
+            } 
+         $list = $db->paginate(10);
+         $aa=\DB::table('details')
+            ->where('id', $id)
+            ->update(['status'=>'1']);
+
+        $data=\DB::table('details')->where('status','=','2')->get();
+         return view('admin.type.order2')->with('status',$data)->with(["list"=>$list,"where"=>$where]);
     }
 }

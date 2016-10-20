@@ -115,9 +115,8 @@
 Route::get('/', function () {
     return view('web');
 });
-Route::get('/link',function () {
-    return view('web');
-});
+
+Route::get('/link',"NewlinkController@link");
 // Route::get('/admin',"AdminController@admin");
 //跳转登录 注册页面
 Route::get('/login',"LoginController@login");
@@ -153,7 +152,7 @@ Route::get('/lk4',"Lk4Controller@lk4");
 //第六张图片链接
 Route::get('/lk5',"Lk5Controller@lk5");
 //第七张图片链接
-Route::get('/lk6',"Lk6Controller@lk6");
+Route::get('/lk6',"Lk5Controller@lk6");
 //跳转到新闻
 Route::get('/info',"NewlinkController@info");
 //跳转到10k
@@ -163,7 +162,7 @@ Route::get('/product',"NewlinkController@product");
 Route::get('/ShopList/{id}',"NewlinkController@ShopList");
 
 //跳转到购物车
-Route::get('/Shoping',"NewlinkController@Shoping");
+Route::get('/Shoping',"NewlinkCntroller@Shoping");
 //个人中心
 Route::get('/center',"NewlinkController@center");
 Route::get('/edit',"NewlinkController@edit");
@@ -244,8 +243,19 @@ Route::get('type/comment',function () {
 });
 
 //显示订单详情表
-Route::any('type/order',"Admin\WordController@index");
+Route::any('type/order',"WordController@index");
+Route::any('type/ordera',"WordController@index1");
+Route::any('type/orderb',"WordController@index2");
 
+//订单删除
+Route::any('/shan/{id?}','WordController@edit');
+Route::any('/shana/{id?}','WordController@edit1');
+Route::any('/shanb/{id?}','WordController@edit2');
+
+//改变订单
+Route::get('order/huo/{id}','WordController@huo');
+Route::get('order/huoqq/{id}','WordController@huoqq');
+Route::get('order/huojj/{id}','WordController@huojj');
 //显示添加订单表
 Route::get('type/addorder',function () {
 	return view('admin.type.addorder');
@@ -308,14 +318,13 @@ Route::get('/addinter',"Admin\lianController@wang");
 //执行添加链接
 Route::any('/qj', 'Admin\lianController@doqj');
 
+//执行修改
+Route::any('/ek/{id?}', 'Admin\lianController@shaqj');
+
 //执行删除
 Route::resource('/adcDel', 'Admin\lianController');
 
-//Route::any('/shui', 'Admin\lianController@update');
 
-Route::get('/shui',function(){
-	return 123;
-});
 
 Route::any('/hao',"Admin\lianController@index");
 // 删除购物车

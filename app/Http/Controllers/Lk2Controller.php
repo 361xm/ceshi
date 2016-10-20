@@ -9,6 +9,7 @@
 	{
 		public function lk2()
 		{
-			return view('home/lk2');
+			$wan=\DB::table("links")->get();
+			return view('home/lk2',["wan"=>$wan]);
 		}
 	}

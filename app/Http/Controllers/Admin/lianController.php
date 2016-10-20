@@ -21,7 +21,7 @@ class lianController extends Controller
 	        } 
 	     $num = 0;
 	     $list = $db->paginate(3);
-         return view('admin.inter.link')->with(["list"=>$list,"where"=>$where,"num"=>$num]);   
+        return view('admin.inter.link')->with(["list"=>$list,"where"=>$where,"num"=>$num]);   
     }
 
     //显示链接添加
@@ -57,14 +57,16 @@ class lianController extends Controller
     }
 
     //执行修改
-     public function update(Request $request,$id)
-    {
-    	$data = $request->only("fu","zi","info");
-        if(!empty($request->input('fu'))){
-    		// return 1;
-    		$da=\DB::table('links')->where('id',$id)->update($data);
-    		dd($da);
-    		//return redirect('/interlinkage');
-    	}
-	}
+      public function shaqj(Request $request,$id)
+      {
+          $data = $request->only("fu","zi","info");
+          if(!empty($request->input('fu'))){
+
+          $da=\DB::table('links')->where('id',$id)->update($data);
+          
+          return redirect('/interlinkage');
+        }
+      }
+
+
 }
