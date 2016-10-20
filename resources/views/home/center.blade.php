@@ -73,7 +73,7 @@
         </div>
         <div class="u_right">
             <div class="title">订单查询</div>
-            <div class="uorder_zt"><a href="/index.php?m=User&a=order&order=add_time" class="check" >按日期列出的订单</a> | <a href="/index.php?m=User&a=order&order=status&status=0" >未支付订单</a></div>
+            <div class="uorder_zt"></div>
           <div class="uoserch clearfix">
 			<div class="uoserch_left"></div>
 			<div class="uoserch_c">
@@ -97,12 +97,6 @@
 					<input type="hidden" name="order" value="add_time" />
 					<input type="hidden" name="status" value="" />
 					<input type="hidden" name="uo_keyword" value="收货人姓名、订单号…" />
-                    <div class="uoserch_c2 f_l">
-						日期：
-                          <select name="time" id="select">
-								<option value="0" selected="selected">所有订单</option><option value="1" >过去30天内下的订单</option><option value="3" >过去 3个月内下的订单</option><option value="6" >过去 6个月内下的订单</option>                          </select>
-							<input type="submit" id="button2" value="搜索订单"  class="submit"/>
-                    </div>
 					</form>
 			</div>
 			<div>
@@ -133,7 +127,7 @@
                                     <tbody><tr>
                                       <td width="45%">颜色：{{ $gb->color}}<br>尺寸：{{ $gb->big}} 
                                       <br>数量：{{ $gb->count}}</td>
-                                      <td width="55%">价格：￥{{ $gb->price }}</td>
+                                      <td width="55%">价格：￥{{ $gb->price*$gb->count}}</td>
                                     </tr>
                                   </tbody></table>
                               </td>
@@ -143,7 +137,7 @@
                         <div class="uolist_right3">
                             <ul>
                                 <a style="display:block;height:33px;" href="/index.php?m=Order&amp;a=pay&amp;ordersn=GF2016101936085" class="tobuy">马上支付</a>
-                                                                <li style="margin:10px 31px;"><a href="javascript:void(0);" data-id="43518" id="delOrder">删除</a></li>                           </ul>
+                                                                <li style="margin:10px 31px;"><a href="javascript:shanchu({{ $gb->id }})" data-id="43518" id="delOrder">删除</a></li>                           </ul>
                         </div>
                       </td>
                   </tr>
@@ -162,20 +156,5 @@
 <script type="text/javascript" src="http://361img.361sport.com.cn/shop/js/artDialog/artDialog.js"></script>
 <script type="text/javascript" src="http://361img.361sport.com.cn/shop/js/user.js"></script>
 <script type="text/javascript">
-$(document).ready(function(){
-	$("a#delOrder").live("click",function(){
-		var delid = $(this).attr("data-id");
-		var delUrl = "/index.php?m=User&a=delOrder";
-		artDialog.confirm("确定删除订单？",function(){
-			$.post(delUrl,{delid:delid},function( result ){
-				if( result.status == '0' ){
-					artDialog.tips(result.msg,2,"succeed"); window.location.reload(); return true;
-				} else {
-					artDialog.tips(result.msg,2,"error"); return false;
-				}
-			},"json");
-		},function(){ return false; });
-	});
-});
 </script>
 @endsection
