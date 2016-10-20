@@ -6,7 +6,7 @@
             <div class="col-xs-12">
               <div class="box">
                 <div class="box-header">
-                  <h3 class="box-title">订单详情表</h3>
+                  <h3 class="box-title">待发货订单详情表</h3>
                   <div class="box-tools">
                     <div class="" style="width: 150px;">
                       <form action="{{ URL('type/order') }}" method="post" enctype="multipart/form-data">
@@ -26,6 +26,7 @@
                     <thead>
                       <tr>
                         <th>订单号</th>
+                        <th>商品ID</th>
                         <th>收货人</th>
                         <th>商品</th>                                             
                         <th>收货地址</th>
@@ -35,21 +36,22 @@
                         <th>操作</th>
                       </tr>
                     </thead>
+                    @foreach($status as $order)
                     <tbody>
-                      @foreach($list as $order)
-                      <tr>
-                        <th style=" text-align:center;">{{ ($list->currentPage()-1)*3+($num)+1 }}</th>
-                        <input type="hidden" value="{{ $num++ }}">
-                        <td>{{ $order->gid }}</td>
-                        <td>{{ $order->uid}}</td>
-                        <td>{{ $order->location }}</td>
-                        <td>{{ $order->goodsMoney}}</td>
-                        <td>{{ $order->goodstime}}</td>
-                        <td>{{ $order->status}}</td>
-                        <td><button class="btn btn-xs btn-info">查看详情</button></td>
+                      <tr id="did">
+                        <td>{{$order->id}}</td>
+                        <td>{{$order->gid}}</td>
+                        <td>{{$order->username}}</td>
+                        <td>{{$order->gdname }}</td>
+                        <td>{{$order->area }}</td>
+                        <td>{{$order->price }}</td>
+                        <td>{{$order->time }}</td>
+                        <td>{{$order->status}}</td>
+                        <td><a href="javascript:deDel({{ $order->id}})" class="glyphicon glyphicon-trash"></a><a href="/order/huo/{{ $order->id }}"><button class="btn btn-xs btn-info">发货</button></a>
+                        </td>
                       </tr>
-                      @endforeach
-                    </tfoot>
+                    </tbody>
+                    @endforeach
                   </table>
                     
                 </div><!-- /.box-body -->
@@ -62,4 +64,14 @@
             </div>
           </div>
     </section>
+    <script type="text/javascript">
+      function deDel(id) {  
+         if(confirm('确定删除吗？')){
+            var myform = document.myform;
+
+            myform.action = "/shan/"+id;
+            myform.submit();
+        }
+      }
+    </script>
 @endsection

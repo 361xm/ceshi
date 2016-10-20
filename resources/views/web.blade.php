@@ -81,11 +81,13 @@
 			</div>
 		</div>
 	</div>
-	@foreach($list as $type)
+	
 		
 	
 		<!--1F   遍历这一块-->
-			<div class="hprolist" style="padding-bottom:10px;"><?php
+		@foreach($list as $type)
+			<div class="hprolist" style="padding-bottom:10px;">
+				<?php
 					if($type->pid==0){
 				?>
 				<div class="hprolist_c">
@@ -120,7 +122,7 @@
 								if($good->tid == $type->id){
 									
 							?>
-							<dd><a href="{{ URL('/product') }}" target="_blank"><img src="admins/upload/{{$good->goodsImage}}" width="174" height="174"/><span>{{ $good->goodsname}}<br /><strong>RMB{{ $good->goodsprice}}</strong></span></a></dd></dl>
+							<dd><a href='{{ URL("/ShopList/$good->id") }}' target="_blank"><img src="admins/upload/{{$good->goodsImage}}" width="174" height="174"/><span>{{ $good->goodsname}}<br /><strong>RMB{{ $good->goodsprice}}</strong></span></a></dd></dl>
 							<?php
 								}}
 							?>

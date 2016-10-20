@@ -129,7 +129,7 @@ Route::get('/forgetPasswd',"LoginController@forgetPasswd");
 //录入原始账号信息
 Route::any('/doForgetPasswd',"LoginController@doForgetPasswd");
 //执行修改密码
-Route::post("/doEditPasswd/{ob}","LoginController@doEditPasswd");
+Route::post("/doEditPasswd/{id?}","LoginController@doEditPasswd");
 
 
 
@@ -162,10 +162,16 @@ Route::get('/product',"NewlinkController@product");
 Route::get('/ShopList/{id}',"NewlinkController@ShopList");
 
 //跳转到购物车
-Route::get('/Shoping',"NewlinkController@Shoping");
+Route::get('/Shoping',"NewlinkCntroller@Shoping");
 //个人中心
 Route::get('/center',"NewlinkController@center");
 Route::get('/edit',"NewlinkController@edit");
+//添加收货人地址信息
+Route::any('/doAdd',"NewlinkController@doAdd");
+//修改收货人信息
+Route::any('/doCenter',"Newlinkcontroller@doCenter");
+Route::any('/doEdit/{id?}',"Newlinkcontroller@doEdit");
+
 //后台登录界面
 // Route::get('/login', function () {
 //     return view('admin.login.login');
@@ -212,7 +218,7 @@ Route::any('/types','Admin\ListController@shop');
 Route::any('/typelist/{bar}','Admin\ListController@index2');
 
 // 删除单个商品
-Route::any('/del/{id}','Admin\TypeListController@delgood');
+Route::any('/del/{id?}','Admin\TypeListController@delgood');
 
 Route::resource("/addgoods",'Admin\TypeListController');
 
@@ -237,8 +243,19 @@ Route::get('type/comment',function () {
 });
 
 //显示订单详情表
-Route::any('type/order',"Admin\WordController@index");
+Route::any('type/order',"WordController@index");
+Route::any('type/ordera',"WordController@index1");
+Route::any('type/orderb',"WordController@index2");
 
+//订单删除
+Route::any('/shan/{id?}','WordController@edit');
+Route::any('/shana/{id?}','WordController@edit1');
+Route::any('/shanb/{id?}','WordController@edit2');
+
+//改变订单
+Route::get('order/huo/{id}','WordController@huo');
+Route::get('order/huoqq/{id}','WordController@huoqq');
+Route::get('order/huojj/{id}','WordController@huojj');
 //显示添加订单表
 Route::get('type/addorder',function () {
 	return view('admin.type.addorder');
@@ -277,7 +294,7 @@ Route::any('/user',"Admin\UserController@index2");
 //前台首页遍历
 Route::get('/',"StageController@desk");
 
-Route::get('/Ajax/Sendmessage/{phone}/{content}','AjaxController@sendMessage');
+Route::any('/gouwche/{id}/{color}','AjaxController@index');
 
 //网站配置
 Route::any('/config',function(){
@@ -285,7 +302,8 @@ Route::any('/config',function(){
 });
 	
 //站点配置
-Route::any('/doConfig','Admin\zhanController@zhandian');
+Route::any('/doConfig','WordController@zhandian');
+
 // 网站维护页面
 Route::get('/errors',function(){
 	return view('errors.errors');
@@ -308,5 +326,10 @@ Route::resource('/adcDel', 'Admin\lianController');
 
 
 
-// Route::any('/tui/{id}',"Admin\lianController@update");
+Route::any('/hao',"Admin\lianController@index");
+// 删除购物车
+Route::any('/doCon','WordController@del');
 
+Route::any('/dingdan/{id?}','DingdanController@dingdan');
+// 支付
+Route::any('/zhifu/{id?}','ZhiFuController@zhifu');

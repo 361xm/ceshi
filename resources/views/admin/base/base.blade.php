@@ -51,11 +51,19 @@
       }
       function del(id){
         if(confirm('确定删除吗？')){
-//                1.获得form表单节点对象
-            var myform = document.myform;
-//                2 设置提交方式
-            myform.action = "/del/"+id;
-            myform.submit();
+          $.ajax({
+            type:'get',
+            url:'{{ URL("/del")}}',
+            data:{tid:id},
+            datatype:'json',
+            success:function(data){
+              $('#types').remove();
+              alert(data);
+            },
+            error:function(data){
+              alert('错误');
+            }
+          });
         }
       }
     </script>
@@ -210,10 +218,9 @@
                 <i class="fa fa-angle-left pull-right"></i>
               </a>
               <ul class="treeview-menu">
-                <li><a href="{{ URL('type/order') }}"><i class="fa fa-circle-o"></i>订单详情表</a></li>
-                <li><a href="{{ URL('type/addorder') }}"><i class="fa fa-circle-o"></i>添加订单</a></li>
-                <li><a href="../UI/buttons.html"><i class="fa fa-circle-o"></i>发货单列表</a></li>
-                <li><a href="../UI/sliders.html"><i class="fa fa-circle-o"></i>退货单列表</a></li>
+                <li><a href="{{ URL('type/order') }}"><i class="fa fa-circle-o"></i>待发货列表</a></li>
+                <li><a href="{{ URL('type/ordera') }}"><i class="fa fa-circle-o"></i>发货单列表</a></li>
+                <li><a href="{{ URL('type/orderb') }}"><i class="fa fa-circle-o"></i>退货单列表</a></li>
 <!--                 <li><a href="../UI/timeline.html"><i class="fa fa-circle-o"></i> Timeline</a></li>
                 <li><a href="../UI/modals.html"><i class="fa fa-circle-o"></i> Modals</a></li> -->
               </ul>

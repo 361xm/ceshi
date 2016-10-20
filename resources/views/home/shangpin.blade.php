@@ -227,38 +227,13 @@
                 <div class="communite">
                   <div class="communite-content">
                   	<div class="newfoot_cl">
-        	<dl>
-            	<dt>关于361°</dt>
-                <dd><a href="http://ir.361sport.com/s/index.php" target="_blank">投资者关系</a></dd>
-                <dd><a href="/index.php?m=Info&a=show&id=10">集团简介</a></dd>
-                <dd><a href="http://cn.361sport.com/shop.asp" target="_blank">店铺查询</a></dd>
-                <dd><a href="http://361bift.361sport.com" target="_blank">361°BIFT</a></dd>
-                <dd><a href="/index.php?m=Info&a=show&id=14">联系我们</a></dd>
-            </dl>
-            <dl>
-            	<dt>如何购物</dt>
-                <dd><a href="/index.php?m=Info&a=show&id=1&cate_id=7">购物流程</a></dd>
-                <dd><a href="/index.php?m=Info&a=show&id=2&cate_id=7">订单查询</a></dd>
-                <dd><a href="/index.php?m=Info&a=show&id=15&cate_id=7">会员及积分体系</a></dd>
-                <!--<dd><a href="#">常见问题</a></dd>
-                <dd><a href="#">帮助中心</a></dd>-->
-            </dl>
-            <dl>
-            	<dt>支付方式</dt>
-                <dd><a href="/index.php?m=Info&a=show&id=3&cate_id=7">支付方式</a></dd>
-                <dd><a href="/index.php?m=Info&a=show&id=4&cate_id=7">发票说明</a></dd>
-            </dl>
-            <dl>
-            	<dt>物流配送</dt>
-                <dd><a href="/index.php?m=Info&a=show&id=5&cate_id=7">配送时间和范围</a></dd>
-                <dd><a href="/index.php?m=Info&a=show&id=6&cate_id=7">配送费用</a></dd>
-                <dd><a href="/index.php?m=Info&a=show&id=7&cate_id=7">商品验收</a></dd>
-            </dl>
-            <dl style="width:95px;">
-            	<dt>售后服务</dt>
-                <dd><a href="/index.php?m=Info&a=show&id=9&cate_id=7">退换货流程</a></dd>
-                <dd><a href="/index.php?m=Info&a=show&id=8&cate_id=7">售后服务政策</a></dd>
-            </dl>
+        	 @foreach($wan as $new)    
+                <dl>
+                    <dt>{{ $new->fu }}</dt>
+                    <dd><a href="http://{{ $new->info }}">{{ $new->zi }}</a></dd>
+                </dl>
+                @endforeach 
+          
         </div>
                     <div class="newfoot_cr">
                         <dl>

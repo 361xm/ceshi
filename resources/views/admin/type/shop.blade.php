@@ -83,26 +83,30 @@
                       <input type="text" class="form-control" id="goodsdescript" name="goodsdescript" placeholder="商品详情">
                       </div>
                       <div class="form-group">
-                      <label for="inputfile">上传图片</label>
+                      <label for="inputfile">上传父图</label>
                       <input type="file" id="inputfile" name="goodsImage">
                       <p class="help-block">请添加图片</p>
                       </div>
                        <div class="form-group">
                       <label for="inputfile">上传子图</label>
                       <input type="file" id="inputfile" name="image">
-                      <p class="help-block">请添加图片</p>
+                      <p class="help-block">请添加子图</p>
                       <input type="file" id="inputfile" name="image1">
-                      <p class="help-block">请添加图片</p>
+                      <p class="help-block">请添加子图</p>
                       <input type="file" id="inputfile" name="image2">
-                      <p class="help-block">请添加图片</p>
+                      <p class="help-block">请添加子图</p>
                       <input type="file" id="inputfile" name="image3">
-                      <p class="help-block">请添加图片</p>
+                      <p class="help-block">请添加子图</p>
                       <input type="file" id="inputfile" name="image4">
-                      <p class="help-block">请添加图片</p>
+                      <p class="help-block">请添加子图</p>
                       <input type="file" id="inputfile" name="image5">
-                      <p class="help-block">请添加图片</p>
-
-                      </div>
+                      <p class="help-block">请添加子图</p>
+                      <input type="file" id="inputfile" name="image_c">
+                      <p class="help-block">请添加左图</p>
+                      <input type="file" id="inputfile" name="image_c1">
+                      <p class="help-block">请添加左图</p>
+                      <input type="file" id="inputfile" name="image_c2">
+                      <p class="help-block">请添加左图</p>
                       <div class="checkbox">
                       </div>
                    </div>

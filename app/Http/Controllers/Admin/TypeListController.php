@@ -23,6 +23,10 @@ class TypeListController extends Controller
 		$image4 = $request->file('image4');
 		$image5 = $request->file('image5');
 		$image6 = $request->file('image6');
+		$image_c = $request->file('image_c');
+		$image_c1 = $request->file('image_c1');
+		$image_c2 = $request->file('image_c2');
+		// dd($image_c2);
 		// 上传
 		 if(!empty($goodsname) && !empty($goodsprice) && !empty($goodsImage)){
         //判断是否有上传
@@ -116,26 +120,52 @@ class TypeListController extends Controller
 	                $file->move("admins/upload/",$filename);
 	            }
 	        }
-	        if($request->hasFile("image6")){
+	        if($request->hasFile("image_c")){
 	            //获取上传信息,$file是一个uploadfile的对象 
-	            $file = $request->file("image6");
+	            $file = $request->file("image_c");
 	            //确认上传的文件是否成功
 	            if($file->isValid()){
 	                $picname = $file->getClientOriginalName(); //获取上传原文件名
 	                $ext = $file->getClientOriginalExtension(); //获取上传文件名的后缀名
 	                //执行移动上传文件
 	                $filename = time().rand(1000,9999).".".$ext;
-	                $image6 = $filename;
+	                $image_c = $filename;
 	                $file->move("admins/upload/",$filename);
 	            }
 	        }
-	         	$img = \DB::table('images');
+	        if($request->hasFile("image_c1")){
+	            //获取上传信息,$file是一个uploadfile的对象 
+	            $file = $request->file("image_c1");
+	            //确认上传的文件是否成功
+	            if($file->isValid()){
+	                $picname = $file->getClientOriginalName(); //获取上传原文件名
+	                $ext = $file->getClientOriginalExtension(); //获取上传文件名的后缀名
+	                //执行移动上传文件
+	                $filename = time().rand(1000,9999).".".$ext;
+	                $image_c1 = $filename;
+	                $file->move("admins/upload/",$filename);
+	            }
+	        }
+	        if($request->hasFile("image_c2")){
+	            //获取上传信息,$file是一个uploadfile的对象 
+	            $file = $request->file("image_c2");
+	            //确认上传的文件是否成功
+	            if($file->isValid()){
+	                $picname = $file->getClientOriginalName(); //获取上传原文件名
+	                $ext = $file->getClientOriginalExtension(); //获取上传文件名的后缀名
+	                //执行移动上传文件
+	                $filename = time().rand(1000,9999).".".$ext;
+	                $image_c2 = $filename;
+	                $file->move("admins/upload/",$filename);
+	            }
+	        }
+	         	$img = \DB::table('images')->get();
+	         	// dd($img);
 	         	$god = \DB::table('goods');
 	            $path='0'.'-'.$id;
 	            $data = \DB::table('types')->insert(['pid'=>$id,'path'=>$path,'stock'=>$stock,'goodsname'=>$goodsname,'goodsprice'=>$goodsprice,'goodsdescript'=>$goodsdescript,'goodsImage'=>$goodsImage]);
 	            $newdata = \DB::table('goods')->insertGetId(['tid'=>$id,'stock'=>$stock,'goodsname'=>$goodsname,'goodsprice'=>$goodsprice,'goodsdescript'=>$goodsdescript,'goodsImage'=>$goodsImage]);
-	            $gid = \DB::table('images')->insert(['gid'=>$newdata,'image'=>$image,'image1'=>$image1,'image2'=>$image2,'image3'=>$image3,'image4'=>$image4,'image5'=>$image5,'image6'=>$image6]);
-	            // dd($gid);
+	            $gid = \DB::table('images')->insert(['gid'=>$newdata,'image'=>$image,'image1'=>$image1,'image2'=>$image2,'image3'=>$image3,'image4'=>$image4,'image5'=>$image5,'image_c'=>$image_c,'image_c1'=>$image_c1,'image_c2'=>$image_c2]);
 	            $db = \DB::table('types')->where('pid',$id);
 		        $where = [];
 		            if($request->has('goodsname')){
@@ -154,10 +184,11 @@ class TypeListController extends Controller
 			}
 		}
 	// 删除商品
-	public function delgood($id)
+	public function delgood(Request $request)
 	{	
+		$id = $request->tid;
 		\DB::table('goods')->where('id',$id)->delete();
-		return redirect('types');
+		return "删除成功";
 	}
 	// 修改商品
 	public function update(Request $request,$id)
