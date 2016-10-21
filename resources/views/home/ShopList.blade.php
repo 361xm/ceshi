@@ -116,9 +116,6 @@
                         <div style="clear:both;"></div>
                     </div>
                     <div class="search-hots-keywords"> 热门搜索：
-                        <a href="http://www.361sport.com/index.php?m=Product&a=index&sports=12&pclass=4&sex=1">跑步鞋</a>
-                        <a href="http://www.361sport.com/index.php?m=Product&a=index&keyword=短T">短T恤</a>
-                        <a href="http://www.361sport.com/index.php?m=Pages&a=keji160323">科技助跑</a>
                     </div>
                 </div>
             </div>
@@ -127,24 +124,7 @@
 <div class="newheaderno"></div>
 
 <!--content Begin-->
-<div class="pv_topgm">
-	<div class="pv_topgm_c clearfix">
-		<div class="tm_left">
-			<ul>
-				<a class="on">商品详情</a>|
-				<a>商品评论(<span>0</span>)</a>|
-				<a>尺码说明</a>
-			</ul>
-		</div>
-		<a class="gmclose"></a>
-		<div class="tm_right">
-			<div class="buy">
-					<span class="buynow"><a  href="javascript:void(0);" data-tid="6414"></a></span>
-					<!-- 加入购物车 -->
-					<span class="addmycart"><a  href=""></a></span>			</div>
-		</div>
-	</div>
-</div>
+
 <div class="pv_dhtop">
 	<div class="pv_dh">
     	<b>所有分类</b> > <a href="/index.php?m=Index&a=index">首页</a>  > <a href="/index.php?m=Product&a=index">商品列表</a> >361°童装 男款 长袖T恤    </div>
@@ -241,9 +221,6 @@
 					            
 					            <button type="submit" class="btn btn-primary">
 					               加入购物车
-					            </button>
-					            <button type="button" class="btn btn-primary">
-					               立即购买
 					            </button>
 					            <button type="button" class="btn btn-default"
 					               data-dismiss="modal">取消
