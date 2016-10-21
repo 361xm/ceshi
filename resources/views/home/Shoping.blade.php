@@ -24,10 +24,8 @@
 <div class="ordercon">
 <table cellpadding="0" cellspacing="0" class="gwc_tb1">
     <tr>
-      <td class="tb1_td1"><input id="Checkbox1" type="checkbox"  class="allselect"/></td>
-      <td class="tb1_td1">全选</td>
+      <td class="tb1_td1"></td>
       <td class="tb1_td3">商品</td>
-      <td class="tb1_td5">数量</td>
       <td class="tb1_td6">单价</td>
       <td class="tb1_td7">操作</td>
     </tr>
@@ -36,20 +34,12 @@
 			           		if(isset($list)){
 			           ?>
   <!---商品加减算总数---->
-  <table cellpadding="0" cellspacing="0" class="gwc_tb2">
   @foreach($list as $gb)
-  
+  <table cellpadding="0" cellspacing="0" class="gwc_tb2">
     <tr id="olist">
-      <td class="tb2_td1"><input type="checkbox" value="1" name="newslist" id="newslist-1" /></td>
+      <td class="tb2_td1"></td>
       <td class="tb2_td2"><a href="#"><img src='{{ URL("admins/upload/$gb->goodsimg")}}'/></a></td>
-      <td class="tb2_td3"><a href="#">{{ $gb->goodname}}</a></td>
-      <td class="tb1_td5">
-        <div class="gw_num">
-          <em class="jian" onclick="jian()">-</em>
-          <input type="text" value="1" class="num" id="vals"/>
-          <em class="add" onclick="jia()">+</em>
-        </div>
-      </td>
+      <td class="tb2_td3"><a href="#">{{$gb->goodname}}</a></td>
       <td class="tb1_td6"><label id="total1" class="tot" style="color:#ff5500;font-size:14px; font-weight:bold;">{{ $gb->goodsprice}}</label></td>
       <td class="tb1_td7"><button onclick="voids({{ $gb->id }})">删除</button></td>
     </tr> @endforeach
@@ -59,8 +49,7 @@
 	
 	<table cellpadding="0" cellspacing="0" class="gwc_tb3">
     <tr>
-      <td class="tb1_td1"><input id="checkAll" class="allselect" type="checkbox" /></td>
-      <td class="tb1_td1">全选</td>
+      <td class="tb1_td1"></td>
       <td class="tb3_td1">
       <td class="tb3_td3">合计(不含运费):<span>￥</span><span style=" color:#ff5500;" >
         <label id="zong1" style="color:#ff5500;font-size:14px; font-weight:bold;"><span id="vls">{{ $gb->goodsprice }}</span></label>
@@ -78,21 +67,21 @@
 <!--内容-->
 <div class="clear"></div>
 <script type="text/javascript">
-    function jia(){
-      var counts = Number($('#vls').html());
-      var vls = Number($('#vls').html())+counts;
-      var val = Number($('#vals').val())+1;
-      $('#vls').html(vls);
-    }
-    function jian(){
-       var counts = Number($('#total1').html());
-       var val = Number($('#vals').val());
-       if(val == 1){
-        $('#.jian').attr('disabled', 'true');
-       }
-      var vls = Number($('#vls').html())-counts;
-      $('#vls').html(vls);
-    }
+    // function jia(){
+    //   var counts = Number($('#vls').html());
+    //   var vls = Number($('#vls').html())+counts;
+    //   var val = Number($('#vals').val())+1;
+    //   $('#vls').html(vls);
+    // }
+    // function jian(){
+    //    var counts = Number($('#total1').html());
+    //    var val = Number($('#vals').val());
+    //    if(val == 1){
+    //     $('#.jian').attr('disabled', 'true');
+    //    }
+    //   var vls = Number($('#vls').html())-counts;
+    //   $('#vls').html(vls);
+    // }
 		function voids(id){
 			$.ajax({
 				type:'get',
@@ -108,22 +97,6 @@
 				}
 			});
 		}
-    $(document).ready(function(){
-    //加的效果
-    $(".add").click(function(){
-    var n=$(this).prev().val();
-    var num=parseInt(n)+1;
-    if(num==0){ return;}
-    $(this).prev().val(num);
-    });
-    //减的效果
-    $(".jian").click(function(){
-    var n=$(this).next().val();
-    var num=parseInt(n)-1;
-    if(num==0){ return}
-    $(this).next().val(num);
-    });
-    })
 </script>
 <!--底部-->
 <script src="http://tjs.sjs.sinajs.cn/open/api/js/wb.js" type="text/javascript" charset="utf-8"></script>

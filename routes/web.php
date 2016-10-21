@@ -243,12 +243,12 @@ Route::get('type/comment',function () {
 });
 
 //显示订单详情表
-Route::any('type/order',"WordController@index");
+Route::any('type/order',"WordController@inner");
 Route::any('type/ordera',"WordController@index1");
 Route::any('type/orderb',"WordController@index2");
 
 //订单删除
-Route::any('/shan/{id?}','WordController@edit');
+Route::any('order/wsb/{id}','WordController@rrr');
 Route::any('/shana/{id?}','WordController@edit1');
 Route::any('/shanb/{id?}','WordController@edit2');
 

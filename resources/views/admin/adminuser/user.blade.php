@@ -22,7 +22,6 @@
                         <tr>
                           <th>ID</th>
                           <th>AdminUser</th>
-                          <th>Status</th>
                           <th>操作</th>
                         </tr>
                         @foreach($list as $user)
@@ -30,11 +29,9 @@
                           <td>{{ ($list->currentPage()-1)*3+($num)+1 }}</td>
                           <input type="hidden" value="{{ $num++ }}">
                           <td>{{ $user->adminname }}</td>
-                          <td><span class="label label-success">{{ $user->status }}</span></td>
                           <td>
                             <a href="javascript:deDel({{ $user->id}})" class="glyphicon glyphicon-trash"></a>
                             <a onclick="doupdate({{ $user->id}})" data-toggle="modal" data-target="#myModall" class="glyphicon glyphicon-wrench"></a>
-                            <a class="glyphicon glyphicon-plus"></a>
                           </td>
                         </tr>
                         @endforeach

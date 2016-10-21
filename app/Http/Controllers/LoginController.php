@@ -56,7 +56,7 @@
     //忘记密码
     public function forgetPasswd()
     {   $configs = \DB::table('config')->get();
-     $wan=\DB::table('links')->get();
+        $wan=\DB::table('links')->get();
         return view('home/forgetPasswd')->with(['configs'=>$configs,'wan'=>$wan]);
     }
     //忘记密码的原始信息
@@ -82,7 +82,8 @@
                 session()->flash('username',$db->id);
                 $ob = $db->id; 
                 $configs = \DB::table('config')->get();
-                    return view('home/editPasswd')->with(['ob'=>$ob,'configs'=>$configs]);
+                $wan=\DB::table('links')->get();
+                    return view('home/editPasswd')->with(['ob'=>$ob,'configs'=>$configs,'wan'=>$wan]);
                 }
                 return back()->with("msg","手机号或者用户名不存在");
             }
@@ -101,11 +102,13 @@
         if($password===$repassword){
             $ob = \DB::table('user')->where('id',$id)->update($data);
             $configs = \DB::table('config')->get();
-            return view('/home/login')->with(['configs'=>$configs]);
+            $wan=\DB::table('links')->get();
+            return view('/home/login')->with(['configs'=>$configs,'wan'=>$wan]);
         }else{
             $mvg = "密码不一致";
             $configs = \DB::table('config')->get();
-             return view('/home/editPasswd')->with(["mvg"=>$mvg,'configs'=>$configs]);
+            $wan=\DB::table('links')->get();
+             return view('/home/editPasswd')->with(["mvg"=>$mvg,'configs'=>$configs,'wan'=>$wan]);
         }
     }
 }

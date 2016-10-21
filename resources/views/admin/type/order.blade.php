@@ -14,7 +14,7 @@
                         <input type="text" name="name" size="15" class="form-inline">
                         <button type="submit" class="btn btn-sm btn-default"><i class="fa fa-search"></i></button>
                       </form>
-                      <form action="" method="post" name="myform">
+                      <form action="" method="post" name="zxc">
                             <input type="hidden" name="_token" value="{{ csrf_token()}}">
                             <input type="hidden" name="_method" value="delete">
                       </form>
@@ -47,7 +47,7 @@
                         <td>{{$order->price }}</td>
                         <td>{{$order->time }}</td>
                         <td>{{$order->status}}</td>
-                        <td><a href="javascript:deDel({{ $order->id}})" class="glyphicon glyphicon-trash"></a><a href="/order/huo/{{ $order->id }}"><button class="btn btn-xs btn-info">发货</button></a>
+                        <td><a href="/order/wsb/{{ $order->id }}" class="glyphicon glyphicon-trash"></a><a href="/order/huo/{{ $order->id }}"><button class="btn btn-xs btn-info">发货</button></a>
                         </td>
                       </tr>
                     </tbody>
@@ -65,28 +65,12 @@
           </div>
     </section>
     <script type="text/javascript">
-      function deDel(id) {  
+      function yyy(id) {  
          if(confirm('确定删除吗？')){
-            var myform = document.myform;
+            var zxc = document.zxc;
 
-            myform.action = "/shan/"+id;
-            myform.submit();
+            zxc.action = "/shan/"+id;
+            zxc.submit();
         }
-      function shan(id)
-      {
-        $.ajax({
-        type:'get',
-        url:'{{ URL("/shan")}}',
-        data:{did:id},
-        datatype:'html',
-        success:function(data){
-          $('#did').remove();
-          alert(data);
-        },
-        error:function(data){
-          alert('错误');
-        }
-       });
-      }
     </script>
 @endsection

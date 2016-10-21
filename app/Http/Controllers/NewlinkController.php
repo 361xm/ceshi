@@ -52,10 +52,12 @@
 			$list = \DB::table('goods')->where('id',$id)->get();
 			$data = \DB::table('images')->join('goods','images.gid','=','goods.id')->where('gid',$id)->get();
 			// dd($data);
+			$qinjb = \DB::table('goods')->get();
+			// dd($db);
 			$configs = \DB::table('config')->get();
 
 			$wan=\DB::table("links")->get();
-			return view('home/ShopList')->with(['list'=>$list,'data'=>$data,'configs'=>$configs,'wan'=>$wan]);
+			return view('home/ShopList')->with(['qinjb'=>$qinjb,'list'=>$list,'data'=>$data,'configs'=>$configs,'wan'=>$wan]);
 
 			// dd($data);
 		}

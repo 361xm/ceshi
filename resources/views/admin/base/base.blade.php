@@ -198,8 +198,8 @@
                 <!-- <li><a href="../layout/collapsed-sidebar.html"><i class="fa fa-circle-o"></i> Collapsed Sidebar</a></li> -->
               </ul>
             </li>
-            <li class="treeview">
-              <a href="#">
+            <!-- <li class="treeview"> -->
+         <!--      <a href="#">
                 <i class="fa fa-pie-chart"></i>
                 <span>评论管理</span>
                 <i class="fa fa-angle-left pull-right"></i>
@@ -209,8 +209,8 @@
                 <!-- <li><a href="../charts/morris.html"><i class="fa fa-circle-o"></i> Morris</a></li>
                 <li><a href="../charts/flot.html"><i class="fa fa-circle-o"></i> Flot</a></li>
                 <li><a href="../charts/inline.html"><i class="fa fa-circle-o"></i> Inline charts</a></li> -->
-              </ul>
-            </li>
+              <!-- </ul> -->
+            <!-- </li> -->
             <li class="treeview">
               <a href="#">
                 <i class="fa fa-laptop"></i>

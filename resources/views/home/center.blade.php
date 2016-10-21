@@ -32,8 +32,7 @@
                 <div class="pclass_title clearfix close"><span></span>我的订单</div>
                 <div class="pclass">
                     <ul>
-                        <li><a href="{{ URL('/center')}}">订单查询</a></li>
-                        <li><a href="/index.php?m=User&a=backlist">退换货订单</a></li>
+                        <li><a href="/index.php?m=User&a=order">订单查询</a></li>
                     </ul>
                 </div>
             </div>

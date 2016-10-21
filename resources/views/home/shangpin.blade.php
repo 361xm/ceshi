@@ -94,7 +94,7 @@
 			<div class="chooseleft" id="choose">
 
 			</div>
-			<div class="chooseright"><a href="/index.php?m=Product&a=index">全部撤销</a><span>共<em>2377</em>件产品</span></div>
+			<div class="chooseright"><a href="/index.php?m=Product&a=index"></a><span>共<em></em>件产品</span></div>
 		</div>
 		<div class="sr-chooseCon">
 			<div id="other-search">
@@ -143,9 +143,6 @@
 			</div>
 			<a href="javascript:void(0);" class="openicon"><span>收起</span></a>
 		</div>
-		<div class="search-order">
-            <span class="pxfs">排序方式：</span><a class=" order-time" href="http://www.361sport.com/index.php?m=Product&a=index&groupby=1&sort=ASC"><span >按上市时间排序</span></a><a href="http://www.361sport.com/index.php?m=Product&a=index&groupby=2&sort=ASC"><span  >按价格排序</span></a><a href="http://www.361sport.com/index.php?m=Product&a=index&groupby=3&sort=ASC"><span >按销量排序</span></a>
-        </div>
 		<div class="p_right">
 			<ul class="clearfix"  id="container">
 				@foreach($list as $p)

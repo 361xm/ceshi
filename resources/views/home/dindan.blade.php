@@ -90,12 +90,18 @@
                                 var xiaoji = document.getElementById('xiaoji');
                                 // 商品的应付总额
                                 var zonge = document.getElementById('zonge');
+                                // 传值到数据库
+                                var countd = document.getElementById('countd');
+                                  // 传用户总输入
+                                var newprice = document.getElementById('newprice');
 
+                               var newmyform = document.newmyform;
+                               // newmyform.action="/zhifu/"+zhi+"/"+geshu;
                                 var bianl = priced.innerHTML*txe.value;
 
                                 xiaoji.innerHTML=bianl;
 
-                                zonge.innerHTML = bianl;
+                                zonge.innerHTML = bianl; 
                               }
 
                             </script>
@@ -132,9 +138,11 @@
       ?>
     <div class="order_buyinfo clearfix" style="height: 137px;">
     <div class="f_r tjcart">请核对以上信息，确认无误后点击"提交订单"<input name="uselectaddress" id="uselectaddress" value="32446" type="hidden"><input name="ctype" id="ctype" value="" type="hidden"><input name="cid" value="" id="cid" type="hidden"><input name="cprice" id="cprice" value="" type="hidden">
-        <a href="{{ URL('/zhifu')}}"><input class="pointer" name="button" id="submitbutton" value="提交" type="submit"></a>
+        <a href="{{URL('/zhifu').'/'.$list->id}}"><input class="pointer" name="button" id="submitbutton" value="提交" type="submit"></a>
     </div></div>
   </div>
+  <script type="text/javascript">
+  </script>
   </div>
 </div>
 

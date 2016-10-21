@@ -248,6 +248,7 @@
 <!--itemEnd-->
 <div class="clear"></div>
 <!--comment Begin-->
+
 <div class="pvspxq clearfix">
 	<div class="xq_left">
 		<div class="xq_search">
@@ -264,81 +265,45 @@
 		</div>
 		<div class="keylist clearfix">
 			<ul>
-				<li><a href="/index.php?m=Product&a=index&sports=13&pclass=4">篮球鞋</a><em></em></li>
-				<li><a href="/index.php?m=Product&a=index&sports=12&pclass=4">跑步鞋</a></li>
-				<li><a href="/index.php?m=Product&a=index&sports=20&pclass=4">综训鞋</a></li>
-				<li><a href="/index.php?m=Product&a=index&sports=42&pclass=4">休闲鞋</a></li>
-				<li><a href="/index.php?m=Product&a=index&sports=16&pclass=4">户外鞋</a><em></em></li>
+				<li><a href="#">男鞋</a></li>
+				<li><a href="#">女鞋</a></li>
+				<li><a href="#">男装</a></li>
+				<li><a href="#">女装</a></li>
 			</ul>
 		</div>
 	</div>
 </div>
 <div class="goumguo hotsell">
+	
 	<dl class="clearfix">
-		<dt>热销款 <a class="hotrefresh"></a></dt><dd><a href="/index.php?m=Product&a=show&proid=5438" target="_blank"><img src="http://361img.361sport.com.cn/product/2016/02/22/m_56ca7b21a329e.jpg" height="82" width="82"/></a><div>￥189.00</div></dd><dd><a href="/index.php?m=Product&a=show&proid=5434" target="_blank"><img src="http://361img.361sport.com.cn/product/2016/02/22/m_56ca739a69082.jpg" height="82" width="82"/></a><div>￥159.00</div></dd><dd><a href="/index.php?m=Product&a=show&proid=5423" target="_blank"><img src="http://361img.361sport.com.cn/product/2016/02/20/m_56c80e9cbbf41.jpg" height="82" width="82"/></a><div>￥159.00</div></dd><dd><a href="/index.php?m=Product&a=show&proid=5418" target="_blank"><img src="http://361img.361sport.com.cn/product/2016/02/20/m_56c7e1eaaa488.jpg" height="82" width="82"/></a><div>￥199.00</div></dd>				
+		<dt>热销款 <a class="hotrefresh"></a></dt>
+		@foreach($qinjb as $ob)
+		<dd><a href="/ShopList/{{$ob->id}}" target="_blank"><img src='{{ asset("admins/upload/$ob->goodsImage") }}' height="82" width="82"/></a><div>{{ $ob->goodsprice }}</div></dd>
+		@endforeach
 	</dl>
+
+
 </div>
 <div class="goumguo">
 	<dl>
 		<dt>猜你喜欢</dt>
+		@foreach($qinjb as $ob)
 		<dd>
-				<a href="/index.php?m=Product&a=show&proid=5199" target="_blank"><img src="http://361img.361sport.com.cn/product/2015/12/08/b_5666872d9a2d3.jpg" height="200" width="200"/></a>
+				<a href="/ShopList/{{$ob->id}}" target="_blank"><img src='{{ asset("admins/upload/$ob->goodsImage") }}' height="200" width="200"/></a>
 			<div class="prl_info">
 				<div class="prl_color">3色</div>
 				<b>
-					<a href="/index.php?m=Product&a=show&proid=5199" target="_blank">绒里夹克</a>
+					<a href="/ShopList/{{$ob->id}}" target="_blank">绒里夹克</a>
 				</b>
 				<div class="prl_des">
-					￥245.00<span>吊牌价<font>￥499.00</font></span>
+					￥{{ $ob->goodsprice}}<span>吊牌价<font>￥499</font></span>
 				</div>
 			</div>
-			</dd><dd>
-				<a href="/index.php?m=Product&a=show&proid=2846" target="_blank"><img src="http://361img.361sport.com.cn/product/2015/11/17/b_564aa04c660d8.JPG" height="200" width="200"/></a>
-			<div class="prl_info">
-				<div class="prl_color">7色</div>
-				<b>
-					<a href="/index.php?m=Product&a=show&proid=2846" target="_blank">冬季男装轻质保暖白鸭绒填充羽绒服</a>
-				</b>
-				<div class="prl_des">
-					￥199.00<span>吊牌价<font>￥539.00</font></span>
-				</div>
-			</div>
-			</dd><dd>
-				<a href="/index.php?m=Product&a=show&proid=3068" target="_blank"><img src="http://361img.361sport.com.cn/product/2015/01/16/b_54b8c5e345508.jpg" height="200" width="200"/></a>
-			<div class="prl_info">
-				<div class="prl_color">3色</div>
-				<b>
-					<a href="/index.php?m=Product&a=show&proid=3068" target="_blank">休闲鞋</a>
-				</b>
-				<div class="prl_des">
-					￥119.00<span>吊牌价<font>￥319.00</font></span>
-				</div>
-			</div>
-			</dd><dd>
-				<a href="/index.php?m=Product&a=show&proid=5358" target="_blank"><img src="http://361img.361sport.com.cn/product/2016/02/20/b_56c7c67ac29da.jpg" height="200" width="200"/></a>
-			<div class="prl_info">
-				<div class="prl_color">3色</div>
-				<b>
-					<a href="/index.php?m=Product&a=show&proid=5358" target="_blank">篮球鞋</a>
-				</b>
-				<div class="prl_des">
-					￥289.00<span>吊牌价<font>￥539.00</font></span>
-				</div>
-			</div>
-			</dd><dd>
-				<a href="/index.php?m=Product&a=show&proid=5416" target="_blank"><img src="http://361img.361sport.com.cn/product/2016/02/20/b_56c7dd590c1d8.jpg" height="200" width="200"/></a>
-			<div class="prl_info">
-				<div class="prl_color">3色</div>
-				<b>
-					<a href="/index.php?m=Product&a=show&proid=5416" target="_blank">板鞋</a>
-				</b>
-				<div class="prl_des">
-					￥199.00<span>吊牌价<font>￥369.00</font></span>
-				</div>
-			</div>
-			</dd>					
+		</dd>
+		@endforeach					
 	</dl>
 </div>	</div>
+
 	<div class="xq_right">
 		<div class="dh3">
 			<ul>
@@ -352,15 +317,7 @@
 
 			<div  class="spxq_c1 yahei">
 				<div class="title"></div>
-				
-				<div class="content clearfix">
-					<ul>
-						<li><span>品牌：</span>xxx</li>
-						<li><span>货号：</span>xxx</li>
-						<li><span>上市时间：</span>xxx</li>
-					</ul>
-				</div>
-				<div class="content2"><span>商品描述：</span></div>
+
 			</div>
 			<div class="bottom"></div>
 			
