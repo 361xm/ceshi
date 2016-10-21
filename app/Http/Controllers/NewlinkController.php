@@ -69,13 +69,16 @@
 			return view('home/Shoping')->with(['configs'=>$configs,'data'=>$data,"wan"=>$wan]);
 		}
 
-		public function center()
-
-		{
+		public function center(Request $request)
+		{	$id = session('adminuser')->id;
+			$danzi = \DB::table('details')->where('uid',$id)->get();
+            if($request->has('name')){
+            	 $name = $request->input('name');
+            	 $danzi = \DB::table('details')->where('uid',$id)->where('id','=',$name)->get();
+            } 
 			$wan=\DB::table("links")->get();
 	
-			$id = session('adminuser')->id;
-			$danzi = \DB::table('details')->where('uid',$id)->get();
+			
 			$configs = \DB::table('config')->get();
 			return view('home/center')->with(['configs'=>$configs,'danzi'=>$danzi,"wan"=>$wan]);
 
@@ -148,10 +151,8 @@
 					return view('home.doEdit')->with(['configs'=>$configs,'data'=>$data,'wan'=>$wan]);
 
 					return view('home/doEdit')->with(['data'=>$data,'configs'=>$configs,'wan'=>$wan]);
-				}else{
-					return view('home.doEdit')->with(['configs'=>$configs,'data'=>$data,'wan'=>$wan]);
-
 				}
+					return view('home.doEdit')->with(['configs'=>$configs,'data'=>$data,'wan'=>$wan]);
 			
 		}
 		public function doEdit(Request $request)
