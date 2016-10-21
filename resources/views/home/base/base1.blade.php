@@ -31,7 +31,7 @@
                         if(isset(session('adminuser')->username)){
                           ?>  
                             &nbsp;<a href="{{ URL('/center')}}" style="margin-left:8px;font-size:16px;"><em style="margin-left:8px;margin-right:8px;font-size:16px;" >{{ session('adminuser')->username }}</em></a>&nbsp;&nbsp;
-                            <span><a href="{{ URL('/logout') }}" style="font-size:16px;">退出</a><span style="color:#fff">{{ session('adminuser')->username}}</span></span>
+                            <span><a href="{{ URL('/logout') }}" style="font-size:16px;">退出</a></span>
 
                         <?php
 

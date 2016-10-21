@@ -66,7 +66,7 @@ class WordController extends Controller
     }
 
 
-    public function index(Request $request)
+    public function inner(Request $request)
     {
         $db = \DB::table('details');
         $where = [];
@@ -119,8 +119,9 @@ class WordController extends Controller
         return view("admin.type.order2")->with(["list"=>$list,"where"=>$where,"num"=>$num,"status"=>$status]);
     }
 
-    public function edit(Request $request,$id)
+    public function rrr(Request $request,$id)
     {
+        
         //1 执行删除 
         $data = \DB::table('details')->where('id',$id)->delete();//删除制定的id
 
