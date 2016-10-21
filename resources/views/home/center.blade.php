@@ -24,7 +24,6 @@
         <div class="pl_c">
             <div class="userinfo">
                 <div class="username Arial fbold">{{ session('adminuser')->username }}</div>
-                <div style="margin-top:5px;">普通会员&nbsp;积分：0</div>
                 <a class="useredit" href="{{ URL('/edit') }}" style="color:orange;">添加个人资料</a>
                 <a class="useredit" href="{{ URL('/doCenter')}}" style="color:orange;">修改个人资料</a>
             </div>
@@ -33,7 +32,7 @@
                 <div class="pclass_title clearfix close"><span></span>我的订单</div>
                 <div class="pclass">
                     <ul>
-                        <li><a href="/index.php?m=User&a=order">订单查询</a></li>
+                        <li><a href="{{ URL('/center')}}">订单查询</a></li>
                         <li><a href="/index.php?m=User&a=backlist">退换货订单</a></li>
                     </ul>
                 </div>
@@ -59,14 +58,13 @@
           <div class="uoserch clearfix">
 			<div class="uoserch_left"></div>
 			<div class="uoserch_c">
-									<form method="get">
-					<input type="hidden" name="m" value="User" />
-					<input type="hidden" name="a" value="order" />
+				<form method="post" action="{{ URL('/center') }}">
+           <input type="hidden" name="_token" value="{{ csrf_token() }}">
 					<div class="uoserch_c1 f_l">
 						<table cellpadding="0" cellspacing="0">
 							<tr>
-								<td>
-									<b>搜索您的订单：</b><input type="text" name="uo_keyword" id="uo_keyword" class="input"  value="收货人姓名、订单号…" onfocus="if( $(this).val() == '收货人姓名、订单号…' ){ $(this).val(''); return; }" onblur="if( $(this).val() == '' ){ $(this).val('收货人姓名、订单号…'); return; }"/></td><td>
+								<td>                  
+									<b>搜索您的订单：</b><input type="text" name="name" id="uo_keyword" class="input" onfocus="if( $(this).val() == '收货人姓名、订单号…' ){ $(this).val(''); return; }" onblur="if( $(this).val() == '' ){ $(this).val('收货人姓名、订单号…'); return; }"/></td><td>
 									<input type="submit" id="button2" value="搜索订单"  class="submit"/>
 								</td>
 							</tr>
@@ -84,7 +82,7 @@
 			<div>
                 <!-- 遍历这一块 -->
                 @foreach($danzi as $gb)
-                <table width="98%" cellspacing="0" cellpadding="15" border="0" class="uolist_bo">
+                <table width="98%" cellspacing="0" cellpadding="15" border="0" class="uolist_bo" id="dindan">
                     <tbody><tr>
                     <td width="26%" valign="top" class="uolist_left" rowspan="2">
                         已下订单<br>
@@ -93,7 +91,7 @@
                         收件人 <font color="#333333">{{ $gb->username }}</font><br>
                         应付金额<font color="#bc1820">￥{{ $gb->price}}</font><br>
                     </td>
-                    <td valign="top" class="uolist_right1" colspan="2"><span class="color1"><?php echo $gb->status==1?'已发货':'待发货'?></span></td>
+                    <td valign="top" class="uolist_right1" colspan="2"><span class="color1"><?php if($gb->status==1){ echo '商家已发货';}else if($gb->status==0){echo '商家还未发货';}else{echo "退货中";}?></span></td>
                     </tr>
                     <tr>
                       <td valign="middle" height="190">
@@ -118,17 +116,14 @@
                       <td width="18%" valign="middle">
                         <div class="uolist_right3">
                             <ul>
-                                <a style="display:block;height:33px;" href="/index.php?m=Order&amp;a=pay&amp;ordersn=GF2016101936085" class="tobuy">马上支付</a>
-                                                                <li style="margin:10px 31px;"><a href="javascript:shanchu({{ $gb->id }})" data-id="43518" id="delOrder">删除</a></li>                           </ul>
+                                <li style="margin:10px 31px;"><a onclick="dodels({{ $gb->id }})" data-id="43518" id="delOrder">删除</a></li>                           </ul>
                         </div>
                       </td>
                   </tr>
                 </tbody>@endforeach</table>
-               
                 <!-- 结束 -->
             </div>
           </div>
-          <div>所有订单，共 <b>0</b> 单</div>
 		  		         <div class="page"></div>
         </div>
         <div class="clear"></div>
@@ -138,5 +133,20 @@
 <script type="text/javascript" src="http://361img.361sport.com.cn/shop/js/artDialog/artDialog.js"></script>
 <script type="text/javascript" src="http://361img.361sport.com.cn/shop/js/user.js"></script>
 <script type="text/javascript">
+  function dodels(id){
+    $.ajax({
+        type:'get',
+        url:'{{ URL("/doshanchu")}}',
+        data:{did:id},
+        datatype:'json',
+        success:function(data){
+          $('#dindan').remove();
+          alert(data);
+        },
+        error:function(data){
+          alert('错误');
+        }
+      });
+  }
 </script>
 @endsection
