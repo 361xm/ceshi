@@ -10,7 +10,7 @@ class ZhiFuController extends Controller
 {
     public function zhifu($id)
     {	
-    	$uid = session('adminuser')->id;
+    	$uid = session('qtuser')->id;
 		// 用户详情
 		$data = \DB::table('user_c')->where('uid',$uid)->first();
 		// 用户购物车

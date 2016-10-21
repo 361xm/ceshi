@@ -23,7 +23,7 @@
         ﻿<div class="pl_top"></div>
         <div class="pl_c">
             <div class="userinfo">
-                <div class="username Arial fbold">{{ session('adminuser')->username }}</div>
+                <div class="username Arial fbold">{{ session('qtuser')->username }}</div>
                 <a class="useredit" href="{{ URL('/edit') }}" style="color:orange;">添加个人资料</a>
                 <a class="useredit" href="{{ URL('/doCenter')}}" style="color:orange;">修改个人资料</a>
             </div>
@@ -32,7 +32,7 @@
                 <div class="pclass_title clearfix close"><span></span>我的订单</div>
                 <div class="pclass">
                     <ul>
-                        <li><a href="/index.php?m=User&a=order">订单查询</a></li>
+                        <li><a href="{{URL('/center')}}">订单查询</a></li>
                     </ul>
                 </div>
             </div>

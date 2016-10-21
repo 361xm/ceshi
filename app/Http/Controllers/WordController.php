@@ -68,7 +68,7 @@ class WordController extends Controller
        // $status=\DB::table('details')->where('status','=','0')->pluck('status');
         $status=\DB::table('details')->where('status','0')->get();
         // dd($status);
-        return view("admin.type.order")->with(["list"=>$list,"where"=>$where,"num"=>$num])->with(['status'=>$status]);
+        return view("admin.type.order")->with(["list"=>$list,"where"=>$where,"num"=>$num,'status'=>$status]);
     }
  
     public function index1(Request $request)

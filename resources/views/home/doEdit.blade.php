@@ -23,7 +23,7 @@
         ﻿<div class="pl_top"></div>
         <div class="pl_c">
             <div class="userinfo">
-                <div class="username Arial fbold">{{ session('adminuser')->username }}</div>
+                <div class="username Arial fbold">{{ session('qtuser')->username }}</div>
                 <div style="margin-top:5px;">普通会员&nbsp;积分：0</div>
                 <a class="useredit" href="{{ URL('/edit') }}" style="color:orange;">添加个人资料</a>
                 <a class="useredit" href="{{ URL('/doCenter')}}" style="color:orange;">修改个人资料</a>
@@ -51,14 +51,14 @@
         </div>
         <div class="u_right">
 			<div class="title">修改个人信息</div>
-			<div class="color1">亲爱的{{ session('adminuser')->username }}，填写真实的资料，有助于我们为您提供更贴心得服务，还可以获取<b>50</b>积分。</div>
+			<div class="color1">亲爱的{{ session('qtuser')->username }}，填写真实的资料，有助于我们为您提供更贴心得服务，还可以获取<b>50</b>积分。</div>
 			<form method='post' id="form1" name="form1" action="/doEdit" enctype="multipart/form-data">
 				<input type="hidden" name="_token" value="{{ csrf_token() }}">
 				<div class="u_edit" style="padding-top:5px; padding-left:100px;">
 					<div class="formlist">
 						<dl>
 							<dt>登录名：</dt>
-							<dd class="ue_name">{{ session('adminuser')->username }}</dd>
+							<dd class="ue_name">{{ session('qtuser')->username }}</dd>
 						</dl>
 						@foreach($data as $list)
 						<dl>

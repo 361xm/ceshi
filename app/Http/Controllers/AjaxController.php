@@ -10,8 +10,8 @@ class AjaxController extends Controller
 {
      public function index(Request $request,$id,$color)
      {    
-          if(isset(session('adminuser')->username)){
-               $uid = session('adminuser')->id;
+          if(isset(session('qtuser')->username)){
+               $uid = session('qtuser')->id;
                $goodscolor = $request->input('goodscolor');
                $sizes = $request->input('sizes');
                $count = $request->input('goodcount');

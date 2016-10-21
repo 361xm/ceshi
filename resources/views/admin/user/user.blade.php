@@ -34,7 +34,7 @@
                       <input type="hidden"value="{{ $num++ }}">
                       <th>{{ $stu->username }}</th>
                       <th>{{ $stu->phone }}</th>
-                      <td><a href="javascript:doDel({{ $stu->id}})" class="glyphicon glyphicon-trash"></a> | <a href="" class="glyphicon glyphicon-eye-open"></a> | <a href="" class="glyphicon glyphicon-cog"></a></td>
+                      <td><a href="javascript:doDel({{ $stu->id}})" class="glyphicon glyphicon-trash"></a> | <a href="{{ URL('type/order')}}" class="glyphicon glyphicon-eye-open"></a></td>
                     </tr>
                     @endforeach
                     

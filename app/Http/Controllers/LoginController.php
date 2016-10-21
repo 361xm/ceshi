@@ -28,8 +28,8 @@
             if($ob->password==$password){
                 //31写入session
 
-                $a = session()->set("adminuser",$ob);
-                $id = session('adminuser')->id;
+                $a = session()->set("qtuser",$ob);
+                $id = session('qtuser')->id;
                 $gouwche = \DB::table('gouwche')->where('uid',$id)->first();
                 session()->set('gouwche',$gouwche);
                 // dd($a);
@@ -46,7 +46,7 @@
     {
         $wan=\DB::table("links")->get();
         //忘记session
-        session()->forget("adminuser");
+        session()->forget("qtuser");
         //重定向
 
         $configs=\DB::table('config')->get();

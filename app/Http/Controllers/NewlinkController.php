@@ -7,31 +7,38 @@
 	
 	class NewlinkController extends Controller
 	{
+        public function login(){
+            $configs = \DB::table('config')->get();
+            $wan=\DB::table("links")->get();
+            return view('home.login')->with(['configs'=>$configs,'wan'=>$wan]);
+        }
 		public function newlink()
 		{
+			$configs = \DB::table('config')->get();
 			$wan=\DB::table("links")->get();
-			return view('home/newlink',["wan"=>$wan]);
+			return view('home/newlink',["wan"=>$wan,'configs'=>$configs]);
 		}
 
 		public function link()
 		{
+			$configs = \DB::table('config')->get();
 			$wan=\DB::table("links")->get();
 			$list=\DB::table("types")->get();
 			$data = \DB::table('goods')->get();
-			return view('/web',["wan"=>$wan,"list"=>$list,"data"=>$data]);
+			return view('/web',["wan"=>$wan,"list"=>$list,"data"=>$data,'configs'=>$configs]);
 		}
 
 		public function info()
-		{
+		{ $configs = \DB::table('config')->get();
 			$list=\DB::table("press")->get();
 			$wan=\DB::table("links")->get();
-    		return view("home/xinwen",["list"=>$list,"wan"=>$wan]);
+    		return view("home/xinwen",["list"=>$list,"wan"=>$wan,'configs'=>$configs]);
 		}
 
 		public function page()
-		{	
+		{	$configs = \DB::table('config')->get();
 			$wan=\DB::table("links")->get();
-			return view('home/ganchao')->with(["wan"=>$wan]);
+			return view('home/ganchao')->with(["wan"=>$wan,'configs'=>$configs]);
 		}
 
 		public function product()
@@ -72,7 +79,7 @@
 		}
 
 		public function center(Request $request)
-		{	$id = session('adminuser')->id;
+		{	$id = session('qtuser')->id;
 			$danzi = \DB::table('details')->where('uid',$id)->get();
             if($request->has('name')){
             	 $name = $request->input('name');
@@ -109,7 +116,7 @@
 			$shi = $request->input('shi');
 			$qu = $request->input('qu');
 			$phone = $request->input('phone');
-			$id = Session('adminuser')->id;
+			$id = Session('qtuser')->id;
 			$areas = $area.$sheng.$shi.$qu;
 			// dd($phone); 
 			$uid = \DB::table('user_c')->pluck('uid');
@@ -133,7 +140,7 @@
 			$configs = \DB::table('config')->get();
 			
 			// return 1;
-			$id = session('adminuser')->id;
+			$id = session('qtuser')->id;
 			
 			$uid = \DB::table('user_c')->pluck('uid');
 			// dd($uid);
@@ -159,7 +166,7 @@
 		}
 		public function doEdit(Request $request)
 		{
-			$id = session('adminuser')->id;
+			$id = session('qtuser')->id;
 			// dd($id);
 			$list = $request->only('username','sex','email','area','phone');
 			\DB::table('user_c')->where('uid',$id)->update($list);

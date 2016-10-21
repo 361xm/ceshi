@@ -9,7 +9,8 @@
 	{
 		public function lk4()
 		{
+			$configs = \DB::table('config')->get();
 			$wan=\DB::table("links")->get();
-			return view('home/lk4',["wan"=>$wan]);	
+			return view('home/lk4',["wan"=>$wan,'configs'=>$configs]);
 		}
 	}

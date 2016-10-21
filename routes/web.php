@@ -173,9 +173,7 @@ Route::any('/doCenter',"Newlinkcontroller@doCenter");
 Route::any('/doEdit/{id?}',"Newlinkcontroller@doEdit");
 
 //后台登录界面
-// Route::get('/login', function () {
-//     return view('admin.login.login');
-// });
+ Route::get('/login','Newlinkcontroller@login');
 
 //后台登录验证
 // 后台登录路由的配置 

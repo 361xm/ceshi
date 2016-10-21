@@ -28,9 +28,9 @@
             <div class="logincont"> <a href="#" class="area"  target="_blank"></a>
 
                     <?php 
-                        if(isset(session('adminuser')->username)){
+                        if(isset(session('qtuser')->username)){
                           ?>  
-                            &nbsp;<a href="{{ URL('/center')}}" style="margin-left:8px;font-size:16px;"><em style="margin-left:8px;margin-right:8px;font-size:16px;" >{{ session('adminuser')->username }}</em></a>&nbsp;&nbsp;
+                            &nbsp;<a href="{{ URL('/center')}}" style="margin-left:8px;font-size:16px;"><em style="margin-left:8px;margin-right:8px;font-size:16px;" >{{ session('qtuser')->username }}</em></a>&nbsp;&nbsp;
                             <span><a href="{{ URL('/logout') }}" style="font-size:16px;">退出</a></span>
 
                         <?php
@@ -72,11 +72,6 @@
                             <input type="submit" class="submit pointer" />
                         </form>
                         <div style="clear:both;"></div>
-                    </div>
-                    <div class="search-hots-keywords"> 热门搜索：
-                        <a href="http://www.361sport.com/index.php?m=Product&a=index&sports=12&pclass=4&sex=1">跑步鞋</a>
-                        <a href="http://www.361sport.com/index.php?m=Product&a=index&keyword=短T">短T恤</a>
-                        <a href="http://www.361sport.com/index.php?m=Pages&a=keji160323">科技助跑</a>
                     </div>
                 </div>
             </div>

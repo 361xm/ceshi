@@ -9,14 +9,16 @@
 	{
 		public function lk5()
 		{
+			$configs = \DB::table('config')->get();
 			$wan=\DB::table("links")->get();
-			return view('home/lk5',["wan"=>$wan]);
+			return view('home/lk5',["wan"=>$wan,'configs'=>$configs]);
 		
 		}
 		public function lk6()
 		{
+			$configs = \DB::table('config')->get();
 			$wan=\DB::table("links")->get();
-			return view('home/lk5',["wan"=>$wan]);
+			return view('home/link',["wan"=>$wan,'configs'=>$configs]);
 		
 		}
 	}

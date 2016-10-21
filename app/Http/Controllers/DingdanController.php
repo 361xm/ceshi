@@ -10,7 +10,7 @@ class DingdanController extends Controller
 {
 	public function dingdan($id)
 	{
-		$uid = session('adminuser')->id;
+		$uid = session('qtuser')->id;
 		$data = \DB::table('user_c')->where('uid',$uid)->first();
 		$list = \DB::table('gouwche')->where('uid',$uid)->first();
    		return view('home/dindan')->with(['data'=>$data,'list'=>$list]);

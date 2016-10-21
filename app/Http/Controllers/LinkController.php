@@ -8,6 +8,8 @@
 	{
 		public function link()
 		{
-			return redirect('home/link');
+			$configs = \DB::table('config')->get();
+			$wan=\DB::table("links")->get();
+			return view('home/link',["wan"=>$wan,'configs'=>$configs]);
 		}
 	}
