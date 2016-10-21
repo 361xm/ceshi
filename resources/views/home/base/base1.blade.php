@@ -51,7 +51,7 @@
             <div class="navcon">
                 
 
-                <a class="logo"><img src="" style="width:200px;height:70px;"></a>
+                <a class="logo"><img src="admins/upload/{{ $configs[0]->wzimage }}" style="width:200px;height:70px;"></a>
                
                 <div class="newshop_menu" style="width:684px;">
                     <ul>
