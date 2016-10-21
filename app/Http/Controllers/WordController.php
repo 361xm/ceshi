@@ -38,20 +38,7 @@ class WordController extends Controller
     {
         $did = $request->did;
         \DB::table('gouwche')->where('id',$did)->delete();
-    }
-    public function index(Request $request)
-    {
-         $db = \DB::table('details');
-        $where = [];
-        if($request->has('name')){
-            $name = $request->input('name');
-            $db->where('id', 'like', "%{$name}%");//实现过滤控制器
-            $where['id'] = $name;
-         // 模板显示
-        } 
-        $list = $db->paginate(10);
-        $num = 0;
-        return view("admin.type.order")->with(["list"=>$list,"where"=>$where,"num"=>$num]);
+        return "删除成功";
     }
     public function shan(Request $request)
     {
@@ -238,5 +225,22 @@ class WordController extends Controller
 
         $data=\DB::table('details')->where('status','=','2')->get();
          return view('admin.type.order2')->with('status',$data)->with(["list"=>$list,"where"=>$where]);
+    }
+
+    public function doshanchu(Request $request)
+    {
+      $did = $request->did;
+     
+      \DB::table('details')->where('id',$did)->delete();
+      return '删除成功';
+    }
+    public function dosearch(Request $request)
+    {   $name = $request->input('name');
+        $danzi = \DB::table('details')->where('id','like','%{$name}%')->get();
+        $where = [];
+           
+        $configs = \DB::table('config')->get(); 
+         $wan=\DB::table('links')->get();
+        return view('home.center')->with(['where'=>$where,'danzi'=>$danzi,'configs'=>$configs,'wan'=>$wan]);
     }
 }
