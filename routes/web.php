@@ -159,12 +159,12 @@ Route::get('/info',"NewlinkController@info");
 Route::get('/pages',"NewlinkController@page");
 //跳转到所有产品
 Route::get('/product',"NewlinkController@product");
-Route::get('/ShopList/{id}',"NewlinkController@ShopList");
+Route::get('/ShopList/{id?}',"NewlinkController@ShopList");
 
 //跳转到购物车
-Route::get('/Shoping',"NewlinkCntroller@Shoping");
+Route::get('/Shoping',"NewlinkController@Shoping");
 //个人中心
-Route::get('/center',"NewlinkController@center");
+Route::any('/center',"NewlinkController@center");
 Route::get('/edit',"NewlinkController@edit");
 //添加收货人地址信息
 Route::any('/doAdd',"NewlinkController@doAdd");
@@ -294,7 +294,7 @@ Route::any('/user',"Admin\UserController@index2");
 //前台首页遍历
 Route::get('/',"StageController@desk");
 
-Route::any('/gouwche/{id}/{color}','AjaxController@index');
+Route::any('/gouwche/{id?}/{color?}','AjaxController@index');
 
 //网站配置
 Route::any('/config',function(){
@@ -306,6 +306,9 @@ Route::any('/doConfig','WordController@zhandian');
 
 // Ajax订单删除
 Route::any('/shan','WordController@shan');
+Route::any('/doshanchu','WordController@doshanchu');
+Route::any('/dosearch','WordController@dosearch');
+
 
 // 网站维护页面
 Route::get('/errors',function(){
