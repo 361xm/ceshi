@@ -27,7 +27,11 @@
             //3 密码
             if($ob->password==$password){
                 //31写入session
+
                 $a = session()->set("adminuser",$ob);
+                $id = session('adminuser')->id;
+                $gouwche = \DB::table('gouwche')->where('uid',$id)->first();
+                session()->set('gouwche',$gouwche);
                 // dd($a);
                 //32跳转到后台首页
           
@@ -45,14 +49,15 @@
         session()->forget("adminuser");
         //重定向
 
-        $congigs=\DB::table('config')->get();
+        $configs=\DB::table('config')->get();
         return view("home/login")->with(['configs'=>$configs,'wan'=>$wan]);
     }
 
     //忘记密码
     public function forgetPasswd()
     {   $configs = \DB::table('config')->get();
-        return view('home/forgetPasswd')->with(['configs'=>$configs]);
+     $wan=\DB::table('links')->get();
+        return view('home/forgetPasswd')->with(['configs'=>$configs,'wan'=>$wan]);
     }
     //忘记密码的原始信息
     public function doForgetPasswd(Request $request)
